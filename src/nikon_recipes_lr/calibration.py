@@ -11,7 +11,7 @@ def read_samples(path):
     path=Path(path)
     if path.suffix.lower()=='.npy':value=np.load(path,allow_pickle=False)
     else:
-        rows=json.loads(path.read_text())
+        rows=json.loads(path.read_text(encoding='utf-8'))
         value=np.array([r['measured'] for r in rows]) if rows and isinstance(rows[0],dict) else np.array(rows)
     if value.ndim!=2 or value.shape[1]!=3 or not np.isfinite(value).all() or np.any((value<0)|(value>1)):
         raise ValueError('Samples must be a finite Nx3 array in 0..1')
@@ -20,7 +20,7 @@ def read_samples(path):
 
 def sample_tiff(image_path,metadata_path,radius=4):
     if not 0<=radius<=16:raise ValueError('Patch radius must be 0..16')
-    metadata=json.loads(Path(metadata_path).read_text())
+    metadata=json.loads(Path(metadata_path).read_text(encoding='utf-8'))
     with tifffile.TiffFile(image_path) as tif:
         page=tif.pages[0]
         icc=page.tags.get(34675)

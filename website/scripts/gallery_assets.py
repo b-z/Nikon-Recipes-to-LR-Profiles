@@ -20,21 +20,21 @@ def inventory(assets, destination):
             if path.is_file() and path.suffix in ('.jpg', '.md', '.json') and not path.name.startswith('._'):
                 rows.append(dict(path=path.relative_to(assets).as_posix(), bytes=path.stat().st_size,
                                  sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
-    destination.write_text(json.dumps(rows, indent=2))
+    destination.write_text(json.dumps(rows, indent=2), encoding='utf-8')
     return rows
 
 
 def compact_sheets(assets, docs):
     source=assets/'comparisons';target=docs/'comparisons';target.mkdir(parents=True,exist_ok=True)
-    rows=json.loads((source/'manifest.json').read_text())
+    rows=json.loads((source/'manifest.json').read_text(encoding='utf-8'))
     previous=target/'manifest.json'
     if previous.exists():
-        for entry in json.loads(previous.read_text()):
+        for entry in json.loads(previous.read_text(encoding='utf-8')):
             (target/Path(entry['path']).name).unlink(missing_ok=True)
     for row in rows:
         path=Path(row['path']).name
         shutil.copyfile(source/path,target/path)
     shutil.copyfile(source/'manifest.json',target/'manifest.json')
-    text=(source/'README.md').read_text()
+    text=(source/'README.md').read_text(encoding='utf-8')
     text+='\nFull-size scene previews are available in the [online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/). Website assets are stored separately from this source tree.\n'
-    (target/'README.md').write_text(text)
+    (target/'README.md').write_text(text, encoding='utf-8')

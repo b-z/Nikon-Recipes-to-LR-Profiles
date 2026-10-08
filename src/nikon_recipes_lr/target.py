@@ -88,5 +88,5 @@ def generate(donor,output,confirm_calibration=False):
                     '-Nikon:VignetteControl=Off','-Nikon:AutoDistortionControl=Off',
                     '-Nikon:DiffractionCompensation=Off',str(output)],check=True)
     meta.write_text(json.dumps(dict(sensor_size=[W,H],active_size=[8256,5504],inset=list(INSET),
-                                  pitch=pitch,patches=patches,preview_warning='Embedded JPEG previews are donor previews; render the raw data'),indent=2))
+                                  pitch=pitch,patches=patches,preview_warning='Embedded JPEG previews are donor previews; render the raw data'),indent=2), encoding='utf-8')
     return meta

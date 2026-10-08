@@ -13,7 +13,7 @@ def main():
     p.add_argument('--profiles',required=True);p.add_argument('--metrics',required=True)
     p.add_argument('--samples');p.add_argument('--output',required=True);p.add_argument('--version',default='0.1.0')
     args=p.parse_args();root=Path(__file__).resolve().parents[1];out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
-    rows=json.loads(Path(args.metrics).read_text());profiles=Path(args.profiles)
+    rows=json.loads(Path(args.metrics).read_text(encoding='utf-8'));profiles=Path(args.profiles)
     if len(rows)!=236:raise ValueError('Initial Nikon pack must contain all 236 conversions')
     ids=set()
     for row in rows:
@@ -35,7 +35,7 @@ def main():
         archive.writestr('SHA256SUMS.profiles',''.join(f'{r["sha256"]}  profiles/{r["file"]}\n' for r in rows))
     artifacts=[destination]
     if args.samples:
-        directory=Path(args.samples);manifest=json.loads((root/'samples/manifest.json').read_text())
+        directory=Path(args.samples);manifest=json.loads((root/'samples/manifest.json').read_text(encoding='utf-8'))
         destination=out/f'nikon-recipes-lr-samples-{args.version}.zip'
         if destination.exists():raise FileExistsError(destination)
         with zipfile.ZipFile(destination,'w',zipfile.ZIP_STORED) as archive:
@@ -47,7 +47,7 @@ def main():
             archive.write(root/'samples/LICENSE.md','LICENSE.md')
             archive.write(root/'samples/README.md','README.md')
         artifacts.append(destination)
-    with (out/'SHA256SUMS').open('w') as stream:
+    with (out/'SHA256SUMS').open('w',encoding='utf-8') as stream:
         for path in artifacts:stream.write(f'{sha256(path)}  {path.name}\n')
     print(json.dumps([dict(file=str(p),bytes=p.stat().st_size,sha256=sha256(p)) for p in artifacts],indent=2))
 

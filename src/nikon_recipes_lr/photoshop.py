@@ -15,7 +15,7 @@ def render(raw,output,profile=None,amount=1.,app='Adobe Photoshop 2026'):
     with tempfile.TemporaryDirectory(prefix='nikon-lr-render-') as directory:
         work=Path(directory);source=work/'input.NEF';target=work/'output.TIF'
         shutil.copyfile(raw,source)
-        source.with_suffix('.xmp').write_text(render_sidecar(profile,amount))
+        source.with_suffix('.xmp').write_text(render_sidecar(profile,amount), encoding='utf-8')
         code='''#target photoshop
 var previousDialogs=app.displayDialogs;
 app.displayDialogs=DialogModes.NO;
@@ -32,7 +32,7 @@ try {
  answer="ERR "+e.message;
 } finally {app.displayDialogs=previousDialogs;}
 answer;'''.replace('SOURCE',json.dumps(str(source))).replace('TARGET',json.dumps(str(target)))
-        script=work/'render.jsx';script.write_text(code)
+        script=work/'render.jsx';script.write_text(code, encoding='utf-8')
         command=f'tell application {json.dumps(app)} to do javascript (read POSIX file {json.dumps(str(script))})'
         result=subprocess.run(['osascript','-e',command],capture_output=True,text=True,timeout=180)
         if result.returncode or result.stdout.strip()!='OK' or not target.exists():

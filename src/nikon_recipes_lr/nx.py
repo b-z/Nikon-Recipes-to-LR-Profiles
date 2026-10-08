@@ -34,7 +34,7 @@ def sha256(path):
 
 
 def prepare(source,template_path,recipe_paths,output):
-    source=Path(source);output=Path(output);template=Path(template_path).read_text()
+    source=Path(source);output=Path(output);template=Path(template_path).read_text(encoding='utf-8')
     if output.exists():raise FileExistsError('Use a new empty batch directory')
     prepared=[];names=set()
     for p in recipe_paths:
@@ -46,5 +46,5 @@ def prepare(source,template_path,recipe_paths,output):
     for name,sidecar in prepared:
         dest=output/f'{name}.NEF';shutil.copyfile(source,dest)
         if sha256(dest)!=source_hash:raise IOError('RAW copy checksum differs')
-        (output/'NKSC_PARAM'/f'{dest.name}.nksc').write_text(sidecar)
+        (output/'NKSC_PARAM'/f'{dest.name}.nksc').write_text(sidecar, encoding='utf-8')
     return [name for name,_ in prepared]

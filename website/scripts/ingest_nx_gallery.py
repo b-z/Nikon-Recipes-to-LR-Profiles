@@ -42,7 +42,7 @@ def sheets(rows, refs, docs, per_sheet=8):
     # Remove only previously generated sheets, keeping unrelated files intact.
     previous = destination / 'manifest.json'
     if previous.exists():
-        for entry in json.loads(previous.read_text()):
+        for entry in json.loads(previous.read_text(encoding='utf-8')):
             name = Path(entry['path']).name
             if name.endswith('.jpg'):
                 (destination / name).unlink(missing_ok=True)
@@ -96,13 +96,13 @@ def sheets(rows, refs, docs, per_sheet=8):
         result.append(dict(path='comparisons/'+name,recipes=[r['recipe'] for r in subset],
                            mean_delta_e=[r['fit']['mean'] for r in subset],scene_order=[stem for stem,_ in SCENES],
                            rows=len(subset),images_per_row=8,width=width))
-    (destination/'manifest.json').write_text(json.dumps(result,indent=2))
+    (destination/'manifest.json').write_text(json.dumps(result,indent=2), encoding='utf-8')
     text=['# NX Studio / Lightroom comparison sheets','',
           'Recipes are ordered by ascending chart mean ΔE. Each sheet has up to eight recipe rows; each row shows all four scenes as NX/LR pairs (eight photographs). Names, ΔE and Banding risk are above each row. NX and LR labels overlay the photographs. These are high-quality sRGB visual previews, not precision banding measurements.','',
           'Photos © b-z / Zhou Bowei. [Project comparison permission](../../samples/LICENSE.md).','']
     for entry in result:
         text.extend([f"## Recipes {Path(entry['path']).stem.split('_')[-1]}",'',f"![NX / LR on four scenes]({Path(entry['path']).name})",''])
-    (destination/'README.md').write_text('\n'.join(text)+'\n')
+    (destination/'README.md').write_text('\n'.join(text)+'\n', encoding='utf-8')
     return len(result)
 
 
@@ -114,11 +114,11 @@ def main():
     parser.add_argument('--assets', type=Path, required=True)
     args = parser.parse_args()
     asset_location(args.assets, root)
-    rows = json.loads((args.docs / 'recipe_metrics.json').read_text())
-    batch = json.loads((args.batch / 'manifest.json').read_text())
+    rows = json.loads((args.docs / 'recipe_metrics.json').read_text(encoding='utf-8'))
+    batch = json.loads((args.batch / 'manifest.json').read_text(encoding='utf-8'))
     target = args.assets / 'images/nx'; target.mkdir(parents=True, exist_ok=True)
     previous = root / 'website/data/nx_references.json'
-    refs = {(r['photo'], r['recipe']): r for r in json.loads(previous.read_text())} if previous.exists() else {}
+    refs = {(r['photo'], r['recipe']): r for r in json.loads(previous.read_text(encoding='utf-8'))} if previous.exists() else {}
     profile = ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB')).tobytes()
     export_lists = {}
     for folder in {item['folder'] for item in batch}:
@@ -157,12 +157,12 @@ def main():
             if imported % 40 == 0:
                 print(f'Imported {imported} NX references', flush=True)
     reference_rows = list(refs.values())
-    previous.write_text(json.dumps(reference_rows, indent=2))
+    previous.write_text(json.dumps(reference_rows, indent=2), encoding='utf-8')
     count = sheets(rows, reference_rows, args.assets)
     compact_sheets(args.assets, args.docs)
     manifest = root / 'website/data/assets_manifest.json'
     inventory(args.assets, manifest)
-    (args.assets/'assets_manifest.json').write_text(manifest.read_text())
+    (args.assets/'assets_manifest.json').write_text(manifest.read_text(encoding='utf-8'), encoding='utf-8')
     build_pages(rows, args.docs, include_previews=False)
     print(json.dumps(dict(imported=imported, references=len(refs), contact_sheets=count)))
 

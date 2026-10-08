@@ -40,18 +40,18 @@ def main():
             valid=~(((x>.999)|(x<.0005)|(y>.999)|(y<.0005)).any(1))
             if valid.sum()<4:raise ValueError('Too few unclipped calibration pairs')
             lut,solver=NativeFitter(x[valid],args.grid).fit(y[valid],args.lam)
-            Path(args.output).write_text(build_profile(lut,args.name,args.author,camera=args.camera))
+            Path(args.output).write_text(build_profile(lut,args.name,args.author,camera=args.camera), encoding='utf-8')
             error=de2000(lab(lookup(lut,x[valid])),lab(y[valid]))
             result=dict(profile=args.output,samples=int(valid.sum()),mean_de=float(error.mean()),p95_de=float(np.percentile(error,95)),
                         evaluation='training chart, not independent validation',solver=solver,structure=audit(lut))
-            if args.report:Path(args.report).write_text(json.dumps(result,indent=2))
+            if args.report:Path(args.report).write_text(json.dumps(result,indent=2), encoding='utf-8')
         elif args.command=='export':
-            lut=np.load(args.lut,allow_pickle=False);Path(args.output).write_text(build_profile(lut,args.name,args.author));result=dict(profile=args.output)
+            lut=np.load(args.lut,allow_pickle=False);Path(args.output).write_text(build_profile(lut,args.name,args.author), encoding='utf-8');result=dict(profile=args.output)
         elif args.command=='audit':
             lut,m=read_profile(args.profile);result=dict(name=m['name'],structure=audit(lut))
-            if args.output:Path(args.output).write_text(json.dumps(result,indent=2))
+            if args.output:Path(args.output).write_text(json.dumps(result,indent=2), encoding='utf-8')
         elif args.command=='sample':
-            rows=sample_tiff(args.tiff,args.metadata);Path(args.output).write_text(json.dumps(rows,indent=2));result=dict(samples=len(rows),output=args.output)
+            rows=sample_tiff(args.tiff,args.metadata);Path(args.output).write_text(json.dumps(rows,indent=2), encoding='utf-8');result=dict(samples=len(rows),output=args.output)
         elif args.command=='prepare-nx':
             from .nx import prepare
             result=dict(recipes=prepare(args.source,args.template,args.recipes,args.output))

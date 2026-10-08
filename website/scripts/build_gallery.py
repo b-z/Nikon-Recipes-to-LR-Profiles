@@ -42,7 +42,7 @@ def main():
     assets=Path(args.assets);data=root/'website/data'
     asset_location(assets,root)
     dest=assets/'images';dest.mkdir(exist_ok=True,parents=True)
-    rows=json.loads(Path(args.metrics).read_text())
+    rows=json.loads(Path(args.metrics).read_text(encoding='utf-8'))
     adobe=ImageCms.ImageCmsProfile(io.BytesIO((baselines/'adobe_rgb.icc').read_bytes()))
     srgb=ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB'));srgbbytes=srgb.tobytes()
     conversion=ImageCms.buildTransformFromOpenProfiles(adobe,srgb,'RGB','RGB')
@@ -69,7 +69,7 @@ def main():
     for path in baselines.glob('*_actual_*.jpg'):shutil.copyfile(path,dest/path.name)
     shutil.copyfile(baselines/'acr_validation.json',docs/'acr_validation.json')
     shutil.copyfile(baselines/'roi_manifest.json',data/'roi_manifest.json')
-    (data/'gallery_manifest.json').write_text(json.dumps(manifest,indent=2))
+    (data/'gallery_manifest.json').write_text(json.dumps(manifest,indent=2), encoding='utf-8')
     # Sidebar previews are website assets too.
     thumbs=assets/'images/thumbs';thumbs.mkdir(exist_ok=True)
     for row in rows:
@@ -77,13 +77,13 @@ def main():
             pic.thumbnail((172,116),Image.Resampling.LANCZOS)
             pic.save(thumbs/f'{row["recipe"]}.jpg',quality=82,icc_profile=pic.info.get('icc_profile'))
     inventory(assets,data/'assets_manifest.json')
-    (assets/'assets_manifest.json').write_text((data/'assets_manifest.json').read_text())
+    (assets/'assets_manifest.json').write_text((data/'assets_manifest.json').read_text(encoding='utf-8'), encoding='utf-8')
     build_pages(rows,docs,include_previews=False)
 
 
 def build_pages(rows,docs,include_previews=True):
     references_path=docs/'nx_references.json'
-    references=json.loads(references_path.read_text()) if references_path.exists() else []
+    references=json.loads(references_path.read_text(encoding='utf-8')) if references_path.exists() else []
     nx_lookup={(r['photo'],r['recipe']):r for r in references}
     pages=docs/'recipes';pages.mkdir(exist_ok=True)
     index=['# Recipe catalog — 0.1.0','',
@@ -126,19 +126,19 @@ Right: numerical tetrahedral Lightroom table preview, 100% Amount. Left: owner-e
             before=nx['path'] if nx else f'images/{stem}_base.jpg'
             caption='NX Studio' if nx else 'Adobe Standard (NX reference pending)'
             page+=f'### {label}\n\n![{caption}](../{before})\n\n![Converted {display}](../images/{stem}_{recipe}.jpg)\n\n'
-        if any(r['recipe']==recipe for r in json.loads((docs/'acr_validation.json').read_text())):
+        if any(r['recipe']==recipe for r in json.loads((docs/'acr_validation.json').read_text(encoding='utf-8'))):
             page+='## Actual Camera Raw verification\n\nThese are actual Camera Raw exports, separate from the numerical previews. [Measured preview/render differences](../acr_validation.json).\n\n'
             for stem in (('9046','2849','2694','5054') if include_previews else []):page+=f'![Actual Camera Raw _DSC{stem}](../images/{stem}_actual_{recipe}.jpg)\n\n'
         page+='Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.\n'
-        (pages/f'{recipe}.md').write_text(page)
-    (docs/'RECIPES.md').write_text('\n'.join(index)+'\n')
+        (pages/f'{recipe}.md').write_text(page, encoding='utf-8')
+    (docs/'RECIPES.md').write_text('\n'.join(index)+'\n', encoding='utf-8')
     if not include_previews:
         return
     data=json.dumps(rows,ensure_ascii=False).replace('</','<\\/')
-    page=(Path(__file__).resolve().parents[1].joinpath('gallery.template.html').read_text()
+    page=(Path(__file__).resolve().parents[1].joinpath('gallery.template.html').read_text(encoding='utf-8')
           .replace('__DATA__',data)
           .replace('__REFERENCES__',json.dumps(references).replace('</','<\\/')))
-    (docs/'gallery.html').write_text(page)
+    (docs/'gallery.html').write_text(page, encoding='utf-8')
 
 
 if __name__=='__main__':main()

@@ -52,11 +52,11 @@ class CoreTests(unittest.TestCase):
         result,meta=unpack_table(payload)
         self.assertEqual(tid,meta['table_id']);np.testing.assert_allclose(result,lut,atol=.5/65535)
         with tempfile.TemporaryDirectory() as t:
-            path=Path(t)/'test.xmp';path.write_text(build_profile(lut,'Example & <look>','A "creator"'))
+            path=Path(t)/'test.xmp';path.write_text(build_profile(lut,'Example & <look> 彩色 —','A "creator"'), encoding='utf-8')
             restored,m=read_profile(path);np.testing.assert_array_equal(result,restored)
-            self.assertEqual(m['name'],'Example & <look>');self.assertEqual(m['camera'],'NIKON Z 8')
+            self.assertEqual(m['name'],'Example & <look> 彩色 —');self.assertEqual(m['camera'],'NIKON Z 8')
             self.assertIn('Amount="0.3"',render_sidecar(path,.3))
-            text=path.read_text().replace(tid,'F'*32);path.write_text(text)
+            text=path.read_text(encoding='utf-8').replace(tid,'F'*32);path.write_text(text, encoding='utf-8')
             with self.assertRaises(ValueError):read_profile(path)
 
     def test_reject_bad_table(self):
@@ -77,7 +77,7 @@ class CoreTests(unittest.TestCase):
     def test_tiff_sampling_endianness_crop_and_profile_rejection(self):
         with tempfile.TemporaryDirectory() as t:
             path=Path(t)/'sample.TIF';meta=Path(t)/'chart.json'
-            meta.write_text(json.dumps(dict(sensor_size=[10,10],active_size=[8,8],inset=[1,1],patches=[dict(label='p',center=[5,5])])))
+            meta.write_text(json.dumps(dict(sensor_size=[10,10],active_size=[8,8],inset=[1,1],patches=[dict(label='p',center=[5,5])])), encoding='utf-8')
             icc=ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB')).tobytes()
             for endian in ('<u2','>u2'):
                 array=np.empty((8,8,3),dtype=endian);array[:]=[10000,20000,30000]
