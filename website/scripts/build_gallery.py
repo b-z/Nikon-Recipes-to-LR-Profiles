@@ -137,6 +137,7 @@ Right: numerical tetrahedral Lightroom table preview, 100% Amount. Left: owner-e
     data=json.dumps(rows,ensure_ascii=False).replace('</','<\\/')
     page=(Path(__file__).resolve().parents[1].joinpath('gallery.template.html').read_text(encoding='utf-8')
           .replace('__DATA__',data)
+          .replace('__DOWNLOADS__',(Path(__file__).resolve().parents[1]/'data/downloads.json').read_text(encoding='utf-8'))
           .replace('__REFERENCES__',json.dumps(references).replace('</','<\\/')))
     (docs/'gallery.html').write_text(page, encoding='utf-8')
 

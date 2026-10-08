@@ -15,9 +15,9 @@ def asset_location(assets, root):
 
 def inventory(assets, destination):
     rows=[]
-    for folder in ('images', 'comparisons'):
+    for folder in ('images', 'comparisons', 'profiles'):
         for path in sorted((assets/folder).rglob('*')):
-            if path.is_file() and path.suffix in ('.jpg', '.md', '.json') and not path.name.startswith('._'):
+            if path.is_file() and path.suffix in (('.xmp',) if folder=='profiles' else ('.jpg', '.md', '.json')) and not path.name.startswith('._'):
                 rows.append(dict(path=path.relative_to(assets).as_posix(), bytes=path.stat().st_size,
                                  sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
     destination.write_text(json.dumps(rows, indent=2), encoding='utf-8')

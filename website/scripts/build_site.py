@@ -27,6 +27,8 @@ def main():
     docs = root / 'docs'
     data = root / 'website/data'
     inventory = json.loads((data / 'assets_manifest.json').read_text(encoding='utf-8'))
+    rows = json.loads((docs / 'recipe_metrics.json').read_text(encoding='utf-8'))
+    allowed_profiles = {row['file'] for row in rows}
     args.output.mkdir(parents=True, exist_ok=True)
     # Documentation stays light in Git; the site receives full-size assets below.
     paths = [f for f in docs.rglob('*') if f.is_file() and f.suffix in ('.md', '.json', '.jpg')]
@@ -44,10 +46,12 @@ def main():
     # Stream each asset once, verifying hashes while copying. Fail on stale packs.
     for row in inventory:
         relative = Path(row['path'])
-        if relative.is_absolute() or '..' in relative.parts or relative.parts[0] not in ('images', 'comparisons'):
+        if relative.is_absolute() or '..' in relative.parts or relative.parts[0] not in ('images', 'comparisons', 'profiles'):
             raise ValueError('Unsafe asset path')
-        if relative.suffix not in ('.jpg', '.json', '.md'):
+        if relative.suffix not in (('.xmp',) if relative.parts[0]=='profiles' else ('.jpg', '.json', '.md')):
             raise ValueError('Unexpected asset type')
+        if relative.parts[0]=='profiles' and (len(relative.parts)!=2 or relative.name not in allowed_profiles):
+            raise ValueError('Unrecognized downloadable profile')
         source = args.assets / relative
         if not source.resolve().is_relative_to(args.assets.resolve()):
             raise ValueError('Asset leaves its directory')
@@ -62,6 +66,9 @@ def main():
     rows = json.loads((docs / 'recipe_metrics.json').read_text(encoding='utf-8'))
     refs = json.loads((data / 'nx_references.json').read_text(encoding='utf-8'))
     for row in rows:
+        profile=args.output/'docs/profiles'/row['file']
+        if not profile.is_file() or hashlib.sha256(profile.read_bytes()).hexdigest()!=row['sha256']:
+            raise ValueError('Missing or mismatched downloadable profile')
         for stem in ('9046', '2849', '2694', '5054'):
             if not (args.output / 'docs/images' / f'{stem}_{row["recipe"]}.jpg').is_file():
                 raise ValueError('Missing conversion preview')
@@ -72,7 +79,7 @@ def main():
             raise ValueError('Missing NX reference')
     build_pages(rows, args.output / 'docs')
     (args.output / '_redirects').write_text('/ /docs/gallery.html 302\n/gallery /docs/gallery.html 302\n', encoding='utf-8')
-    (args.output / '_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n', encoding='utf-8')
+    (args.output / '_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n/docs/profiles/*\n  Content-Type: application/octet-stream\n  Content-Disposition: attachment\n', encoding='utf-8')
     files = [f for f in args.output.rglob('*') if f.is_file()]
     forbidden = {'.nef', '.np3', '.ncp', '.nksc', '.tif', '.tiff', '.toml', '.env'}
     if any(f.suffix.lower() in forbidden or f.stat().st_size > 25 * 1024**2 for f in files):

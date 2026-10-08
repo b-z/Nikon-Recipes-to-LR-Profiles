@@ -33,6 +33,8 @@
     "overview": "16-bit area average, factor 6, before transform",
     "crop": null,
     "source_documentation_preview": "Overview <= 768px; no separate detail thumbnails. Native/full-size previews remain in the private preparation archive.",
-    "label": "Banding test 2"
+    "label": "Banding test 2",
+    "benchmark_lens_policy": "Private Adobe render copy with mandatory distortion flag disabled and vignetting off, matching uncorrected NX references; original NEF and NX exports unchanged",
+    "raw_strip_sha256": "3463c2094256751be4d82d470298ad8c719b74710d24dc56a7299a19a761823b"
   }
 ]

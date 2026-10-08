@@ -27,33 +27,6 @@
     "kind": "Actual Camera Raw overview vs native numerical preview; stride 4 on area-averaged image; includes clipped pixels"
   },
   {
-    "photo": "5054",
-    "recipe": "LeicaSTD",
-    "amount": 1.0,
-    "mean_de": 0.02898063018424637,
-    "p95_de": 0.1030963565646839,
-    "max_de": 1.3117398044261293,
-    "kind": "Actual Camera Raw overview vs native numerical preview; stride 4 on area-averaged image; includes clipped pixels"
-  },
-  {
-    "photo": "5054",
-    "recipe": "BleachBlue_Aparupa",
-    "amount": 1.0,
-    "mean_de": 0.02270773759010047,
-    "p95_de": 0.07346551121385451,
-    "max_de": 6.704382115191096,
-    "kind": "Actual Camera Raw overview vs native numerical preview; stride 4 on area-averaged image; includes clipped pixels"
-  },
-  {
-    "photo": "5054",
-    "recipe": "Filmic_Fabio",
-    "amount": 1.0,
-    "mean_de": 0.037401654271847426,
-    "p95_de": 0.12172062632554877,
-    "max_de": 2.8844825936649054,
-    "kind": "Actual Camera Raw overview vs native numerical preview; stride 4 on area-averaged image; includes clipped pixels"
-  },
-  {
     "photo": "9046",
     "recipe": "LeicaSTD",
     "amount": 1.0,
@@ -106,5 +79,35 @@
     "p95_de": 1.580060045793359,
     "max_de": 7.051835275720742,
     "kind": "Actual Camera Raw overview vs native numerical preview; stride 4 on area-averaged image; includes clipped pixels"
+  },
+  {
+    "photo": "5054",
+    "recipe": "LeicaSTD",
+    "amount": 1.0,
+    "mean_de": 0.029161806941178887,
+    "p95_de": 0.10112462208573968,
+    "max_de": 1.2569845287377288,
+    "kind": "Actual Camera Raw vs numerical preview; stride 4 on area-averaged image; includes clipped pixels",
+    "benchmark_geometry": "Private render copy: mandatory distortion flag Off; original NEF and NX references unchanged"
+  },
+  {
+    "photo": "5054",
+    "recipe": "BleachBlue_Aparupa",
+    "amount": 1.0,
+    "mean_de": 0.02260482645526138,
+    "p95_de": 0.0721780904859301,
+    "max_de": 4.853849477679593,
+    "kind": "Actual Camera Raw vs numerical preview; stride 4 on area-averaged image; includes clipped pixels",
+    "benchmark_geometry": "Private render copy: mandatory distortion flag Off; original NEF and NX references unchanged"
+  },
+  {
+    "photo": "5054",
+    "recipe": "Filmic_Fabio",
+    "amount": 1.0,
+    "mean_de": 0.03782144043816779,
+    "p95_de": 0.12035295220463096,
+    "max_de": 3.0097029139881752,
+    "kind": "Actual Camera Raw vs numerical preview; stride 4 on area-averaged image; includes clipped pixels",
+    "benchmark_geometry": "Private render copy: mandatory distortion flag Off; original NEF and NX references unchanged"
   }
 ]

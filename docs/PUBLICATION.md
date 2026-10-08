@@ -23,4 +23,4 @@ Distribution: a profiles ZIP, a separate sample RAW ZIP and an independent websi
 
 Yunchuang remains the private research project. Emulsion is unrelated.
 
-Website code is isolated in `website/`. The complete gallery image library and website asset ZIP are kept on external storage. `website/assets/` and `website/dist/` are ignored; documentation retains only a small example and 2024-pixel-wide contact sheets. Full gallery images are distributed separately in the website asset ZIP. The gallery offers slider comparison and synchronized A/B blinking at 1.5-second intervals.
+Website code is isolated in `website/`. The complete gallery image library and website asset ZIP are kept on external storage. `website/assets/` and `website/dist/` are ignored; documentation retains only a small example and 2024-pixel-wide contact sheets. Full gallery images are distributed separately in the website asset ZIP. The gallery offers slider comparison and synchronized A/B blinking at 1-second intervals.

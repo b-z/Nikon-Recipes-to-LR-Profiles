@@ -8,13 +8,13 @@ The [live comparison gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) i
 | `website/scripts/` | Preview generation, NX import and site builder | Yes |
 | `website/data/` | Reference metadata, provenance and SHA-256 asset inventory | Yes |
 | `docs/images/`, `docs/comparisons/` | Small example and compact contact sheets | Yes |
-| External asset directory | Complete `images/` and `comparisons/` folders | No |
+| External asset directory | Complete `images/`, `comparisons/` and downloadable `profiles/` folders | No |
 | `website/assets/` | Optional local extraction location for the asset pack | No |
 | `website/dist/` | Generated deployable site | No |
 
 ## Build
 
-Install the project's dependencies (`python -m pip install -e .`). Obtain the separate `nikon-recipes-lr-website-assets-0.1.0.zip` asset pack and extract it outside the checkout or into the ignored `website/assets/` directory. Download it from the [v0.1.0 Release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.1.0). Maintainers can instead use the external asset directory directly.
+Install the project's dependencies (`python -m pip install -e .`). Obtain the separate `nikon-recipes-lr-website-assets-0.1.1.zip` asset pack and extract it outside the checkout or into the ignored `website/assets/` directory. Download it from the [v0.1.0 Release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.1.0). Maintainers can instead use the external asset directory directly.
 
 ```sh
 PYTHONPATH=src python3 website/scripts/build_site.py --assets /path/to/website-assets
@@ -39,3 +39,5 @@ Deploy `website/dist/` with Cloudflare Pages Direct Upload. Deployment does not 
 中文：完整图库素材保存在仓库之外；仓库只保留网站代码、素材清单和小尺寸文档图。构建产物 `website/dist/` 不进入 Git。
 
 日本語：完全な画像素材はリポジトリ外に保存し、ソースにはサイトコード、素材一覧と小さな文書用画像のみを含めます。`website/dist/` は Git に追加しません。
+
+The gallery defaults to synchronized A/B blinking every second. Arrow Up / Arrow Down selects the previous / next recipe in the visible filtered/sorted list. The NP3 button links to the credited upstream archive; the XMP button downloads the exact converted profile. Original NP3s are not hosted here.
