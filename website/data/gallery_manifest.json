@@ -1,0 +1,38 @@
+[
+  {
+    "photo": "_DSC9046.NEF",
+    "amount": 1.0,
+    "type": "Numerical tetrahedral preview on Camera Raw Adobe Standard baseline; not NX ground truth",
+    "overview": "16-bit area average, factor 6, before transform",
+    "crop": null,
+    "source_documentation_preview": "Overview <= 768px; no separate detail thumbnails. Native/full-size previews remain in the private preparation archive.",
+    "label": "Landscape test 1"
+  },
+  {
+    "photo": "_DSC2849.NEF",
+    "amount": 1.0,
+    "type": "Numerical tetrahedral preview on Camera Raw Adobe Standard baseline; not NX ground truth",
+    "overview": "16-bit area average, factor 6, before transform",
+    "crop": null,
+    "source_documentation_preview": "Overview <= 768px; no separate detail thumbnails. Native/full-size previews remain in the private preparation archive.",
+    "label": "Landscape test 2"
+  },
+  {
+    "photo": "_DSC2694.NEF",
+    "amount": 1.0,
+    "type": "Numerical tetrahedral preview on Camera Raw Adobe Standard baseline; not NX ground truth",
+    "overview": "16-bit area average, factor 6, before transform",
+    "crop": null,
+    "source_documentation_preview": "Overview <= 768px; no separate detail thumbnails. Native/full-size previews remain in the private preparation archive.",
+    "label": "Banding test 1"
+  },
+  {
+    "photo": "_DSC5054.NEF",
+    "amount": 1.0,
+    "type": "Numerical tetrahedral preview on Camera Raw Adobe Standard baseline; not NX ground truth",
+    "overview": "16-bit area average, factor 6, before transform",
+    "crop": null,
+    "source_documentation_preview": "Overview <= 768px; no separate detail thumbnails. Native/full-size previews remain in the private preparation archive.",
+    "label": "Banding test 2"
+  }
+]

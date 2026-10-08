@@ -1,0 +1,22 @@
+{
+  "profile_count": 236,
+  "yc7": 19,
+  "yc4": 217,
+  "sample_raws": 4,
+  "actual_acr_comparisons": 12,
+  "unit_tests": 10,
+  "source_workflow": {
+    "patches": 24432,
+    "raw_bytes": 92914232,
+    "max_rgb_difference": 0.0017700465400167856,
+    "mean_rgb_difference": 5.6784979379918456e-05
+  },
+  "upstream_archive": {
+    "repository": "https://github.com/shouryan01/Nikon-Recipes",
+    "local_snapshot_revision": "2458e53bd07538749d3a30b5a6360f8ae18996e2"
+  },
+  "publication": {
+    "repository": "https://github.com/b-z/Nikon-Recipes-to-LR-Profiles",
+    "release": "v0.1.0"
+  }
+}

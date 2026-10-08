@@ -1,0 +1,954 @@
+[
+  {
+    "path": "comparisons/recipes_01.jpg",
+    "recipes": [
+      "CineBias-BB",
+      "FILMICBW",
+      "Scott's_Ilford_400_MID",
+      "Scott's_Ilford_400_LO",
+      "CineAchromic",
+      "Filmstill's_ARTE_B&W",
+      "BleachBypass_01a",
+      "Scott's_Ilford_400"
+    ],
+    "mean_delta_e": [
+      0.20395445644134266,
+      0.20409698795832174,
+      0.20804058029730058,
+      0.218888336792021,
+      0.22206472382071984,
+      0.2250975347372648,
+      0.2262735946126244,
+      0.22643608550261185
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_02.jpg",
+    "recipes": [
+      "CafeCat_yw",
+      "Catgrain_yw",
+      "CineBias_RED",
+      "VINTAGE_FILM_Ludwig",
+      "DGFilmLook_DannyG",
+      "Premium_Dreamy_Mono",
+      "Honey_IanHarland",
+      "SetouchiBlue_Noci"
+    ],
+    "mean_delta_e": [
+      0.23737390601175806,
+      0.23737390601175806,
+      0.23737390601175806,
+      0.23737390601175806,
+      0.23786798753722763,
+      0.24540273489014225,
+      0.2454773279910334,
+      0.24623777786788084
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_03.jpg",
+    "recipes": [
+      "Fern_IanHarland",
+      "EmotionalB&W_Wazika",
+      "Premium_Dreamy_Peep",
+      "A-X+rossandhisjpegs",
+      "MGA_MonoFilmic_FC",
+      "CineBias-TC",
+      "PinkWater_HYEYA",
+      "Wedding_V1_Mono"
+    ],
+    "mean_delta_e": [
+      0.24762967368441174,
+      0.2574689669542746,
+      0.25915068155211923,
+      0.2646767339070872,
+      0.2666939388375035,
+      0.26743949937172184,
+      0.27074156793185944,
+      0.2756498037786456
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_04.jpg",
+    "recipes": [
+      "F400H",
+      "Glow_IanHarland",
+      "SummerShine_Dondre",
+      "Negative_YeCy_02a",
+      "WarmPortrait_Y2",
+      "Negative_YeCy_01a",
+      "IndoorHarmony_Julia",
+      "MovieG&O_InstantF"
+    ],
+    "mean_delta_e": [
+      0.27593989846647643,
+      0.2764621440992735,
+      0.2853566685323453,
+      0.28699531652080057,
+      0.2906871563340262,
+      0.2913691550603192,
+      0.2923071843351361,
+      0.29299660765312036
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_05.jpg",
+    "recipes": [
+      "LeicaSTD",
+      "CineBiasOffset",
+      "BlueHour_Luna",
+      "HazyMemories_Julia",
+      "CozyAutumn_Leno",
+      "KG200",
+      "EuroFilmBW_Vincent",
+      "PurpleM_LUIZCLAS"
+    ],
+    "mean_delta_e": [
+      0.29316178484246336,
+      0.29327468834819104,
+      0.2953505976738128,
+      0.29634183016773513,
+      0.299930270227565,
+      0.30193373224926384,
+      0.3043217338185356,
+      0.3084901281260795
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_06.jpg",
+    "recipes": [
+      "Turquoise_Blue_Yuki",
+      "NightsLike_Dondre",
+      "SoftGlow_Harpreet",
+      "CineBias-C",
+      "VintageM_TSakai",
+      "ArmitageKGold200",
+      "MatteBlueGray_tanco",
+      "Filmic_Fabio"
+    ],
+    "mean_delta_e": [
+      0.3089451572710025,
+      0.3115329853330872,
+      0.3130885168223405,
+      0.31321153292947707,
+      0.31525421309074014,
+      0.31540275255255734,
+      0.3164969123590863,
+      0.3175850377218518
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_07.jpg",
+    "recipes": [
+      "BohoLook_EmilieH",
+      "KP160",
+      "Negative_Bu_01b",
+      "ClrPortrait_TSakai",
+      "PremiumCinema_Green",
+      "Nature_Links",
+      "MGA_TriX",
+      "ArmitageEktar100"
+    ],
+    "mean_delta_e": [
+      0.3189645264334262,
+      0.32155985573363677,
+      0.3276857689502382,
+      0.32945676415826164,
+      0.33235979707761815,
+      0.33262478097896975,
+      0.33375963895243776,
+      0.33422366302637
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_08.jpg",
+    "recipes": [
+      "Kodachrome",
+      "SoftFilm_Leno",
+      "KCHROME",
+      "HoneyTale_MASAYA",
+      "Negative_CyBu_01b",
+      "CalmBreeze_Dondre",
+      "MoodyShadows_Gilmar",
+      "Premium_Monochrome"
+    ],
+    "mean_delta_e": [
+      0.3344284283601352,
+      0.33466007664595804,
+      0.3349701865803969,
+      0.33532756814522785,
+      0.33588296762315784,
+      0.3408390261634077,
+      0.34234325039265395,
+      0.34253504215518515
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_09.jpg",
+    "recipes": [
+      "MOSS_Nagisa",
+      "ClrMode_Ye_01a",
+      "L100",
+      "FadedBlue_Hinami",
+      "AgU100",
+      "LeicaVIV",
+      "Negative_Bu_01a",
+      "Negative_Ye_01b"
+    ],
+    "mean_delta_e": [
+      0.34313100793645557,
+      0.3436446847000226,
+      0.344882481358301,
+      0.3461642789166677,
+      0.3466047116250162,
+      0.3488050222260936,
+      0.3498731431739431,
+      0.3505377722612382
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_10.jpg",
+    "recipes": [
+      "KP400",
+      "Negative_Ye_02b",
+      "SunsetReset_Baek",
+      "QUIET_Nagisa",
+      "CloudyForest_Y2",
+      "FSol100",
+      "KEktr100",
+      "Negative_RdCy_01b"
+    ],
+    "mean_delta_e": [
+      0.3515293920223222,
+      0.3525236752771559,
+      0.35298325699777866,
+      0.3530166095673048,
+      0.3538882387598697,
+      0.3546753079847393,
+      0.3547546624437716,
+      0.3570032476155202
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_11.jpg",
+    "recipes": [
+      "Classic_Chrome",
+      "Heartwarming_YoheiS",
+      "TexturedDocmntry_MS",
+      "TenderClear_FukaK",
+      "FILMSTILLFilmic",
+      "CineBias-T",
+      "MGA_OldSchool_RTP",
+      "Filmstill's_Astia"
+    ],
+    "mean_delta_e": [
+      0.3588640799058395,
+      0.3590611442182642,
+      0.35952332886642047,
+      0.3604977764645834,
+      0.36343830216230527,
+      0.363904780914844,
+      0.3682926763997808,
+      0.3692284665558451
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_12.jpg",
+    "recipes": [
+      "Bluegrain_jyota",
+      "Negative_GnCy_01b",
+      "Yuragi_Hinami",
+      "N-3+rossandhisjpegs",
+      "Kota-Green_TAKASU",
+      "KG200P1",
+      "Premium_Negative",
+      "Scott's_Vintage_Film"
+    ],
+    "mean_delta_e": [
+      0.36956231578364795,
+      0.3700961633751166,
+      0.3717101340415278,
+      0.37383680089708643,
+      0.37392459609021567,
+      0.37521117786898744,
+      0.37633515375356247,
+      0.3774827248305974
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_13.jpg",
+    "recipes": [
+      "Filmstill's_Velvia",
+      "MGA_Sandstorm",
+      "Negative_Ye_03b",
+      "Negative_Ye_01a",
+      "Negative_Ye_02a",
+      "MGA_Standard_MovieT",
+      "ArmitageProvia100F",
+      "RedM_LUIZCLAS"
+    ],
+    "mean_delta_e": [
+      0.37758885770192496,
+      0.3784601338836557,
+      0.37854649718923417,
+      0.37879475782905986,
+      0.37906067511485575,
+      0.3794996718086089,
+      0.3811291939659213,
+      0.38151978763743705
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_14.jpg",
+    "recipes": [
+      "CineM_LUIZCLAS",
+      "SunkissedCool_Julia",
+      "SunkissedWarm_Julia",
+      "LoFi",
+      "GoldenBrownSiinapse",
+      "FilmstilGoldmatic",
+      "VINTAGEPort_Fuji",
+      "FProvia100F"
+    ],
+    "mean_delta_e": [
+      0.3823556417312047,
+      0.38397815239420136,
+      0.38397815239420136,
+      0.38557539877650837,
+      0.3860182928482418,
+      0.3861375058049768,
+      0.38645910394662886,
+      0.38655520208052463
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_15.jpg",
+    "recipes": [
+      "Negative_RdCy_01a",
+      "ClrMode_Gn_01a",
+      "CineBias-CC",
+      "CineBias-WC",
+      "Vibrant_Lamoureux",
+      "Pale_Tale_Yuri",
+      "Negative_Cy_01a",
+      "At_Dusk_Woo"
+    ],
+    "mean_delta_e": [
+      0.38742001960343464,
+      0.38815185847074785,
+      0.3892927415775511,
+      0.3892927415775511,
+      0.39123547258942576,
+      0.3930110108203035,
+      0.394097372181448,
+      0.3962380556174863
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_16.jpg",
+    "recipes": [
+      "Negative_CyBu_01a",
+      "Negative_Ye_03a",
+      "Scott's_Vintage_Film_HI",
+      "Negative_GnCy_01a",
+      "WL3",
+      "BritFilmBW_Vincent",
+      "OptiColour200",
+      "Japanesque_Arashida"
+    ],
+    "mean_delta_e": [
+      0.39732787890784615,
+      0.3978501521911248,
+      0.4010305612980824,
+      0.40124417186907485,
+      0.4020733779895175,
+      0.4045941003595847,
+      0.40510885359093335,
+      0.40573165474828266
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_17.jpg",
+    "recipes": [
+      "MGA_In-An-InstantBW",
+      "PastelNos_TSakai",
+      "ClrMode_Gn_01b",
+      "MGA_HCM-Street",
+      "DawnHues_Leno",
+      "T&O_BrandonW",
+      "CallItLove_Faloo_Mi",
+      "MNightBlush_Preston"
+    ],
+    "mean_delta_e": [
+      0.4087989402879854,
+      0.4101033349334318,
+      0.4121178844991943,
+      0.4163564819828235,
+      0.41661322789741034,
+      0.4183878106974273,
+      0.41977101066458666,
+      0.4224203304507741
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_18.jpg",
+    "recipes": [
+      "Negative_YeGn_01b",
+      "FIlmstill's_Nostalgic_Negative",
+      "ClrMode_Ye_01b",
+      "VINTAGEFla_Fuji",
+      "SunsetGlow_Mikan",
+      "MoistureGn_HirokiN",
+      "Pastelpink_Yuki",
+      "Negative_T_01b"
+    ],
+    "mean_delta_e": [
+      0.42256206099735316,
+      0.42874368650122846,
+      0.43071351027256727,
+      0.4318921497416199,
+      0.43305185492722115,
+      0.434759604564735,
+      0.43509750574291656,
+      0.4393471133661174
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_19.jpg",
+    "recipes": [
+      "ArmitageKPortra800",
+      "ClrMode_Bu_01a",
+      "ColorSplash_Gilmar",
+      "Winter_Hues_Eeva",
+      "Scott's_Gold_200",
+      "VintageTouch_Amy",
+      "Negative_YeGn_01a",
+      "Wedding_V1_Colour"
+    ],
+    "mean_delta_e": [
+      0.4409762130895732,
+      0.4412157762268378,
+      0.44766317308230624,
+      0.4526359885994633,
+      0.4580507471589771,
+      0.4614989414691036,
+      0.46336767460670547,
+      0.4638177904955017
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_20.jpg",
+    "recipes": [
+      "SunlightHappy_DAnn",
+      "Green_Soul_Wong",
+      "MGA_AcrosLike_FC",
+      "Premium_Standard_V2",
+      "KOLORA",
+      "KP800",
+      "Soft_Vivid_Vijay",
+      "VintageVibe_Preston"
+    ],
+    "mean_delta_e": [
+      0.4669571554137819,
+      0.46817373308490356,
+      0.46889207318693693,
+      0.4690308007416266,
+      0.4703909969848995,
+      0.4705472868592818,
+      0.4717517375159104,
+      0.4719287609654605
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_21.jpg",
+    "recipes": [
+      "KOLORA_PUSHED",
+      "Negative_T_01a",
+      "MGA_Portra-Ish_FC",
+      "ClrMode_TealOr_01a",
+      "H-1+rossandhisjpegs",
+      "MGA_In-An-Instant",
+      "MGA_Nostalgic_Past",
+      "WarmtonedPtt_Wazika"
+    ],
+    "mean_delta_e": [
+      0.4756283474928384,
+      0.47602914722187045,
+      0.47988743081668317,
+      0.482891086992465,
+      0.4864819035687357,
+      0.488186043016671,
+      0.49165486023253063,
+      0.49301598942282615
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_22.jpg",
+    "recipes": [
+      "Hidamari_Haruka",
+      "WarmDimLight_Luna",
+      "Filmstill's_Classic_Neg",
+      "MGA_Klassic_Khrome",
+      "SkyMistFilm_hinano",
+      "Scott's_Leiter_CLR",
+      "VitalityFilm_Pmango",
+      "B-7+rossandhisjpegs"
+    ],
+    "mean_delta_e": [
+      0.4933162561652982,
+      0.4948906153003359,
+      0.49639665795086385,
+      0.49971673609322526,
+      0.5049537148058142,
+      0.5061231700144435,
+      0.5081529286655143,
+      0.5152400148535903
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_23.jpg",
+    "recipes": [
+      "PrimaryPop_Gilmar",
+      "RoseOldFilm_hinano",
+      "ShadeFall_BrittanyK",
+      "MGA_BW_Portrait_FC",
+      "VintageA_BrittanyK",
+      "CUBANO",
+      "CRYSClear_Eisuke",
+      "CINENigRed_Fuji"
+    ],
+    "mean_delta_e": [
+      0.5169294361595338,
+      0.5169294361595338,
+      0.5210381261948932,
+      0.5221127286248766,
+      0.5226627182433368,
+      0.5228911776247055,
+      0.5245522600889541,
+      0.5270448770298345
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_24.jpg",
+    "recipes": [
+      "GlowUp_Preston",
+      "GoldenDusk_EmilieH",
+      "HT_Harmony_HanaaT",
+      "MGA_Natural_FC",
+      "ArmitageWarmAutumn",
+      "MoodyGr_BrittanyK",
+      "MGA_Slide_2",
+      "E100"
+    ],
+    "mean_delta_e": [
+      0.5275073519918299,
+      0.5279769127624899,
+      0.532104335672628,
+      0.5351865715844685,
+      0.535209322752744,
+      0.5362018289552283,
+      0.5406242083752338,
+      0.5436694425903706
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_25.jpg",
+    "recipes": [
+      "Golden_Grid_LKJ",
+      "ClrMode_Bu_01b",
+      "Scott's_Leiter",
+      "MGA_LeicaMono_FC",
+      "BlueM_LUIZCLAS",
+      "NeonGlow_BrandonW",
+      "Coastal_Glow_NM",
+      "SunsetFilm_JKBoy"
+    ],
+    "mean_delta_e": [
+      0.5476042209988541,
+      0.5579601176855695,
+      0.5662861446302997,
+      0.5717431585879698,
+      0.5737488855639843,
+      0.5864957379673591,
+      0.5872390638302227,
+      0.5925817091048806
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_26.jpg",
+    "recipes": [
+      "HKReminisce_Hiuman",
+      "CineBlue_BrandonW",
+      "USAFilmBW_Vincent",
+      "PainterlyLight_DAnn",
+      "24Look_24Frames",
+      "Filmstill's_Portra",
+      "Summertime_Zerletti",
+      "Warm_Street_Ben"
+    ],
+    "mean_delta_e": [
+      0.6028515874773696,
+      0.6056207176367776,
+      0.6057398816535209,
+      0.6073862352599608,
+      0.6147688558617367,
+      0.6158803763844576,
+      0.6248558425023626,
+      0.628017827379787
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_27.jpg",
+    "recipes": [
+      "BleachBlue_Aparupa",
+      "FilmPop_Leno",
+      "Premium_Vivid_Punch",
+      "GoldenHourGlow_DAnn",
+      "Premium_Nostalgic",
+      "Premium_Vivid_Norm",
+      "MGA_Portra-Fade_FC",
+      "Premium_Standard"
+    ],
+    "mean_delta_e": [
+      0.6297330502729903,
+      0.6353017302079597,
+      0.6354614016785876,
+      0.6381264045338916,
+      0.641452282771833,
+      0.6518652014178303,
+      0.6523831089470522,
+      0.6754051880907427
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_28.jpg",
+    "recipes": [
+      "Premium_Koda2025",
+      "ClrMode_TealOr_01b",
+      "Cyanora_EyesOfBelga",
+      "MGA_Slide",
+      "MGA_Nostalgic_FC",
+      "MGA_Everyday_Chrome",
+      "AirGreen_Gunji",
+      "MGA_WEZZY"
+    ],
+    "mean_delta_e": [
+      0.6799391447728543,
+      0.6814985169703656,
+      0.7044093430985278,
+      0.7070488023422136,
+      0.7327987286337372,
+      0.7418108860368532,
+      0.7421119454166564,
+      0.7473644903125861
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_29.jpg",
+    "recipes": [
+      "MGA_OldFilmish_FC",
+      "MGA_EverydayChromeW",
+      "MGA_Paintry_FC",
+      "MGA_Pop!_(Blue)",
+      "MV_Green_Orange_Woo",
+      "MGA_Futurist_FC",
+      "MGA_Pop!_(Green)",
+      "MGA_Kodachrome_2025"
+    ],
+    "mean_delta_e": [
+      0.7751265318146013,
+      0.7812502878949639,
+      0.7961698750168991,
+      0.8064631166597809,
+      0.8205294373589687,
+      0.8532703515901403,
+      0.8720735723138184,
+      0.900952216334222
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 8,
+    "images_per_row": 8,
+    "width": 2024
+  },
+  {
+    "path": "comparisons/recipes_30.jpg",
+    "recipes": [
+      "MGA_Pop!_(Red)",
+      "MGA_Retrofy_2",
+      "MGA_Summer_Memories",
+      "MGA_Retrofy"
+    ],
+    "mean_delta_e": [
+      0.919715559550544,
+      0.9361266737173061,
+      0.9950565680961754,
+      1.1500551846852558
+    ],
+    "scene_order": [
+      "9046",
+      "2849",
+      "2694",
+      "5054"
+    ],
+    "rows": 4,
+    "images_per_row": 8,
+    "width": 2024
+  }
+]

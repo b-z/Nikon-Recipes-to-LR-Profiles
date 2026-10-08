@@ -1,0 +1,22 @@
+name: Banding / color mismatch
+description: Report a reproducible profile problem
+body:
+  - type: input
+    id: recipe
+    attributes:
+      label: Recipe, pack version, Amount
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Camera, Lightroom / Camera Raw version, OS
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction and comparison
+      description: Include permitted crops or a synthetic test. Describe NX comparison if available. Do not upload private metadata unnecessarily.
+    validations:
+      required: true

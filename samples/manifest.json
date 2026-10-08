@@ -1,0 +1,50 @@
+[
+  {
+    "file": "_DSC2694.NEF",
+    "purpose": "bokeh banding",
+    "camera": "NIKON Z 8",
+    "sha256": "10a12719874e6f5fbfcf3f79d10c8a461788102e1a49040af824fd9bab506205",
+    "bytes": 46913023,
+    "raw_strip_sha256": "e57dd281a1cbca9f1f9ad90268cebe711db912d3772f1622178d7fe8e93e9839",
+    "author": "b-z / Zhou Bowei",
+    "license": "Project testing and comparison only; other uses require permission",
+    "metadata_removed": [],
+    "metadata_policy": "Untouched original; publication authorized by photo owner"
+  },
+  {
+    "file": "_DSC5054.NEF",
+    "purpose": "sky banding",
+    "camera": "NIKON Z 8",
+    "sha256": "37d05afa5a39aaf3c97366b901aa38eb986f4d4bd3a548a47922d15f3a275ecb",
+    "bytes": 48198165,
+    "raw_strip_sha256": "3463c2094256751be4d82d470298ad8c719b74710d24dc56a7299a19a761823b",
+    "author": "b-z / Zhou Bowei",
+    "license": "Project testing and comparison only; other uses require permission",
+    "metadata_removed": [],
+    "metadata_policy": "Untouched original; publication authorized by photo owner"
+  },
+  {
+    "file": "_DSC9046.NEF",
+    "purpose": "landscape style",
+    "camera": "NIKON Z 8",
+    "sha256": "19cd4efba0233e86a05fa35c7a4358ef135bf93ab1f098bd46b80b2309066976",
+    "bytes": 53888707,
+    "raw_strip_sha256": "f7b5a242bdc0b4747f159b4471f667ac7e348b2f8412e85ae691337efb04d839",
+    "author": "b-z / Zhou Bowei",
+    "license": "Project testing and comparison only; other uses require permission",
+    "metadata_removed": [],
+    "metadata_policy": "Untouched original; publication authorized by photo owner"
+  },
+  {
+    "file": "_DSC2849.NEF",
+    "purpose": "landscape style",
+    "camera": "NIKON Z 8",
+    "sha256": "be12c7009952382d889a3cb767c423e5fb3d58ba0d9ba2054438cda57172f2d1",
+    "bytes": 59202887,
+    "raw_strip_sha256": "bca374122d0b9e40f7a570397e45d134169682ecf6153533f2a0f481cee100d4",
+    "author": "b-z / Zhou Bowei",
+    "license": "Project testing and comparison only; other uses require permission",
+    "metadata_removed": [],
+    "metadata_policy": "Untouched original; publication authorized by photo owner"
+  }
+]
