@@ -2,18 +2,18 @@
 
 Original author: **Yuki Hirotani**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
 
-Profile: `NikonRecipes_Turquoise_Blue_Yuki.xmp` · Source conversion: **YC4** · Amount: **100%**.
+Profile: `NikonRecipes_Turquoise_Blue_Yuki_YC7.xmp` · Source conversion: **YC7** · Amount: **100%**.
 
 | Measurement | Score |
 |---|---:|
-| Chart mean / median ΔE | 0.3089 / 0.2498 |
-| Chart p95 ΔE | 0.7381 |
+| Chart mean / median ΔE | 0.3687 / 0.2904 |
+| Chart p95 ΔE | 0.9049 |
 | Valid chart samples | 23142 |
-| Native face jump p99 / maximum | 0.7043 / 2.0486 |
-| Native face jump RMS | 0.1733 |
+| Native face jump p99 / maximum | 0.3994 / 1.1645 |
+| Native face jump RMS | 0.1060 |
 | Audited faces | 351726 |
 
-Review: **not individually accepted in the latest review**. NX target: original NX chart; detail settings not uniformly disabled.
+Review: **2026-10-10 Y7 owner review: not flagged in this assessment; not a universal no-banding guarantee.**. NX target: original NX chart; detail settings not uniformly disabled.
 
 [Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
 

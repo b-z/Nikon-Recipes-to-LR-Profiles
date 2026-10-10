@@ -2,18 +2,18 @@
 
 Original author: **Mark G Adams**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
 
-Profile: `NikonRecipes_Premium_Vivid_Norm.xmp` · Source conversion: **YC4** · Amount: **100%**.
+Profile: `NikonRecipes_Premium_Vivid_Norm_YC7.xmp` · Source conversion: **YC7** · Amount: **100%**.
 
 | Measurement | Score |
 |---|---:|
-| Chart mean / median ΔE | 0.6519 / 0.5387 |
-| Chart p95 ΔE | 1.5650 |
+| Chart mean / median ΔE | 0.7160 / 0.5274 |
+| Chart p95 ΔE | 2.0044 |
 | Valid chart samples | 14919 |
-| Native face jump p99 / maximum | 1.2736 / 5.0335 |
-| Native face jump RMS | 0.3455 |
+| Native face jump p99 / maximum | 0.9632 / 5.2538 |
+| Native face jump RMS | 0.2515 |
 | Audited faces | 351726 |
 
-Review: **not individually accepted in the latest review**. NX target: original NX chart; detail settings not uniformly disabled.
+Review: **2026-10-10 Y7 owner review: not flagged in this assessment; not a universal no-banding guarantee.**. NX target: original NX chart; detail settings not uniformly disabled.
 
 [Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
 

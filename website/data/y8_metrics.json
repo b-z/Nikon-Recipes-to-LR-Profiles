@@ -1,0 +1,5902 @@
+[
+  {
+    "recipe": "24Look_24Frames",
+    "file": "NikonRecipes_24Look_24Frames_Y8.xmp",
+    "uuid": "F8BB6BDE5C4F5E24AA6A603A3D786F6B",
+    "sha256": "2808f33099676be2e38f1d407bb1f0c7c5ea26ec3ac5fd06d4341a0ab592e92b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.927000719158226,
+      "median": 0.694160505557509,
+      "p95": 2.601460125276554,
+      "sample_count": 21738,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2131,
+        "mean": 0.970251677270778,
+        "p95": 2.6686727866375834
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.593197323335031,
+      "face_jump_max": 1.6477798581980634,
+      "face_jump_rms": 0.1730804354026916
+    }
+  },
+  {
+    "recipe": "A-X+rossandhisjpegs",
+    "file": "NikonRecipes_A-X+rossandhisjpegs_Y8.xmp",
+    "uuid": "39B71836B6F958D59E5CDB44F5074373",
+    "sha256": "d4349419fc62f0f1c8bdf80b96aaddbeae95c117caea3cb804f3b649c6b19e1e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.14774271588315993,
+      "median": 0.059885435314923165,
+      "p95": 0.5306325167522342,
+      "sample_count": 24333,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.144488927441861,
+        "p95": 0.4643677298421795
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.43564832763770395,
+      "face_jump_max": 2.2681271947705084,
+      "face_jump_rms": 0.11300288692750918
+    }
+  },
+  {
+    "recipe": "AgU100",
+    "file": "NikonRecipes_AgU100_Y8.xmp",
+    "uuid": "B9A5F7F7FBE059088E6622AE308EC773",
+    "sha256": "2009cda9bb9f6dda0bea21afd6ddd738d6b8902024424d73ab1ab8cfdd669e05",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.629604972680556,
+      "median": 0.5216685801666111,
+      "p95": 1.554267115041782,
+      "sample_count": 22415,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2227,
+        "mean": 0.6694537808684136,
+        "p95": 1.6438188234688094
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4759041789535118,
+      "face_jump_max": 1.1830346490474786,
+      "face_jump_rms": 0.1445855935989575
+    }
+  },
+  {
+    "recipe": "AirGreen_Gunji",
+    "file": "NikonRecipes_AirGreen_Gunji_Y8.xmp",
+    "uuid": "D7EBD350C4845EEAB9EADFEB3CC6CDC5",
+    "sha256": "d20d03d20af0e7cbebe2b7a167cb6d684d6b1ee81c302878d52ffabfbfb2f5e7",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.413113329271397,
+      "median": 1.1017051706491852,
+      "p95": 3.661242668549649,
+      "sample_count": 19173,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1936,
+        "mean": 1.5213129995644323,
+        "p95": 4.039559039144256
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.8844687694517763,
+      "face_jump_max": 1.7631971727911557,
+      "face_jump_rms": 0.27861214981925686
+    }
+  },
+  {
+    "recipe": "ArmitageEktar100",
+    "file": "NikonRecipes_ArmitageEktar100_Y8.xmp",
+    "uuid": "88A848D2B5F15B4DA962799894AEC05C",
+    "sha256": "30d4903d4a59f35a2c093fdc6a44273d4fd57f593839d4cfeb19b935fb46229a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5789419504643549,
+      "median": 0.4432055907967133,
+      "p95": 1.5622335033905232,
+      "sample_count": 21600,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2139,
+        "mean": 0.6139340892155558,
+        "p95": 1.6871012576020674
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.423882894693359,
+      "face_jump_max": 0.8730008460936954,
+      "face_jump_rms": 0.13730619214066042
+    }
+  },
+  {
+    "recipe": "ArmitageKGold200",
+    "file": "NikonRecipes_ArmitageKGold200_Y8.xmp",
+    "uuid": "AEC82794BB1D59A1B1EACAB7DA02DB5A",
+    "sha256": "99edc58597418c2b442d1c78cf4c909eba8d320c928d0522d07eafe81d18642b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5471533725052901,
+      "median": 0.4589384574079254,
+      "p95": 1.3036468734387736,
+      "sample_count": 22470,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2226,
+        "mean": 0.5652607108254025,
+        "p95": 1.3788229921239252
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3515186632948567,
+      "face_jump_max": 0.9220105644481696,
+      "face_jump_rms": 0.0997873959638208
+    }
+  },
+  {
+    "recipe": "ArmitageKPortra800",
+    "file": "NikonRecipes_ArmitageKPortra800_Y8.xmp",
+    "uuid": "B530F4A42A7C555FA66A19EB73DA88BB",
+    "sha256": "687df15ce6da9ba11bb582439d60c7ca42223b98c96b45ef8f05fa90595bcbfd",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7793491605494464,
+      "median": 0.6446651568356268,
+      "p95": 1.872978827623936,
+      "sample_count": 22873,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2271,
+        "mean": 0.8254410460286018,
+        "p95": 2.0352007526980365
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5379223126398694,
+      "face_jump_max": 1.0162229923520465,
+      "face_jump_rms": 0.17348128782445335
+    }
+  },
+  {
+    "recipe": "ArmitageProvia100F",
+    "file": "NikonRecipes_ArmitageProvia100F_Y8.xmp",
+    "uuid": "C65ED9993F4F5CC6A6A1BA1E3EB2A15E",
+    "sha256": "f5bc123e3bb4042cf6e31b1a6569c7a08c4d28d50b5a5e8f22af81d575ba1ef8",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7434412933734302,
+      "median": 0.5209272265141973,
+      "p95": 2.16802481744481,
+      "sample_count": 19026,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1905,
+        "mean": 0.7857956903799744,
+        "p95": 2.282268439706185
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5349229513781871,
+      "face_jump_max": 1.1524132094073458,
+      "face_jump_rms": 0.1658284068537161
+    }
+  },
+  {
+    "recipe": "ArmitageWarmAutumn",
+    "file": "NikonRecipes_ArmitageWarmAutumn_Y8.xmp",
+    "uuid": "BCBB39EB64975BAC97B695E8892FFA63",
+    "sha256": "f989f637661287c945a18cd41cd2a6368a0a082754e6df63784a5836d1515b56",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8889049503978229,
+      "median": 0.7324342042152396,
+      "p95": 2.1492058753860594,
+      "sample_count": 22558,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2245,
+        "mean": 0.9054726295165757,
+        "p95": 2.2279309721175165
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.41674116039981085,
+      "face_jump_max": 0.7642539252439761,
+      "face_jump_rms": 0.12827289693914626
+    }
+  },
+  {
+    "recipe": "At_Dusk_Woo",
+    "file": "NikonRecipes_At_Dusk_Woo_Y8.xmp",
+    "uuid": "E745947F298655829009CDA6BE5522E0",
+    "sha256": "48696bf88aa4ece2283cdd553b702bdb753958e015467bbf709d5c6e88062bc1",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.753239583262506,
+      "median": 0.5031877409918384,
+      "p95": 2.147342336294833,
+      "sample_count": 21183,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2117,
+        "mean": 0.7876350335810149,
+        "p95": 2.2979855439115235
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5370498976448245,
+      "face_jump_max": 1.284998334654038,
+      "face_jump_rms": 0.15799128957009387
+    }
+  },
+  {
+    "recipe": "B-7+rossandhisjpegs",
+    "file": "NikonRecipes_B-7+rossandhisjpegs_Y8.xmp",
+    "uuid": "1C4082D251575667AB8C243A7702053A",
+    "sha256": "220a14863b4d2d8212517c3955c8f2429aec8f5bfa754c361c39b8cf32859b7b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8899393196534512,
+      "median": 0.7545616093441005,
+      "p95": 2.059636075628338,
+      "sample_count": 22030,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2200,
+        "mean": 0.9380450306797183,
+        "p95": 2.120582821409067
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5474373923735573,
+      "face_jump_max": 1.258001953986488,
+      "face_jump_rms": 0.1703405540270877
+    }
+  },
+  {
+    "recipe": "BleachBlue_Aparupa",
+    "file": "NikonRecipes_BleachBlue_Aparupa_Y8.xmp",
+    "uuid": "B59A97B0C4E75C0994C94F92BB05FB81",
+    "sha256": "a3e6b8f80603a585f04021ba0c55be3f1f1a53a841df49deef12796879f677ca",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.8292490155786448,
+      "median": 0.6026777566522468,
+      "p95": 2.258227485774691,
+      "sample_count": 18914,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1888,
+        "mean": 0.8170250640814246,
+        "p95": 2.208407469324172
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4718299732648933,
+      "face_jump_max": 1.01112923682691,
+      "face_jump_rms": 0.14091025264049883
+    }
+  },
+  {
+    "recipe": "BleachBypass_01a",
+    "file": "NikonRecipes_BleachBypass_01a_Y8.xmp",
+    "uuid": "CAED837567135BBF9BEEA97D289315F2",
+    "sha256": "bdb8430c52ef6e8af08f8635c79aa2bd7d9bf1c88ad607d5f5ebe182fabeeacc",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.30646807237227064,
+      "median": 0.23476769021802774,
+      "p95": 0.7701451997913513,
+      "sample_count": 22357,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2228,
+        "mean": 0.30993740205211545,
+        "p95": 0.7375349628563574
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.291511040046521,
+      "face_jump_max": 0.9414966267591075,
+      "face_jump_rms": 0.08471745733490152
+    }
+  },
+  {
+    "recipe": "BlueHour_Luna",
+    "file": "NikonRecipes_BlueHour_Luna_Y8.xmp",
+    "uuid": "0BDCF4D443675D41B1B3D294E372DBC9",
+    "sha256": "f3b7d0234d1959e531f6f39d47e3b4f467b303344670e5e2e7ea2010e3a20941",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5558595062049726,
+      "median": 0.42026456577147475,
+      "p95": 1.5107028995212204,
+      "sample_count": 21655,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2150,
+        "mean": 0.5931484423211993,
+        "p95": 1.6201599153947974
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.43424356390293295,
+      "face_jump_max": 0.8434913708664868,
+      "face_jump_rms": 0.12432894438585061
+    }
+  },
+  {
+    "recipe": "BlueM_LUIZCLAS",
+    "file": "NikonRecipes_BlueM_LUIZCLAS_Y8.xmp",
+    "uuid": "72EC6084D6E4513BB49B9E82DA29823D",
+    "sha256": "16b07cd54f8eaa269b486ae4e2c5ad90558fd599aae7ad26e66aed587b7a4a29",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8033149646725503,
+      "median": 0.5831734257622601,
+      "p95": 2.301819266376998,
+      "sample_count": 22578,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2239,
+        "mean": 0.8312539264343328,
+        "p95": 2.3053371339362427
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.39811054290491876,
+      "face_jump_max": 0.9260495630831298,
+      "face_jump_rms": 0.12781216096258063
+    }
+  },
+  {
+    "recipe": "Bluegrain_jyota",
+    "file": "NikonRecipes_Bluegrain_jyota_Y8.xmp",
+    "uuid": "14FDDFDFD09E54A5B2F55E569D4DAC54",
+    "sha256": "48a99f5953b2d3ce9a423cfdd573824d831085576226f4fad64310e43528cd06",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5740067193927428,
+      "median": 0.41855876315181245,
+      "p95": 1.5744886980488515,
+      "sample_count": 18613,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1842,
+        "mean": 0.5951284391597198,
+        "p95": 1.6194555283920808
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.44167776856737134,
+      "face_jump_max": 0.973153463096651,
+      "face_jump_rms": 0.1338013436428941
+    }
+  },
+  {
+    "recipe": "BohoLook_EmilieH",
+    "file": "NikonRecipes_BohoLook_EmilieH_Y8.xmp",
+    "uuid": "971BF10045ED59349AA1659AAA705586",
+    "sha256": "261a6bce35ec79dd7dca309498ef161b1e66fea761146f9ddb0ff320a74bf814",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6067992645500624,
+      "median": 0.47533758874117243,
+      "p95": 1.6254821505737551,
+      "sample_count": 19739,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1969,
+        "mean": 0.6411720270156908,
+        "p95": 1.6996873823610312
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5919293132482598,
+      "face_jump_max": 1.145208662391017,
+      "face_jump_rms": 0.16016720430636183
+    }
+  },
+  {
+    "recipe": "BritFilmBW_Vincent",
+    "file": "NikonRecipes_BritFilmBW_Vincent_Y8.xmp",
+    "uuid": "01A3D94D09E05E1289FA1FD96A7D07FB",
+    "sha256": "3194c396a1645e06d9d98f2d5f4c0e24d1681a5e3d2e47baf2f45c3e50419036",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.25439089837088863,
+      "median": 0.18068677261084196,
+      "p95": 0.6648491584485317,
+      "sample_count": 23001,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2299,
+        "mean": 0.25460948407042383,
+        "p95": 0.5904871431922084
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.28982015393971755,
+      "face_jump_max": 0.9004389249412411,
+      "face_jump_rms": 0.07299571556143991
+    }
+  },
+  {
+    "recipe": "CINENigRed_Fuji",
+    "file": "NikonRecipes_CINENigRed_Fuji_Y8.xmp",
+    "uuid": "E8D79FAF706950B2BD0738B5CC123BA8",
+    "sha256": "313490af6d1942245755240bbb939f9f00044fc4aac6bf75adcd6765cd88d6bd",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8195381088331689,
+      "median": 0.6004555802421152,
+      "p95": 2.198095556250895,
+      "sample_count": 22919,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2273,
+        "mean": 0.8524964893379129,
+        "p95": 2.2138807688002933
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4264797388925023,
+      "face_jump_max": 0.8278026136521895,
+      "face_jump_rms": 0.12411570536651864
+    }
+  },
+  {
+    "recipe": "CRYSClear_Eisuke",
+    "file": "NikonRecipes_CRYSClear_Eisuke_Y8.xmp",
+    "uuid": "EC5A0E9BF24C544983C400FF7925FDA9",
+    "sha256": "51462f5deb1826b19d703c51545da62bd40c8ce012339187ea106bae9320d317",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7497341695325105,
+      "median": 0.5876798247590973,
+      "p95": 1.9153095735007697,
+      "sample_count": 19957,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1997,
+        "mean": 0.797937188020576,
+        "p95": 1.9696904701794637
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5466139886397576,
+      "face_jump_max": 1.267432864899096,
+      "face_jump_rms": 0.16082537733680893
+    }
+  },
+  {
+    "recipe": "CUBANO",
+    "file": "NikonRecipes_CUBANO_Y8.xmp",
+    "uuid": "E5A584EE26DC5C6DB69C5021B89529D1",
+    "sha256": "53cfdebe60af3c1bbc8f428cbf78a09edea088d7751f3a9f66be8ce17e5de24a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.9845686920798552,
+      "median": 0.7428619524274712,
+      "p95": 2.692694732685134,
+      "sample_count": 22355,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2217,
+        "mean": 1.048760138055643,
+        "p95": 2.885531118062429
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5127567532916142,
+      "face_jump_max": 0.9671066043411989,
+      "face_jump_rms": 0.16117483015751957
+    }
+  },
+  {
+    "recipe": "CafeCat_yw",
+    "file": "NikonRecipes_CafeCat_yw_Y8.xmp",
+    "uuid": "9338C6513A4E5D7DA3926C96EEB4566C",
+    "sha256": "2c2df4d5ec2cb94ec0c1faf669322f3efde024df27924143f291b6c2fd3795a2",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.3880437045400398,
+      "median": 0.3100894440539428,
+      "p95": 0.946383599033779,
+      "sample_count": 22983,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2289,
+        "mean": 0.40850372914868766,
+        "p95": 0.9700406785158212
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.30370126309523454,
+      "face_jump_max": 0.8871257667931699,
+      "face_jump_rms": 0.08957731169887909
+    }
+  },
+  {
+    "recipe": "CallItLove_Faloo_Mi",
+    "file": "NikonRecipes_CallItLove_Faloo_Mi_Y8.xmp",
+    "uuid": "9A3AB737644D58FB849C92AF1905BFAC",
+    "sha256": "594e570de4712c2f2cb198706c9cff72c337fa35c6b61e99277d646e4f1b0826",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7306817582831171,
+      "median": 0.5520915187618203,
+      "p95": 1.9774592287904003,
+      "sample_count": 20361,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2022,
+        "mean": 0.7579949944319687,
+        "p95": 2.0980892181533792
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.40039608268755006,
+      "face_jump_max": 1.1759301848047423,
+      "face_jump_rms": 0.12738780914418532
+    }
+  },
+  {
+    "recipe": "CalmBreeze_Dondre",
+    "file": "NikonRecipes_CalmBreeze_Dondre_Y8.xmp",
+    "uuid": "C239F5D1FED4598DADEA0ED3F44283FA",
+    "sha256": "5d51059a5559a03334e85f87b3fb39b61e984910ec3446d538988f88db9cfbfd",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.4954930568067681,
+      "median": 0.35458644092537034,
+      "p95": 1.3733465001998046,
+      "sample_count": 21862,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2165,
+        "mean": 0.508370143368319,
+        "p95": 1.430381466968943
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4311244497485457,
+      "face_jump_max": 1.0144316395813822,
+      "face_jump_rms": 0.11563322993954475
+    }
+  },
+  {
+    "recipe": "Catgrain_yw",
+    "file": "NikonRecipes_Catgrain_yw_Y8.xmp",
+    "uuid": "6CC8ABC87A5D539AA549FD0D02B73C39",
+    "sha256": "7eee3d8e357b7b45cce18ed977f693799273dfee8dc599b472322b0b7ab82ae3",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.3880437045400398,
+      "median": 0.3100894440539428,
+      "p95": 0.946383599033779,
+      "sample_count": 22983,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2289,
+        "mean": 0.40850372914868766,
+        "p95": 0.9700406785158212
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.30370126309523454,
+      "face_jump_max": 0.8871257667931699,
+      "face_jump_rms": 0.08957731169887909
+    }
+  },
+  {
+    "recipe": "CineAchromic",
+    "file": "NikonRecipes_CineAchromic_Y8.xmp",
+    "uuid": "8A06D05A77C75FD09BF5625368E44D6F",
+    "sha256": "d6acde3cd25a073ff5baa2567508a01f05135a6a8de3fdd9260902467393053d",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.12392972450562181,
+      "median": 0.08079516671394474,
+      "p95": 0.37897480304562137,
+      "sample_count": 24188,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2392,
+        "mean": 0.1287624005396548,
+        "p95": 0.3855987355862083
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.24808952348428276,
+      "face_jump_max": 0.872020558488424,
+      "face_jump_rms": 0.06825801609313867
+    }
+  },
+  {
+    "recipe": "CineBias-BB",
+    "file": "NikonRecipes_CineBias-BB_Y8.xmp",
+    "uuid": "28545FA72EB85B33AC5B42F4AF1CEA73",
+    "sha256": "deeebfc9ab4ce99a0c7ff9d9ca698647a5828ffe15e8e87fcca18264f4c38829",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.3285619296438227,
+      "median": 0.25326799464019417,
+      "p95": 0.8381522552516036,
+      "sample_count": 23019,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2293,
+        "mean": 0.3435732528717187,
+        "p95": 0.8232512163065286
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3177552001039379,
+      "face_jump_max": 0.9447581041062636,
+      "face_jump_rms": 0.08888786482153582
+    }
+  },
+  {
+    "recipe": "CineBias-C",
+    "file": "NikonRecipes_CineBias-C_Y8.xmp",
+    "uuid": "4ED68E53F87A5C05A5E5EB2AB9C53D52",
+    "sha256": "dfcda15d6882dcafacdc174d9e2a3dc0eae48bed44ea06f94ee6614a53fa7346",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5652196567042838,
+      "median": 0.43626950634277795,
+      "p95": 1.4033519031756903,
+      "sample_count": 23528,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2337,
+        "mean": 0.5799782771774998,
+        "p95": 1.4362447245212975
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3975087674083475,
+      "face_jump_max": 1.0959277940353378,
+      "face_jump_rms": 0.12522362269681883
+    }
+  },
+  {
+    "recipe": "CineBias-CC",
+    "file": "NikonRecipes_CineBias-CC_Y8.xmp",
+    "uuid": "6E0F96B87A8B5BBF8552EFBA1624B851",
+    "sha256": "d596606e3aabef18854d1301fcdf023c76717016ab718ea1ae558dfaf0dc4c9b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.552723979793599,
+      "median": 0.4507811909347271,
+      "p95": 1.3550132128398666,
+      "sample_count": 23828,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2361,
+        "mean": 0.5508125419764769,
+        "p95": 1.3288654318070499
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.36432130462728396,
+      "face_jump_max": 1.1340842896192898,
+      "face_jump_rms": 0.11487711598537798
+    }
+  },
+  {
+    "recipe": "CineBias-T",
+    "file": "NikonRecipes_CineBias-T_Y8.xmp",
+    "uuid": "A21B022B722B5CDE9B782FA2A2F1FC38",
+    "sha256": "4d7401db756d0900b78f1904840bb9f9645bbe3b3a6340fe69311ba92b51b798",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.4857369134546949,
+      "median": 0.3693085327104476,
+      "p95": 1.2537045835441911,
+      "sample_count": 24232,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2398,
+        "mean": 0.5000615550819125,
+        "p95": 1.3372416136450538
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3107084921484133,
+      "face_jump_max": 0.9143655126208365,
+      "face_jump_rms": 0.09549161422983683
+    }
+  },
+  {
+    "recipe": "CineBias-TC",
+    "file": "NikonRecipes_CineBias-TC_Y8.xmp",
+    "uuid": "DE336E764BB0551EB1D22972EF7F1424",
+    "sha256": "6e2932036f395766953870a32a8707f2393041c3132a7e50d27c240b01af8a23",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.45614090725936607,
+      "median": 0.3409019739554525,
+      "p95": 1.2109888838322473,
+      "sample_count": 23916,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2367,
+        "mean": 0.47882900282588625,
+        "p95": 1.3477282617075954
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.353959609432175,
+      "face_jump_max": 0.931617751786156,
+      "face_jump_rms": 0.11205386538535574
+    }
+  },
+  {
+    "recipe": "CineBias-WC",
+    "file": "NikonRecipes_CineBias-WC_Y8.xmp",
+    "uuid": "E1EC0B1493CA599B83203D9B5C33CC90",
+    "sha256": "3be7b2d8796f7fb346a0b2c1402e8ee23e00cb43ab7072f4484335437eaf5415",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.552723979793599,
+      "median": 0.4507811909347271,
+      "p95": 1.3550132128398666,
+      "sample_count": 23828,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2361,
+        "mean": 0.5508125419764769,
+        "p95": 1.3288654318070499
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.36432130462728396,
+      "face_jump_max": 1.1340842896192898,
+      "face_jump_rms": 0.11487711598537798
+    }
+  },
+  {
+    "recipe": "CineBiasOffset",
+    "file": "NikonRecipes_CineBiasOffset_Y8.xmp",
+    "uuid": "02819E7C27765B70A0606F0ACEBF3687",
+    "sha256": "9e69d1ff3f1de7b2178925d1a28980282b7a1667be1052b0d9034cea1d546f3a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.48648660359617146,
+      "median": 0.4056856469551273,
+      "p95": 1.2016473592939096,
+      "sample_count": 23989,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2370,
+        "mean": 0.509948409866505,
+        "p95": 1.2603989893089271
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.32163652922881575,
+      "face_jump_max": 0.9864602703500832,
+      "face_jump_rms": 0.09575610898034617
+    }
+  },
+  {
+    "recipe": "CineBias_RED",
+    "file": "NikonRecipes_CineBias_RED_Y8.xmp",
+    "uuid": "6622AF185EC1579EB535E7F9415FDF74",
+    "sha256": "837d6c175d2e132f650bfca1749d71dee56d46edeff6caca9fd75ad5a308ce34",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.3880437045400398,
+      "median": 0.3100894440539428,
+      "p95": 0.946383599033779,
+      "sample_count": 22983,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2289,
+        "mean": 0.40850372914868766,
+        "p95": 0.9700406785158212
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.30370126309523454,
+      "face_jump_max": 0.8871257667931699,
+      "face_jump_rms": 0.08957731169887909
+    }
+  },
+  {
+    "recipe": "CineBlue_BrandonW",
+    "file": "NikonRecipes_CineBlue_BrandonW_Y8.xmp",
+    "uuid": "BDAC6BE681445CA7BA80B77E6C129D4E",
+    "sha256": "0e7004622a4287d296e2db47d10a264895d494e6d7a1a45d8e1c3c43590ed664",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8831182395741521,
+      "median": 0.6824164933983159,
+      "p95": 2.229537485922344,
+      "sample_count": 22612,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2256,
+        "mean": 0.9142550046904521,
+        "p95": 2.2703635680022773
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.49877093636591263,
+      "face_jump_max": 1.116970620707784,
+      "face_jump_rms": 0.16210961426034523
+    }
+  },
+  {
+    "recipe": "CineM_LUIZCLAS",
+    "file": "NikonRecipes_CineM_LUIZCLAS_Y8.xmp",
+    "uuid": "6B21E95A88535730A84755C5F8FF5F23",
+    "sha256": "05c0902c1bf2b9b9cc5399fd72b909cb5ffcaaff5faa7443bfba58776acf8dde",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.4862364153234384,
+      "median": 0.36943813894375305,
+      "p95": 1.2210421965374783,
+      "sample_count": 22362,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2217,
+        "mean": 0.49890034906499925,
+        "p95": 1.2711711765451699
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3522873235383217,
+      "face_jump_max": 0.8620846177866932,
+      "face_jump_rms": 0.10411980534369404
+    }
+  },
+  {
+    "recipe": "Classic_Chrome",
+    "file": "NikonRecipes_Classic_Chrome_Y8.xmp",
+    "uuid": "E24302B1D5C75FE68BB971AA7E903896",
+    "sha256": "fcfbfa46e6de83918e7285bdd0fe87054a4e8708fbd48421f0ab09ee56826f8e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6055926628829462,
+      "median": 0.5075856102836995,
+      "p95": 1.394289200589775,
+      "sample_count": 21874,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2190,
+        "mean": 0.6262681862385007,
+        "p95": 1.4244771112156425
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3517117202326854,
+      "face_jump_max": 0.7942923315519687,
+      "face_jump_rms": 0.11109799891550459
+    }
+  },
+  {
+    "recipe": "CloudyForest_Y2",
+    "file": "NikonRecipes_CloudyForest_Y2_Y8.xmp",
+    "uuid": "689CBA05765859B2AA2FA7700251C5CB",
+    "sha256": "2f9bd870ee302b2761f41d855969b286318ed75eb836209cd42a13cf01a8521e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5232866332691632,
+      "median": 0.37947140556921766,
+      "p95": 1.4754477405143198,
+      "sample_count": 21073,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2110,
+        "mean": 0.5483355235237036,
+        "p95": 1.5351449757493902
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3941508264993621,
+      "face_jump_max": 0.7357938260798537,
+      "face_jump_rms": 0.11641947529848662
+    }
+  },
+  {
+    "recipe": "ClrMode_Bu_01a",
+    "file": "NikonRecipes_ClrMode_Bu_01a_Y8.xmp",
+    "uuid": "C2A93C0303DC547EBA731C1FE3B6D214",
+    "sha256": "1cd2c98f561ff89fb91351f7112bdd4acf0942c6067e2789f5f8159c8396d55f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7714072599808542,
+      "median": 0.5986541557117687,
+      "p95": 1.987266165238437,
+      "sample_count": 17858,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1765,
+        "mean": 0.7953338037938892,
+        "p95": 2.146613418457922
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3614702028618886,
+      "face_jump_max": 1.1127639887292324,
+      "face_jump_rms": 0.12053218950995043
+    }
+  },
+  {
+    "recipe": "ClrMode_Bu_01b",
+    "file": "NikonRecipes_ClrMode_Bu_01b_Y8.xmp",
+    "uuid": "72B71526067259158D0756686422C21E",
+    "sha256": "d735579400e80b196200d17de2190292e6a27f1dc98b960ad1cbe721772e9e1b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8772246443401113,
+      "median": 0.6392834485755918,
+      "p95": 2.423831033567655,
+      "sample_count": 19122,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1898,
+        "mean": 0.8885896868988917,
+        "p95": 2.3951487924421246
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.37328545997851004,
+      "face_jump_max": 0.7885559393814345,
+      "face_jump_rms": 0.12124628459393413
+    }
+  },
+  {
+    "recipe": "ClrMode_Gn_01a",
+    "file": "NikonRecipes_ClrMode_Gn_01a_Y8.xmp",
+    "uuid": "D35664B642D756FBA05DBF73D8BD72D2",
+    "sha256": "c11ea01f307223ef958cf4e592ff051eaacfbdd7ca7ebd0af60a56f843e36446",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7164070512037308,
+      "median": 0.5333371360842933,
+      "p95": 1.9511106320488416,
+      "sample_count": 18611,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1833,
+        "mean": 0.7572456617123713,
+        "p95": 2.0786613893224146
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4854727919954249,
+      "face_jump_max": 1.182649311721397,
+      "face_jump_rms": 0.1483670119832324
+    }
+  },
+  {
+    "recipe": "ClrMode_Gn_01b",
+    "file": "NikonRecipes_ClrMode_Gn_01b_Y8.xmp",
+    "uuid": "AAB5B1A4B69159859AC6C88D6249A252",
+    "sha256": "0a948d62c1db70f6413821a8c0ca7cf7814d51169fff2a44bc87e7950687a9d6",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7910225709474074,
+      "median": 0.5831211239760835,
+      "p95": 2.1423377265850156,
+      "sample_count": 18183,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1797,
+        "mean": 0.8279036144525879,
+        "p95": 2.21832603260158
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4830559532394835,
+      "face_jump_max": 1.1148503724085332,
+      "face_jump_rms": 0.15278210127181074
+    }
+  },
+  {
+    "recipe": "ClrMode_TealOr_01a",
+    "file": "NikonRecipes_ClrMode_TealOr_01a_Y8.xmp",
+    "uuid": "4292282C476D5DD7A181DA7F8E4FB454",
+    "sha256": "c5c2e10c40bbd4ca9a96b4fd2409c21e44ab41905a3c6c61f2a75e67eececbf9",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8615858572020824,
+      "median": 0.6691915552365185,
+      "p95": 2.1552412379260106,
+      "sample_count": 19484,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1947,
+        "mean": 0.882169582736592,
+        "p95": 2.2556304367676776
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4798423880212659,
+      "face_jump_max": 0.9271962112988543,
+      "face_jump_rms": 0.14781281534067173
+    }
+  },
+  {
+    "recipe": "ClrMode_TealOr_01b",
+    "file": "NikonRecipes_ClrMode_TealOr_01b_Y8.xmp",
+    "uuid": "43A456D4D1225CCBB56FC14EC9C28ADD",
+    "sha256": "c52b57f1c5a1c0975c7f4d5fd8efd3cbda3dc474bc3a3053f1ac686144476090",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.220901068102603,
+      "median": 0.8832912941878606,
+      "p95": 3.215304868871581,
+      "sample_count": 20192,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2025,
+        "mean": 1.252067009544787,
+        "p95": 3.3123311149607106
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4992290964243746,
+      "face_jump_max": 0.9988301415639292,
+      "face_jump_rms": 0.15793474841765875
+    }
+  },
+  {
+    "recipe": "ClrMode_Ye_01a",
+    "file": "NikonRecipes_ClrMode_Ye_01a_Y8.xmp",
+    "uuid": "79188CD6690E52FCAAEAD57CAE8EE0B1",
+    "sha256": "c870bb0d2a3c8c56013eccd522cc7997fd6118994c0bf5278578be7da50a4bce",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6276789197452884,
+      "median": 0.48100981357208084,
+      "p95": 1.5906058243455663,
+      "sample_count": 17652,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1765,
+        "mean": 0.6444504139897493,
+        "p95": 1.680467227403645
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4616984697726214,
+      "face_jump_max": 0.9705743707637142,
+      "face_jump_rms": 0.13156677420977658
+    }
+  },
+  {
+    "recipe": "ClrMode_Ye_01b",
+    "file": "NikonRecipes_ClrMode_Ye_01b_Y8.xmp",
+    "uuid": "AB6EBD97CF0F5E17A3FBD8AC7FBB73E0",
+    "sha256": "388256750f9cd80d9ec1f2833336e32daa570981ce1e26894fc346d5011b3fb4",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7712145304884467,
+      "median": 0.620757843381721,
+      "p95": 1.8752118381155494,
+      "sample_count": 17562,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1756,
+        "mean": 0.7893545790476957,
+        "p95": 1.8680933480579327
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4552553722041363,
+      "face_jump_max": 0.9898554905666459,
+      "face_jump_rms": 0.14202010794871248
+    }
+  },
+  {
+    "recipe": "ClrPortrait_TSakai",
+    "file": "NikonRecipes_ClrPortrait_TSakai_Y8.xmp",
+    "uuid": "F9FA35A976D35986B96E240830C25B4B",
+    "sha256": "b2786c8a1c49dd20794d67a2d2363846d3ad38ea22904cf5af809b08fbe73614",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5160514487748153,
+      "median": 0.38426899021926053,
+      "p95": 1.4064509450054477,
+      "sample_count": 19693,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1979,
+        "mean": 0.5535867819450453,
+        "p95": 1.5399700215631875
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.37392936058043585,
+      "face_jump_max": 0.7612048501492485,
+      "face_jump_rms": 0.1186491674352928
+    }
+  },
+  {
+    "recipe": "Coastal_Glow_NM",
+    "file": "NikonRecipes_Coastal_Glow_NM_Y8.xmp",
+    "uuid": "7A403ABD7D445A609CFAB0AE684E57DA",
+    "sha256": "a434fc7999ef2a4ada3c859078b941564c916b861dca669a8938077407ae47c9",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.9031436769789543,
+      "median": 0.7171082982711703,
+      "p95": 2.3301958076574123,
+      "sample_count": 15595,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1531,
+        "mean": 0.9653457542329126,
+        "p95": 2.5045709575899258
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5680874633697703,
+      "face_jump_max": 1.6669686688195968,
+      "face_jump_rms": 0.1720258351343513
+    }
+  },
+  {
+    "recipe": "ColorSplash_Gilmar",
+    "file": "NikonRecipes_ColorSplash_Gilmar_Y8.xmp",
+    "uuid": "AE8C09A3D637550890354D6448DF4214",
+    "sha256": "8d44170a6a5a0ba370fd75bac4628b33d388c55cc124715daacbd9bf65bd1619",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6487204778919445,
+      "median": 0.5101045618115703,
+      "p95": 1.700871338011222,
+      "sample_count": 14866,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1460,
+        "mean": 0.6854553967637814,
+        "p95": 1.8022059489380022
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.47294352032488424,
+      "face_jump_max": 0.9688906534802079,
+      "face_jump_rms": 0.15265230988205916
+    }
+  },
+  {
+    "recipe": "CozyAutumn_Leno",
+    "file": "NikonRecipes_CozyAutumn_Leno_Y8.xmp",
+    "uuid": "E95A702DF9785E6D94EC5ACD15FCF082",
+    "sha256": "86c68f31d00ddd90955922e35820c9f43894dc4bf99e83b7e01ac742fdeb70df",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.39387176215715486,
+      "median": 0.2997706832921286,
+      "p95": 1.0052706390872912,
+      "sample_count": 23727,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2348,
+        "mean": 0.41798517948064284,
+        "p95": 1.0679302085650482
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.30987235188547135,
+      "face_jump_max": 1.0300972590711899,
+      "face_jump_rms": 0.09250186842323203
+    }
+  },
+  {
+    "recipe": "Cyanora_EyesOfBelga",
+    "file": "NikonRecipes_Cyanora_EyesOfBelga_Y8.xmp",
+    "uuid": "4D3B84D174D55EED98B4A7EA4207BD56",
+    "sha256": "0f6e5dde6302ddd50e3bfc78ac0cfb80c6f10ca97caa29c346ab813cfb15188b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.1105867675649284,
+      "median": 0.8729258075361006,
+      "p95": 2.765434435979081,
+      "sample_count": 16170,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1608,
+        "mean": 1.177328115318228,
+        "p95": 2.978721219043602
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.7170786695017712,
+      "face_jump_max": 1.4987624206219228,
+      "face_jump_rms": 0.22638916649789617
+    }
+  },
+  {
+    "recipe": "DGFilmLook_DannyG",
+    "file": "NikonRecipes_DGFilmLook_DannyG_Y8.xmp",
+    "uuid": "1408C5647391538CA0DF7F8110ECA95C",
+    "sha256": "9d38dd4977232e0ab8c5d7625fcc9855fe39e0800937bbdb0c5602da82e879d6",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.387446869391852,
+      "median": 0.31258951452589856,
+      "p95": 0.9441342353629218,
+      "sample_count": 24165,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2397,
+        "mean": 0.3983022515369829,
+        "p95": 0.9571921575082494
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3597396148703894,
+      "face_jump_max": 1.0682241880705816,
+      "face_jump_rms": 0.10323171146132154
+    }
+  },
+  {
+    "recipe": "DawnHues_Leno",
+    "file": "NikonRecipes_DawnHues_Leno_Y8.xmp",
+    "uuid": "A6D1745C950C52CAB058CABFE721D611",
+    "sha256": "c96d6fbd215a1a09cbed80343f55a3b31031996361873c75dd1d4d5b0862722f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7378182638927274,
+      "median": 0.5912810028185906,
+      "p95": 1.8818448017284277,
+      "sample_count": 21253,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2084,
+        "mean": 0.7790031078946216,
+        "p95": 1.974487625073256
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4113596830047761,
+      "face_jump_max": 1.0567102942179072,
+      "face_jump_rms": 0.12472017994660045
+    }
+  },
+  {
+    "recipe": "E100",
+    "file": "NikonRecipes_E100_Y8.xmp",
+    "uuid": "1246F90AE1235592B205C6AF4B741067",
+    "sha256": "0fbcad4c3b62c6f97561c2d51e56e005cdd53d191a225dbe67fedd17da3bf2a3",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.0570112675443921,
+      "median": 0.7033711542810498,
+      "p95": 3.189516910776741,
+      "sample_count": 21939,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2180,
+        "mean": 1.134446919596857,
+        "p95": 3.384272902809649
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.7429768009168276,
+      "face_jump_max": 2.094420192423949,
+      "face_jump_rms": 0.2122291823383058
+    }
+  },
+  {
+    "recipe": "EmotionalB&W_Wazika",
+    "file": "NikonRecipes_EmotionalB&W_Wazika_Y8.xmp",
+    "uuid": "3FE39CFB156D532AA30DD24F90841968",
+    "sha256": "f536dc814384a0ff9cdcf80572406d2f0fcdfb22cb1d7a5a5ea99a094fb31f5b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.14830992476650012,
+      "median": 0.09343086574727578,
+      "p95": 0.46247755787731243,
+      "sample_count": 24317,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2407,
+        "mean": 0.14442572337780743,
+        "p95": 0.42138642791515396
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.24063034173021497,
+      "face_jump_max": 0.8574257620067399,
+      "face_jump_rms": 0.06596752595905236
+    }
+  },
+  {
+    "recipe": "EuroFilmBW_Vincent",
+    "file": "NikonRecipes_EuroFilmBW_Vincent_Y8.xmp",
+    "uuid": "FCA17F63C7EC5D51A1EE27CFB7C14CDB",
+    "sha256": "63e51ccdbbaf75d1e2f89c5ccecdd53b528e3981552393dd34c771343c15573b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.17156231764686744,
+      "median": 0.11674467843746587,
+      "p95": 0.5046543453174749,
+      "sample_count": 21632,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2167,
+        "mean": 0.171227187874578,
+        "p95": 0.4806591978726839
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.25918443900247323,
+      "face_jump_max": 0.846610013189414,
+      "face_jump_rms": 0.06599738113942225
+    }
+  },
+  {
+    "recipe": "F400H",
+    "file": "NikonRecipes_F400H_Y8.xmp",
+    "uuid": "666867BABFDD54E6BA720BD874A4CFEC",
+    "sha256": "74907a6e84add3b49a0f686419df029bba260cef08f9f8a0b709ce36f374b57e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.4733807592092604,
+      "median": 0.36675473744067355,
+      "p95": 1.2453757228684845,
+      "sample_count": 23920,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2372,
+        "mean": 0.4941527037198446,
+        "p95": 1.2524792366183555
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3532451862792436,
+      "face_jump_max": 0.9395376877243131,
+      "face_jump_rms": 0.1107428384127281
+    }
+  },
+  {
+    "recipe": "FILMICBW",
+    "file": "NikonRecipes_FILMICBW_Y8.xmp",
+    "uuid": "DE02899560965C429C9F83E6D06627B9",
+    "sha256": "97f6cc167e0f26dc301dd7ea2ec1cf24032f8a7ab8eda2dc62a8fad343f813d9",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.10353316130856395,
+      "median": 0.05885329264487546,
+      "p95": 0.36037594433465475,
+      "sample_count": 24333,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.10538327235552551,
+        "p95": 0.3616548230492904
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.2611106685449931,
+      "face_jump_max": 0.7720687765559984,
+      "face_jump_rms": 0.07158667581145489
+    }
+  },
+  {
+    "recipe": "FILMSTILLFilmic",
+    "file": "NikonRecipes_FILMSTILLFilmic_Y8.xmp",
+    "uuid": "DF36F7DB109E5737B8FF753E7593B420",
+    "sha256": "72ce64bab98015c4f48fd8bfc3e155f2d43dc42d4550702e58befbf2dfc9c209",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.663577130758911,
+      "median": 0.5417181147457429,
+      "p95": 1.5877734879575995,
+      "sample_count": 21122,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2110,
+        "mean": 0.7059420580248462,
+        "p95": 1.7155015516239034
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.46472379396232466,
+      "face_jump_max": 0.913433537835667,
+      "face_jump_rms": 0.1436080990746549
+    }
+  },
+  {
+    "recipe": "FIlmstill's_Nostalgic_Negative",
+    "file": "NikonRecipes_FIlmstill's_Nostalgic_Negative_Y8.xmp",
+    "uuid": "B426C329399458A98AA776BC817CE8E9",
+    "sha256": "8bcb0e4f580458473c244bbbf60ab974ede7aee61a518bffc84566b2d0ce405d",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8062680184313169,
+      "median": 0.6413374563764991,
+      "p95": 1.9889402838553165,
+      "sample_count": 20710,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2048,
+        "mean": 0.8410534206267202,
+        "p95": 2.0207117929612073
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5307686464018893,
+      "face_jump_max": 1.0293536660015519,
+      "face_jump_rms": 0.154316816005464
+    }
+  },
+  {
+    "recipe": "FProvia100F",
+    "file": "NikonRecipes_FProvia100F_Y8.xmp",
+    "uuid": "4D29F677567A525999103CBA3BDBD333",
+    "sha256": "bc151fa223ff10ccf6cc38c62cdc501b71bf1b11d15ff1a9c3f60a275f09f21a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.755893224358894,
+      "median": 0.5332731241736445,
+      "p95": 2.213804170403123,
+      "sample_count": 18103,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1823,
+        "mean": 0.7927404664953989,
+        "p95": 2.308783696896489
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5522383967102691,
+      "face_jump_max": 1.192351884760681,
+      "face_jump_rms": 0.1696327038933857
+    }
+  },
+  {
+    "recipe": "FSol100",
+    "file": "NikonRecipes_FSol100_Y8.xmp",
+    "uuid": "533EBB2C72365713BE23C4815834470F",
+    "sha256": "c4ce97d48d5988d9eb21dcf8867b447e431a066c0d7e228c7a5257faac31c979",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5926043509111005,
+      "median": 0.44679858443535236,
+      "p95": 1.5951338613343589,
+      "sample_count": 22508,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2245,
+        "mean": 0.6481190623654106,
+        "p95": 1.7614737970675918
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5002664550601833,
+      "face_jump_max": 1.326022424548506,
+      "face_jump_rms": 0.1495787131532214
+    }
+  },
+  {
+    "recipe": "FadedBlue_Hinami",
+    "file": "NikonRecipes_FadedBlue_Hinami_Y8.xmp",
+    "uuid": "66ED57D7288E538EB9F06D43FD467BA1",
+    "sha256": "1ab5ecf88dcba6c4da62d9528295f9a21ca5914be84b4aacf73a0d3f9434e865",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5413984332236088,
+      "median": 0.4391647345055937,
+      "p95": 1.2592293576036215,
+      "sample_count": 19840,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1978,
+        "mean": 0.5680296250597907,
+        "p95": 1.3308690277450848
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3674469456216215,
+      "face_jump_max": 0.9965882180999787,
+      "face_jump_rms": 0.1135297183399291
+    }
+  },
+  {
+    "recipe": "Fern_IanHarland",
+    "file": "NikonRecipes_Fern_IanHarland_Y8.xmp",
+    "uuid": "54E92C7738455391868426B4FC54898C",
+    "sha256": "50790b6dea46df0a465734423d2919dfcf9b8bd6260eb803b9598378f7c86fed",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.42775708894443226,
+      "median": 0.33401662854450453,
+      "p95": 1.096975907115603,
+      "sample_count": 21372,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2143,
+        "mean": 0.45228569555062775,
+        "p95": 1.1217134093192962
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4140593360173615,
+      "face_jump_max": 1.0800824536637579,
+      "face_jump_rms": 0.12400644967702182
+    }
+  },
+  {
+    "recipe": "FilmPop_Leno",
+    "file": "NikonRecipes_FilmPop_Leno_Y8.xmp",
+    "uuid": "0D3E33A599435361A9876A935C431AD3",
+    "sha256": "25ed20da8dc7f1c9e3837dfa49a4d4f2c71aa1f2ea0bf84fe1f400375ba5e38e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.0782887895884274,
+      "median": 0.7393691601340848,
+      "p95": 3.2625757790836185,
+      "sample_count": 24096,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2390,
+        "mean": 1.1475566375458168,
+        "p95": 3.542505944797144
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6026186466082621,
+      "face_jump_max": 1.2761730584725022,
+      "face_jump_rms": 0.1578199203228589
+    }
+  },
+  {
+    "recipe": "Filmic_Fabio",
+    "file": "NikonRecipes_Filmic_Fabio_Y8.xmp",
+    "uuid": "05FD9B5116AE59F69F2A61BDA6BD0B3E",
+    "sha256": "b5260e51eda149d4b71f41a4b45ddf4e0914d876b627f945e300bd21d69bbc9d",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5661070311735568,
+      "median": 0.42867212553468104,
+      "p95": 1.4737959747623153,
+      "sample_count": 22712,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2259,
+        "mean": 0.5974143667261985,
+        "p95": 1.5288885889838004
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.44469802680121223,
+      "face_jump_max": 1.1524426248672315,
+      "face_jump_rms": 0.13910996250697863
+    }
+  },
+  {
+    "recipe": "FilmstilGoldmatic",
+    "file": "NikonRecipes_FilmstilGoldmatic_Y8.xmp",
+    "uuid": "D3E0DC70D22457CAA4DEDFDEE2F77772",
+    "sha256": "f24ea2b7816626b1c96526ac617dae086b5c917eacf5f6f4529cbaf05e745b98",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.724589124282989,
+      "median": 0.5299782284110344,
+      "p95": 2.0296978877238003,
+      "sample_count": 19936,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1989,
+        "mean": 0.7744445239623872,
+        "p95": 2.1906914329346705
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4291249372023082,
+      "face_jump_max": 0.9133591886531959,
+      "face_jump_rms": 0.1355513900980435
+    }
+  },
+  {
+    "recipe": "Filmstill's_ARTE_B&W",
+    "file": "NikonRecipes_Filmstill's_ARTE_B&W_Y8.xmp",
+    "uuid": "84D45E2BF1AA5D71B8E90C215227BDA4",
+    "sha256": "d72a3fd0a295990741a0fba834eb532ba8f173ef0af0152889d0327a8e4f6cdf",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.13856854193670098,
+      "median": 0.07489366315099401,
+      "p95": 0.4767381441810155,
+      "sample_count": 24333,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.1424797424311733,
+        "p95": 0.4864319779123654
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.36628261293748765,
+      "face_jump_max": 0.8075686197413039,
+      "face_jump_rms": 0.10253864729167447
+    }
+  },
+  {
+    "recipe": "Filmstill's_Astia",
+    "file": "NikonRecipes_Filmstill's_Astia_Y8.xmp",
+    "uuid": "EF24C0C22C585402A78B64A21D3DA38B",
+    "sha256": "b724ff2725fcd304b87a08003162fd747c3305eebb308766c56aa051b610c404",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6274360997963394,
+      "median": 0.49369157496647464,
+      "p95": 1.607680568635138,
+      "sample_count": 20324,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2023,
+        "mean": 0.6557650232594593,
+        "p95": 1.719741519604622
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.45857000896991384,
+      "face_jump_max": 0.8738198784822857,
+      "face_jump_rms": 0.14044766074852819
+    }
+  },
+  {
+    "recipe": "Filmstill's_Classic_Neg",
+    "file": "NikonRecipes_Filmstill's_Classic_Neg_Y8.xmp",
+    "uuid": "BD3C030334CD5344B482FFEE681AFB9A",
+    "sha256": "bb78f4f3711e8d149fa30e265098d269476a4c1b1bfd7408103820456f78ccc2",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8488105869019149,
+      "median": 0.6363060287842538,
+      "p95": 2.2959840611745768,
+      "sample_count": 23263,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2309,
+        "mean": 0.8890594851229084,
+        "p95": 2.3195790271588854
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5783174744198498,
+      "face_jump_max": 1.2368171245631248,
+      "face_jump_rms": 0.16699562527078313
+    }
+  },
+  {
+    "recipe": "Filmstill's_Portra",
+    "file": "NikonRecipes_Filmstill's_Portra_Y8.xmp",
+    "uuid": "8FF4C24FCC6B5145B9E74C0720B362AC",
+    "sha256": "df88321c81cdc74c81d7d9852e62f1e309e7d780f663cc2c90fbfd374ccbe2e4",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.1553140869061698,
+      "median": 0.7640135268366437,
+      "p95": 3.681412296274788,
+      "sample_count": 22593,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2244,
+        "mean": 1.2338722990975608,
+        "p95": 4.008530209702108
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6042579691779093,
+      "face_jump_max": 1.3268201704978742,
+      "face_jump_rms": 0.18721929126197873
+    }
+  },
+  {
+    "recipe": "Filmstill's_Velvia",
+    "file": "NikonRecipes_Filmstill's_Velvia_Y8.xmp",
+    "uuid": "F4567A4C84F1543C8264E59B0DDCF0E7",
+    "sha256": "74dd829d95ddce1386a8411ad4bf806941c75ac270c025bc384f71c77327fa04",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6540918641294281,
+      "median": 0.4975686565882813,
+      "p95": 1.6937526041230897,
+      "sample_count": 19464,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1942,
+        "mean": 0.67781200008649,
+        "p95": 1.7661593425264943
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4600489044210818,
+      "face_jump_max": 1.190097172899864,
+      "face_jump_rms": 0.1446863630180721
+    }
+  },
+  {
+    "recipe": "GlowUp_Preston",
+    "file": "NikonRecipes_GlowUp_Preston_Y8.xmp",
+    "uuid": "DD27AD6454BF58A9AFD4C77D1BA8A5CE",
+    "sha256": "7a818cf9f3fcef6f6f4f3343ff64493200917ee6981d388e65babe026039bdbf",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.009280052529775,
+      "median": 0.8360230875803818,
+      "p95": 2.4045423593863413,
+      "sample_count": 16532,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1643,
+        "mean": 1.0373815737230254,
+        "p95": 2.400357254909626
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5477000437460731,
+      "face_jump_max": 1.3356946000712528,
+      "face_jump_rms": 0.171415636718649
+    }
+  },
+  {
+    "recipe": "Glow_IanHarland",
+    "file": "NikonRecipes_Glow_IanHarland_Y8.xmp",
+    "uuid": "31828540556D5911B8E91D33D542183D",
+    "sha256": "02a2b88d6009e30509da85ff281996dde19937a6895ca9678b3d9c788625cd6b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5070645881946606,
+      "median": 0.3832128107900756,
+      "p95": 1.3489096801212241,
+      "sample_count": 18729,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1880,
+        "mean": 0.5277259091927023,
+        "p95": 1.4125771227187007
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.41249666182081657,
+      "face_jump_max": 0.8257880307964456,
+      "face_jump_rms": 0.12325559256327
+    }
+  },
+  {
+    "recipe": "GoldenBrownSiinapse",
+    "file": "NikonRecipes_GoldenBrownSiinapse_Y8.xmp",
+    "uuid": "2ADAEDA6EA125C6682AD6752D3303B5E",
+    "sha256": "225259fe3c6b702eb21ca7175aa2689b0f2b6f4cd1a4a48749a7a0efcdd2518e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.6126773877863256,
+      "median": 0.45350058889020006,
+      "p95": 1.7146972608406663,
+      "sample_count": 19155,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1919,
+        "mean": 0.6082585763502046,
+        "p95": 1.5780001256903813
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.48734386265307217,
+      "face_jump_max": 1.0141792717224842,
+      "face_jump_rms": 0.12820596126990336
+    }
+  },
+  {
+    "recipe": "GoldenDusk_EmilieH",
+    "file": "NikonRecipes_GoldenDusk_EmilieH_Y8.xmp",
+    "uuid": "C7C78B6FC0875F01A475A5C84FB8E0DE",
+    "sha256": "0fd28a9ee20f01cedeef0afa01cb0fd51ba9b135e184edb217c4c84a7e3ba631",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8957503336575278,
+      "median": 0.6746760432578055,
+      "p95": 2.40370153942027,
+      "sample_count": 18412,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1830,
+        "mean": 0.9125910825617314,
+        "p95": 2.3676283354935457
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4686877980545341,
+      "face_jump_max": 0.9102627499252482,
+      "face_jump_rms": 0.146151618348704
+    }
+  },
+  {
+    "recipe": "GoldenHourGlow_DAnn",
+    "file": "NikonRecipes_GoldenHourGlow_DAnn_Y8.xmp",
+    "uuid": "0482CCEEBCE259E8839CB4B0069F58D5",
+    "sha256": "21fa921acd306107fc92c12cef2c6e9a09540810aff247da89a4276ca144cada",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.0363975246111905,
+      "median": 0.7806910375903284,
+      "p95": 2.819213641242661,
+      "sample_count": 16368,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1625,
+        "mean": 1.0364991620423283,
+        "p95": 2.729931609813281
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.620787253217489,
+      "face_jump_max": 1.3235503124134753,
+      "face_jump_rms": 0.1885751248963305
+    }
+  },
+  {
+    "recipe": "Golden_Grid_LKJ",
+    "file": "NikonRecipes_Golden_Grid_LKJ_Y8.xmp",
+    "uuid": "A70258CC0892538281CB880B2130B127",
+    "sha256": "be62940d5941f49001677582898e765863cf3f2e8af4898ed0eef36b700d58b6",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.9467105194365952,
+      "median": 0.719355903177795,
+      "p95": 2.5801227317241335,
+      "sample_count": 18079,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1820,
+        "mean": 0.9658671486114135,
+        "p95": 2.6428155782789378
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6039381251912346,
+      "face_jump_max": 1.5352898028352313,
+      "face_jump_rms": 0.1754046549146518
+    }
+  },
+  {
+    "recipe": "Green_Soul_Wong",
+    "file": "NikonRecipes_Green_Soul_Wong_Y8.xmp",
+    "uuid": "07C8B2B6FA085491AD078D2F191ADB0C",
+    "sha256": "71445a2b57ae8a972b806e54654ddfbcd7265c5ea0e36b14370be1e6367057b3",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.9023009182069126,
+      "median": 0.6683875326823145,
+      "p95": 2.432809713203422,
+      "sample_count": 20433,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2067,
+        "mean": 0.9762124312410521,
+        "p95": 2.785765676517742
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6378920530770846,
+      "face_jump_max": 1.454188481739438,
+      "face_jump_rms": 0.17231190063279417
+    }
+  },
+  {
+    "recipe": "H-1+rossandhisjpegs",
+    "file": "NikonRecipes_H-1+rossandhisjpegs_Y8.xmp",
+    "uuid": "4E9A074F13D95A2D97A790B91EE55559",
+    "sha256": "4a8d71e34da012c786bcd60c96d54d2af539668b1e72921465c2fdcf72a30bb5",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8563381443057262,
+      "median": 0.62776634623198,
+      "p95": 2.290939416863088,
+      "sample_count": 22044,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2204,
+        "mean": 0.8977974976808947,
+        "p95": 2.447364770836983
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6116326793261164,
+      "face_jump_max": 1.2222216413977351,
+      "face_jump_rms": 0.1782318009405531
+    }
+  },
+  {
+    "recipe": "HKReminisce_Hiuman",
+    "file": "NikonRecipes_HKReminisce_Hiuman_Y8.xmp",
+    "uuid": "7ED3754B24CB593AB70134EEBDBA51DC",
+    "sha256": "80d1b4023018cc7996ecda654d1f29e6a8c6fb9175f8612e43e87b0130025692",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.0117962823007671,
+      "median": 0.8097270231527804,
+      "p95": 2.4637161367951093,
+      "sample_count": 17315,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1743,
+        "mean": 1.01787041183706,
+        "p95": 2.5364395948285368
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5385670885681288,
+      "face_jump_max": 1.202538204139402,
+      "face_jump_rms": 0.16967583251218749
+    }
+  },
+  {
+    "recipe": "HT_Harmony_HanaaT",
+    "file": "NikonRecipes_HT_Harmony_HanaaT_Y8.xmp",
+    "uuid": "B4DB12EEA91158848062B0759E9D68C9",
+    "sha256": "07f26f032493e155bad2e1cdc93a431dabeecbafb43eee19ce499a769ad558a7",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.9384686918167398,
+      "median": 0.6541324679987308,
+      "p95": 2.862669696695874,
+      "sample_count": 22294,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2212,
+        "mean": 0.9870331683886521,
+        "p95": 3.0947506107154372
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5110522541025228,
+      "face_jump_max": 1.1726752060986123,
+      "face_jump_rms": 0.15148359927749705
+    }
+  },
+  {
+    "recipe": "HazyMemories_Julia",
+    "file": "NikonRecipes_HazyMemories_Julia_Y8.xmp",
+    "uuid": "82FF23B6280E549EB985DBA1F2838491",
+    "sha256": "189c9e21d7976f3c2fda388c013d363dcc3f4b74e28609ff82dfeb866d71719b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5022380328001386,
+      "median": 0.4049716247534424,
+      "p95": 1.284859036676418,
+      "sample_count": 20780,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2080,
+        "mean": 0.529012039418163,
+        "p95": 1.3841384151705542
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3594484023573965,
+      "face_jump_max": 0.8756045126234224,
+      "face_jump_rms": 0.11026820148686728
+    }
+  },
+  {
+    "recipe": "Heartwarming_YoheiS",
+    "file": "NikonRecipes_Heartwarming_YoheiS_Y8.xmp",
+    "uuid": "B4623413378F50FE85DE039D91C1FFA3",
+    "sha256": "e9a161b62cdf00dc0fbfd40fc6aa9658a9df60cd01622791782def103b7e836d",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5843460902144255,
+      "median": 0.4657428953075913,
+      "p95": 1.465134609778755,
+      "sample_count": 23591,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2333,
+        "mean": 0.600877657358126,
+        "p95": 1.4830334082665442
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3612422539096973,
+      "face_jump_max": 0.9792811170094597,
+      "face_jump_rms": 0.11050588738031968
+    }
+  },
+  {
+    "recipe": "Hidamari_Haruka",
+    "file": "NikonRecipes_Hidamari_Haruka_Y8.xmp",
+    "uuid": "491CC5967A7B51ABAE174D4DCFC773C0",
+    "sha256": "8ada8def71d15c08a8e1faac71ab72469b3a492d8c106f7edc2e35ef6e8ad11a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8930840902124895,
+      "median": 0.6764848497125884,
+      "p95": 2.431991168705267,
+      "sample_count": 21898,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2173,
+        "mean": 0.9371446818457615,
+        "p95": 2.6292504569882076
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.42147873441262573,
+      "face_jump_max": 1.2424436756108759,
+      "face_jump_rms": 0.1381915824562867
+    }
+  },
+  {
+    "recipe": "HoneyTale_MASAYA",
+    "file": "NikonRecipes_HoneyTale_MASAYA_Y8.xmp",
+    "uuid": "312A4D9764A6526D85D5F17F481D6CB0",
+    "sha256": "56ecbbdeeba5c650d405407fce10703ea3988e9e840bf366eb3618e217e042fa",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.60831167486832,
+      "median": 0.4698494586386263,
+      "p95": 1.552105339184978,
+      "sample_count": 17770,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1762,
+        "mean": 0.6212545357686552,
+        "p95": 1.5399051213614467
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.46069181012125854,
+      "face_jump_max": 1.1133954089048745,
+      "face_jump_rms": 0.13106320942764668
+    }
+  },
+  {
+    "recipe": "Honey_IanHarland",
+    "file": "NikonRecipes_Honey_IanHarland_Y8.xmp",
+    "uuid": "BED2E4C7045357D18CFE67162E21263B",
+    "sha256": "0e46a0ef189b525af2ef18217af052c346f373c2ba2dcb09293beabebbf4bca8",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.38731677578665435,
+      "median": 0.3206442824975155,
+      "p95": 0.9258017583125815,
+      "sample_count": 22432,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2226,
+        "mean": 0.404026868589636,
+        "p95": 0.9718285265792248
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.38981720914052653,
+      "face_jump_max": 1.02348855643494,
+      "face_jump_rms": 0.11659989457135349
+    }
+  },
+  {
+    "recipe": "IndoorHarmony_Julia",
+    "file": "NikonRecipes_IndoorHarmony_Julia_Y8.xmp",
+    "uuid": "14917C9B1BD35E15AF9D97D05EBAC736",
+    "sha256": "674a81ecfd48536222b3d4b56297352ac3c478fa04c42b390a73048b1d42894e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5006496744762442,
+      "median": 0.385097409640398,
+      "p95": 1.3153315276327466,
+      "sample_count": 24328,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.5425106024498425,
+        "p95": 1.4218430550341892
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3162450168153039,
+      "face_jump_max": 0.806740988226068,
+      "face_jump_rms": 0.09939219945229788
+    }
+  },
+  {
+    "recipe": "Japanesque_Arashida",
+    "file": "NikonRecipes_Japanesque_Arashida_Y8.xmp",
+    "uuid": "9B2B8DF18C6352519DD3F0846A9E0E8E",
+    "sha256": "10196b38e565b3de3c9cb2ff78296d85120234750ed1251ee3432977d57f683c",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7462404114963841,
+      "median": 0.5691440668544592,
+      "p95": 1.9605616956817997,
+      "sample_count": 21029,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2092,
+        "mean": 0.7655787566899139,
+        "p95": 2.01920273683161
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5848592586958136,
+      "face_jump_max": 1.4921112204835145,
+      "face_jump_rms": 0.17224701369730122
+    }
+  },
+  {
+    "recipe": "KCHROME",
+    "file": "NikonRecipes_KCHROME_Y8.xmp",
+    "uuid": "892DCBCEAF4A52479F3D5B5977077B12",
+    "sha256": "64467ff2786524220b752d90081772860cb736840019432cafca87f3cc3726bc",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.600742933024885,
+      "median": 0.45876565284352633,
+      "p95": 1.5839527600535854,
+      "sample_count": 21916,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2172,
+        "mean": 0.6329761315745177,
+        "p95": 1.734049171035178
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.43106112611112984,
+      "face_jump_max": 0.9656824139430283,
+      "face_jump_rms": 0.14550831369010056
+    }
+  },
+  {
+    "recipe": "KEktr100",
+    "file": "NikonRecipes_KEktr100_Y8.xmp",
+    "uuid": "6F1BF16465A35555BDFC71B93667F662",
+    "sha256": "dcff5a4dbda83a7fa320890c2acabb987d56fa04366f0021856ad54d311f995f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6321714570047923,
+      "median": 0.4792501399784058,
+      "p95": 1.7128426504242222,
+      "sample_count": 20926,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2078,
+        "mean": 0.6739129206080785,
+        "p95": 1.8492431830453198
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4541843668617138,
+      "face_jump_max": 0.8630481907458226,
+      "face_jump_rms": 0.15021973387107812
+    }
+  },
+  {
+    "recipe": "KG200",
+    "file": "NikonRecipes_KG200_Y8.xmp",
+    "uuid": "DF81FD8D976F5E15B61D65110536D9E8",
+    "sha256": "0754a0b17a6b9de60a0b525dd6bff645cbd8dcf9178650e030f27e09937357e9",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5231643262849445,
+      "median": 0.43036871606829896,
+      "p95": 1.2914051856194155,
+      "sample_count": 22498,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2239,
+        "mean": 0.5465983695905801,
+        "p95": 1.376303448535085
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3589039196682099,
+      "face_jump_max": 0.8793984318086333,
+      "face_jump_rms": 0.10300834127616554
+    }
+  },
+  {
+    "recipe": "KG200P1",
+    "file": "NikonRecipes_KG200P1_Y8.xmp",
+    "uuid": "597DB316DDD9529E956A635D9715FCB9",
+    "sha256": "1e9f7a3ad3e730bcfaed2c567ca86072a16f83f3acd9abf55e5e10313f66b297",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7047054247096614,
+      "median": 0.5880756948857955,
+      "p95": 1.7014585228233434,
+      "sample_count": 22452,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2239,
+        "mean": 0.7353881349844413,
+        "p95": 1.7096986173523803
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5433452166906215,
+      "face_jump_max": 1.224630810038333,
+      "face_jump_rms": 0.1604742562887331
+    }
+  },
+  {
+    "recipe": "KOLORA",
+    "file": "NikonRecipes_KOLORA_Y8.xmp",
+    "uuid": "2B30864D757A5E11BB1DA65324C0B11E",
+    "sha256": "401221d877c1b5064fd011b0a727674a5b4aa72f117bc767b2b1e247ffb5882f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.791712431575444,
+      "median": 0.6563816635302044,
+      "p95": 1.8969413289256005,
+      "sample_count": 19925,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1988,
+        "mean": 0.8322831033395446,
+        "p95": 2.05613108724265
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.39062214017992836,
+      "face_jump_max": 0.7320279090761824,
+      "face_jump_rms": 0.13705894859231577
+    }
+  },
+  {
+    "recipe": "KOLORA_PUSHED",
+    "file": "NikonRecipes_KOLORA_PUSHED_Y8.xmp",
+    "uuid": "AF9D9CD3016859668514FC494DE0F4E6",
+    "sha256": "ae4c8f324fea8e688431830ac57b23e6998036e9e6f3339d98d882683e726c84",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7719073609319551,
+      "median": 0.642379216948905,
+      "p95": 1.805243299751226,
+      "sample_count": 19886,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1980,
+        "mean": 0.8070625909088308,
+        "p95": 1.9270892924179952
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.42698547336450976,
+      "face_jump_max": 0.8827577918643432,
+      "face_jump_rms": 0.1434198267050394
+    }
+  },
+  {
+    "recipe": "KP160",
+    "file": "NikonRecipes_KP160_Y8.xmp",
+    "uuid": "CF979252BF5357949EFD78CE7868D840",
+    "sha256": "37b3fd00639a504f8fd8b7e5df0427d26f120a3b5db95bb45d92aa8f48dc40d5",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5762292958301343,
+      "median": 0.43559867121614093,
+      "p95": 1.529457031218613,
+      "sample_count": 24065,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2391,
+        "mean": 0.6101947229415359,
+        "p95": 1.6031675807244414
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3497188424549973,
+      "face_jump_max": 0.703833351546315,
+      "face_jump_rms": 0.10051395450650207
+    }
+  },
+  {
+    "recipe": "KP400",
+    "file": "NikonRecipes_KP400_Y8.xmp",
+    "uuid": "E071516368D75E04B1641B2E0D8E19C7",
+    "sha256": "efcf093cf66c3cf1efeb13e92298621e02b603d1e24419cbe271e866c175fbb8",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6735961740135175,
+      "median": 0.5287918198109985,
+      "p95": 1.7030985050020724,
+      "sample_count": 22067,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2208,
+        "mean": 0.7135223822152356,
+        "p95": 1.766508887536912
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3931172618981926,
+      "face_jump_max": 0.7761955804222711,
+      "face_jump_rms": 0.12184141095936755
+    }
+  },
+  {
+    "recipe": "KP800",
+    "file": "NikonRecipes_KP800_Y8.xmp",
+    "uuid": "11A41F69314158E9A88371A21CEED300",
+    "sha256": "d64d23af6540c1feb8f7e23e179de346120956cfdcd07cf8f729ac8b584bc9bf",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8616113845600186,
+      "median": 0.7015223351428164,
+      "p95": 2.102457997214342,
+      "sample_count": 23001,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2278,
+        "mean": 0.9070992066388677,
+        "p95": 2.2531625161609723
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.582547140468017,
+      "face_jump_max": 1.0265114599464742,
+      "face_jump_rms": 0.18695590677466614
+    }
+  },
+  {
+    "recipe": "Kodachrome",
+    "file": "NikonRecipes_Kodachrome_Y8.xmp",
+    "uuid": "AEE99DCD142E5DC689D935CDCF0A36B6",
+    "sha256": "c84c828e28a748ce8cb642212f1349ee7d45afd445c041e2a1419fa669e97607",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.5056835508160473,
+      "median": 0.4000350529710022,
+      "p95": 1.2615542844182954,
+      "sample_count": 19991,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1992,
+        "mean": 0.5131255470940107,
+        "p95": 1.2704895560842295
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.43795549310240645,
+      "face_jump_max": 0.860478822074241,
+      "face_jump_rms": 0.12545822663904163
+    }
+  },
+  {
+    "recipe": "Kota-Green_TAKASU",
+    "file": "NikonRecipes_Kota-Green_TAKASU_Y8.xmp",
+    "uuid": "8EFD809B896357D89501747317454ACC",
+    "sha256": "29ce11e8d0a521213cf2dad4ecc2ff2663696ef5fb27ef168be5a3c1cdb4fbbe",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5992099425361934,
+      "median": 0.4460644682026792,
+      "p95": 1.640071447878654,
+      "sample_count": 24006,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2386,
+        "mean": 0.6233959892382321,
+        "p95": 1.7514936351831885
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3425209340913366,
+      "face_jump_max": 0.8264203492166046,
+      "face_jump_rms": 0.10485635178551903
+    }
+  },
+  {
+    "recipe": "L100",
+    "file": "NikonRecipes_L100_Y8.xmp",
+    "uuid": "587327B89E155C0F8E90FD980CB01753",
+    "sha256": "805e9b62b37ae5e190463fb50c1a63ae0f15024737a2a6755aeb785a7645e521",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6305467736552344,
+      "median": 0.5007553009397057,
+      "p95": 1.6277506074379702,
+      "sample_count": 21805,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2171,
+        "mean": 0.6759738200209796,
+        "p95": 1.6589790888981106
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.48185311662537605,
+      "face_jump_max": 1.1920994549764514,
+      "face_jump_rms": 0.15291376677595842
+    }
+  },
+  {
+    "recipe": "LeicaSTD",
+    "file": "NikonRecipes_LeicaSTD_Y8.xmp",
+    "uuid": "EDE9B8750D5E5F06BFAA75C3148430B8",
+    "sha256": "f0a4348c3033b7f0786985e9cc9aa01ef4726ec1293b4934520794660982059f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5755893566124295,
+      "median": 0.4387801751083629,
+      "p95": 1.5432007925050883,
+      "sample_count": 21642,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2134,
+        "mean": 0.6249604561950416,
+        "p95": 1.6959072822467276
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.40838271551455985,
+      "face_jump_max": 0.8937787818307772,
+      "face_jump_rms": 0.11010708575419763
+    }
+  },
+  {
+    "recipe": "LeicaVIV",
+    "file": "NikonRecipes_LeicaVIV_Y8.xmp",
+    "uuid": "B15CB78773155A259E80BCA9FB4018BF",
+    "sha256": "60147c2efbd0e9e0bf689956b0bb67006c4d8f932d8bc924fe61d9f1f69750fc",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6231960770805224,
+      "median": 0.47150396717401455,
+      "p95": 1.6482371455012246,
+      "sample_count": 21832,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2145,
+        "mean": 0.6674732203743093,
+        "p95": 1.7300652491496764
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.41355037052112475,
+      "face_jump_max": 1.0289481793625646,
+      "face_jump_rms": 0.12419196515337542
+    }
+  },
+  {
+    "recipe": "LoFi",
+    "file": "NikonRecipes_LoFi_Y8.xmp",
+    "uuid": "1FCE060337865FFEB1C0166C785038FC",
+    "sha256": "cc650b4e55fda29c20e71ec585bf10baaf7f88546e2e712ba3c32bb352c50544",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7336829743186156,
+      "median": 0.5890246322203391,
+      "p95": 1.8507784833675067,
+      "sample_count": 20812,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2073,
+        "mean": 0.7838053191363848,
+        "p95": 1.9622984053771044
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5305723216927737,
+      "face_jump_max": 1.1752900006712304,
+      "face_jump_rms": 0.17347105899749432
+    }
+  },
+  {
+    "recipe": "MGA_AcrosLike_FC",
+    "file": "NikonRecipes_MGA_AcrosLike_FC_Y8.xmp",
+    "uuid": "571CC1F6486159BBA790F75ADA837334",
+    "sha256": "aca2d60a0cc5c1d0cf7f5b5fb58f67b19e5a5790c5799be6a6d3ce95e377ce23",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.521462496156176,
+      "median": 0.3681528167282022,
+      "p95": 1.4621322683442388,
+      "sample_count": 24046,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2376,
+        "mean": 0.5341771765656332,
+        "p95": 1.4666032195565295
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.7394855607727877,
+      "face_jump_max": 2.168279094740151,
+      "face_jump_rms": 0.1955665645183956
+    }
+  },
+  {
+    "recipe": "MGA_BW_Portrait_FC",
+    "file": "NikonRecipes_MGA_BW_Portrait_FC_Y8.xmp",
+    "uuid": "C158B416DB675BFE9327956F5A1D49BD",
+    "sha256": "1cdf4bbf6d3ad36a96a706af6e26219a92c05a568f702fd653cd306f6c73e304",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.5399458884727262,
+      "median": 0.2750211265207138,
+      "p95": 1.820073817707976,
+      "sample_count": 24019,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2373,
+        "mean": 0.5430703475243375,
+        "p95": 1.8232446580693376
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.8763586868618096,
+      "face_jump_max": 2.0697942105517098,
+      "face_jump_rms": 0.22276040761901772
+    }
+  },
+  {
+    "recipe": "MGA_EverydayChromeW",
+    "file": "NikonRecipes_MGA_EverydayChromeW_Y8.xmp",
+    "uuid": "456A9A1F0B905E51BDBA958B850E8585",
+    "sha256": "43d7a65c92827bc906ab82cf183bc5fc40ef45d8349bcfa5e934eb798474927a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.2225641986841636,
+      "median": 1.0320854220213367,
+      "p95": 2.7587089374092675,
+      "sample_count": 14526,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1398,
+        "mean": 1.2606091534202857,
+        "p95": 2.8629407231542623
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5892459448624157,
+      "face_jump_max": 1.49532829447754,
+      "face_jump_rms": 0.1933466323311482
+    }
+  },
+  {
+    "recipe": "MGA_Everyday_Chrome",
+    "file": "NikonRecipes_MGA_Everyday_Chrome_Y8.xmp",
+    "uuid": "DF4C2D59F60556D98BE12F3BB970B422",
+    "sha256": "216c115d33f21d8cc87092eae3404f4aba2ca0e3fd1f438577894acf1cb657d8",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.1971880053416115,
+      "median": 1.012174583982469,
+      "p95": 2.779624393780486,
+      "sample_count": 14727,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1423,
+        "mean": 1.2274484253532743,
+        "p95": 2.8312674824592157
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5697736241936069,
+      "face_jump_max": 1.4585020055860403,
+      "face_jump_rms": 0.18951352711134686
+    }
+  },
+  {
+    "recipe": "MGA_Futurist_FC",
+    "file": "NikonRecipes_MGA_Futurist_FC_Y8.xmp",
+    "uuid": "428FE05C03D05207B3D7A246F7618CF6",
+    "sha256": "f03fd4ca3061f4e42096a9197b4d15ac912eb495888e51b76a27150bb28d5f70",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.4763708635880228,
+      "median": 1.0601001345335543,
+      "p95": 4.17750902974282,
+      "sample_count": 17072,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1691,
+        "mean": 1.53662350284865,
+        "p95": 4.1139258304273225
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.8638648738297223,
+      "face_jump_max": 1.6437253850614466,
+      "face_jump_rms": 0.25524149979328276
+    }
+  },
+  {
+    "recipe": "MGA_HCM-Street",
+    "file": "NikonRecipes_MGA_HCM-Street_Y8.xmp",
+    "uuid": "6D651E30695F5E599A6433DED688DB81",
+    "sha256": "50dceb6a6438a7771230964beb6d6047ba1c9affd9221cd9f0b5185b7ba839c9",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.4863517497084955,
+      "median": 0.13518617360068988,
+      "p95": 2.11645678302923,
+      "sample_count": 24333,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.47705328483664133,
+        "p95": 2.0187564798595856
+      }
+    },
+    "banding": {
+      "face_jump_p99": 1.248672562743135,
+      "face_jump_max": 3.575304449124655,
+      "face_jump_rms": 0.3068412215681828
+    }
+  },
+  {
+    "recipe": "MGA_In-An-Instant",
+    "file": "NikonRecipes_MGA_In-An-Instant_Y8.xmp",
+    "uuid": "62E15A5B7CD05138ACE0705E52166777",
+    "sha256": "346e6a5dd87fada13b9b0f4d1d24982f87bdd8d3a6d7e9d8f22a76f78059fae9",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.7335480548326339,
+      "median": 0.6004561253542647,
+      "p95": 1.7015845735156805,
+      "sample_count": 19781,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1969,
+        "mean": 0.7270619845002317,
+        "p95": 1.650092215401654
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4957707028933236,
+      "face_jump_max": 1.4080142969624208,
+      "face_jump_rms": 0.15030573957124557
+    }
+  },
+  {
+    "recipe": "MGA_In-An-InstantBW",
+    "file": "NikonRecipes_MGA_In-An-InstantBW_Y8.xmp",
+    "uuid": "334351473699593087EB0445C1792FA1",
+    "sha256": "26f4259e093cc35e0db1a171cbfa449e4c7938915cb6bc3eee6cc5c3510fc3ab",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.3396137472572138,
+      "median": 0.19950158582949945,
+      "p95": 1.0630367514436945,
+      "sample_count": 23520,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2327,
+        "mean": 0.3208805592782413,
+        "p95": 1.0192126415412408
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.42060398864449144,
+      "face_jump_max": 1.6959246711300926,
+      "face_jump_rms": 0.11408956988918137
+    }
+  },
+  {
+    "recipe": "MGA_Klassic_Khrome",
+    "file": "NikonRecipes_MGA_Klassic_Khrome_Y8.xmp",
+    "uuid": "A074FED3B553562ABEA26A2853AD730C",
+    "sha256": "19c5e6f39979c03e0ca2333fa7db21c7c0b650749493636f8f44ee1059c6b8b5",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.7756054711787117,
+      "median": 0.6348403152572997,
+      "p95": 1.819562202015601,
+      "sample_count": 19790,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1977,
+        "mean": 0.8064404631996792,
+        "p95": 1.9613308509878535
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4589276539181336,
+      "face_jump_max": 0.8865128956919839,
+      "face_jump_rms": 0.1486091696522469
+    }
+  },
+  {
+    "recipe": "MGA_Kodachrome_2025",
+    "file": "NikonRecipes_MGA_Kodachrome_2025_Y8.xmp",
+    "uuid": "3945B398E648525A8F3A1C634F8778FA",
+    "sha256": "f2d0ad1a14522dc8cd0190f66d2bd416ccc29e7c8e9c1cdf1bb3bc87aff78984",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.572271137569412,
+      "median": 1.177385618763935,
+      "p95": 4.069142720152155,
+      "sample_count": 19425,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1944,
+        "mean": 1.6279581573054196,
+        "p95": 4.217941722494724
+      }
+    },
+    "banding": {
+      "face_jump_p99": 1.114985288787003,
+      "face_jump_max": 2.385463203540639,
+      "face_jump_rms": 0.3012940892452833
+    }
+  },
+  {
+    "recipe": "MGA_LeicaMono_FC",
+    "file": "NikonRecipes_MGA_LeicaMono_FC_Y8.xmp",
+    "uuid": "1F26ADA10E715381B183B42D1E23CC0F",
+    "sha256": "0a26f7d9d8057e1d443eb570943862da6aa22ad11a00fbcb6e9242e402ee5ec7",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.5371639220325627,
+      "median": 0.35852841570858707,
+      "p95": 1.5908661475900978,
+      "sample_count": 23944,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2368,
+        "mean": 0.5145131915298304,
+        "p95": 1.52854067036137
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5422636953144556,
+      "face_jump_max": 1.8411463606262797,
+      "face_jump_rms": 0.14736319968968345
+    }
+  },
+  {
+    "recipe": "MGA_MonoFilmic_FC",
+    "file": "NikonRecipes_MGA_MonoFilmic_FC_Y8.xmp",
+    "uuid": "8C1FFBC4896851C9ACA27596FD69D260",
+    "sha256": "f06147128f90e5a6a1a698c0a34d60631a048d76b0c36004c04f8ef43cb31848",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.22695455313753718,
+      "median": 0.13968598792379078,
+      "p95": 0.7149550263845948,
+      "sample_count": 24328,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.2363266822531309,
+        "p95": 0.6844356088161041
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3989738253606936,
+      "face_jump_max": 0.9902864745601203,
+      "face_jump_rms": 0.11161579554895805
+    }
+  },
+  {
+    "recipe": "MGA_Natural_FC",
+    "file": "NikonRecipes_MGA_Natural_FC_Y8.xmp",
+    "uuid": "384306346128529490C09DD5CCDCE977",
+    "sha256": "9da23cb0306c8ac5a123ca667d0bcd62e66d0856b282b5260166561f2448ea3a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.040418863089137,
+      "median": 0.8227892323091731,
+      "p95": 2.6232885559865293,
+      "sample_count": 16756,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1653,
+        "mean": 1.063678313372544,
+        "p95": 2.6885201123527853
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6810401975525044,
+      "face_jump_max": 1.8187617766201223,
+      "face_jump_rms": 0.20820774851952123
+    }
+  },
+  {
+    "recipe": "MGA_Nostalgic_FC",
+    "file": "NikonRecipes_MGA_Nostalgic_FC_Y8.xmp",
+    "uuid": "3E975850656454D2B91429FB11F15987",
+    "sha256": "82613abd1d88ac54ab4284814ee82f5f9d0de5694e15b1b7b2b6d5bec53ee4d2",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.2725282659733543,
+      "median": 0.9723460935297892,
+      "p95": 3.2518996621388827,
+      "sample_count": 19936,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1984,
+        "mean": 1.3200387479888787,
+        "p95": 3.3022685472512707
+      }
+    },
+    "banding": {
+      "face_jump_p99": 1.0769003846597658,
+      "face_jump_max": 2.3114559316164285,
+      "face_jump_rms": 0.28216516842575845
+    }
+  },
+  {
+    "recipe": "MGA_Nostalgic_Past",
+    "file": "NikonRecipes_MGA_Nostalgic_Past_Y8.xmp",
+    "uuid": "57C25E1A061E53D58AE96A17A48EF1D4",
+    "sha256": "781fdebe81fd94ae9862753fc0d46f64e84b4f7f75db8d6bd65337911e20b556",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.7640198001473532,
+      "median": 0.5784537098873817,
+      "p95": 1.9738164292829619,
+      "sample_count": 21835,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2151,
+        "mean": 0.7760429693487488,
+        "p95": 1.9001368520860111
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6308779642109689,
+      "face_jump_max": 1.4546857070066828,
+      "face_jump_rms": 0.17468008357447137
+    }
+  },
+  {
+    "recipe": "MGA_OldFilmish_FC",
+    "file": "NikonRecipes_MGA_OldFilmish_FC_Y8.xmp",
+    "uuid": "ABA8394087525F7191E32A399EC7EAA3",
+    "sha256": "0437bab78bbff8dd2eeb53cdfc9a86c0bcb139f14c198bbcfa8dc2ec0b694410",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.183780810455675,
+      "median": 0.9852918600756035,
+      "p95": 2.6718849924792534,
+      "sample_count": 20024,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1997,
+        "mean": 1.1975964171572189,
+        "p95": 2.7730120525679554
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.9552108512162022,
+      "face_jump_max": 2.4250657121807717,
+      "face_jump_rms": 0.2579969937943409
+    }
+  },
+  {
+    "recipe": "MGA_OldSchool_RTP",
+    "file": "NikonRecipes_MGA_OldSchool_RTP_Y8.xmp",
+    "uuid": "C8E08B001F7C50D59EC999395CFB383A",
+    "sha256": "92f270ea446f68784732dc64f3aaf70e1b221eecd59cb6bbeb15e5b4a603c929",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6776808435352932,
+      "median": 0.5386319059356287,
+      "p95": 1.7172900004471723,
+      "sample_count": 18711,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1871,
+        "mean": 0.6954431606501399,
+        "p95": 1.7153851090278516
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.49231408744249633,
+      "face_jump_max": 0.9903775289760851,
+      "face_jump_rms": 0.16331570886805868
+    }
+  },
+  {
+    "recipe": "MGA_Paintry_FC",
+    "file": "NikonRecipes_MGA_Paintry_FC_Y8.xmp",
+    "uuid": "829B3F5742535BEA8717FAD69F92E45E",
+    "sha256": "f6899d222011986062aead6c9b4b4a49827d39fcd6d781134b04741f1497ef73",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.4338323243672444,
+      "median": 1.088726375454451,
+      "p95": 3.818990451342268,
+      "sample_count": 18271,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1817,
+        "mean": 1.436863965149964,
+        "p95": 3.9206755936044546
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.8420404527045146,
+      "face_jump_max": 1.9992463810878154,
+      "face_jump_rms": 0.2312864269771697
+    }
+  },
+  {
+    "recipe": "MGA_Pop!_(Blue)",
+    "file": "NikonRecipes_MGA_Pop!_(Blue)_Y8.xmp",
+    "uuid": "DEE9F8EB8233570294AC2DD2AB3097E6",
+    "sha256": "1c64ed45236cc84ac8c660de743ca59a764c708be37322992058c9dc1672d179",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.1914845897397388,
+      "median": 0.7041542503200738,
+      "p95": 4.159129217518893,
+      "sample_count": 23359,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2312,
+        "mean": 1.2157295593986968,
+        "p95": 4.453602026407381
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.7394955588710644,
+      "face_jump_max": 1.4816364842971403,
+      "face_jump_rms": 0.18874782791677233
+    }
+  },
+  {
+    "recipe": "MGA_Pop!_(Green)",
+    "file": "NikonRecipes_MGA_Pop!_(Green)_Y8.xmp",
+    "uuid": "ABF21D36D7D4533ABE376A09AEA39B66",
+    "sha256": "18900710953d832f7651c42398d0ebb7639a6cf2f7ac6cf6d24cc57e66a67dfe",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.4335457502146434,
+      "median": 1.1192562115414315,
+      "p95": 3.8740510816390272,
+      "sample_count": 22772,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2255,
+        "mean": 1.4593671224692402,
+        "p95": 4.062801736941346
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.7208186983171359,
+      "face_jump_max": 1.6855106196283383,
+      "face_jump_rms": 0.1886044125624786
+    }
+  },
+  {
+    "recipe": "MGA_Pop!_(Red)",
+    "file": "NikonRecipes_MGA_Pop!_(Red)_Y8.xmp",
+    "uuid": "F6DB3FEF790B5F34A472CCA75D13B0FE",
+    "sha256": "1b0cdb857f29c70510e6d682e7da6f23486b3041b432f65f36ca751ec183b3e8",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.2435910066932736,
+      "median": 0.6938020038823479,
+      "p95": 4.6538244694997335,
+      "sample_count": 23753,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2351,
+        "mean": 1.2585548767697525,
+        "p95": 5.034273768749447
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.7986747872406115,
+      "face_jump_max": 1.7557821796449327,
+      "face_jump_rms": 0.2053939804745399
+    }
+  },
+  {
+    "recipe": "MGA_Portra-Fade_FC",
+    "file": "NikonRecipes_MGA_Portra-Fade_FC_Y8.xmp",
+    "uuid": "C76D0BEE4D3857B7A8DF7C4B1EEA2503",
+    "sha256": "b48d8a03c505159a9a9bfcdea1dca9722ff81587a43d2413011c7a3227795404",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.0024034841212395,
+      "median": 0.7795053318254261,
+      "p95": 2.4337897821833643,
+      "sample_count": 21918,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2176,
+        "mean": 1.0021778090773874,
+        "p95": 2.513407318343903
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4992227094352077,
+      "face_jump_max": 1.1372484466985213,
+      "face_jump_rms": 0.16518702137725316
+    }
+  },
+  {
+    "recipe": "MGA_Portra-Ish_FC",
+    "file": "NikonRecipes_MGA_Portra-Ish_FC_Y8.xmp",
+    "uuid": "7C4CECF2ECDD54E3A7C89D504600BBBB",
+    "sha256": "59db371038fa7761b2bcec36ac3496267fff6febabf192e0f720866c89922f78",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.8052806410633327,
+      "median": 0.6069530308160113,
+      "p95": 2.13862101690521,
+      "sample_count": 20734,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2069,
+        "mean": 0.8234387393885136,
+        "p95": 2.2315611439297602
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4636829844986542,
+      "face_jump_max": 1.1439772675884263,
+      "face_jump_rms": 0.14340777358580245
+    }
+  },
+  {
+    "recipe": "MGA_Retrofy",
+    "file": "NikonRecipes_MGA_Retrofy_Y8.xmp",
+    "uuid": "846D1BA3C09B5D7EA2C48C19FBC93690",
+    "sha256": "026fc13187d90771c67b03573bab276f8fcb3c102dcf25d1721d0e779d648a33",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.8315207299922798,
+      "median": 1.516236633917524,
+      "p95": 4.148089160076169,
+      "sample_count": 18275,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1829,
+        "mean": 1.8616291745070377,
+        "p95": 4.2654247790590665
+      }
+    },
+    "banding": {
+      "face_jump_p99": 1.028306656903263,
+      "face_jump_max": 2.2326103868765674,
+      "face_jump_rms": 0.2996929775481501
+    }
+  },
+  {
+    "recipe": "MGA_Retrofy_2",
+    "file": "NikonRecipes_MGA_Retrofy_2_Y8.xmp",
+    "uuid": "8A3EF7ECB1C65FB3AB4911B376064552",
+    "sha256": "48b3f49cf48586953264bd6f8d2ef733946d52d704ac312fc98c94de3aa599da",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.4432734285487152,
+      "median": 1.1772417349822508,
+      "p95": 3.2891728117347054,
+      "sample_count": 20371,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2020,
+        "mean": 1.4365478915628127,
+        "p95": 3.1204973168496632
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.7603922292364067,
+      "face_jump_max": 1.7564878011941472,
+      "face_jump_rms": 0.22234876196421088
+    }
+  },
+  {
+    "recipe": "MGA_Sandstorm",
+    "file": "NikonRecipes_MGA_Sandstorm_Y8.xmp",
+    "uuid": "391A01DF54A05CFCB8E1D699208E6CA9",
+    "sha256": "bd26e106a4682034362871197c2b749dcf910b6b1d1ece87121361ab374a8bf9",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6868075722561512,
+      "median": 0.5154507818582625,
+      "p95": 1.8410649510783577,
+      "sample_count": 17956,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1768,
+        "mean": 0.7167902950331655,
+        "p95": 1.8728781465689055
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6632979686266234,
+      "face_jump_max": 1.3184778901732288,
+      "face_jump_rms": 0.18774480869120194
+    }
+  },
+  {
+    "recipe": "MGA_Slide",
+    "file": "NikonRecipes_MGA_Slide_Y8.xmp",
+    "uuid": "C436044A0BCC5CFB8274C7663BCC0641",
+    "sha256": "b3d983634f7c2ac6fd1618c86e2e233c3f56a6ac89a461938987066a8aac33e7",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.0284621234724665,
+      "median": 0.8674531810409525,
+      "p95": 2.1610544750039153,
+      "sample_count": 19232,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1913,
+        "mean": 1.0295954554274243,
+        "p95": 2.2171915794459203
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6100876328183299,
+      "face_jump_max": 1.6583566472765365,
+      "face_jump_rms": 0.19636271958532583
+    }
+  },
+  {
+    "recipe": "MGA_Slide_2",
+    "file": "NikonRecipes_MGA_Slide_2_Y8.xmp",
+    "uuid": "7D791F408EA458FF90131EB406543337",
+    "sha256": "a6e6e29f1b4816563e362857f334d19a7810d25e4abd5b98e06b75d8e613a87f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.0291773787327347,
+      "median": 0.8387404829325311,
+      "p95": 2.580020937015247,
+      "sample_count": 16748,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1658,
+        "mean": 1.077465692771283,
+        "p95": 2.570111486090417
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.8574038407681118,
+      "face_jump_max": 2.490992253909781,
+      "face_jump_rms": 0.2584429143429397
+    }
+  },
+  {
+    "recipe": "MGA_Standard_MovieT",
+    "file": "NikonRecipes_MGA_Standard_MovieT_Y8.xmp",
+    "uuid": "BB924CD8BF0E507593104C15334B1C42",
+    "sha256": "9896788c945737aaa1f1d02f399d14c9c4b6ae382b576c86e4e4f693c410cfbc",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7749275536422603,
+      "median": 0.6336040598885497,
+      "p95": 1.862848834972366,
+      "sample_count": 12696,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1280,
+        "mean": 0.7942149400468205,
+        "p95": 1.8940437248697541
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6450968150620974,
+      "face_jump_max": 1.5484303387842593,
+      "face_jump_rms": 0.19703651348422713
+    }
+  },
+  {
+    "recipe": "MGA_Summer_Memories",
+    "file": "NikonRecipes_MGA_Summer_Memories_Y8.xmp",
+    "uuid": "46E4CB8D6BAF549F9A859EF6169A0E33",
+    "sha256": "9742cdec6f5dea9ab9995b99beae0db85da4846a398752a90a334fb432a916b1",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.849164224208397,
+      "median": 1.369079213609039,
+      "p95": 4.817482682395865,
+      "sample_count": 16654,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1671,
+        "mean": 1.9663514991099382,
+        "p95": 5.207182275205023
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.9268354785741277,
+      "face_jump_max": 1.9634023224778778,
+      "face_jump_rms": 0.27109857561715317
+    }
+  },
+  {
+    "recipe": "MGA_TriX",
+    "file": "NikonRecipes_MGA_TriX_Y8.xmp",
+    "uuid": "1241F68586795E059F7709CE65517AFA",
+    "sha256": "983206d790665e2ae50ef7f8e64ea4fa857491d4fb5c9da2c28f4e85a41ebcee",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.4063832677178701,
+      "median": 0.16931493336073292,
+      "p95": 1.5797233447757009,
+      "sample_count": 24333,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.4230687001180197,
+        "p95": 1.6402041437902504
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.9686576054622558,
+      "face_jump_max": 2.655311811731454,
+      "face_jump_rms": 0.2374848878406062
+    }
+  },
+  {
+    "recipe": "MGA_WEZZY",
+    "file": "NikonRecipes_MGA_WEZZY_Y8.xmp",
+    "uuid": "85A6CF4839A453B8AF39516B4FD39161",
+    "sha256": "a0a61e4b74a51ca916fb937f6f6b7c2bc33813106ff3c7ca2b494f9ac6502231",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.5294509584918503,
+      "median": 1.1354967291528681,
+      "p95": 4.1418909561322605,
+      "sample_count": 16722,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1670,
+        "mean": 1.6604935544172752,
+        "p95": 4.5539179574038835
+      }
+    },
+    "banding": {
+      "face_jump_p99": 1.1142590340259348,
+      "face_jump_max": 2.2325635826285435,
+      "face_jump_rms": 0.2946309311149295
+    }
+  },
+  {
+    "recipe": "MNightBlush_Preston",
+    "file": "NikonRecipes_MNightBlush_Preston_Y8.xmp",
+    "uuid": "58B32EAC75EA54809AF86DC6072FDE26",
+    "sha256": "9f19303584cb187936f4f17b4291bd38e53cb70e447a686f5fe63fff70a133f5",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8109423304030497,
+      "median": 0.6118710401765567,
+      "p95": 2.1565169354454943,
+      "sample_count": 20399,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2046,
+        "mean": 0.8432065912810085,
+        "p95": 2.2761810402818043
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.41927057013461655,
+      "face_jump_max": 1.0749911416767144,
+      "face_jump_rms": 0.12943051000781614
+    }
+  },
+  {
+    "recipe": "MOSS_Nagisa",
+    "file": "NikonRecipes_MOSS_Nagisa_Y8.xmp",
+    "uuid": "D0A1A0093A205627B97845F3FCBDDA18",
+    "sha256": "38a2f7f85eef598add18b074d618b2b106e198a749d0d104ba51ac10adbee3a7",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6501379193126243,
+      "median": 0.5014725041671648,
+      "p95": 1.7362183321517346,
+      "sample_count": 20116,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1998,
+        "mean": 0.6842865137448919,
+        "p95": 1.8212161577803985
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4970661948070449,
+      "face_jump_max": 0.8263290998926381,
+      "face_jump_rms": 0.15470878480391528
+    }
+  },
+  {
+    "recipe": "MV_Green_Orange_Woo",
+    "file": "NikonRecipes_MV_Green_Orange_Woo_Y8.xmp",
+    "uuid": "7ABCEEE8462D542B829B239A40280BB7",
+    "sha256": "df9a40a8c8ad6a1690b3aa2af23435f496707d4774fabbbad9e2dfa85d1fce9c",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.4834654192626753,
+      "median": 1.1311719310045207,
+      "p95": 3.9819855135840347,
+      "sample_count": 19620,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1951,
+        "mean": 1.561954812963158,
+        "p95": 4.4763953282028766
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6042923131578694,
+      "face_jump_max": 1.3994635610422494,
+      "face_jump_rms": 0.18924821797763694
+    }
+  },
+  {
+    "recipe": "MatteBlueGray_tanco",
+    "file": "NikonRecipes_MatteBlueGray_tanco_Y8.xmp",
+    "uuid": "350157F17057593CB30BA1A6D843D3B8",
+    "sha256": "79dd29bbced2d8b3e8af7faa13a6d025c5a857557bd3850200ce8431de738361",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.4650257229139073,
+      "median": 0.35950243924660585,
+      "p95": 1.183274198895409,
+      "sample_count": 23551,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2338,
+        "mean": 0.48374878441092806,
+        "p95": 1.283231430258288
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.332389106482335,
+      "face_jump_max": 0.7597210080101019,
+      "face_jump_rms": 0.09674004924554877
+    }
+  },
+  {
+    "recipe": "MoistureGn_HirokiN",
+    "file": "NikonRecipes_MoistureGn_HirokiN_Y8.xmp",
+    "uuid": "180A9E021EF85522B9D874D459023C93",
+    "sha256": "f0ede241dfa1d19c3c95a6b3f20d97b1d49b672c4f61daea36c11f2f5ea0b76b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.6684300054747874,
+      "median": 0.5501344746295656,
+      "p95": 1.6457000993302278,
+      "sample_count": 20001,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1978,
+        "mean": 0.6715085874694707,
+        "p95": 1.6030174140448767
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5058012357809379,
+      "face_jump_max": 1.3575752349394858,
+      "face_jump_rms": 0.14268796076803344
+    }
+  },
+  {
+    "recipe": "MoodyGr_BrittanyK",
+    "file": "NikonRecipes_MoodyGr_BrittanyK_Y8.xmp",
+    "uuid": "F734D15281E158C3A887994E62B52CE6",
+    "sha256": "a34b041a5b48f0b84bd921e9f4af43fde2443b0f04f30a2132c7d6a389959c3f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.0148103716149828,
+      "median": 0.7108268666704456,
+      "p95": 2.9755078664554335,
+      "sample_count": 20746,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2060,
+        "mean": 1.0768676725210227,
+        "p95": 3.182627638990989
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5984379758401634,
+      "face_jump_max": 1.2859207197825047,
+      "face_jump_rms": 0.1581705447842642
+    }
+  },
+  {
+    "recipe": "MoodyShadows_Gilmar",
+    "file": "NikonRecipes_MoodyShadows_Gilmar_Y8.xmp",
+    "uuid": "D6191B6E60A651DC9E4BAC87708C0730",
+    "sha256": "ac346c50c435cc133c5cba0768d3ae56e9bcd0e432dd3cef7c6749d65a4dc266",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5952413251710127,
+      "median": 0.4922318247210332,
+      "p95": 1.4266693424492187,
+      "sample_count": 22144,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2176,
+        "mean": 0.6254748973382884,
+        "p95": 1.5230401961157238
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.44754107597140264,
+      "face_jump_max": 1.2251245861762567,
+      "face_jump_rms": 0.13381928000263177
+    }
+  },
+  {
+    "recipe": "MovieG&O_InstantF",
+    "file": "NikonRecipes_MovieG&O_InstantF_Y8.xmp",
+    "uuid": "6D21D0CA3F4051D29C49A019DFA14FED",
+    "sha256": "f3c3d9bf5ebef3ad216d79bfe669b587aeddf2dbaa69e27cf5e23599fe48d594",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.4367096352545589,
+      "median": 0.32397602827899086,
+      "p95": 1.1748462914571156,
+      "sample_count": 24134,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2397,
+        "mean": 0.4542881713205495,
+        "p95": 1.2085848619478503
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.33561980739523795,
+      "face_jump_max": 0.7395900336620281,
+      "face_jump_rms": 0.09891973449378061
+    }
+  },
+  {
+    "recipe": "N-3+rossandhisjpegs",
+    "file": "NikonRecipes_N-3+rossandhisjpegs_Y8.xmp",
+    "uuid": "6B5E72D2CBF8542FB4679E9A6E6D1A6D",
+    "sha256": "3ed567b1f99b4d20a7b4f788265615067398edf73c095037719127d15275d51f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6529730374818069,
+      "median": 0.49242023970836435,
+      "p95": 1.7700587137566643,
+      "sample_count": 21310,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2116,
+        "mean": 0.6740497745109479,
+        "p95": 1.7793682870846674
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4916198612356775,
+      "face_jump_max": 1.7489857708058367,
+      "face_jump_rms": 0.1546104836345158
+    }
+  },
+  {
+    "recipe": "Nature_Links",
+    "file": "NikonRecipes_Nature_Links_Y8.xmp",
+    "uuid": "CF924C0E97985CFB828EA2BE314D344F",
+    "sha256": "5f5db1c59028f729ed6ca62b6ebf25daf3978f895410a31d5eac82c0befc06db",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5834211930757148,
+      "median": 0.4403312375941101,
+      "p95": 1.5985579228759526,
+      "sample_count": 19288,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1923,
+        "mean": 0.6025466718755671,
+        "p95": 1.7044974740873982
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4153479377552554,
+      "face_jump_max": 0.8173265723233433,
+      "face_jump_rms": 0.13159708468073728
+    }
+  },
+  {
+    "recipe": "Negative_Bu_01a",
+    "file": "NikonRecipes_Negative_Bu_01a_Y8.xmp",
+    "uuid": "C2897F692F8A5329A7BC1CC6B768796F",
+    "sha256": "695d2960a0ac5c91099b78f5efadaac3a11a6cb55531b6466cf4afc9d3e7dc06",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5730925910183358,
+      "median": 0.44461210951322416,
+      "p95": 1.449890918197872,
+      "sample_count": 21548,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2159,
+        "mean": 0.5987556677621914,
+        "p95": 1.547593251665778
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.41321166375569385,
+      "face_jump_max": 0.9121186118705596,
+      "face_jump_rms": 0.11898541513547589
+    }
+  },
+  {
+    "recipe": "Negative_Bu_01b",
+    "file": "NikonRecipes_Negative_Bu_01b_Y8.xmp",
+    "uuid": "B801137D58865508B0BB62D46EA7F5A3",
+    "sha256": "e414db1e62cd973ad0769226c73ea8ffcf13b413d32fa2c9c6092683c2292841",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6504221046690111,
+      "median": 0.4831093803640881,
+      "p95": 1.7392675305228817,
+      "sample_count": 17569,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1779,
+        "mean": 0.6740291974234143,
+        "p95": 1.8293363548226182
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4812704462274028,
+      "face_jump_max": 0.9153890634069468,
+      "face_jump_rms": 0.14293402026403337
+    }
+  },
+  {
+    "recipe": "Negative_CyBu_01a",
+    "file": "NikonRecipes_Negative_CyBu_01a_Y8.xmp",
+    "uuid": "E4539A118E91524CB21AFB88CBD7C6CC",
+    "sha256": "b9af96bdf645851d7ab7947c7215ac48b48baeaf5e9c92c94e20c648335dba8b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6790669023883803,
+      "median": 0.5267478979007701,
+      "p95": 1.752984189482998,
+      "sample_count": 19623,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1966,
+        "mean": 0.7024623025873463,
+        "p95": 1.8960581505957406
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.45627335503965327,
+      "face_jump_max": 1.0158036735686882,
+      "face_jump_rms": 0.1377302604628455
+    }
+  },
+  {
+    "recipe": "Negative_CyBu_01b",
+    "file": "NikonRecipes_Negative_CyBu_01b_Y8.xmp",
+    "uuid": "8FE8E4A47F0250ACBFF4BDDBCCD90AE0",
+    "sha256": "c0cd388df89980fbb2431dea2caa3c786918a9a831270df597e58b5e558fb87b",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6550575865961091,
+      "median": 0.4874245664319494,
+      "p95": 1.7210939729265136,
+      "sample_count": 16613,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1672,
+        "mean": 0.6908331859740962,
+        "p95": 1.8421110247966812
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.47604767354430777,
+      "face_jump_max": 1.028248801510739,
+      "face_jump_rms": 0.14682615808868274
+    }
+  },
+  {
+    "recipe": "Negative_Cy_01a",
+    "file": "NikonRecipes_Negative_Cy_01a_Y8.xmp",
+    "uuid": "A6F88C8B46885131BC1FC888FE93747D",
+    "sha256": "5bf9bbb60a42376fe881ffe2af193fd09d9aa3b8525d5b13cc63b31bc6335755",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6712555000508769,
+      "median": 0.5440608090815338,
+      "p95": 1.6350027360790789,
+      "sample_count": 20970,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2104,
+        "mean": 0.6790526846595576,
+        "p95": 1.6317932942723263
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4100264258290058,
+      "face_jump_max": 0.8879678053752219,
+      "face_jump_rms": 0.12238045281606806
+    }
+  },
+  {
+    "recipe": "Negative_GnCy_01a",
+    "file": "NikonRecipes_Negative_GnCy_01a_Y8.xmp",
+    "uuid": "5A099168056955C0803962E8973866A4",
+    "sha256": "4a1e1fd9fa069c622ae6cc20e0a1f2de105593192558c23fb354c8e7ff3d191a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7121051968802923,
+      "median": 0.5450717520516802,
+      "p95": 1.8940248313439314,
+      "sample_count": 18933,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1903,
+        "mean": 0.7398831307725697,
+        "p95": 2.0755204136594667
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.45592798176322863,
+      "face_jump_max": 0.9826854302778908,
+      "face_jump_rms": 0.13597770307542845
+    }
+  },
+  {
+    "recipe": "Negative_GnCy_01b",
+    "file": "NikonRecipes_Negative_GnCy_01b_Y8.xmp",
+    "uuid": "5F44D062C72A5BD8906C5463C60695D0",
+    "sha256": "0e4313c6491d692897519387e4b85f60b3ccca49b392e9545a282096c91c76f0",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7875507717021475,
+      "median": 0.5763810619516615,
+      "p95": 2.1341184972770497,
+      "sample_count": 14705,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1481,
+        "mean": 0.8202214770720225,
+        "p95": 2.1804021547895336
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.488460522034207,
+      "face_jump_max": 1.0501235430872802,
+      "face_jump_rms": 0.1568234806430435
+    }
+  },
+  {
+    "recipe": "Negative_RdCy_01a",
+    "file": "NikonRecipes_Negative_RdCy_01a_Y8.xmp",
+    "uuid": "14C60AD7CE24533197A9385F65C6C81E",
+    "sha256": "d5145af4851ba048c92d95aed16c47b0d57dc540bf10ee2126dcf8bf69cf97c6",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6578276509562385,
+      "median": 0.5078938561511442,
+      "p95": 1.6430590183454754,
+      "sample_count": 19777,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1996,
+        "mean": 0.6796188647916831,
+        "p95": 1.706803668965024
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4240449220754396,
+      "face_jump_max": 0.950642792035953,
+      "face_jump_rms": 0.12693224633618455
+    }
+  },
+  {
+    "recipe": "Negative_RdCy_01b",
+    "file": "NikonRecipes_Negative_RdCy_01b_Y8.xmp",
+    "uuid": "9E0E746F7DAC5776A97A6A667BE86C7B",
+    "sha256": "6fa29994054bde86a8bd158ca48bdaf819f655d6438892a2ac1e4f2ba1b1d345",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7382057939977846,
+      "median": 0.5587024356461758,
+      "p95": 1.900236354350254,
+      "sample_count": 15219,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1540,
+        "mean": 0.7879325943914826,
+        "p95": 2.103983297187827
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4881597495511786,
+      "face_jump_max": 1.0604580593377664,
+      "face_jump_rms": 0.15208651090819372
+    }
+  },
+  {
+    "recipe": "Negative_T_01a",
+    "file": "NikonRecipes_Negative_T_01a_Y8.xmp",
+    "uuid": "4D21F316A1A15717AA7FD4807D8A0B07",
+    "sha256": "6ad298a1b9ce204de7058b3779d22a3ac779f71544301b02a1df54aa68dc50f9",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7523426400107077,
+      "median": 0.5928069964222602,
+      "p95": 1.9765549841225005,
+      "sample_count": 23321,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2300,
+        "mean": 0.7707254991535782,
+        "p95": 1.9861846295610524
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.46505511771900127,
+      "face_jump_max": 1.0322977303966931,
+      "face_jump_rms": 0.14526787450869136
+    }
+  },
+  {
+    "recipe": "Negative_T_01b",
+    "file": "NikonRecipes_Negative_T_01b_Y8.xmp",
+    "uuid": "BC7E6F476B0653FF85E6355BC3F27DCB",
+    "sha256": "4c9fbd9f4c465d1d31e70f7549300cb28538c06d52f90363bfdd50ed360271e0",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.804658807754856,
+      "median": 0.6158886031787606,
+      "p95": 2.220025880011143,
+      "sample_count": 20165,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1996,
+        "mean": 0.8247204816579938,
+        "p95": 2.184930085339946
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5179457362631168,
+      "face_jump_max": 1.353005294423116,
+      "face_jump_rms": 0.16335233116307546
+    }
+  },
+  {
+    "recipe": "Negative_YeCy_01a",
+    "file": "NikonRecipes_Negative_YeCy_01a_Y8.xmp",
+    "uuid": "2FB621A5CE2A5441B6EF60B1C3E27929",
+    "sha256": "b8397a3d42a406c9a59ccc7bc55b4df57f8ab61b65fe1f8a579210868bdbb791",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.46187228620426674,
+      "median": 0.36772440825156405,
+      "p95": 1.139785352973611,
+      "sample_count": 21138,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2127,
+        "mean": 0.47215535568129363,
+        "p95": 1.1734716855322143
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.32467561110523613,
+      "face_jump_max": 1.1472113702896192,
+      "face_jump_rms": 0.09828010165183597
+    }
+  },
+  {
+    "recipe": "Negative_YeCy_02a",
+    "file": "NikonRecipes_Negative_YeCy_02a_Y8.xmp",
+    "uuid": "1F4A0889B6E85E209EA1BE4FEFA1E7D5",
+    "sha256": "1ef6a95e3dda01c8236dc706194315144562224f4cc9fbc485e113a33a226402",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.44840363069808137,
+      "median": 0.35785985626316774,
+      "p95": 1.0871090851215335,
+      "sample_count": 20528,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2070,
+        "mean": 0.4577657449919608,
+        "p95": 1.142435971898552
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3383777726634098,
+      "face_jump_max": 1.0437772609402456,
+      "face_jump_rms": 0.09971021169526152
+    }
+  },
+  {
+    "recipe": "Negative_YeGn_01a",
+    "file": "NikonRecipes_Negative_YeGn_01a_Y8.xmp",
+    "uuid": "09553DB264BB5F10AE5EEA2019ED83E4",
+    "sha256": "67f9f37a5c8bdf990423c6635117fdb05ca3d2786a1894ba78c9c4e0af977f3e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8565079522388387,
+      "median": 0.6668422827817745,
+      "p95": 2.168738261657878,
+      "sample_count": 20785,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2089,
+        "mean": 0.8917113125589383,
+        "p95": 2.2178653293180193
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4739145991387093,
+      "face_jump_max": 1.0380625254148168,
+      "face_jump_rms": 0.14109704793708067
+    }
+  },
+  {
+    "recipe": "Negative_YeGn_01b",
+    "file": "NikonRecipes_Negative_YeGn_01b_Y8.xmp",
+    "uuid": "4A5A3D4655AC5C5BB27EE497652BD285",
+    "sha256": "888e99177919a9dda37a9ce5e118291483361c1d3672a2819e679153b1e72169",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8398911423249134,
+      "median": 0.6649606014976993,
+      "p95": 2.0704983444893577,
+      "sample_count": 17891,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1809,
+        "mean": 0.8907693062845239,
+        "p95": 2.1098357437755126
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4946439140814286,
+      "face_jump_max": 0.9934645847230354,
+      "face_jump_rms": 0.15759185122924405
+    }
+  },
+  {
+    "recipe": "Negative_Ye_01a",
+    "file": "NikonRecipes_Negative_Ye_01a_Y8.xmp",
+    "uuid": "DDFA8EEC51A4515DB3DD143648DB850D",
+    "sha256": "a52d6af0e6d3945a1133e369ec01165cbcbeb263c65c4ffe785070c21bb314d6",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.641089528111244,
+      "median": 0.5185425971663757,
+      "p95": 1.5764784660563287,
+      "sample_count": 21469,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2146,
+        "mean": 0.6720922731045731,
+        "p95": 1.7438329770661443
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4529207908691309,
+      "face_jump_max": 0.9176975706874859,
+      "face_jump_rms": 0.12659967515453147
+    }
+  },
+  {
+    "recipe": "Negative_Ye_01b",
+    "file": "NikonRecipes_Negative_Ye_01b_Y8.xmp",
+    "uuid": "054ABA4118385B578F634A2CEC8129BF",
+    "sha256": "be344172080e876c50d82645d169238f588c58fd36a2363fd1101228817ef56c",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6999796740427864,
+      "median": 0.5535305530058746,
+      "p95": 1.7028238022910456,
+      "sample_count": 17171,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1727,
+        "mean": 0.7187464629744609,
+        "p95": 1.6975273317023116
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5050659071601906,
+      "face_jump_max": 1.2007030775452756,
+      "face_jump_rms": 0.15173512552477156
+    }
+  },
+  {
+    "recipe": "Negative_Ye_02a",
+    "file": "NikonRecipes_Negative_Ye_02a_Y8.xmp",
+    "uuid": "8468026F43FF5D098C064D899FB826C0",
+    "sha256": "258d80ac40ed1532a34805eff9674ec25c4d4dba8ac1b09b128c80eba90872db",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6245948284154632,
+      "median": 0.5125131630362392,
+      "p95": 1.4821750960408375,
+      "sample_count": 21155,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2107,
+        "mean": 0.6482113601268918,
+        "p95": 1.6379826853009793
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.41776046649473975,
+      "face_jump_max": 0.9030202232158561,
+      "face_jump_rms": 0.12145444862763125
+    }
+  },
+  {
+    "recipe": "Negative_Ye_02b",
+    "file": "NikonRecipes_Negative_Ye_02b_Y8.xmp",
+    "uuid": "28457A632AD05E7A9F608ADA6CADD40D",
+    "sha256": "1b026fa84da0c6d43c5ecc69a3a02369cf4140f19da3e7349cf1b300d59da08f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7129595790368215,
+      "median": 0.5528312831524904,
+      "p95": 1.807403542114352,
+      "sample_count": 16421,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1650,
+        "mean": 0.7586134395112116,
+        "p95": 1.9542157539028497
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.46735044999332004,
+      "face_jump_max": 0.983598195603899,
+      "face_jump_rms": 0.14656863578898577
+    }
+  },
+  {
+    "recipe": "Negative_Ye_03a",
+    "file": "NikonRecipes_Negative_Ye_03a_Y8.xmp",
+    "uuid": "6071A29891A3511390E87B0E2C29CFF7",
+    "sha256": "f4cce7c66a21c05af3f481d0e44616ae03454d5c907b67cbc1d2ada6872c5ab1",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6748068550109844,
+      "median": 0.5138557490063298,
+      "p95": 1.768447145211505,
+      "sample_count": 21742,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2173,
+        "mean": 0.7090691925179724,
+        "p95": 1.9815963561489924
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.39665308332139515,
+      "face_jump_max": 0.9183526150312372,
+      "face_jump_rms": 0.1211665033151688
+    }
+  },
+  {
+    "recipe": "Negative_Ye_03b",
+    "file": "NikonRecipes_Negative_Ye_03b_Y8.xmp",
+    "uuid": "68B8BEF4F2CB5A89A540B2BA434B5441",
+    "sha256": "50cb85e198e31f634261e37220282b6b4a100c4991d628c1668396f82c73b644",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7384192040919204,
+      "median": 0.5749378300318846,
+      "p95": 1.920838978974474,
+      "sample_count": 16744,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1692,
+        "mean": 0.7607400991543652,
+        "p95": 2.0359747101993375
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.48377987354856605,
+      "face_jump_max": 0.8990339405918204,
+      "face_jump_rms": 0.14793811585455663
+    }
+  },
+  {
+    "recipe": "NeonGlow_BrandonW",
+    "file": "NikonRecipes_NeonGlow_BrandonW_Y8.xmp",
+    "uuid": "82C50DC38C3F5722A24A68B55B7F0828",
+    "sha256": "6062a34a2ae0ee4f7dc31e66a79404d598b61d77d6317d83942fdef2be2f8aeb",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.1360686649007306,
+      "median": 0.9633190547171027,
+      "p95": 2.669437183562966,
+      "sample_count": 17925,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1798,
+        "mean": 1.1613139358838627,
+        "p95": 2.703660172158587
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6243518693755008,
+      "face_jump_max": 1.3838072347560102,
+      "face_jump_rms": 0.18946588103188833
+    }
+  },
+  {
+    "recipe": "NightsLike_Dondre",
+    "file": "NikonRecipes_NightsLike_Dondre_Y8.xmp",
+    "uuid": "E2055C704D8F5F9C9A40D13B356FEE31",
+    "sha256": "06d08234a713eb1b6fb59eaa4b72d338bb636b644f20aff917b1c35288ad5b67",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.46979344154729114,
+      "median": 0.3547819983633919,
+      "p95": 1.1814248858885337,
+      "sample_count": 18205,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1801,
+        "mean": 0.4798024469522701,
+        "p95": 1.1668648794974512
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5002171981756396,
+      "face_jump_max": 1.069629830139139,
+      "face_jump_rms": 0.13607962422064404
+    }
+  },
+  {
+    "recipe": "OptiColour200",
+    "file": "NikonRecipes_OptiColour200_Y8.xmp",
+    "uuid": "322638937F1057538B453F20F7D7BD29",
+    "sha256": "8695d707ee18b6165b5620b0e0fa7fb3a92933f4318d085fe443f9054e166c4f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6735866464592328,
+      "median": 0.5036101097157489,
+      "p95": 1.8595274978406142,
+      "sample_count": 23089,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2296,
+        "mean": 0.7156185927677884,
+        "p95": 1.9995410527567774
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.467777319768797,
+      "face_jump_max": 1.034406566359874,
+      "face_jump_rms": 0.14635103268762967
+    }
+  },
+  {
+    "recipe": "PainterlyLight_DAnn",
+    "file": "NikonRecipes_PainterlyLight_DAnn_Y8.xmp",
+    "uuid": "1E54FD66A9B255A5BB9206370DF61ED0",
+    "sha256": "072e1b1a35e1ad6d8b39daff2890dce8e5a1b1d3e836ae77b393bd537abb82de",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.0573691108989105,
+      "median": 0.789802669965465,
+      "p95": 2.747788167564009,
+      "sample_count": 18492,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1838,
+        "mean": 1.0950675003512857,
+        "p95": 2.899334066293919
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.7984948319354626,
+      "face_jump_max": 1.8058289474604992,
+      "face_jump_rms": 0.21386990307425932
+    }
+  },
+  {
+    "recipe": "Pale_Tale_Yuri",
+    "file": "NikonRecipes_Pale_Tale_Yuri_Y8.xmp",
+    "uuid": "F7AA6F2D2BFD53DCBB78271EB2422FDF",
+    "sha256": "3283bffb98022ece363d4c9b93f15c4e9a09850b97fe7b0fe0c79b14b608477d",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7158211115098234,
+      "median": 0.5392251025319215,
+      "p95": 1.967156701135167,
+      "sample_count": 19272,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1925,
+        "mean": 0.7640731920146504,
+        "p95": 2.1513300793483667
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.43819644986445255,
+      "face_jump_max": 0.9137439752103669,
+      "face_jump_rms": 0.14350050025148714
+    }
+  },
+  {
+    "recipe": "PastelNos_TSakai",
+    "file": "NikonRecipes_PastelNos_TSakai_Y8.xmp",
+    "uuid": "4917CC5D48C15A23AEC04658C4302F6B",
+    "sha256": "e2b878e50ac7535fd7a71cb697193f2ed0b53ee0435cfe732b5edb5aacbecfe2",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7142048065975289,
+      "median": 0.5286780478240702,
+      "p95": 2.021479210115484,
+      "sample_count": 20912,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2092,
+        "mean": 0.7609122920902434,
+        "p95": 2.164269673575593
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5379364552780038,
+      "face_jump_max": 1.3786229052954482,
+      "face_jump_rms": 0.16448953254051388
+    }
+  },
+  {
+    "recipe": "Pastelpink_Yuki",
+    "file": "NikonRecipes_Pastelpink_Yuki_Y8.xmp",
+    "uuid": "27A0C7C8786E5B49A07B0E2ECE017275",
+    "sha256": "886b99fb4e8cbe61f4ad2989c52c689a057232242a4d0f5385d724133ef4270a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.5750160789363963,
+      "median": 0.4538807367163762,
+      "p95": 1.3906832790911219,
+      "sample_count": 23963,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2384,
+        "mean": 0.582023713702571,
+        "p95": 1.4411824590830142
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.38271872202735896,
+      "face_jump_max": 1.1665799974868147,
+      "face_jump_rms": 0.11275152919490773
+    }
+  },
+  {
+    "recipe": "PinkWater_HYEYA",
+    "file": "NikonRecipes_PinkWater_HYEYA_Y8.xmp",
+    "uuid": "6A776EFF19BC53769003E446482BE7F2",
+    "sha256": "0be92f0c3b47357eb0caef97ed70a0e1a7a0ecd5e1db6658e70bd90d818f266a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.44783197323462504,
+      "median": 0.35679767706698756,
+      "p95": 1.1243545380880444,
+      "sample_count": 23919,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2369,
+        "mean": 0.47972527530915643,
+        "p95": 1.1964113672561698
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3085362139404111,
+      "face_jump_max": 0.9343612650406224,
+      "face_jump_rms": 0.09768701013124283
+    }
+  },
+  {
+    "recipe": "PremiumCinema_Green",
+    "file": "NikonRecipes_PremiumCinema_Green_Y8.xmp",
+    "uuid": "3FECC7AFEA6152ABB2EB34CD0ABAC3FD",
+    "sha256": "70223906e4d18f4df30f5e427ba2815ced393fc58737977844a210b19b880b77",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.5446165583461291,
+      "median": 0.3771646149267277,
+      "p95": 1.6557797658072555,
+      "sample_count": 23321,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2316,
+        "mean": 0.5708670997328875,
+        "p95": 1.6946109915566514
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.38679715220330124,
+      "face_jump_max": 1.1326454400237511,
+      "face_jump_rms": 0.1175419704213607
+    }
+  },
+  {
+    "recipe": "Premium_Dreamy_Mono",
+    "file": "NikonRecipes_Premium_Dreamy_Mono_Y8.xmp",
+    "uuid": "41CEE83463505B14A21E3E43141382B4",
+    "sha256": "b56662cbc3da5c79356529e64b17d4a82ff8d96417dfb5675bdb32d882a6a7bf",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.13381401884412727,
+      "median": 0.06382784504195235,
+      "p95": 0.45511178155008913,
+      "sample_count": 24329,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.1337240752826863,
+        "p95": 0.43176948921493263
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.407044850309365,
+      "face_jump_max": 1.792107258512131,
+      "face_jump_rms": 0.1110459831840077
+    }
+  },
+  {
+    "recipe": "Premium_Dreamy_Peep",
+    "file": "NikonRecipes_Premium_Dreamy_Peep_Y8.xmp",
+    "uuid": "50E512E5DE535E8296EDA2D7D63F0862",
+    "sha256": "73120ee79a8a59e73225f9a3a4070e9c4466a61face7bfc27b72645a8de6b20a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.3052841730354033,
+      "median": 0.11084926801766051,
+      "p95": 1.2718629734262379,
+      "sample_count": 23685,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2344,
+        "mean": 0.326676933843036,
+        "p95": 1.3275740908708027
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.9476703076922538,
+      "face_jump_max": 5.497942987940672,
+      "face_jump_rms": 0.245275352002486
+    }
+  },
+  {
+    "recipe": "Premium_Koda2025",
+    "file": "NikonRecipes_Premium_Koda2025_Y8.xmp",
+    "uuid": "1A1519CB0C7A59BFB1F82AD6D9E177B9",
+    "sha256": "5fe43ed42fa9b246c6cfd5034d2c0872ae3ddd05c68dfad78b81d7975ddc8698",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.2688567058960978,
+      "median": 0.9540549224614048,
+      "p95": 3.5011046921216473,
+      "sample_count": 19206,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1913,
+        "mean": 1.333282880229332,
+        "p95": 3.6246318659138574
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.9581882572637747,
+      "face_jump_max": 1.9368926711885603,
+      "face_jump_rms": 0.2691399441558305
+    }
+  },
+  {
+    "recipe": "Premium_Monochrome",
+    "file": "NikonRecipes_Premium_Monochrome_Y8.xmp",
+    "uuid": "0A251579AE8658199A719719E8F6CB44",
+    "sha256": "72301258e40f157720da44b69f052ddc00c26867ae1622b2e273a5a6ca18c9c6",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.3363625864506245,
+      "median": 0.21357568447657996,
+      "p95": 1.071121366389219,
+      "sample_count": 24322,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.33194702769765466,
+        "p95": 1.026984875792401
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5430355989734554,
+      "face_jump_max": 1.2344303799980987,
+      "face_jump_rms": 0.13142268533573062
+    }
+  },
+  {
+    "recipe": "Premium_Negative",
+    "file": "NikonRecipes_Premium_Negative_Y8.xmp",
+    "uuid": "9C5DCE4D438151E29EB610E5DEEDC417",
+    "sha256": "111b8f448dcf46dc602426c8fb5906ec295d975327d262cc75c8cfd552531ff4",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6980070436798665,
+      "median": 0.5482285366883445,
+      "p95": 1.7896865133505717,
+      "sample_count": 21383,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2115,
+        "mean": 0.7241934852569001,
+        "p95": 1.8353131918640317
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4579362710133828,
+      "face_jump_max": 1.0729241197592263,
+      "face_jump_rms": 0.13296030519846003
+    }
+  },
+  {
+    "recipe": "Premium_Nostalgic",
+    "file": "NikonRecipes_Premium_Nostalgic_Y8.xmp",
+    "uuid": "A339F9DBD8045B21AD35F284BB589345",
+    "sha256": "a8852cc80b260ba566b5ee9f062c8a5e9fc81d2615f47ab9a0c85552405b2627",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.1486553362741898,
+      "median": 0.8400949564737509,
+      "p95": 3.071457909825994,
+      "sample_count": 20793,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2051,
+        "mean": 1.200095526271521,
+        "p95": 3.2209476066333913
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.9335015099433522,
+      "face_jump_max": 1.9977334240406277,
+      "face_jump_rms": 0.24638742053443938
+    }
+  },
+  {
+    "recipe": "Premium_Standard",
+    "file": "NikonRecipes_Premium_Standard_Y8.xmp",
+    "uuid": "2BA3452819FC546ABEF4DB8FFAF62A72",
+    "sha256": "a9fa2b8ccc26e28a0bc3bb5a183daa4d131dbfdd4f9e985844af9d2fce9295ca",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.1166627307890507,
+      "median": 0.8769636601813023,
+      "p95": 2.77050599621493,
+      "sample_count": 19879,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1987,
+        "mean": 1.1589627430075138,
+        "p95": 2.987503091837473
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5664001553400713,
+      "face_jump_max": 1.214259169556408,
+      "face_jump_rms": 0.18101386945158043
+    }
+  },
+  {
+    "recipe": "Premium_Standard_V2",
+    "file": "NikonRecipes_Premium_Standard_V2_Y8.xmp",
+    "uuid": "FFB494E456F75B7281D5E2FA0A206B26",
+    "sha256": "7d66d87d04755295b9b66f1db90dba6f843439d57d12975417f6b3024a6f88bd",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.6886429623709995,
+      "median": 0.5381158391051934,
+      "p95": 1.7554291072250985,
+      "sample_count": 18247,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1850,
+        "mean": 0.7012436494807003,
+        "p95": 1.6768076422684912
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.48210769706870926,
+      "face_jump_max": 1.0452406132762986,
+      "face_jump_rms": 0.1369168782519251
+    }
+  },
+  {
+    "recipe": "Premium_Vivid_Norm",
+    "file": "NikonRecipes_Premium_Vivid_Norm_Y8.xmp",
+    "uuid": "03A05420B645561F9C9AA614E8437868",
+    "sha256": "2f0e415e3b42c884ec1a536cde09425ad1fa110458a4a9d39c66df32b652d1c2",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.457761065755958,
+      "median": 1.1344417407438414,
+      "p95": 3.671993103008017,
+      "sample_count": 14919,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1469,
+        "mean": 1.5668370909856382,
+        "p95": 3.935355376308329
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.8398424447806501,
+      "face_jump_max": 2.3235354569314315,
+      "face_jump_rms": 0.24045852434913256
+    }
+  },
+  {
+    "recipe": "Premium_Vivid_Punch",
+    "file": "NikonRecipes_Premium_Vivid_Punch_Y8.xmp",
+    "uuid": "E9BD9582A6F452BEB5F2976804BAEBAA",
+    "sha256": "585fca514b221dfc37af790bd911355e07873f581d89fa0fe1a1edc3c04c9c07",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.4754507945717004,
+      "median": 1.0894708031497373,
+      "p95": 4.085617076600245,
+      "sample_count": 14710,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1437,
+        "mean": 1.5558369672931749,
+        "p95": 4.104750210133168
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.9536973402321455,
+      "face_jump_max": 2.5305239837865376,
+      "face_jump_rms": 0.2527415199554142
+    }
+  },
+  {
+    "recipe": "PrimaryPop_Gilmar",
+    "file": "NikonRecipes_PrimaryPop_Gilmar_Y8.xmp",
+    "uuid": "1864E3F0B4D35EA9A5DEFA32B2B77352",
+    "sha256": "8c4b46e5716fc5816166270baf7930f7e77336a6661ed9dd804be17f290518a3",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.7000686655814425,
+      "median": 0.5957941250067315,
+      "p95": 1.515105102129447,
+      "sample_count": 24333,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.7073851106822903,
+        "p95": 1.5064923682571862
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.42079425465989756,
+      "face_jump_max": 1.1952429456647864,
+      "face_jump_rms": 0.11876456738556794
+    }
+  },
+  {
+    "recipe": "PurpleM_LUIZCLAS",
+    "file": "NikonRecipes_PurpleM_LUIZCLAS_Y8.xmp",
+    "uuid": "AE982BABE1575715B4A2CB618855FA92",
+    "sha256": "cc484e0dcff1df828c174fcb40d9794132213dff66d07d86754a29e221440184",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5121107257526929,
+      "median": 0.3862908976342616,
+      "p95": 1.3444960176675114,
+      "sample_count": 22621,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2239,
+        "mean": 0.5259670434328284,
+        "p95": 1.443144714108831
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.43408817914529446,
+      "face_jump_max": 1.0644049673964946,
+      "face_jump_rms": 0.12316307260704618
+    }
+  },
+  {
+    "recipe": "QUIET_Nagisa",
+    "file": "NikonRecipes_QUIET_Nagisa_Y8.xmp",
+    "uuid": "5754F264121953D689CF3B1A33940EF6",
+    "sha256": "4f5121f9fbde5fc0fcea41c00e5db7773fbcb9f07b15faf1ec4ecab51b34e69a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6405836955041871,
+      "median": 0.5177805359769653,
+      "p95": 1.604036162824521,
+      "sample_count": 19635,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1964,
+        "mean": 0.6958079869461848,
+        "p95": 1.7286476376436226
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4210524163573399,
+      "face_jump_max": 0.7685212613365828,
+      "face_jump_rms": 0.13571275876374925
+    }
+  },
+  {
+    "recipe": "RedM_LUIZCLAS",
+    "file": "NikonRecipes_RedM_LUIZCLAS_Y8.xmp",
+    "uuid": "B98CC09E3FD75D8C8ACC06277501E6F0",
+    "sha256": "b545632249a73d22f57dc395f797239b80910c84df28cf14374e322506f2afab",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7018663287881683,
+      "median": 0.5417124093566928,
+      "p95": 1.852158888064839,
+      "sample_count": 20733,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2053,
+        "mean": 0.7211879158128878,
+        "p95": 1.9384976583879372
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.43443829611534146,
+      "face_jump_max": 1.0340315172867753,
+      "face_jump_rms": 0.13113797439357563
+    }
+  },
+  {
+    "recipe": "RoseOldFilm_hinano",
+    "file": "NikonRecipes_RoseOldFilm_hinano_Y8.xmp",
+    "uuid": "DC5F67AB5B995FBBB9EC7BC11E95CECE",
+    "sha256": "d0b9f611fe3616539ed613b0be1c65789ff227b48687e1ad35a33a34c94a772a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.7000686655814425,
+      "median": 0.5957941250067315,
+      "p95": 1.515105102129447,
+      "sample_count": 24333,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.7073851106822903,
+        "p95": 1.5064923682571862
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.42079425465989756,
+      "face_jump_max": 1.1952429456647864,
+      "face_jump_rms": 0.11876456738556794
+    }
+  },
+  {
+    "recipe": "Scott's_Gold_200",
+    "file": "NikonRecipes_Scott's_Gold_200_Y8.xmp",
+    "uuid": "D557242D10CF5D14A5CA439798CF890E",
+    "sha256": "c0349604e1b77567c75507872659ce63e603d2f1160e66a9091e1f6b8bfb3a36",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8679177919739844,
+      "median": 0.6444202702728447,
+      "p95": 2.3827169682684235,
+      "sample_count": 22429,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2226,
+        "mean": 0.9289859848594438,
+        "p95": 2.5175855592639524
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4939612279286017,
+      "face_jump_max": 0.8923967855036145,
+      "face_jump_rms": 0.1627101288699159
+    }
+  },
+  {
+    "recipe": "Scott's_Ilford_400",
+    "file": "NikonRecipes_Scott's_Ilford_400_Y8.xmp",
+    "uuid": "0DF9024A40EC51F8A80BE8F9C0336964",
+    "sha256": "629e8fd8d93124708c4e32b70e530405a04ee37af28fc99f127e53f88aeaa3fb",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.11863712976230159,
+      "median": 0.0552699125659362,
+      "p95": 0.45076052710926473,
+      "sample_count": 22785,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2245,
+        "mean": 0.11774798570867046,
+        "p95": 0.42283495119703246
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.337501606346233,
+      "face_jump_max": 0.9972430491109586,
+      "face_jump_rms": 0.09582761813279538
+    }
+  },
+  {
+    "recipe": "Scott's_Ilford_400_LO",
+    "file": "NikonRecipes_Scott's_Ilford_400_LO_Y8.xmp",
+    "uuid": "2DC888116FA7505E81B7BFE14804E411",
+    "sha256": "ee8ccdeb6c2fa6270bb33d746c64f1293c6a414f32749c7404862fd635550314",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.11863141868309225,
+      "median": 0.0845444851685846,
+      "p95": 0.3610015349643726,
+      "sample_count": 24333,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.11794915935199096,
+        "p95": 0.34782453595920193
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.177631610166439,
+      "face_jump_max": 0.6110144703797674,
+      "face_jump_rms": 0.052360873607470305
+    }
+  },
+  {
+    "recipe": "Scott's_Ilford_400_MID",
+    "file": "NikonRecipes_Scott's_Ilford_400_MID_Y8.xmp",
+    "uuid": "B869C88A5F895CC6BC623493D67C1EC6",
+    "sha256": "1b3ffe363553e2219eee90938807b84a9ce652f98b311832d061e334d48289c9",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.10697292719624224,
+      "median": 0.05599947737049301,
+      "p95": 0.3703486422453457,
+      "sample_count": 24229,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2400,
+        "mean": 0.10919769372599994,
+        "p95": 0.35802537662723877
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.27845250537403243,
+      "face_jump_max": 0.7790283256445586,
+      "face_jump_rms": 0.07788711596606793
+    }
+  },
+  {
+    "recipe": "Scott's_Leiter",
+    "file": "NikonRecipes_Scott's_Leiter_Y8.xmp",
+    "uuid": "51412A6E3DB55869BACC33221BF0A453",
+    "sha256": "752881275f2c18f1b507d2c9e574b6a5a9908717c28d2323dde533770970ea67",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 1.0065262718253454,
+      "median": 0.7590229516427417,
+      "p95": 2.64582577641369,
+      "sample_count": 21524,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2113,
+        "mean": 1.0483656298404551,
+        "p95": 2.7644375544315873
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.8338336616964077,
+      "face_jump_max": 2.2911579111832654,
+      "face_jump_rms": 0.23494521228576015
+    }
+  },
+  {
+    "recipe": "Scott's_Leiter_CLR",
+    "file": "NikonRecipes_Scott's_Leiter_CLR_Y8.xmp",
+    "uuid": "F51E9C1004985116B66FB9ECCC178244",
+    "sha256": "e92bbbb682c7f34018de1d94a10ee7ead6dc24ea78adf78f643646c2ac8b8afd",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.9773365743798522,
+      "median": 0.7279665730817297,
+      "p95": 2.5937482419130924,
+      "sample_count": 21446,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2109,
+        "mean": 1.0258894814305872,
+        "p95": 2.7162735711542716
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.8259673203553612,
+      "face_jump_max": 2.2744087463318423,
+      "face_jump_rms": 0.23397358573704005
+    }
+  },
+  {
+    "recipe": "Scott's_Vintage_Film",
+    "file": "NikonRecipes_Scott's_Vintage_Film_Y8.xmp",
+    "uuid": "EFC9759362C352BCA0B0B379A904EAE5",
+    "sha256": "a3a79ba5c494ac73c655d078f5823f31235a0c38e6fdc3f0e6f68dff28b672d2",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7197385288453048,
+      "median": 0.5468178684190159,
+      "p95": 1.8586652048057597,
+      "sample_count": 21557,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2149,
+        "mean": 0.7651588374783469,
+        "p95": 1.9784482214233858
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3729991241144558,
+      "face_jump_max": 0.8955977229165407,
+      "face_jump_rms": 0.11602812957904735
+    }
+  },
+  {
+    "recipe": "Scott's_Vintage_Film_HI",
+    "file": "NikonRecipes_Scott's_Vintage_Film_HI_Y8.xmp",
+    "uuid": "8821D8E3144055448CB09441E093138C",
+    "sha256": "6e91f4a6ce1b4ecbbcce9e700852a0e62fd5775b5028372e34596e5761e3e85e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7883522211675462,
+      "median": 0.598439333612521,
+      "p95": 2.047395502804468,
+      "sample_count": 17717,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1759,
+        "mean": 0.8412722904817614,
+        "p95": 2.193815286144586
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4172664076238149,
+      "face_jump_max": 0.8956313259076036,
+      "face_jump_rms": 0.13088708790137027
+    }
+  },
+  {
+    "recipe": "SetouchiBlue_Noci",
+    "file": "NikonRecipes_SetouchiBlue_Noci_Y8.xmp",
+    "uuid": "B11A1A0E9BAA56108276D0A14BD93810",
+    "sha256": "0e42603b88370d4fe227f88251c7f5931d1fd1c4e51e2a1162870b3d2b29c372",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.39852929895562583,
+      "median": 0.29992488893255836,
+      "p95": 1.0401077138943224,
+      "sample_count": 23810,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2357,
+        "mean": 0.4195149594267894,
+        "p95": 1.0722463533933744
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.2927079215441631,
+      "face_jump_max": 1.0063628318971292,
+      "face_jump_rms": 0.09615858451537271
+    }
+  },
+  {
+    "recipe": "ShadeFall_BrittanyK",
+    "file": "NikonRecipes_ShadeFall_BrittanyK_Y8.xmp",
+    "uuid": "38ABEB5942AD513BAC7B19A8220A3C7B",
+    "sha256": "a58881ead87540405bb8caf249810185d30828ac115184735d42ca519d8ce0c2",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.85908719622573,
+      "median": 0.7022017442868724,
+      "p95": 2.115469450863673,
+      "sample_count": 22794,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2259,
+        "mean": 0.8773941333376838,
+        "p95": 2.1716659826195293
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4300638496579059,
+      "face_jump_max": 0.8855622209620756,
+      "face_jump_rms": 0.12641791122911597
+    }
+  },
+  {
+    "recipe": "SkyMistFilm_hinano",
+    "file": "NikonRecipes_SkyMistFilm_hinano_Y8.xmp",
+    "uuid": "53A0EC3BCD96571C80059EC0D357C43A",
+    "sha256": "96d99d4c8192e7533f4d89f606a5c4fbd875c27d169015772440c1acebb447c6",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.7648000425901963,
+      "median": 0.6315796192719549,
+      "p95": 1.7486363867453152,
+      "sample_count": 24162,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2399,
+        "mean": 0.8015773290338967,
+        "p95": 1.7780338249366117
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4518723554382929,
+      "face_jump_max": 1.008635162232181,
+      "face_jump_rms": 0.13953725754447854
+    }
+  },
+  {
+    "recipe": "SoftFilm_Leno",
+    "file": "NikonRecipes_SoftFilm_Leno_Y8.xmp",
+    "uuid": "268C53EA56815EDA852B243F522FF746",
+    "sha256": "5833b08fc59d923d6fd8fd6174ea4f9c08f09e84c884066d5efdbfe732da645e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.4482626994703116,
+      "median": 0.3380863232886816,
+      "p95": 1.0628941818074311,
+      "sample_count": 22583,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2249,
+        "mean": 0.4678758589785788,
+        "p95": 1.109793434667288
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.32274978253020675,
+      "face_jump_max": 0.9533739206208308,
+      "face_jump_rms": 0.09463604822969014
+    }
+  },
+  {
+    "recipe": "SoftGlow_Harpreet",
+    "file": "NikonRecipes_SoftGlow_Harpreet_Y8.xmp",
+    "uuid": "FDD2BB4D0C0E53D59E41A163C54396FB",
+    "sha256": "3bebd6ef664a58f4cb3b9c3be9ac118f74daf760951e526d4e003388e7270958",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5276363698353934,
+      "median": 0.44113773455388117,
+      "p95": 1.214280285376946,
+      "sample_count": 22558,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2244,
+        "mean": 0.545660337535106,
+        "p95": 1.2403872012848398
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4368533446062608,
+      "face_jump_max": 0.9136839777874501,
+      "face_jump_rms": 0.12271481525618463
+    }
+  },
+  {
+    "recipe": "Soft_Vivid_Vijay",
+    "file": "NikonRecipes_Soft_Vivid_Vijay_Y8.xmp",
+    "uuid": "85BF007960915E94AF53D5A471F2C8F9",
+    "sha256": "963fa8339cbef9fc310776fa1f23a88255e48f5d148868283d85ec2a9e4c6f8c",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.7432176114430772,
+      "median": 0.4688934675781851,
+      "p95": 2.4715637684690352,
+      "sample_count": 19107,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1902,
+        "mean": 0.7399474560303138,
+        "p95": 2.5135328907472974
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.47808167225110954,
+      "face_jump_max": 0.9024063689570884,
+      "face_jump_rms": 0.14837252511814747
+    }
+  },
+  {
+    "recipe": "SummerShine_Dondre",
+    "file": "NikonRecipes_SummerShine_Dondre_Y8.xmp",
+    "uuid": "F7448A87D4135C8F9B42122926A27FA5",
+    "sha256": "8f88bcc0b73eec52d530c017e034b5c0ed0bea9bddd9636760862530ce56da7f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.4159818946803071,
+      "median": 0.32812129569479237,
+      "p95": 0.9894402676887954,
+      "sample_count": 21991,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2195,
+        "mean": 0.4236692874027637,
+        "p95": 0.9865066411771266
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3360016078851862,
+      "face_jump_max": 0.8761246494330243,
+      "face_jump_rms": 0.09623669978760158
+    }
+  },
+  {
+    "recipe": "Summertime_Zerletti",
+    "file": "NikonRecipes_Summertime_Zerletti_Y8.xmp",
+    "uuid": "32363408D89A5CE29161D581B11D6843",
+    "sha256": "2503469e960781555e0d5c6d21514384ac695d79d97b5cbc868e62b065d7ace9",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.210536923882808,
+      "median": 0.9010707136251873,
+      "p95": 3.3640957596267005,
+      "sample_count": 20095,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1998,
+        "mean": 1.2930552431726534,
+        "p95": 3.717014588951702
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.7300364877638386,
+      "face_jump_max": 1.9575356969617135,
+      "face_jump_rms": 0.21146989994080065
+    }
+  },
+  {
+    "recipe": "SunkissedCool_Julia",
+    "file": "NikonRecipes_SunkissedCool_Julia_Y8.xmp",
+    "uuid": "9337C7F35DF75DE1980132E20C8E34D6",
+    "sha256": "637119ae39b5b4a4abf03cc7108889ba609297bf0f94f2e8b2113aa271353fea",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.5872378427022168,
+      "median": 0.47607274136091005,
+      "p95": 1.4310479410689634,
+      "sample_count": 23555,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2336,
+        "mean": 0.6150599315755002,
+        "p95": 1.475180006255785
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.32896051288503514,
+      "face_jump_max": 0.8318647533704684,
+      "face_jump_rms": 0.10622783005711461
+    }
+  },
+  {
+    "recipe": "SunkissedWarm_Julia",
+    "file": "NikonRecipes_SunkissedWarm_Julia_Y8.xmp",
+    "uuid": "6815A870D5625B45ACAD712F31D9BF33",
+    "sha256": "8192b3ce838699f956845fcb73be0c15e6499d8c992bcb7e91064705e0a5feb5",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.5872378427022168,
+      "median": 0.47607274136091005,
+      "p95": 1.4310479410689634,
+      "sample_count": 23555,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2336,
+        "mean": 0.6150599315755002,
+        "p95": 1.475180006255785
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.32896051288503514,
+      "face_jump_max": 0.8318647533704684,
+      "face_jump_rms": 0.10622783005711461
+    }
+  },
+  {
+    "recipe": "SunlightHappy_DAnn",
+    "file": "NikonRecipes_SunlightHappy_DAnn_Y8.xmp",
+    "uuid": "C3B9423FDD695280AC3183C268F96EC6",
+    "sha256": "9c0248df6731099db5c072c9976393975fd531a9de4dfa84c60ce92e34378ebf",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.8074312240921858,
+      "median": 0.5909183772738729,
+      "p95": 2.162796476722929,
+      "sample_count": 14314,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1405,
+        "mean": 0.8242301902550235,
+        "p95": 2.1905196271074017
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.569789723939831,
+      "face_jump_max": 1.218170914443108,
+      "face_jump_rms": 0.1689120129547919
+    }
+  },
+  {
+    "recipe": "SunsetFilm_JKBoy",
+    "file": "NikonRecipes_SunsetFilm_JKBoy_Y8.xmp",
+    "uuid": "64000DC6E9435C4DAF0FABEE3E1041EF",
+    "sha256": "f3e9750fc75a616636918e4030f8d28d1f67cbfb8fe908dd72782e251be61c10",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.9462037421386388,
+      "median": 0.7090804388695691,
+      "p95": 2.5394240953243616,
+      "sample_count": 21478,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2136,
+        "mean": 0.9837329437882791,
+        "p95": 2.640681922704987
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5946560680059644,
+      "face_jump_max": 1.504237651105142,
+      "face_jump_rms": 0.15233009355185811
+    }
+  },
+  {
+    "recipe": "SunsetGlow_Mikan",
+    "file": "NikonRecipes_SunsetGlow_Mikan_Y8.xmp",
+    "uuid": "93969BC694355B1C9B57EC029B70A0E5",
+    "sha256": "4774144cfe2f5d07ba20684cc4053ca24d200e953fbc058e5fd16473d51e91d4",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.773370756114626,
+      "median": 0.6367376597071479,
+      "p95": 1.7699305998398869,
+      "sample_count": 20898,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2092,
+        "mean": 0.8166929804196874,
+        "p95": 1.8347096337684987
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5265775434211055,
+      "face_jump_max": 1.3217718929321292,
+      "face_jump_rms": 0.16788839020157711
+    }
+  },
+  {
+    "recipe": "SunsetReset_Baek",
+    "file": "NikonRecipes_SunsetReset_Baek_Y8.xmp",
+    "uuid": "0D721F3C019459C0B490F2E72ABDFA68",
+    "sha256": "f83c2a388601485a53b029ace3ba412e1a35076d0a0e108ad9f2d70b1b1a4774",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.5129980497798053,
+      "median": 0.39217263620581927,
+      "p95": 1.261264863387226,
+      "sample_count": 21393,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2154,
+        "mean": 0.524721664072336,
+        "p95": 1.2460301879533247
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3342621642696861,
+      "face_jump_max": 1.0464964633129292,
+      "face_jump_rms": 0.1048436977648143
+    }
+  },
+  {
+    "recipe": "T&O_BrandonW",
+    "file": "NikonRecipes_T&O_BrandonW_Y8.xmp",
+    "uuid": "AEA5AE45932B52D6A415116E30348C3B",
+    "sha256": "98fb0f70777497f6bc8d3a9a697b6b1a40eb8c860fc92d15a9e7fafb1d556072",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.7290515265621244,
+      "median": 0.5678264466144503,
+      "p95": 1.8212984041163638,
+      "sample_count": 18692,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1840,
+        "mean": 0.7647635445065452,
+        "p95": 1.8815766868710142
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.48671869246185184,
+      "face_jump_max": 1.3678943647249293,
+      "face_jump_rms": 0.1518338132090974
+    }
+  },
+  {
+    "recipe": "TenderClear_FukaK",
+    "file": "NikonRecipes_TenderClear_FukaK_Y8.xmp",
+    "uuid": "C490CC918A525D03B6FD20B68AA30FCA",
+    "sha256": "7670f6663c398dd3d7d86cc9b2fa8c0626a651680cfbf0b40dbbfc5e88bba85f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.582424560567488,
+      "median": 0.46133843279417985,
+      "p95": 1.4753961268348168,
+      "sample_count": 21690,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2165,
+        "mean": 0.6169428171182416,
+        "p95": 1.5907226528992584
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3833020459299775,
+      "face_jump_max": 0.7905923767939635,
+      "face_jump_rms": 0.1212520717169751
+    }
+  },
+  {
+    "recipe": "TexturedDocmntry_MS",
+    "file": "NikonRecipes_TexturedDocmntry_MS_Y8.xmp",
+    "uuid": "EE6220584635546EA716395357280805",
+    "sha256": "7b0b724f2b9b565940dc211fc869d2bd3a53b13490cc809a91ad56b9202258ed",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.6335901572329901,
+      "median": 0.45968279153740926,
+      "p95": 1.828901617672242,
+      "sample_count": 20326,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2030,
+        "mean": 0.6553795005441255,
+        "p95": 1.895145418117448
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.581963013733101,
+      "face_jump_max": 1.8472570270814557,
+      "face_jump_rms": 0.17129011731840757
+    }
+  },
+  {
+    "recipe": "Turquoise_Blue_Yuki",
+    "file": "NikonRecipes_Turquoise_Blue_Yuki_Y8.xmp",
+    "uuid": "ED58310A22805C54ADCBD7BD498F8498",
+    "sha256": "88780fb6e0001dbdded65df5732985e6a23b9bf4c2d346573c6bf50803a87157",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.5127134768603098,
+      "median": 0.41737875505363187,
+      "p95": 1.2305477885158924,
+      "sample_count": 23142,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2285,
+        "mean": 0.5341008455428644,
+        "p95": 1.291793255635614
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.39693081342275777,
+      "face_jump_max": 1.0158285644413836,
+      "face_jump_rms": 0.1152051125713804
+    }
+  },
+  {
+    "recipe": "USAFilmBW_Vincent",
+    "file": "NikonRecipes_USAFilmBW_Vincent_Y8.xmp",
+    "uuid": "F3253AA236535B188DEE30BD5FF9B000",
+    "sha256": "2f6c376ecce7859f45d97a04ddcbf67ae22ca16c231ce7db52aacca97b3c77fc",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.4559160268578646,
+      "median": 0.27403792337790345,
+      "p95": 1.2657484545969768,
+      "sample_count": 17686,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1726,
+        "mean": 0.4249625870885748,
+        "p95": 1.1687999803478104
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4230702447443727,
+      "face_jump_max": 1.3892599005225708,
+      "face_jump_rms": 0.11425584231266715
+    }
+  },
+  {
+    "recipe": "VINTAGEFla_Fuji",
+    "file": "NikonRecipes_VINTAGEFla_Fuji_Y8.xmp",
+    "uuid": "272D375E12B9596CAB91B1F4529B2D40",
+    "sha256": "8506982df04ad89dbe6c2fd2022a5c331657d2b95bcff24475e0b14a1c6d1837",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8738041167794929,
+      "median": 0.6708350073145222,
+      "p95": 2.4022164083106836,
+      "sample_count": 22576,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2234,
+        "mean": 0.9302834716325656,
+        "p95": 2.4466858629921684
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5066991932917914,
+      "face_jump_max": 0.9976872140230827,
+      "face_jump_rms": 0.14703871652439168
+    }
+  },
+  {
+    "recipe": "VINTAGEPort_Fuji",
+    "file": "NikonRecipes_VINTAGEPort_Fuji_Y8.xmp",
+    "uuid": "A2F6FB14192E5244A33B65880892D147",
+    "sha256": "78684c7908ca89558c5068408da1919ae9ea6edb18a630f1f3a29035b651af86",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.713581755316664,
+      "median": 0.544618785089523,
+      "p95": 1.848359749340158,
+      "sample_count": 20388,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2057,
+        "mean": 0.7354301835959738,
+        "p95": 1.8007189574809825
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4028474715191116,
+      "face_jump_max": 0.8991898542318884,
+      "face_jump_rms": 0.12296196463414824
+    }
+  },
+  {
+    "recipe": "VINTAGE_FILM_Ludwig",
+    "file": "NikonRecipes_VINTAGE_FILM_Ludwig_Y8.xmp",
+    "uuid": "6C03840ABD175427849995DEB612FD6B",
+    "sha256": "e3569cd4b2d307084eafb0ac48a528c14890543ef0d78a9bbb36cbe4acea9583",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.3880437045400398,
+      "median": 0.3100894440539428,
+      "p95": 0.946383599033779,
+      "sample_count": 22983,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2289,
+        "mean": 0.40850372914868766,
+        "p95": 0.9700406785158212
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.30370126309523454,
+      "face_jump_max": 0.8871257667931699,
+      "face_jump_rms": 0.08957731169887909
+    }
+  },
+  {
+    "recipe": "Vibrant_Lamoureux",
+    "file": "NikonRecipes_Vibrant_Lamoureux_Y8.xmp",
+    "uuid": "178A76EB77485100805C42471D40C559",
+    "sha256": "3e373d81622f40e722992f14cd1404ab146b95bd070a78708ea123788643d0a7",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7363113910363894,
+      "median": 0.5678101656004767,
+      "p95": 1.9112452954597452,
+      "sample_count": 21532,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2152,
+        "mean": 0.7910529130320919,
+        "p95": 2.0583891410619595
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5809156880532259,
+      "face_jump_max": 1.1402890367336687,
+      "face_jump_rms": 0.16969500850212357
+    }
+  },
+  {
+    "recipe": "VintageA_BrittanyK",
+    "file": "NikonRecipes_VintageA_BrittanyK_Y8.xmp",
+    "uuid": "50B5268CC89251A393D53C636914F21B",
+    "sha256": "dd225e36a13cf92c3120c1bdd50416cc547d239daf4190b654c02b19b4a634a0",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8588849500275925,
+      "median": 0.700074800270016,
+      "p95": 2.112066087297092,
+      "sample_count": 22941,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2271,
+        "mean": 0.8764432259661021,
+        "p95": 2.157067936892317
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4261583287921239,
+      "face_jump_max": 0.8558163231048393,
+      "face_jump_rms": 0.1256035840097079
+    }
+  },
+  {
+    "recipe": "VintageM_TSakai",
+    "file": "NikonRecipes_VintageM_TSakai_Y8.xmp",
+    "uuid": "08AD09E3D7FD5A4F9E8A2107271C0EF5",
+    "sha256": "6fb7618e825d530a80e36babbdf4a8ff54f99ebfb9c648b442a63c12f08dd376",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.45762260305674773,
+      "median": 0.3644158480497952,
+      "p95": 1.068974455055155,
+      "sample_count": 23577,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2343,
+        "mean": 0.47907385502247585,
+        "p95": 1.1601496926342794
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3789206891930002,
+      "face_jump_max": 0.9470439295750775,
+      "face_jump_rms": 0.10880121693741619
+    }
+  },
+  {
+    "recipe": "VintageTouch_Amy",
+    "file": "NikonRecipes_VintageTouch_Amy_Y8.xmp",
+    "uuid": "D60A4B0B07A751D19ECA6038C8D46433",
+    "sha256": "aca9e0772f9e437b1587f7dcd1f5a2c957895c033e3a6f69f31b8e7e85d90d46",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.6082234348278761,
+      "median": 0.48613240833462407,
+      "p95": 1.427374910574147,
+      "sample_count": 22776,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2272,
+        "mean": 0.6077805768804042,
+        "p95": 1.3747013106257548
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4331634812036874,
+      "face_jump_max": 1.1470192355318423,
+      "face_jump_rms": 0.1283991623365049
+    }
+  },
+  {
+    "recipe": "VintageVibe_Preston",
+    "file": "NikonRecipes_VintageVibe_Preston_Y8.xmp",
+    "uuid": "87315BF585D85B06A7B1AF835EAE62FB",
+    "sha256": "951711e5d7543ceb3fe5fc7a076b7dd3465ec6cf925d534d224cf5c77c0aedd4",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8357363888036415,
+      "median": 0.6091182944984885,
+      "p95": 2.371823173224085,
+      "sample_count": 17603,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1721,
+        "mean": 0.8979325429363361,
+        "p95": 2.5802425303823537
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5227129914996057,
+      "face_jump_max": 1.0851931794448324,
+      "face_jump_rms": 0.16248366711869408
+    }
+  },
+  {
+    "recipe": "VitalityFilm_Pmango",
+    "file": "NikonRecipes_VitalityFilm_Pmango_Y8.xmp",
+    "uuid": "61D5F53128B85D238D05DCC609FA464D",
+    "sha256": "04d4d68cd7435161a5a851e3585d1da1e57bea03807a145b135334b4c50f23ab",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8766006127373197,
+      "median": 0.7024211762208723,
+      "p95": 2.196632646982078,
+      "sample_count": 21481,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2144,
+        "mean": 0.9153104805156361,
+        "p95": 2.3912274461334766
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5191758783470337,
+      "face_jump_max": 1.3164113408833433,
+      "face_jump_rms": 0.1597354007851979
+    }
+  },
+  {
+    "recipe": "WL3",
+    "file": "NikonRecipes_WL3_Y8.xmp",
+    "uuid": "134556D4AA355BE8BC589ECDCCA78AF2",
+    "sha256": "d6d1cfcf1a61c37888504f87be9daee13ba4431ce5cc768e600222e45c04038f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.7253298342335436,
+      "median": 0.5723076292833587,
+      "p95": 1.774360223367738,
+      "sample_count": 19257,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1923,
+        "mean": 0.761328659611322,
+        "p95": 1.8858670376722377
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.44946582128642815,
+      "face_jump_max": 0.8840229930814424,
+      "face_jump_rms": 0.15576961544711507
+    }
+  },
+  {
+    "recipe": "WarmDimLight_Luna",
+    "file": "NikonRecipes_WarmDimLight_Luna_Y8.xmp",
+    "uuid": "720BB694C1945A8088AF0295B29937E3",
+    "sha256": "4bec8d37a09827dcb729376c75a88fe26a68c3ccaac940c85ec813d41fae1499",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.733807342563227,
+      "median": 0.5674283964523545,
+      "p95": 1.9274251401278162,
+      "sample_count": 16197,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1584,
+        "mean": 0.7565030893751857,
+        "p95": 1.978023376300121
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.47667217396668793,
+      "face_jump_max": 1.1308450950151596,
+      "face_jump_rms": 0.14244868769599223
+    }
+  },
+  {
+    "recipe": "WarmPortrait_Y2",
+    "file": "NikonRecipes_WarmPortrait_Y2_Y8.xmp",
+    "uuid": "E111A55A994C54E7BD2C95774A8FF7A0",
+    "sha256": "ae836bfe5334d7a0d65e24afd6faa54282c12e5bb45f7045e68cf44f4b6e7716",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.46163063148961325,
+      "median": 0.3735757309109549,
+      "p95": 1.1246088102396852,
+      "sample_count": 21782,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2183,
+        "mean": 0.4907758821075148,
+        "p95": 1.2042589831781354
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4039820237478926,
+      "face_jump_max": 0.8151477677878195,
+      "face_jump_rms": 0.11674391860075227
+    }
+  },
+  {
+    "recipe": "Warm_Street_Ben",
+    "file": "NikonRecipes_Warm_Street_Ben_Y8.xmp",
+    "uuid": "97D413317E08555C8D012FF8F0D2496A",
+    "sha256": "0bfbdb544e2afb82780e5d3f3d719e65e213297a4e29dde307e1d2b6ba412061",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 1.2065367330637742,
+      "median": 0.9227544099895757,
+      "p95": 3.2369360062603225,
+      "sample_count": 18614,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1851,
+        "mean": 1.276113845196078,
+        "p95": 3.3073589052688006
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5278914753485813,
+      "face_jump_max": 1.1725172055363895,
+      "face_jump_rms": 0.17028374234869845
+    }
+  },
+  {
+    "recipe": "WarmtonedPtt_Wazika",
+    "file": "NikonRecipes_WarmtonedPtt_Wazika_Y8.xmp",
+    "uuid": "2BA224BD5A2C5403838CD5A31ED550F9",
+    "sha256": "33754cc91e3fbd67afcdd1d2c9ef546cccc065aab7865be0cdf41ff44a4ce99f",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8792165069962907,
+      "median": 0.6754630155445073,
+      "p95": 2.315582929324737,
+      "sample_count": 18535,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1852,
+        "mean": 0.904465110901971,
+        "p95": 2.3249956059850767
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.46665684410746805,
+      "face_jump_max": 0.7805047036880378,
+      "face_jump_rms": 0.1436762153915142
+    }
+  },
+  {
+    "recipe": "Wedding_V1_Colour",
+    "file": "NikonRecipes_Wedding_V1_Colour_Y8.xmp",
+    "uuid": "FE6726A877E95A878B77C3FC13FDB798",
+    "sha256": "b96596c125ecd2222dccbaf61a742a4fd44eb6eac60e471a20ecf1f1f8f75312",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.9002417592586415,
+      "median": 0.7317627807697263,
+      "p95": 2.2548770255892943,
+      "sample_count": 19009,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1907,
+        "mean": 0.9598742961893408,
+        "p95": 2.3235505277845245
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.6633954132674563,
+      "face_jump_max": 1.2949702163623875,
+      "face_jump_rms": 0.20329195349006673
+    }
+  },
+  {
+    "recipe": "Wedding_V1_Mono",
+    "file": "NikonRecipes_Wedding_V1_Mono_Y8.xmp",
+    "uuid": "70F3B9EB99525BB682BF86ABDAEEA750",
+    "sha256": "2d67c01406773d870628be3b403ab8d3e425aedcd40570ee9d47afa1d1df3361",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": true,
+    "fit": {
+      "mean": 0.1529699245661889,
+      "median": 0.07681375134192389,
+      "p95": 0.5051467968596897,
+      "sample_count": 24333,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2411,
+        "mean": 0.14206438147222278,
+        "p95": 0.4784709639135636
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.3902453936909622,
+      "face_jump_max": 1.870761872375097,
+      "face_jump_rms": 0.1007587771999831
+    }
+  },
+  {
+    "recipe": "Winter_Hues_Eeva",
+    "file": "NikonRecipes_Winter_Hues_Eeva_Y8.xmp",
+    "uuid": "588E77BAA65D5ED1BAEA99F48EAF799B",
+    "sha256": "9d8b29180be1bc685cc769787b3fef4af495689b487065c4aab82650faf7e59e",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.8352716082889385,
+      "median": 0.6524675841789902,
+      "p95": 2.15764118812965,
+      "sample_count": 16326,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 1631,
+        "mean": 0.8729506107072065,
+        "p95": 2.2202647089436542
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.5199665102429603,
+      "face_jump_max": 1.0686619878699228,
+      "face_jump_rms": 0.17230687930888766
+    }
+  },
+  {
+    "recipe": "Yuragi_Hinami",
+    "file": "NikonRecipes_Yuragi_Hinami_Y8.xmp",
+    "uuid": "1174FA71376D53B990E043A6494245E4",
+    "sha256": "3a80a48aa5fa6e3d5dcac9e0bad9f9b2119cc710ccbdbc27dbf6cfe9e0c6346a",
+    "source_version": "Y8-S16",
+    "prior_y7_banding": false,
+    "fit": {
+      "mean": 0.6921404055798231,
+      "median": 0.5198532188534538,
+      "p95": 1.8494903050991975,
+      "sample_count": 19950,
+      "kind": "Current-table chart evaluation, same sample policy as Y7; not an independent test",
+      "heldout": {
+        "count": 2001,
+        "mean": 0.7308724233264039,
+        "p95": 1.9451258915751495
+      }
+    },
+    "banding": {
+      "face_jump_p99": 0.4727542953646192,
+      "face_jump_max": 1.0773349330569841,
+      "face_jump_rms": 0.1432734215092303
+    }
+  }
+]

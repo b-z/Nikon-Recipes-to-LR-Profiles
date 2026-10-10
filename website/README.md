@@ -41,3 +41,9 @@ Deploy `website/dist/` with Cloudflare Pages Direct Upload. Deployment does not 
 日本語：完全な画像素材はリポジトリ外に保存し、ソースにはサイトコード、素材一覧と小さな文書用画像のみを含めます。`website/dist/` は Git に追加しません。
 
 The gallery defaults to synchronized A/B blinking every second. Arrow Up / Arrow Down selects the previous / next recipe in the visible filtered/sorted list. The NP3 button links to the credited upstream archive; the XMP button downloads the exact converted profile. Original NP3s are not hosted here.
+
+Use the heart beside each recipe to save favorites in this browser’s local storage. Favorites persist across reloads and are not uploaded or shared between devices. Clearing site data removes them.
+
+Neutral warning triangles mark the 58 recipes with residual banding in the owner’s Y7 review on 2026-10-10. They replace the previous yellow/gray classification. The fixed list is in `data/banding_warnings.json`; favorites remain browser-local and independent of it. [Review](../docs/BANDING_REVIEW.md). `Order by Favorites` is unchanged.
+
+The gallery defaults to Y8 smooth-function conversions. Select Y7 or `Previous LR conversion` to compare older versions. The XMP button explicitly labels and downloads the displayed conversion version (right-hand LR source takes priority). All236 Y8 profiles and four-scene previews are stored as separate external assets; Y7 and NX are preserved. The 58 historical Y7 warning recipes passed the owner's latest Y8 real-photo review, with no banding observed. This is not a universal guarantee. GitHub release assets remain a separate historical snapshot until explicitly updated.

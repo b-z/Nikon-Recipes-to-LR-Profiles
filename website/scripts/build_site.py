@@ -28,7 +28,8 @@ def main():
     data = root / 'website/data'
     inventory = json.loads((data / 'assets_manifest.json').read_text(encoding='utf-8'))
     rows = json.loads((docs / 'recipe_metrics.json').read_text(encoding='utf-8'))
-    allowed_profiles = {row['file'] for row in rows}
+    y8_rows = json.loads((data/'y8_metrics.json').read_text(encoding='utf-8'))
+    allowed_profiles = {row['file'] for row in rows+y8_rows}
     args.output.mkdir(parents=True, exist_ok=True)
     # Documentation stays light in Git; the site receives full-size assets below.
     paths = [f for f in docs.rglob('*') if f.is_file() and f.suffix in ('.md', '.json', '.jpg')]
@@ -74,6 +75,15 @@ def main():
                 raise ValueError('Missing conversion preview')
         if not (args.output / 'docs/images/thumbs' / f'{row["recipe"]}.jpg').is_file():
             raise ValueError('Missing recipe thumbnail')
+    for row in y8_rows:
+        profile=args.output/'docs/profiles'/row['file']
+        if not profile.is_file() or hashlib.sha256(profile.read_bytes()).hexdigest()!=row['sha256']:
+            raise ValueError('Missing or mismatched Y8 profile')
+        for stem in ('9046','2849','2694','5054'):
+            if not (args.output/'docs/images/y8'/f'{stem}_{row["recipe"]}.jpg').is_file():
+                raise ValueError('Missing Y8 conversion preview')
+        if not (args.output/'docs/images/y8/thumbs'/f'{row["recipe"]}.jpg').is_file():
+            raise ValueError('Missing Y8 thumbnail')
     for ref in refs:
         if not (args.output / 'docs' / ref['path']).is_file():
             raise ValueError('Missing NX reference')

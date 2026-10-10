@@ -1,0 +1,38 @@
+[
+  {
+    "photo": "2694",
+    "recipe": "BleachBlue_Aparupa",
+    "amount": 1.0,
+    "mean_de": 0.018149576942758813,
+    "p95_de": 0.0604455812504736,
+    "max_de": 1.3274174272347365,
+    "source_version": "Y8-S16-20261010",
+    "table_id": "28BDA5FB4E7801B983C84F1D45750543",
+    "kind": "Actual Camera Raw vs native preview on area-averaged image; includes clipped pixels",
+    "within_preview_threshold": true
+  },
+  {
+    "photo": "9046",
+    "recipe": "Filmic_Fabio",
+    "amount": 1.0,
+    "mean_de": 0.08365632440704131,
+    "p95_de": 0.35183843586243635,
+    "max_de": 4.3870931695126405,
+    "source_version": "Y8-S16-20261010",
+    "table_id": "73A7B3F033F0561BCA668CDEFAE46207",
+    "kind": "Actual Camera Raw vs native preview on area-averaged image; includes clipped pixels",
+    "within_preview_threshold": true
+  },
+  {
+    "photo": "2849",
+    "recipe": "GoldenBrownSiinapse",
+    "amount": 1.0,
+    "mean_de": 0.2742954118551976,
+    "p95_de": 1.2756449447626756,
+    "max_de": 5.242016182957415,
+    "source_version": "Y8-S16-20261010",
+    "table_id": "2B63C2A1E8CA985446D6C8129E348C80",
+    "kind": "Actual Camera Raw vs native preview on area-averaged image; includes clipped pixels",
+    "within_preview_threshold": false
+  }
+]
