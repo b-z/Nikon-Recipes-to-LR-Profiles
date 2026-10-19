@@ -4,23 +4,23 @@
 
 Bring Nikon Imaging Cloud recipe color styles into Lightroom and Adobe Camera Raw, with an **Amount slider from 0 to 200%**. Keep exposure, white balance and other edits available in your normal RAW workflow.
 
-The initial pack contains **236 Nikon recipe conversions** as enhanced-profile `.xmp` files built on Adobe Standard. No separate DCP or installer is needed. These are calibrated approximations, not Nikon's renderer and not a direct NP3 slider translation. **Nikon Z 8 is the tested camera.** Other bodies are unvalidated.
+Release 0.2.0 contains **236 Nikon recipe conversions**, all fitted with the smoother **Y8** method, as enhanced-profile `.xmp` files built on Adobe Standard. No separate DCP or installer is needed. These are calibrated approximations, not Nikon's renderer and not a direct NP3 slider translation. **Nikon Z 8 is the tested camera.** Other bodies are unvalidated.
 
 ## Use a profile
 
 1. Download and unzip the profiles asset from [Releases](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases).
 2. In Lightroom / Camera Raw, open the Profile Browser and choose **Import Profiles**. Select the `.xmp` files. Restart Lightroom if new profiles do not appear.
-3. Open **Nikon Recipes LR 0.1**, select a look and adjust **Amount**. Start around 30–50% for a subtle effect; continue editing exposure and white balance normally.
+3. Open **Nikon Recipes LR 0.2**, select a look and adjust **Amount**. Start around 30–50% for a subtle effect; continue editing exposure and white balance normally.
 
-Profiles have new names and UUIDs so they can coexist with previous private test versions.
+0.2.0 profiles have new names, group and UUIDs, so they can coexist with 0.1 profiles; remove the **Nikon Recipes LR 0.1** group if you no longer need it.
 
 ## Compare the recipes
 
-[Recipe catalog and scores](docs/RECIPES.md) · [Live interactive gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) · [Website build](website/README.md) · [Machine-readable metrics](docs/recipe_metrics.json)
+[Recipe catalog and scores](docs/RECIPES.md) · [Live interactive gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) · [Website build](website/README.md) · [Machine-readable release manifest](docs/release_manifest.json)
 
 Each recipe has chart fitting errors, a global tetrahedral-face banding-risk score, author/source attribution and previews of four Z8 photographs. The sidebar shows all recipes on Landscape test 1, followed by two landscapes and two banding test scenes. Source documentation keeps only a small example and compact contact sheets. The complete image library is external to Git; website source and asset metadata live in `website/`. Gallery conversions are **numerical RGBTable previews on Camera Raw Adobe Standard exports** unless explicitly labeled as a Camera Raw render. All 944 owner-exported NX Studio references (236 recipes on four scenes) and [compact NX/LR contact sheets](docs/comparisons/README.md) are available on the website. The gallery defaults to NX Studio versus our LR conversion; either side can independently select Adobe Standard, NX or our conversion. See [gallery workflow](docs/GALLERY.md), [measurement definitions](docs/en/metrics.md) and [actual Camera Raw checks](docs/en/acr-validation.md).
 
-**Banding remains a known issue.** The live gallery defaults to the full-library **Y8** smooth-function rebuild (236 profiles), with Y7 and earlier conversions retained for comparison. Scores and XMP downloads follow the selected conversion version. All 58 recipes previously flagged in the owner’s Y7 review were tested with Y8 on multiple real photographs, with no banding observed; the other 178 have not received the same review. Historical warning triangles describe Y7, not Y8. Low chart ΔE and the four sample scenes are not universal no-banding guarantees. [Y8 method and review](docs/Y8_REBUILD.md). GitHub release archives remain the historical 19-YC7 / 217-YC4 pack until separately updated.
+**Banding remains a known issue.** Release 0.2.0 and the live gallery both use the full-library **Y8** smooth-function rebuild (236 profiles); the gallery keeps Y7 and earlier conversions for comparison, and its scores and XMP downloads follow the selected version. Y8 trades some chart accuracy for smoother gradients: 214 of 236 recipes have a higher chart ΔE than Y7 (median 0.47 → 0.70; see the [catalog](docs/RECIPES.md)), while the median face-jump banding-risk score falls 0.51 → 0.46. All 58 recipes previously flagged in the owner’s Y7 review were tested with Y8 on multiple real photographs, with no banding observed; the other 178 have not received the same review. Historical warning triangles describe Y7, not Y8. Low chart ΔE and the four sample scenes are not universal no-banding guarantees. [Y8 method and review](docs/Y8_REBUILD.md). The 0.1.0 Release (19 YC7 + 217 YC4) remains available as a historical download.
 
 ## Calibrate another recipe
 

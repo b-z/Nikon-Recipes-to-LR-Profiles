@@ -6,15 +6,16 @@ import zipfile
 from pathlib import Path
 from nikon_recipes_lr.profile import read_profile
 from nikon_recipes_lr.nx import sha256
+from nikon_recipes_lr import __version__
 
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--profiles',required=True);p.add_argument('--metrics',required=True)
-    p.add_argument('--samples');p.add_argument('--output',required=True);p.add_argument('--version',default='0.1.0')
+    p.add_argument('--samples');p.add_argument('--output',required=True);p.add_argument('--version',default=__version__)
     args=p.parse_args();root=Path(__file__).resolve().parents[1];out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
     rows=json.loads(Path(args.metrics).read_text(encoding='utf-8'));profiles=Path(args.profiles)
-    if len(rows)!=236:raise ValueError('Initial Nikon pack must contain all 236 conversions')
+    if len(rows)!=236:raise ValueError('Nikon pack must contain all 236 conversions')
     ids=set()
     for row in rows:
         source=profiles/row['file'];lut,metadata=read_profile(source)

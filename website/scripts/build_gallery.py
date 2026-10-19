@@ -78,7 +78,7 @@ def main():
             pic.save(thumbs/f'{row["recipe"]}.jpg',quality=82,icc_profile=pic.info.get('icc_profile'))
     inventory(assets,data/'assets_manifest.json')
     (assets/'assets_manifest.json').write_text((data/'assets_manifest.json').read_text(encoding='utf-8'), encoding='utf-8')
-    build_pages(rows,docs,include_previews=False)
+    # docs/RECIPES.md and docs/recipes/ describe the Release profiles; regenerate them with scripts/write_catalog.py.
 
 
 def build_y8_pages(rows, docs):

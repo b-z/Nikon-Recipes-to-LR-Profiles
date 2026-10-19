@@ -32,7 +32,7 @@ NX JPEGs may sit alongside the batch RAW names or under `exports/`. Keep origina
 PYTHONPATH=src python3 website/scripts/ingest_nx_gallery.py --batch /path/to/nx-batch --assets /path/to/website-assets
 ```
 
-This updates website reference metadata and the asset inventory, writes full-size gallery previews and sheets only into the external assets, and refreshes compact documentation sheets and score pages. Rebuild the asset pack after changing assets; old packs intentionally fail the new inventory check. Numerical conversion previews can be regenerated with `website/scripts/build_gallery.py --profiles ... --baselines ... --metrics docs/recipe_metrics.json --assets ...`.
+This updates website reference metadata and the asset inventory, writes full-size gallery previews and sheets only into the external assets, and refreshes compact documentation sheets and score pages. Rebuild the asset pack after changing assets; old packs intentionally fail the new inventory check. Numerical conversion previews can be regenerated with `website/scripts/build_gallery.py --profiles ... --baselines ... --metrics docs/recipe_metrics.json --assets ...`. `docs/recipe_metrics.json` holds the Y7 gallery rows and `website/data/y8_metrics.json` the Y8 rows. The source catalog (`docs/RECIPES.md`, `docs/recipes/`) follows the Release manifest `docs/release_manifest.json`; regenerate it with `python scripts/write_catalog.py`.
 
 Deploy `website/dist/` with Cloudflare Pages Direct Upload. Deployment does not require a Git commit or push. All photographs and derivatives follow [sample photo terms](../samples/LICENSE.md); they are not MIT-licensed.
 

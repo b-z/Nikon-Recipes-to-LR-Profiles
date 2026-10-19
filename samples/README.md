@@ -1,6 +1,6 @@
 # Z8 comparison samples
 
-Download the separate `nikon-recipes-lr-samples-0.1.0.zip` sample asset from [Releases](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases). This keeps roughly 200 MB of RAW files out of normal source clones. The four RAWs are still part of the project's published benchmark inputs.
+Download the separate `nikon-recipes-lr-samples-0.1.0.zip` sample asset from [Releases](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases) (attached to both 0.1.0 and 0.2.0; the RAWs are unchanged). This keeps roughly 200 MB of RAW files out of normal source clones. The four RAWs are still part of the project's published benchmark inputs.
 
 | File | Purpose |
 |---|---|

@@ -1,6 +1,6 @@
 # NX Studio / Lightroom comparison sheets
 
-Recipes are ordered by ascending chart mean ΔE. Each sheet has up to eight recipe rows; each row shows all four scenes as NX/LR pairs (eight photographs). Names, ΔE and Banding risk are above each row. NX and LR labels overlay the photographs. These are high-quality sRGB visual previews, not precision banding measurements.
+These sheets were made with the previous Y7 tables (Release 0.2.0 ships Y8; the [online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) shows Y8). Recipes are ordered by ascending Y7 chart mean ΔE. Each sheet has up to eight recipe rows; each row shows all four scenes as NX/LR pairs (eight photographs). Names, ΔE and Banding risk are above each row. NX and LR labels overlay the photographs. These are high-quality sRGB visual previews, not precision banding measurements.
 
 Photos © b-z / Zhou Bowei. [Project comparison permission](../../samples/LICENSE.md).
 
