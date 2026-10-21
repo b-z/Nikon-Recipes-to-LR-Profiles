@@ -6,13 +6,37 @@ build-backend = "setuptools.build_meta"
 name = "nikon-recipes-to-lr-profiles"
 version = "0.2.0"
 description = "Calibrate Nikon Imaging Recipes into adjustable Lightroom / Camera Raw profiles"
-requires-python = ">=3.9"
+readme = "README.md"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "b-z"}]
+keywords = ["nikon", "lightroom", "camera-raw", "color", "lut", "picture-control"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Graphics",
+]
 dependencies = ["numpy>=1.23", "scipy>=1.12", "tifffile>=2023.7.10", "Pillow>=10"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.urls]
+Homepage = "https://github.com/b-z/Nikon-Recipes-to-LR-Profiles"
+Gallery = "https://nikon-recipes-to-lr-profiles.pages.dev/"
+Issues = "https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues"
+Changelog = "https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/blob/main/CHANGELOG.md"
 
 [project.scripts]
 nikon-recipes-lr = "nikon_recipes_lr.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "E741", "B905"]

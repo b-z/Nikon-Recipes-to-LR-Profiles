@@ -1,9 +1,12 @@
-## Problem and resulting behavior
+## What does this change?
 
-## Validation
+<!-- Link the related issue, e.g. "Fixes #12". -->
 
-State which data are training, held out, synthetic or actual Lightroom/Camera Raw checks.
+## How was it tested?
 
-## Provenance / limitations
+- [ ] `ruff format --check`, `ruff check` and `pytest` pass
+- [ ] For color or banding changes: data used for fitting vs. evaluation is stated below, with `audit` results, and whether anything was checked in Lightroom / Camera Raw
 
-Confirm that submitted code and data can be distributed under their stated licenses.
+## Licensing
+
+- [ ] I have the right to contribute this code and any included data under the project's licenses

@@ -1,22 +1,40 @@
-name: Banding / color mismatch
-description: Report a reproducible profile problem
+name: Banding or color mismatch
+description: A profile shows steps, posterization or colors that differ clearly from NX Studio
+labels: ["bug"]
 body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting! Small crops that show the problem are the most helpful. Only attach images you are allowed to share.
   - type: input
     id: recipe
     attributes:
-      label: Recipe, pack version, Amount
+      label: Recipe and release
+      description: Profile name as shown in Lightroom, e.g. "Filmic by Fabio Oliveira [NRLR 0.2]"
+    validations:
+      required: true
+  - type: input
+    id: amount
+    attributes:
+      label: Amount
+      placeholder: "100%"
     validations:
       required: true
   - type: input
     id: environment
     attributes:
       label: Camera, Lightroom / Camera Raw version, OS
+      placeholder: "Nikon Z 8, Lightroom Classic 15.x, macOS 26"
     validations:
       required: true
   - type: textarea
-    id: reproduction
+    id: description
     attributes:
-      label: Reproduction and comparison
-      description: Include permitted crops or a synthetic test. Describe NX comparison if available. Do not upload private metadata unnecessarily.
+      label: What do you see?
+      description: Where in the image (sky, bokeh, skin…)? Does it also appear at lower Amount? If you have the NX Studio result of the same photo, how does it compare?
     validations:
       required: true
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Crops or screenshots
+      description: Drag images here. A full-resolution RAW is optional; share it only if you are comfortable with it being public.

@@ -2,7 +2,7 @@
 
 236 Nikon conversions, all **Y8** (smooth spline fit sampled to a 32³ RGB table). **Banding is a known issue**; scores are not universal visibility thresholds. [Definitions](en/metrics.md) · [Y8 method and review](Y8_REBUILD.md) · [Online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/)
 
-Chart ΔE is current-table evaluation on existing targets. Face p99 measures native RGB slope change globally; it is not ΔE. Y7 columns are the previous conversion, for comparison only. Reviewed: the 58 recipes that showed residual banding with Y7 were checked by the owner with Y8 on multiple photographs and no banding was observed. The other 178 were not individually reviewed with Y8.
+Chart ΔE is current-table evaluation on existing targets. Face p99 measures native RGB slope change globally; it is not ΔE. Y7 columns are the previous conversion, for comparison only. Reviewed: the 58 recipes that showed residual banding with Y7 were checked by the maintainer with Y8 on multiple photographs and no banding was observed. The other 178 were not individually reviewed with Y8.
 
 | Recipe / original author | Chart mean ΔE | Chart p95 | Face p99 | Y7 mean ΔE | Y7 face p99 | Reviewed with Y8 |
 |---|---:|---:|---:|---:|---:|:---:|

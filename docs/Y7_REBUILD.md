@@ -13,7 +13,7 @@ Warning icons now reflect the 2026-10-10 Y7 review: 58 recipes retain some bandi
 
 ## Validation
 
-All236 tables were decoded from their delivered XMP and checked for shape, finite bounded values, UUID, fingerprint and file checksum. Camera Raw checks cover 24Look, Bleach Blue and Filmic on Banding test 1; see acr_validation.json. Chart scores are not independent real-scene validation. Each profile uses the same train/test split as the original Y7 run.
+All 236 tables were decoded from their delivered XMP and checked for shape, finite bounded values, UUID, fingerprint and file checksum. Camera Raw checks cover 24Look, Bleach Blue and Filmic on Banding test 1; see acr_validation.json. Chart scores are not independent real-scene validation. Each profile uses the same train/test split as the original Y7 run.
 
 GitHub release archives remain the previous version until explicitly updated; current per-recipe gallery downloads contain this Y7 rebuild.
 

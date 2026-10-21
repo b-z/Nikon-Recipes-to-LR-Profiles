@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Comparison gallery
+    url: https://nikon-recipes-to-lr-profiles.pages.dev/
+    about: Check how a recipe looks on four photographs before reporting a color difference.
+  - name: Security issue
+    url: https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/blob/main/SECURITY.md
+    about: Please report vulnerabilities privately.

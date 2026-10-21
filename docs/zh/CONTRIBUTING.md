@@ -1,11 +1,22 @@
 # 参与贡献
 
-欢迎提交相机校准、断层修复、测试与翻译。代码、注释和主要文档用英语；中文或日文问题报告也欢迎。
+感谢你的帮助！完整指南见[英文版 CONTRIBUTING](../../CONTRIBUTING.md)，以英文版为准。Issue 和 PR 建议用英文，以便所有人都能参与；用中文或日文反馈问题也完全没问题。参与本项目即表示同意遵守[行为准则](../../CODE_OF_CONDUCT.md)。
 
-1. 提交可复现问题：配方与版本、数量、相机和 Adobe 版本，附有权公开的小裁切或合成测试。
-2. 修改一个明确问题，并运行 `python -m unittest discover -s tests -v`。
-3. PR 写明行为变化、验证方式、训练与独立验证数据的区别、素材来源和局限。
+**可以帮忙的方向**
 
-代码和原创文档贡献采用 MIT，无单独 CLA。不要加入原始 NP3 集合、Adobe SDK、私密日志、私人目录默认值或未经许可的照片；富士模拟不在项目范围内。不要只凭单张照片或 ΔE 宣称消除断层，保留全颜色空间审计。
+- 用[问题表单](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues/new/choose)反馈断层或偏色：写明配方、版本、数量、相机和 Lightroom 版本，附上可以公开的小裁切。
+- 校准其他机身（目前只有 Nikon Z 8），见[校准说明](../en/calibration.md)。
+- 改进拟合方法、断层指标或感知评估；改进代码、测试、网站和翻译。
 
-对应 [英文说明](../../CONTRIBUTING.md)，版本 0.2.0。
+**开发环境**（Python 3.10+）
+
+```sh
+python -m pip install -e ".[dev]"
+ruff format src tests scripts website/scripts
+ruff check src tests scripts website/scripts
+python -m pytest
+```
+
+**PR 要求**：一次只做一件事并附测试；改动色彩或断层时写明拟合数据与评估数据，附 `audit` 结果，说明是否在 Lightroom / Camera Raw 中实际检查过。仅凭标靶 ΔE 或单张照片不能宣称消除了断层。不接受原始 NP3 合集、Adobe SDK、Adobe 基础配置文件或无权分享的照片。
+
+贡献按项目的 [MIT 许可](../../LICENSE)提供，无需另签协议。

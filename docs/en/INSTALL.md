@@ -4,7 +4,7 @@
 2. Restart Lightroom if the imported profiles do not appear. Open **Nikon Recipes LR 0.2** and choose a style.
 3. Adjust Amount (0–200%); try 30–50% for subtle application. Continue editing exposure, white balance and other settings as usual.
 
-All 236 Nikon conversions use **Y8**: a smooth spline fit sampled to a 32³ RGB table, which trades some chart accuracy for smoother gradients. The 58 recipes that still showed banding with the previous Y7 tables were checked by the owner with Y8 on several real photographs, and no banding was observed. The other 178 were not individually reviewed with Y8. Banding remains a known risk, especially in smooth sky and bokeh gradients and at high Amount. Only Nikon Z8 has been tested.
+All 236 Nikon conversions use **Y8**: a smooth spline fit sampled to a 32³ RGB table, which trades some chart accuracy for smoother gradients. The 58 recipes that still showed banding with the previous Y7 tables were checked by the maintainer with Y8 on several real photographs, and no banding was observed. The other 178 were not individually reviewed with Y8. Banding remains a known risk, especially in smooth sky and bokeh gradients and at high Amount. Only Nikon Z8 has been tested.
 
 0.2.0 profiles have new names, a new group and new UUIDs, so they can be installed next to 0.1 profiles. Remove the **Nikon Recipes LR 0.1** profiles if you no longer need them.
 

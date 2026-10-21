@@ -1,0 +1,25 @@
+name: Tool or website bug
+description: The CLI, library, gallery or documentation does not work as described
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include the command you ran and the full error message.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Version and environment
+      description: Output of `nikon-recipes-lr --version`, Python version, OS
+    validations:
+      required: true

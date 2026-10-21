@@ -13,7 +13,7 @@ Read [photo permission](LICENSE.md) before reuse. `manifest.json` records origin
 
 ## Original NEFs and NX compatibility
 
-The owner authorized publication of these four untouched original NEFs, including their camera metadata. They replace the earlier metadata-sanitized copies: in the six-case test, sanitized NEFs rendered normally alone but produced abnormal colors with NX recipe sidecars; untouched originals worked with both tested sidecars. The precise metadata mechanism is unknown. Keeping original files preserves compatibility with this NX workflow. The web gallery contains only rendered JPEG derivatives without EXIF, not RAW files.
+The photographer (the project maintainer) authorized publication of these four untouched original NEFs, including their camera metadata. They replace the earlier metadata-sanitized copies: in the six-case test, sanitized NEFs rendered normally alone but produced abnormal colors with NX recipe sidecars; untouched originals worked with both tested sidecars. The precise metadata mechanism is unknown. Keeping original files preserves compatibility with this NX workflow. The web gallery contains only rendered JPEG derivatives without EXIF, not RAW files.
 
 经照片作者授权，样本改为未脱敏、未修改的原始 NEF，保留相机元数据，供 Adobe/Lightroom 和 NX 测试。此前脱敏片搭配 NX 侧车颜色异常。网页只使用无 EXIF 的 JPEG 衍生图。
 

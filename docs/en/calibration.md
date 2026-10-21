@@ -9,7 +9,7 @@ Our NP3 reader exposes Nikon's TLV metadata. Curves, Color Blender and Color Gra
 ## 1. Make a chart (experimental)
 
 ```sh
-nikon-recipes-lr make-target --donor donor.NEF --output chart.NEF   --confirm-donor-calibration
+nikon-recipes-lr make-target --donor donor.NEF --output chart.NEF --confirm-donor-calibration
 ```
 
 The donor must be little-endian Nikon Z 8 RAW with a unique 8280×5520 raw IFD and a single raw strip at the end of the file. This experimental generator uses calibration constants from the development donor: RGGB layout, 12/8 inset, black level 1008, highlight limit 15311 and WB multipliers 1.85156/1/1.42578. **A Z8 model name alone does not establish compatible metadata.** Confirm donor black level, CFA, white balance and dimensions before using the flag; otherwise provide your own synthetic target and metadata. Donor JPEG previews are retained and can show the original photo; evaluate the RAW render. No donor file is bundled as a universal calibration donor.
@@ -21,7 +21,8 @@ The chart samples 48 hue angles × 21 nonuniform saturation levels × 24 brightn
 Save one properly configured NX Studio chart adjustment to an `.nksc` sidecar. Supply that template and your own NP3 files:
 
 ```sh
-nikon-recipes-lr prepare-nx --source chart.NEF --template chart.NEF.nksc   --recipes recipe-a.NP3 recipe-b.NP3 --output nx-batch
+nikon-recipes-lr prepare-nx --source chart.NEF --template chart.NEF.nksc \
+  --recipes recipe-a.NP3 recipe-b.NP3 --output nx-batch
 ```
 
 Open the new batch directory in NX Studio. Verify the named Picture Control and detail/lens settings on a sample, then export all references. Sidecar injection preserves the template's other settings; it does not validate or disable them for you. It requires the observed escaped ExportData/CustomData layout and fails on unsupported templates. No supported public NX command-line renderer is used here.
@@ -46,11 +47,18 @@ This uses a disposable local RAW copy and embedded sidecar, leaves the original 
 ## 4. Fit, audit and review
 
 ```sh
-nikon-recipes-lr fit --adobe-samples adobe.json --nx-samples nx.json   --name "Recipe A" --author "Original author" --output recipe-a.xmp   --grid 32 --lambda 0.5 --report recipe-a-report.json
+nikon-recipes-lr fit --adobe-samples adobe.json --nx-samples nx.json \
+  --name "Recipe A" --author "Original author" --output recipe-a.xmp --report recipe-a-report.json
 nikon-recipes-lr audit recipe-a.xmp
 ```
 
-The bounded solver fits encoded RGB with a penalty on every tetrahedral face and a small identity ridge. It quantizes to 16-bit table nodes. `--lambda` controls the fidelity/smoothness tradeoff; 0.5 is the YC7 development setting, not a proven optimum for every recipe. The CLI fit report is a training-set score. For development, use separate calibration/validation pairs and actual RAW scenes; do not tune on a test split and still call it unseen validation.
+The default `--method spline` is the method used for the released profiles since 0.2.0: a bounded C2 cubic tensor B-spline with 16 control points per axis (`--control-points`) and a curvature penalty (`--lambda`, default 0.001), sampled into the 32³ table and quantized to 16-bit nodes. Because the spline basis is nonnegative and sums to one, bounded coefficients keep every output in gamut without clipping. `--method native` fits the 32³ table directly with a penalty on every tetrahedral face (the 0.1 method, default `--lambda` 0.5); it follows the chart more closely but is more prone to banding. Neither setting is a proven optimum for every recipe.
+
+Clipped pairs (any channel below 0.0005 or above 0.999) are excluded. The fit report is a training-set score. For development, keep separate fitting and evaluation samples and check actual RAW scenes; do not tune on a test split and still call it unseen validation.
+
+Refitting a released recipe from the same samples with a different SciPy version can differ slightly, because the bounded solver stops at a tolerance rather than at the exact optimum. For the 0.2.0 profiles the difference is below 0.2 ΔE at every table node.
+
+New profiles are written to the `Nikon Recipes LR/Custom` group unless you pass `--group`. The UUID is derived from group and name, so re-importing a refit with the same name and group replaces the earlier one in Lightroom. Use `--camera ""` to drop the camera restriction.
 
 Import the enhanced `.xmp` manually, restart Lightroom if needed, and inspect smooth gradients, skies and bokeh at both normal strength and 200%. Changing the profile can change exposure/WB slider feel. Do not overwrite existing edits when preparing benchmarks.
 

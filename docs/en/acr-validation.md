@@ -19,6 +19,6 @@ Overview pixels were area-averaged by a factor of 6; measurements sampled every 
 | _DSC9046 | Filmic_Fabio | 0.1137 | 0.4859 |
 | _DSC9046 | LeicaSTD | 0.0609 | 0.2518 |
 
-Source: [machine-readable results](../acr_validation.json). Actual ACR images are included on the hosted recipe pages; source documentation links to the online gallery. All 944 owner-produced NX references are available on the website. Photos retain the [restricted project-test terms](../../samples/LICENSE.md).
+Source: [machine-readable results](../acr_validation.json). These checks used the Y7 tables; checks of the released Y8 tables are in [y8_acr_validation.json](../y8_acr_validation.json) and listed on the recipe pages. All 944 maintainer-produced NX references are available on the website. Photos retain the [restricted project-test terms](../../samples/LICENSE.md).
 
 Banding test 2 was rechecked after disabling the lens’s mandatory distortion flag on a private render copy. The original RAWs and NX references are unchanged; see [measurement definitions](metrics.md).

@@ -1,20 +1,20 @@
 # Y8 smooth-function rebuild
 
-All236 Nikon recipes have separate Y8 downloads and four-scene previews. Y7 and NX references remain available. Fuji simulations are excluded.
+All 236 Nikon recipes have separate Y8 downloads and four-scene previews. Y7 and NX references remain available. Fuji simulations are excluded.
 
 ## What changed
 
-Y7 optimized the32³ table directly with a global slope-jump penalty. Y8 instead fits a bounded C2 continuous cubic tensor spline with16 control points per axis, penalizes curvature, then samples that function into the delivered32³ table. This reduces fitting freedom from32768 to4096 coefficients per output channel and discourages local compression/expansion waves between chart samples. It does not increase LUT density or change Adobe interpolation.
+Y7 optimized the 32³ table directly with a global slope-jump penalty. Y8 instead fits a bounded C2 continuous cubic tensor spline with 16 control points per axis, penalizes curvature, then samples that function into the delivered32³ table. This reduces fitting freedom from 32768 to 4096 coefficients per output channel and discourages local compression/expansion waves between chart samples. It does not increase LUT density or change Adobe interpolation.
 
 ## Real-photo review
 
-The owner reviewed the58 recipes previously flagged for residual Y7 banding on multiple real photographs and reported good results with no banding observed. The other178 recipes have not received that same review. This does not establish a universal no-banding guarantee. Historical warning icons refer to Y7.
+The maintainer reviewed the 58 recipes previously flagged for residual Y7 banding on multiple real photographs and reported good results with no banding observed. The other178 recipes have not received that same review. This does not establish a universal no-banding guarantee. Historical warning icons refer to Y7.
 
 ## Tradeoff and validation
 
-Fits use the same existing NX chart targets and train/validation/test color-group split. Some recipes sacrifice chart color accuracy for smoothness; Y8 is not uniformly more accurate. In the four-recipe controlled experiment, Vintage Touch's heldout mean ΔE increased0.477→0.608, while actual Camera Raw sky slope ripple fell about84%. Its independent32-panel gradient L-ripple p95 fell about12%. Those percentages are diagnostic metric reductions, not percentages of visible bands removed.
+Fits use the same existing NX chart targets and train/validation/test color-group split. Some recipes sacrifice chart color accuracy for smoothness; Y8 is not uniformly more accurate. In the four-recipe controlled experiment, Vintage Touch's heldout mean ΔE increased 0.477→0.608, while actual Camera Raw sky slope ripple fell about 84%. Its independent 32-panel gradient L-ripple p95 fell about 12%. Those percentages are diagnostic metric reductions, not percentages of visible bands removed.
 
-All236 XMPs converged, decoded exactly, and have distinct UUIDs. Every displayed Y8 conversion is a numerical native tetrahedral preview on the same Camera Raw Adobe Standard baseline used for Y7, color-managed to sRGB. They are not944 new Camera Raw exports or NX truth. NX images are the original owner-exported references. Vintage Touch Y7/Y8 was checked by actual Camera Raw; geometry correction was disabled on a private copy without changing RAW data. The gallery's baselines preserve the existing matched geometry.
+All 236 XMPs converged, decoded exactly, and have distinct UUIDs. Every displayed Y8 conversion is a numerical native tetrahedral preview on the same Camera Raw Adobe Standard baseline used for Y7, color-managed to sRGB. They are not 944 new Camera Raw exports or NX truth. NX images are the original maintainer-exported references. Vintage Touch Y7/Y8 was checked by actual Camera Raw; geometry correction was disabled on a private copy without changing RAW data. The gallery's baselines preserve the existing matched geometry.
 
 Chart ΔE uses the same valid-sample policy as Y7. Banding risk is global native face-jump p99, not a perceptual pass/fail threshold.
 
@@ -262,4 +262,4 @@ Chart ΔE uses the same valid-sample policy as Y7. Banding risk is global native
 
 ## Actual Camera Raw spot checks
 
-The three new checks verify applied profile fingerprints and record approximation error: [measurements](y8_acr_validation.json). Bleach Blue / Banding test1 mean ΔE0.018; Filmic / Landscape test1 mean0.084; Golden Brown / Landscape test2 mean0.274. The last exceeds the initial preview-equivalence threshold. A separate full-resolution diagnostic confirmed the cause: transformation after area averaging differs from transformation before averaging. Matching ACR order reduces Golden Brown mean ΔE to0.0023. No baseline drift was found. Small numerical previews approximate the style; final Lightroom evaluation takes priority. [Diagnostic](preview_2849_diagnosis.json).
+The three new checks verify applied profile fingerprints and record approximation error: [measurements](y8_acr_validation.json). Bleach Blue / Banding test 1 mean ΔE 0.018; Filmic / Landscape test 1 mean 0.084; Golden Brown / Landscape test 2 mean 0.274. The last exceeds the initial preview-equivalence threshold. A separate full-resolution diagnostic confirmed the cause: transformation after area averaging differs from transformation before averaging. Matching ACR order reduces Golden Brown mean ΔE to 0.0023. No baseline drift was found. Small numerical previews approximate the style; final Lightroom evaluation takes priority. [Diagnostic](preview_2849_diagnosis.json).
