@@ -1,6 +1,6 @@
 # Y7 visual banding review
 
-Maintainer review, 2026-10-10: banding is significantly reduced after the full Y7 rebuild. The **58 recipes below still show some residual banding** and carry a neutral triangle in the gallery. The other 178 were not flagged in this review; this is not a guarantee for every image or strength.
+Maintainer review, 2026-10-10: banding is significantly reduced after the full Y7 rebuild. The **58 recipes below still show some residual banding** and carried a neutral triangle in the gallery until 2026-10-21, when the markers were removed because they do not describe the Y8 profiles. The other 178 were not flagged in this review; this is not a guarantee for every image or strength.
 
 This fixed review snapshot replaces all previous warning icons. It was captured from the maintainer's unfavorited recipes; subsequent favorites do not change these public labels. Browser favorites were left unchanged.
 

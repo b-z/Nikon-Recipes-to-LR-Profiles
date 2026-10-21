@@ -96,7 +96,10 @@ def main():
             raise ValueError("Missing NX reference")
     write_gallery_html(rows, args.output / "docs")
     (args.output / "_redirects").write_text(
-        "/ /docs/gallery.html 302\n/gallery /docs/gallery.html 302\n", encoding="utf-8"
+        "/ /docs/gallery.html 302\n/gallery /docs/gallery.html 302\n"
+        # Former per-version Y8 score pages; the catalog page now covers both versions.
+        "/docs/recipes/y8/* /docs/recipes/:splat 301\n",
+        encoding="utf-8",
     )
     (args.output / "_headers").write_text(
         "/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n/docs/profiles/*\n  Content-Type: application/octet-stream\n  Content-Disposition: attachment\n",

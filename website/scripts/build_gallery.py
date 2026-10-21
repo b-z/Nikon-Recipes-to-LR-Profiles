@@ -127,7 +127,6 @@ def write_gallery_html(rows, docs):
         (site / "gallery.template.html")
         .read_text(encoding="utf-8")
         .replace("__DATA__", data)
-        .replace("__BANDING_WARNINGS__", (site / "data/banding_warnings.json").read_text(encoding="utf-8"))
         .replace("__Y8_METRICS__", (site / "data/y8_metrics.json").read_text(encoding="utf-8"))
         .replace("__DOWNLOADS__", (site / "data/downloads.json").read_text(encoding="utf-8"))
         .replace("__REFERENCES__", json.dumps(references).replace("</", "<\\/"))

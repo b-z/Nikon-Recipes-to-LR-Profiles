@@ -44,6 +44,6 @@ The gallery defaults to synchronized A/B blinking every second. Arrow Up / Arrow
 
 Use the heart beside each recipe to save favorites in this browser’s local storage. Favorites persist across reloads and are not uploaded or shared between devices. Clearing site data removes them.
 
-Neutral warning triangles mark the 58 recipes with residual banding in the maintainer's Y7 review on 2026-10-10. They replace the previous yellow/gray classification. The fixed list is in `data/banding_warnings.json`; favorites remain browser-local and independent of it. [Review](../docs/BANDING_REVIEW.md). `Order by Favorites` is unchanged.
+The gallery no longer shows banding warning triangles: they described the Y7 review of 2026-10-10 and do not apply to the Y8 profiles. The historical list is kept in `data/banding_warnings.json` and [BANDING_REVIEW](../docs/BANDING_REVIEW.md). Favorites remain browser-local; `Order by Favorites` is unchanged.
 
 The gallery defaults to Y8 smooth-function conversions. Select Y7 or `Previous LR conversion` to compare older versions. The XMP button explicitly labels and downloads the displayed conversion version (right-hand LR source takes priority). All 236 Y8 profiles and four-scene previews are stored as separate external assets; Y7 and NX are preserved. The 58 historical Y7 warning recipes passed the maintainer's latest Y8 real-photo review, with no banding observed. This is not a universal guarantee. Release 0.2.0 ships the same Y8 tables under release names and UUIDs.
