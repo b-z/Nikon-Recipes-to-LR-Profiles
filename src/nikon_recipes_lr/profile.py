@@ -15,6 +15,7 @@ ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^
 URL = "https://github.com/b-z/Nikon-Recipes-to-LR-Profiles"
 DEFAULT_GROUP = "Nikon Recipes LR/Custom"
 DEFAULT_CAMERA = "NIKON Z 8"
+BASES = ("Adobe Standard", "Camera Flexible Color")
 for prefix, ns in [("x", X), ("rdf", RDF), ("crs", CRS)]:
     ET.register_namespace(prefix, ns)
 
@@ -139,12 +140,16 @@ def read_profile(path):
     return lut, metadata
 
 
-def build_profile(lut, name, author, group=DEFAULT_GROUP, camera=DEFAULT_CAMERA):
-    """Return an enhanced-profile XMP (Look on Adobe Standard) embedding ``lut``.
+def build_profile(lut, name, author, group=DEFAULT_GROUP, camera=DEFAULT_CAMERA, base="Adobe Standard"):
+    """Return an enhanced-profile XMP (a Look on ``base``) embedding ``lut``.
+
+    ``lut`` must have been fitted to chart samples rendered with the same base profile.
 
     The UUID is derived from the group and name, so re-fitting a profile with the
     same name and group replaces it in Lightroom instead of adding a duplicate.
     """
+    if base not in BASES:
+        raise ValueError(f"Base profile must be one of {BASES}")
     payload, tid = pack_table(lut)
     root = ET.Element(f"{{{X}}}xmpmeta")
     rdf = ET.SubElement(root, f"{{{RDF}}}RDF")
@@ -166,7 +171,7 @@ def build_profile(lut, name, author, group=DEFAULT_GROUP, camera=DEFAULT_CAMERA)
         Version="15.4",
         ProcessVersion="15.4",
         ConvertToGrayscale="False",
-        CameraProfile="Adobe Standard",
+        CameraProfile=base,
         RGBTable=tid,
         RGBTableAmount="1.000000",
         HasSettings="True",
@@ -174,7 +179,7 @@ def build_profile(lut, name, author, group=DEFAULT_GROUP, camera=DEFAULT_CAMERA)
     attrs[f"Table_{tid}"] = payload
     desc = ET.SubElement(rdf, f"{{{RDF}}}Description", {f"{{{CRS}}}{k}": v for k, v in attrs.items()})
     description = (
-        f"Original recipe by {author}. Calibrated approximation on Adobe Standard made with Nikon Recipes to LR Profiles ({URL}); Amount 0–200%."
+        f"Original recipe by {author}. Calibrated approximation on {base} made with Nikon Recipes to LR Profiles ({URL}); Amount 0–200%."
         + (f" Calibrated for {camera}." if camera else "")
     )
     for key, value in [
@@ -190,15 +195,17 @@ def build_profile(lut, name, author, group=DEFAULT_GROUP, camera=DEFAULT_CAMERA)
     return ET.tostring(root, encoding="unicode") + "\n"
 
 
-def render_sidecar(profile=None, amount=1.0):
+def render_sidecar(profile=None, amount=1.0, base="Adobe Standard"):
     if not 0 <= amount <= 2 or not np.isfinite(amount):
         raise ValueError("Amount must be 0..2")
+    if base not in BASES:
+        raise ValueError(f"Base profile must be one of {BASES}")
     root = ET.Element(f"{{{X}}}xmpmeta")
     rdf = ET.SubElement(root, f"{{{RDF}}}RDF")
     settings = dict(
         Version="18.3",
         ProcessVersion="15.4",
-        CameraProfile="Adobe Standard",
+        CameraProfile=base,
         WhiteBalance="As Shot",
         HasSettings="True",
         ToneCurveName2012="Linear",
@@ -228,39 +235,67 @@ def render_sidecar(profile=None, amount=1.0):
     desc = ET.SubElement(rdf, f"{{{RDF}}}Description", {f"{{{CRS}}}{k}": v for k, v in settings.items()})
     if profile:
         _, m = read_profile(profile)
-        if m["base"] != "Adobe Standard":
-            raise ValueError("Expected Adobe Standard profile")
-        look = ET.SubElement(desc, f"{{{CRS}}}Look")
-        ld = ET.SubElement(
-            look,
-            f"{{{RDF}}}Description",
-            {
-                f"{{{CRS}}}{k}": str(v)
-                for k, v in dict(
-                    Name=m["name"],
-                    UUID=m["uuid"],
-                    Amount=amount,
-                    SupportsAmount="true",
-                    SupportsMonochrome="false",
-                    SupportsOutputReferred="true",
-                ).items()
-            },
-        )
-        params = ET.SubElement(ld, f"{{{CRS}}}Parameters")
-        ET.SubElement(
-            params,
-            f"{{{RDF}}}Description",
-            {
-                f"{{{CRS}}}{k}": v
-                for k, v in dict(
-                    Version="15.4",
-                    ProcessVersion="15.4",
-                    ConvertToGrayscale="False",
-                    CameraProfile=m["base"],
-                    RGBTable=m["table_id"],
-                    RGBTableAmount="1.000000",
-                    **{f"Table_{m['table_id']}": m["payload"]},
-                ).items()
-            },
-        )
+        if m["base"] != base:
+            raise ValueError(f"The profile is built on {m['base']!r}, not {base!r}")
+        _add_look(desc, m, amount)
     return ET.tostring(root, encoding="unicode") + "\n"
+
+
+def import_sidecar(profile, amount=1.0):
+    """Return a sidecar that sets only the profile's base and its Look, for Lightroom to read at import.
+
+    Other develop settings are absent, so Camera Raw uses its built-in defaults for them. Lens profile
+    correction, which is on by default for new photos but off when a sidecar omits it, is enabled explicitly.
+    """
+    if not 0 <= amount <= 2 or not np.isfinite(amount):
+        raise ValueError("Amount must be 0..2")
+    _, m = read_profile(profile)
+    root = ET.Element(f"{{{X}}}xmpmeta")
+    rdf = ET.SubElement(root, f"{{{RDF}}}RDF")
+    settings = dict(
+        Version="18.3",
+        ProcessVersion="15.4",
+        HasSettings="True",
+        CameraProfile=m["base"],
+        LensProfileEnable="1",
+        LensProfileSetup="LensDefaults",
+    )
+    desc = ET.SubElement(rdf, f"{{{RDF}}}Description", {f"{{{CRS}}}{k}": v for k, v in settings.items()})
+    _add_look(desc, m, amount)
+    return ET.tostring(root, encoding="unicode") + "\n"
+
+
+def _add_look(desc, m, amount):
+    look = ET.SubElement(desc, f"{{{CRS}}}Look")
+    ld = ET.SubElement(
+        look,
+        f"{{{RDF}}}Description",
+        {
+            f"{{{CRS}}}{k}": str(v)
+            for k, v in dict(
+                Name=m["name"],
+                UUID=m["uuid"],
+                Amount=amount,
+                SupportsAmount="true",
+                SupportsMonochrome="false",
+                SupportsOutputReferred="true",
+            ).items()
+        },
+    )
+    params = ET.SubElement(ld, f"{{{CRS}}}Parameters")
+    ET.SubElement(
+        params,
+        f"{{{RDF}}}Description",
+        {
+            f"{{{CRS}}}{k}": v
+            for k, v in dict(
+                Version="15.4",
+                ProcessVersion="15.4",
+                ConvertToGrayscale="False",
+                CameraProfile=m["base"],
+                RGBTable=m["table_id"],
+                RGBTableAmount="1.000000",
+                **{f"Table_{m['table_id']}": m["payload"]},
+            ).items()
+        },
+    )

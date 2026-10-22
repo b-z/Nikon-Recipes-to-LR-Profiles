@@ -9,7 +9,7 @@ import numpy as np
 from . import __version__
 from .calibration import read_samples, sample_tiff
 from .color import de2000, lab
-from .profile import DEFAULT_CAMERA, DEFAULT_GROUP, build_profile, read_profile
+from .profile import BASES, DEFAULT_CAMERA, DEFAULT_GROUP, build_profile, read_profile
 from .tetrahedral import audit, lookup
 
 DEFAULT_LAMBDA = {"spline": 0.001, "native": 0.5}
@@ -20,6 +20,12 @@ def _add_profile_options(parser):
     parser.add_argument("--author", required=True, help="Original recipe author, for attribution")
     parser.add_argument("--group", default=DEFAULT_GROUP, help=f"Profile Browser group (default: {DEFAULT_GROUP!r})")
     parser.add_argument("--camera", default=DEFAULT_CAMERA, help="Camera model restriction; empty string for none")
+    parser.add_argument(
+        "--base",
+        choices=BASES,
+        default="Adobe Standard",
+        help="Base profile the Adobe chart samples were rendered with (default: Adobe Standard)",
+    )
     parser.add_argument("--output", required=True, help="Output .xmp path")
 
 
@@ -34,7 +40,9 @@ def build_parser():
     p.add_argument("recipe", help="Path to an .NP3 file")
 
     p = sub.add_parser("fit", help="Fit paired chart samples and write an enhanced XMP profile")
-    p.add_argument("--adobe-samples", required=True, help="Adobe Standard chart samples (.json or .npy)")
+    p.add_argument(
+        "--adobe-samples", required=True, help="Camera Raw chart samples on the --base profile (.json or .npy)"
+    )
     p.add_argument("--nx-samples", required=True, help="NX Studio chart samples of the recipe (.json or .npy)")
     p.add_argument(
         "--method",
@@ -72,12 +80,26 @@ def build_parser():
     p.add_argument("--output", required=True)
     p.add_argument("--confirm-donor-calibration", action="store_true")
 
+    p = sub.add_parser(
+        "sidecars",
+        help="Write XMP sidecars that apply the profile matching the recipe recorded in each NEF",
+        description="Reads the Picture Control name the camera stored in each NEF (needs ExifTool) and writes "
+        "<name>.xmp next to it with the matching profile. Import the folder into Lightroom afterwards.",
+    )
+    p.add_argument("photos", nargs="+", help="NEF files or folders")
+    p.add_argument("--profiles", required=True, help="Folder with the profiles, e.g. the unzipped release")
+    p.add_argument("--amount", type=float, default=1.0, help="Profile Amount, 0..2 (default: 1)")
+    p.add_argument("--recursive", action="store_true", help="Include subfolders")
+    p.add_argument("--overwrite", action="store_true", help="Replace existing sidecars (their edits are lost)")
+    p.add_argument("--dry-run", action="store_true", help="Report what would be written without writing")
+
     p = sub.add_parser("render", help="macOS only: render a RAW through Photoshop's Camera Raw")
     p.add_argument("raw")
     p.add_argument("--profile", help="XMP profile to apply")
     p.add_argument("--amount", type=float, default=1.0, help="Profile Amount, 0..2 (default: 1)")
     p.add_argument("--output", required=True, help="Output 16-bit TIFF")
     p.add_argument("--app", default="Adobe Photoshop 2026", help="Photoshop application name")
+    p.add_argument("--base", choices=BASES, default="Adobe Standard", help="Base profile (default: Adobe Standard)")
     return parser
 
 
@@ -99,7 +121,8 @@ def _fit(args):
     else:
         lut, solver = NativeFitter(x[valid], args.grid).fit(y[valid], lam)
     Path(args.output).write_text(
-        build_profile(lut, args.name, args.author, group=args.group, camera=args.camera), encoding="utf-8"
+        build_profile(lut, args.name, args.author, group=args.group, camera=args.camera, base=args.base),
+        encoding="utf-8",
     )
     error = de2000(lab(lookup(lut, x[valid])), lab(y[valid]))
     result = dict(
@@ -127,7 +150,7 @@ def run(args):
         return _fit(args)
     if args.command == "export":
         lut = np.load(args.lut, allow_pickle=False)
-        text = build_profile(lut, args.name, args.author, group=args.group, camera=args.camera)
+        text = build_profile(lut, args.name, args.author, group=args.group, camera=args.camera, base=args.base)
         Path(args.output).write_text(text, encoding="utf-8")
         return dict(profile=args.output)
     if args.command == "audit":
@@ -148,10 +171,14 @@ def run(args):
         from .target import generate
 
         return dict(metadata=str(generate(args.donor, args.output, args.confirm_donor_calibration)))
+    if args.command == "sidecars":
+        from .sidecar import write_sidecars
+
+        return write_sidecars(args.photos, args.profiles, args.amount, args.overwrite, args.dry_run, args.recursive)
     if args.command == "render":
         from .photoshop import render
 
-        return dict(output=str(render(args.raw, args.output, args.profile, args.amount, args.app)))
+        return dict(output=str(render(args.raw, args.output, args.profile, args.amount, args.app, args.base)))
     raise AssertionError(args.command)
 
 

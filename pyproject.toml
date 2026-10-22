@@ -33,6 +33,9 @@ nikon-recipes-lr = "nikon_recipes_lr.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+nikon_recipes_lr = ["*.json"]
+
 [tool.ruff]
 line-length = 120
 target-version = "py310"

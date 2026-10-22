@@ -9,7 +9,7 @@ from pathlib import Path
 from .profile import render_sidecar
 
 
-def render(raw, output, profile=None, amount=1.0, app="Adobe Photoshop 2026"):
+def render(raw, output, profile=None, amount=1.0, app="Adobe Photoshop 2026", base="Adobe Standard"):
     raw = Path(raw).resolve()
     output = Path(output).resolve()
     if not raw.is_file():
@@ -22,7 +22,7 @@ def render(raw, output, profile=None, amount=1.0, app="Adobe Photoshop 2026"):
         source = work / "input.NEF"
         target = work / "output.TIF"
         shutil.copyfile(raw, source)
-        source.with_suffix(".xmp").write_text(render_sidecar(profile, amount), encoding="utf-8")
+        source.with_suffix(".xmp").write_text(render_sidecar(profile, amount, base), encoding="utf-8")
         code = """#target photoshop
 var previousDialogs=app.displayDialogs;
 app.displayDialogs=DialogModes.NO;
@@ -47,7 +47,7 @@ answer;""".replace("SOURCE", json.dumps(str(source))).replace("TARGET", json.dum
             raise RuntimeError("Camera Raw render failed: " + (result.stdout + result.stderr).strip())
         # Read back the applied profile identity, not just the requested sidecar.
         settings = json.loads(subprocess.check_output(["exiftool", "-j", "-XMP-crs:all", str(target)]))[0]
-        if settings.get("CameraProfile") != "Adobe Standard":
+        if settings.get("CameraProfile") != base:
             raise RuntimeError("Camera Raw silently changed the requested base profile")
         if profile:
             from .profile import read_profile
