@@ -20,9 +20,9 @@ This project recreates the recipes in **Lightroom and Photoshop Camera Raw**. Ch
 
 1. Download `nikon-recipes-lr-profiles-1.0.0.zip` from the [latest release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) and unzip it. If you only want a few recipes, download them one by one from the [gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) instead.
 2. In Lightroom or Camera Raw, open the Profile Browser, choose **Import Profiles** and select the `.xmp` files. Restart Lightroom if they do not appear.
-3. Open the **Nikon Recipes LR 1.0** group, pick a recipe and adjust **Amount**. 30–50% gives a subtle result.
+3. Open the **Nikon Recipes LR 1.0** group, pick a recipe and adjust its strength with **Amount**: 100% gives the colors of the original recipe; 30–50% gives a subtle result.
 
-**Version 1.0 is for photos from the Nikon Z 8**: its profiles are built on Camera Flexible Color, Adobe's match of Nikon's Flexible Color Picture Control, and only appear for Z 8 photos. For other cameras, use [version 0.2](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0), which is built on Adobe Standard and works with any camera. Each release has its own group, so both can be installed side by side. More in [INSTALL](docs/en/INSTALL.md).
+The 1.0 profiles appear for Nikon Z 8 photos, because the Camera Flexible Color base they need is camera-specific; for other cameras, [version 0.2](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0) works with any body. More in [INSTALL](docs/en/INSTALL.md).
 
 ## What a profile includes
 
@@ -77,7 +77,6 @@ Picture Controls you made yourself, or recipes that are not in the release, can 
 
 ## Known limitations
 
-- **Camera.** 1.0 profiles are calibrated for and limited to the Nikon Z 8. 0.2 profiles work with any camera but are also calibrated on the Z 8, so colors may differ more on other bodies.
 - **Banding.** Smooth skies and bokeh can still show steps, especially at high Amount. Please [report](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues/new/choose) any you find, with the recipe and a small crop.
 - **Approximation.** For 223 of the 236 recipes the average chart difference to NX Studio is below 1 ΔE (CIEDE2000), roughly the smallest difference people notice; the largest is 1.44 ΔE. Single colors and photos can differ more.
 

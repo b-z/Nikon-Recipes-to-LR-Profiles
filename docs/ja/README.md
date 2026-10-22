@@ -16,9 +16,9 @@
 
 1. [最新のリリース](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest)から `nikon-recipes-lr-profiles-1.0.0.zip` をダウンロードして展開します。いくつかだけ欲しい場合は、[オンラインギャラリー](https://nikon-recipes-to-lr-profiles.pages.dev/)から 1 つずつダウンロードすることもできます。
 2. Lightroom または Camera Raw のプロファイルブラウザーで「プロファイルを読み込み」を選び、`.xmp` ファイルを選択します。表示されない場合は Lightroom を再起動してください。
-3. **Nikon Recipes LR 1.0** グループを開き、レシピを選んで適用量を調整します。控えめにしたいときは 30〜50% から試してください。
+3. **Nikon Recipes LR 1.0** グループを開き、レシピを選んで強さ（適用量）を調整します。100% で元のレシピの色になり、30〜50% で控えめな効果になります。
 
-**バージョン 1.0 は Nikon Z 8 で撮影した写真用です**：プロファイルは Camera Flexible Color（ニコンのピクチャーコントロール「Flexible Color」に合わせた Adobe のプロファイル）をベースにしており、Z 8 の写真にだけ表示されます。他の機種では、Adobe Standard ベースでどのカメラでも使える[バージョン 0.2](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0) を使ってください。リリースごとにグループが分かれているので、両方を同時にインストールできます。詳しくは[インストールガイド](INSTALL.md)を参照してください。
+1.0 のプロファイルは機種ごとに用意される Camera Flexible Color をベースにしているため、Nikon Z 8 の写真に表示されます。他の機種では、どのカメラでも使える[バージョン 0.2](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0) を使ってください。詳しくは[インストールガイド](INSTALL.md)を参照してください。
 
 ## プロファイルに含まれるもの
 
@@ -73,7 +73,6 @@ Lightroom で完全な 3D カラーテーブルを持てるのはプロファイ
 
 ## 既知の制限
 
-- **カメラ。** 1.0 のプロファイルは Nikon Z 8 用に校正され、Z 8 専用です。0.2 のプロファイルはどのカメラでも使えますが、校正は同じく Z 8 で行っているため、他の機種では色の差が大きくなることがあります。
 - **段差（バンディング）。** 滑らかな空やボケでは、特に適用量が高いときに段差が出ることがあります。見つけた場合は、レシピ名と小さな切り抜きを添えて[報告](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues/new/choose)してください。
 - **近似。** 236 種類のうち 223 種類で、NX Studio との平均色差がチャート上で 1 ΔE（CIEDE2000、人が気づく最小の差の目安）未満、最大は 1.44 ΔE です。個々の色や写真ではもっと差が出ることがあります。
 

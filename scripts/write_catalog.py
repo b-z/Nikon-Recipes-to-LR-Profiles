@@ -72,7 +72,7 @@ def main():
 
 Recipe by **{author}**. [Original NP3 archive]({row["input_recipe_source"]}) · [All recipes](../RECIPES.md) · [See it in the gallery]({GALLERY}#{quote(recipe, safe="")})
 
-Profile file `{row["file"]}` in release {version}, on the **{row["base"]}** base profile, for the **{row["camera"]}**. Scores are at 100% Amount.
+Profile file `{row["file"]}` in release {version}, on the **{row["base"]}** base profile. Scores are at 100% Amount.
 
 | Measurement | {version} | {old["version"]} |
 |---|---:|---:|

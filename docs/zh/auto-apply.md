@@ -46,4 +46,4 @@
 - 已有附属文件的照片会被跳过。`--overwrite` 会替换附属文件，其中保存的修改将会丢失。
 - 只读取 `.NEF` 和 `.NRW` 文件，原始文件不会被修改。
 
-这个命令已经在 Lightroom Classic 和 Camera Raw 中验证；欢迎在 [Issues](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues) 中反馈 Lightroom（云端版）中的使用结果。1.0 的配置文件只适用于 Nikon Z 8；其他机身的照片请把 `--profiles` 指向 0.2 的配置文件。
+这个命令已经在 Lightroom Classic 和 Camera Raw 中验证；欢迎在 [Issues](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues) 中反馈 Lightroom（云端版）中的使用结果。

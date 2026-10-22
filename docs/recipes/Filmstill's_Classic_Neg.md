@@ -2,7 +2,7 @@
 
 Recipe by **Filmstill**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#Filmstill%27s_Classic_Neg)
 
-Profile file `NikonRecipes_Filmstill's_Classic_Neg.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
+Profile file `NikonRecipes_Filmstill's_Classic_Neg.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
 | Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|

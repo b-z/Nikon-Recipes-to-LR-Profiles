@@ -108,8 +108,9 @@ input[type=search], select { width: 100%; background: var(--canvas); border: 1px
 .folder { margin: 2px 0; }
 .folder > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 6px; border-radius: 6px; font-weight: 600; font-size: 13px; color: #d7e2e6; }
 .folder > summary::-webkit-details-marker { display: none; }
-.folder > summary::before { content: "▸"; color: var(--muted); width: 12px; }
-.folder[open] > summary::before { content: "▾"; }
+.folder > summary::before { content: ""; flex: none; width: 0; height: 0; margin: 0 5px 0 3px; border-left: 8px solid var(--muted); border-top: 5.5px solid transparent; border-bottom: 5.5px solid transparent; transition: transform .15s; }
+.folder[open] > summary::before { transform: rotate(90deg); }
+.folder > summary:hover::before { border-left-color: var(--text); }
 .folder > summary:hover { background: var(--panel-2); }
 .folder > summary .n { margin-left: auto; color: var(--muted); font-weight: 400; font-size: 12px; }
 .folder > .folder-body { padding-left: 12px; border-left: 1px solid var(--line); margin-left: 11px; }
@@ -234,7 +235,7 @@ footer.site p { margin: 0 0 8px; }
     <div class="help-sections">
       <details class="info"><summary><h3 class="info-title" data-i18n="installTitle">Install in three steps</h3></summary><ol><li data-i18n-html="install1"></li><li data-i18n-html="install2"></li><li data-i18n-html="install3"></li></ol></details>
       <details class="info"><summary><h3 class="info-title" data-i18n="howTitle">How the comparison works</h3></summary><ul><li data-i18n="how1"></li><li data-i18n="how2"></li><li data-i18n="how3"></li></ul></details>
-      <details class="info"><summary><h3 class="info-title" data-i18n="limitsTitle">Good to know</h3></summary><ul><li data-i18n="limits1"></li><li data-i18n="limits2"></li></ul></details>
+      <details class="info"><summary><h3 class="info-title" data-i18n="limitsTitle">Good to know</h3></summary><ul><li data-i18n="limits2"></li></ul></details>
     </div>
     <form method="dialog" class="dialog-actions">
       <button type="button" class="button" id="help-download"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span data-i18n="ctaDownload">Download LR profiles</span></button>
@@ -248,7 +249,6 @@ footer.site p { margin: 0 0 8px; }
     <div class="modal-top"><button type="button" class="modal-close" data-close data-i18n-aria="close">×</button></div>
     <h2 id="download-title" data-i18n="dlTitle">Download the Lightroom profiles</h2>
     <p data-i18n="dlText1"></p>
-    <p data-i18n="dlText2"></p>
     <p data-i18n-html="dlText3"></p>
     <div class="dialog-actions">
       <a class="button" id="dl-old" href="#" target="_blank" rel="noopener" data-i18n="dlOld">0.2 for other cameras</a>
@@ -361,14 +361,13 @@ const STR = {
     about4: 'If something looks wrong, please <a href="' + LINKS.issues + '" target="_blank" rel="noopener">open an issue</a> on GitHub. Pull requests are welcome too; see <a href="' + LINKS.contributing + '" target="_blank" rel="noopener">how to contribute</a>.',
     welcomeStart: 'Start browsing',
     ctaDownload: 'Download LR profiles', ctaSponsor: '♥ Sponsor',
-    installTitle: 'How to install', install1: '<b>Download</b>: <b>Download LR profiles</b> gets every recipe in one ZIP file. If you only want a few, select a recipe in the list and use <b>Download this recipe</b>.', install2: '<b>Import</b>: in the Lightroom or Camera Raw Profile Browser, choose Import Profiles and select the .xmp files. Restart Lightroom if they do not appear.', install3: '<b>Use</b>: choose a recipe in the Nikon Recipes LR 1.0 group and adjust Amount; 30–50% gives a subtle result.',
+    installTitle: 'How to install', install1: '<b>Download</b>: <b>Download LR profiles</b> gets every recipe in one ZIP file. If you only want some of them, select a recipe in the list on this site and use <b>Download this recipe</b>.', install2: '<b>Import</b>: in the Lightroom or Camera Raw Profile Browser, choose Import Profiles and select the .xmp files. Restart Lightroom if they do not appear.', install3: '<b>Use</b>: choose a recipe in the Nikon Recipes LR 1.0 group and adjust its strength (Amount); 100% gives the colors of the original recipe; 30–50% gives a subtle result.',
     howTitle: 'How the comparison works', how1: 'Image A and image B can each show NX Studio, either version of the Lightroom profile, or the base profile without a recipe.', how2: 'Blink switches between A and B every second (click an image to pause); the slider shows A on the left and B on the right.', how3: 'All profiles are shown at 100% Amount. The previews are calculated from Camera Raw renders of the original RAW files.',
-    limitsTitle: 'Good to know', limits1: 'Version 1.0 is for photos from the Nikon Z 8. For other cameras, use version 0.2, which works with any camera but was also calibrated on the Z 8.', limits2: 'Banding can still appear in smooth skies or bokeh. Please report cases on GitHub.',
+    limitsTitle: 'Good to know', limits2: 'Banding can still appear in smooth skies or bokeh. Please report cases on GitHub.',
     dlTitle: 'Download the Lightroom profiles',
     dlText1: 'One ZIP file (about 45 MB) holds the profiles of all 236 recipes, for Lightroom Classic, Lightroom and Photoshop Camera Raw. Unzip it and import the .xmp files in the Profile Browser; the README inside explains each step. The files are hosted on GitHub.',
-    dlText2: 'Version 1.0 is built on Camera Flexible Color and is for photos from the Nikon Z 8. For other cameras, use version 0.2, which is built on Adobe Standard.',
-    dlText3: 'Only want a few? Select a recipe in the list and use <b>Download this recipe</b>.',
-    dlLatest: 'Download 1.0 (Nikon Z 8)', dlOld: '0.2 for other cameras',
+    dlText3: 'Only want some of them? Select a recipe in the list on this site and use <b>Download this recipe</b>.',
+    dlLatest: 'Download Y9 (latest)', dlOld: 'Previous version Y8',
     close: 'Close', searchPlaceholder: 'Search recipe, author or folder', viewLabel: 'Order of the recipe list', menu: 'Menu',
     viewName: 'By name', viewFolder: 'By folder', viewFit: 'By difference from NX', viewBand: 'By banding risk', viewFavorites: 'Favorites first',
     count: '{n} of {total} recipes', noMatch: 'No matches. Try another recipe, author or folder name.',
@@ -381,7 +380,7 @@ const STR = {
     band0: 'low', band1: 'medium', band2: 'high',
     downloadXmp: 'Download this recipe · {v}', downloadNp3: 'This recipe\'s NP3', measurements: 'Measurements',
     srcNx: 'NX Studio (original recipe)', srcAdobe: 'Adobe Standard (no recipe)', srcFlex: 'Camera Flexible Color (no recipe)', srcVersion: 'Lightroom profile {v}',
-    ver10: '1.0 · current', ver02: '0.2 · previous',
+    ver10: 'Y9 · latest', ver02: 'Y8 · previous',
     scene9046: 'Landscape test 1', scene2849: 'Landscape test 2', scene2694: 'Banding test 1', scene2694note: 'out-of-focus transitions', scene5054: 'Banding test 2', scene5054note: 'smooth sky',
     sliderLabel: '{scene}: comparison divider', missingNx: 'No NX Studio reference for this scene.', favAdd: 'Add to favorites', favRemove: 'Remove from favorites', prev: 'Previous recipe', next: 'Next recipe',
     sponsorTitle: 'Support the project', sponsorText: 'This project is maintained in spare time. If the profiles are useful to you, a contribution helps keep it going. Sponsoring is entirely optional and does not affect how issues or pull requests are handled.', sponsorGithubNote: 'Card or PayPal', sponsorWechatNote: 'Scan with WeChat', loading: 'Loading…',
@@ -398,14 +397,13 @@ const STR = {
     about4: '如果有任何问题，欢迎在 GitHub 上<a href="' + LINKS.issues + '" target="_blank" rel="noopener">提交 Issue</a> 反馈；也欢迎通过 Pull Request <a href="' + LINKS.contributing + '" target="_blank" rel="noopener">贡献代码</a>。',
     welcomeStart: '开始浏览',
     ctaDownload: '下载 LR 配置文件', ctaSponsor: '♥ 赞助',
-    installTitle: '安装方法', install1: '<b>下载</b>：点击「下载 LR 配置文件」，获取包含全部配方的压缩包；只想要其中几款的话，在列表中选中配方后点击「下载本配方」。', install2: '<b>导入</b>：在 Lightroom 或 Camera Raw 的配置文件浏览器中选择「导入配置文件」，选中 .xmp 文件；如果没有出现，请重启 Lightroom。', install3: '<b>使用</b>：在 Nikon Recipes LR 1.0 分组中选择配方并调整数量；30–50% 效果较温和。',
+    installTitle: '安装方法', install1: '<b>下载</b>：点击「下载 LR 配置文件」，获取包含全部配方的压缩包；只想要其中一部分的话，在网站的列表中选中配方后点击「下载本配方」。', install2: '<b>导入</b>：在 Lightroom 或 Camera Raw 的配置文件浏览器中选择「导入配置文件」，选中 .xmp 文件；如果没有出现，请重启 Lightroom。', install3: '<b>使用</b>：在 Nikon Recipes LR 1.0 分组中选择配方并调整强度；100% 为原版配方色彩；30–50% 效果较温和。',
     howTitle: '对比怎么用', how1: '图像 A 和图像 B 可以分别显示 NX Studio、任一版本的 Lightroom 配置文件，或不套配方的基础配置文件。', how2: '闪烁模式每秒在 A、B 之间切换一次（点击图片可暂停）；滑块模式左边是 A、右边是 B。', how3: '所有配置文件都按 100% 数量显示，预览图由 Camera Raw 渲染原始 RAW 文件计算得到。',
-    limitsTitle: '注意事项', limits1: '1.0 版本只适用于 Nikon Z 8 拍摄的照片。其他机身请使用 0.2 版本，它适用于任何相机，但同样是用 Z 8 校准的。', limits2: '平滑的天空或焦外仍可能出现断层，欢迎在 GitHub 上反馈。',
+    limitsTitle: '注意事项', limits2: '平滑的天空或焦外仍可能出现断层，欢迎在 GitHub 上反馈。',
     dlTitle: '下载 Lightroom 配置文件',
     dlText1: '一个压缩包（约 45 MB）包含全部 236 款配方的配置文件，适用于 Lightroom Classic、Lightroom 和 Photoshop Camera Raw。解压后在配置文件浏览器中导入 .xmp 文件即可，压缩包里的 README 写有详细步骤。文件托管在 GitHub 上。',
-    dlText2: '1.0 版本基于「相机 Flexible Color」，适用于 Nikon Z 8 拍摄的照片；其他机身请使用 0.2 版本，它基于 Adobe Standard。',
-    dlText3: '只想要其中几款？在列表中选中配方，点击<b>「下载本配方」</b>即可。',
-    dlLatest: '下载 1.0（Nikon Z 8）', dlOld: '0.2（其他机身）',
+    dlText3: '只想要其中一部分的话，在网站的列表中选中配方后点击<b>「下载本配方」</b>。',
+    dlLatest: '下载 Y9（最新）', dlOld: '上一版本 Y8',
     close: '关闭', searchPlaceholder: '搜索配方、作者或文件夹', viewLabel: '配方列表排序方式', menu: '菜单',
     viewName: '按名称', viewFolder: '按文件夹', viewFit: '按与原版的色差', viewBand: '按断层风险', viewFavorites: '收藏优先',
     count: '{total} 款中的 {n} 款', noMatch: '没有匹配结果，换个配方名、作者或文件夹试试。',
@@ -418,7 +416,7 @@ const STR = {
     band0: '低', band1: '中', band2: '高',
     downloadXmp: '下载本配方 · {v}', downloadNp3: '本配方的 NP3', measurements: '测量数据',
     srcNx: 'NX Studio（原版配方）', srcAdobe: 'Adobe Standard（不套配方）', srcFlex: '相机 Flexible Color（不套配方）', srcVersion: 'Lightroom 配置文件 {v}',
-    ver10: '1.0 · 当前版本', ver02: '0.2 · 上一版本',
+    ver10: 'Y9 · 最新', ver02: 'Y8 · 上一版本',
     scene9046: '风景测试 1', scene2849: '风景测试 2', scene2694: '断层测试 1', scene2694note: '焦外过渡', scene5054: '断层测试 2', scene5054note: '平滑天空',
     sliderLabel: '{scene}：对比分界线', missingNx: '这个场景没有 NX Studio 参照图。', favAdd: '加入收藏', favRemove: '取消收藏', prev: '上一款', next: '下一款',
     sponsorTitle: '支持这个项目', sponsorText: '这个项目是在业余时间维护的。如果这些配置文件对你有帮助，欢迎赞助支持。赞助完全自愿，不会影响 Issue 和 Pull Request 的处理。', sponsorGithubNote: '信用卡或 PayPal', sponsorWechatNote: '微信扫码赞赏', loading: '载入中…',
@@ -435,14 +433,13 @@ const STR = {
     about4: '問題があれば GitHub で<a href="' + LINKS.issues + '" target="_blank" rel="noopener">Issue を作成</a>してください。<a href="' + LINKS.contributing + '" target="_blank" rel="noopener">プルリクエスト</a>も歓迎します。',
     welcomeStart: '見てみる',
     ctaDownload: 'LR プロファイル', ctaSponsor: '♥ スポンサー',
-    installTitle: 'インストール方法', install1: '<b>ダウンロード</b>：「LR プロファイル」ボタンから、すべてのレシピを 1 つの ZIP ファイルで入手できます。いくつかだけ欲しい場合は、一覧でレシピを選んで「このレシピをダウンロード」を押してください。', install2: '<b>読み込み</b>：Lightroom または Camera Raw のプロファイルブラウザーで「プロファイルを読み込み」を選び、.xmp ファイルを指定します。表示されない場合は Lightroom を再起動してください。', install3: '<b>使い方</b>：Nikon Recipes LR 1.0 グループからレシピを選び、適用量を調整します。30〜50% で控えめな効果になります。',
+    installTitle: 'インストール方法', install1: '<b>ダウンロード</b>：「LR プロファイル」ボタンから、すべてのレシピを 1 つの ZIP ファイルで入手できます。一部だけ欲しい場合は、サイトの一覧でレシピを選んで「このレシピをダウンロード」を押してください。', install2: '<b>読み込み</b>：Lightroom または Camera Raw のプロファイルブラウザーで「プロファイルを読み込み」を選び、.xmp ファイルを指定します。表示されない場合は Lightroom を再起動してください。', install3: '<b>使い方</b>：Nikon Recipes LR 1.0 グループからレシピを選び、強さ（適用量）を調整します。100% で元のレシピの色になり、30〜50% で控えめな効果になります。',
     howTitle: '比較の使い方', how1: '画像 A と画像 B には、それぞれ NX Studio、どちらかのバージョンの Lightroom プロファイル、またはレシピなしのベースプロファイルを表示できます。', how2: '点滅は 1 秒ごとに A と B を切り替えます（画像をクリックで一時停止）。スライダーでは左が A、右が B です。', how3: 'すべて適用量 100% で表示しています。プレビューは元の RAW ファイルを Camera Raw で現像した結果から計算しています。',
-    limitsTitle: '注意点', limits1: 'バージョン 1.0 は Nikon Z 8 で撮影した写真専用です。他の機種ではバージョン 0.2 を使ってください。どのカメラでも使えますが、校正は同じく Z 8 で行っています。', limits2: '滑らかな空やボケで段差が出ることがあります。GitHub で報告をお願いします。',
+    limitsTitle: '注意点', limits2: '滑らかな空やボケで段差が出ることがあります。GitHub で報告をお願いします。',
     dlTitle: 'Lightroom プロファイルのダウンロード',
     dlText1: '1 つの ZIP ファイル（約 45 MB）に 236 種類すべてのレシピのプロファイルが入っています。Lightroom Classic、Lightroom、Photoshop Camera Raw で使えます。展開してプロファイルブラウザーで .xmp ファイルを読み込んでください。手順は ZIP 内の README にあります。ファイルは GitHub で配布しています。',
-    dlText2: 'バージョン 1.0 は Camera Flexible Color をベースにしており、Nikon Z 8 で撮影した写真用です。他の機種では、Adobe Standard をベースにしたバージョン 0.2 を使ってください。',
-    dlText3: 'いくつかだけ欲しい場合は、一覧でレシピを選んで<b>「このレシピをダウンロード」</b>を押してください。',
-    dlLatest: '1.0 をダウンロード（Nikon Z 8）', dlOld: '0.2（他の機種）',
+    dlText3: '一部だけ欲しい場合は、サイトの一覧でレシピを選んで<b>「このレシピをダウンロード」</b>を押してください。',
+    dlLatest: 'Y9 をダウンロード（最新）', dlOld: '前のバージョン Y8',
     close: '閉じる', searchPlaceholder: 'レシピ名・作者・フォルダで検索', viewLabel: 'レシピ一覧の並べ方', menu: 'メニュー',
     viewName: '名前順', viewFolder: 'フォルダ別', viewFit: 'NX との色差順', viewBand: '段差リスク順', viewFavorites: 'お気に入り優先',
     count: '{total} 件中 {n} 件', noMatch: '一致するものがありません。別のレシピ名・作者・フォルダ名で試してください。',
@@ -455,7 +452,7 @@ const STR = {
     band0: '低', band1: '中', band2: '高',
     downloadXmp: 'このレシピをダウンロード · {v}', downloadNp3: 'このレシピの NP3', measurements: '測定データ',
     srcNx: 'NX Studio（元のレシピ）', srcAdobe: 'Adobe Standard（レシピなし）', srcFlex: 'Camera Flexible Color（レシピなし）', srcVersion: 'Lightroom プロファイル {v}',
-    ver10: '1.0 · 現行版', ver02: '0.2 · 前の版',
+    ver10: 'Y9 · 最新', ver02: 'Y8 · 前の版',
     scene9046: '風景テスト 1', scene2849: '風景テスト 2', scene2694: '段差テスト 1', scene2694note: 'ボケの階調', scene5054: '段差テスト 2', scene5054note: '滑らかな空',
     sliderLabel: '{scene}：比較の境界線', missingNx: 'このシーンの NX Studio 参照画像はありません。', favAdd: 'お気に入りに追加', favRemove: 'お気に入りから削除', prev: '前のレシピ', next: '次のレシピ',
     sponsorTitle: 'プロジェクトを支援', sponsorText: 'このプロジェクトは空き時間に保守しています。プロファイルが役に立ったら、支援していただけるとうれしいです。支援は任意で、Issue やプルリクエストの扱いには影響しません。', sponsorGithubNote: 'カードまたは PayPal', sponsorWechatNote: 'WeChat でスキャン', loading: '読み込み中…',
@@ -486,8 +483,8 @@ const t = (key, vars = {}) => (STR[lang][key] ?? STR.en[key] ?? key).replace(/\{
 const byRecipe = rows => new Map(rows.map(r => [r.recipe, r]));
 // Image folders keep the internal method names: y9 is release 1.0, y8 is release 0.2.
 const VERSIONS = [
-  { id: 'y9', label: 'ver10', short: '1.0', metrics: byRecipe(data), xmp: 'xmp_1_0' },
-  { id: 'y8', label: 'ver02', short: '0.2', metrics: byRecipe(previous), xmp: 'xmp_0_2' },
+  { id: 'y9', label: 'ver10', short: 'Y9', metrics: byRecipe(data), xmp: 'xmp_1_0' },
+  { id: 'y8', label: 'ver02', short: 'Y8', metrics: byRecipe(previous), xmp: 'xmp_0_2' },
 ];
 const SCENES = ['9046', '2849', '2694', '5054'];
 const files = byRecipe(downloads);

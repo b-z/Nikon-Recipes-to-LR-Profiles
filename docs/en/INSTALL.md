@@ -13,16 +13,13 @@ Lightroom and Camera Raw profiles for 236 Nikon Imaging Cloud recipes. Compare t
 
 ## Use
 
-1. Open a photo taken with a **Nikon Z 8**. The 1.0 profiles appear only for Z 8 photos (see *Other cameras* below).
-2. In the Profile Browser, open a group whose name starts with **Nikon Recipes LR 1.0** (one group per recipe creator) and click a recipe.
-3. Set its strength with the **Amount** slider under the profile name: 100% matches the recipe, 30–50% gives a subtle result, up to 200% strengthens it.
-4. Edit as usual. Exposure, white balance, curves and every other slider keep working. The profile contains the recipe's color and tone only; its sharpening, mid-range sharpening and clarity are not included.
+1. In the Profile Browser, open a group whose name starts with **Nikon Recipes LR 1.0** (one group per recipe creator) and click a recipe.
+2. Set its strength with the **Amount** slider under the profile name: 100% gives the colors of the original recipe, 30–50% gives a subtle result, up to 200% strengthens it.
+3. Edit as usual. Exposure, white balance, curves and every other slider keep working. The profile contains the recipe's color and tone only; its sharpening, mid-range sharpening and clarity are not included.
 
 To open new photos with the recipe they were shot with, see https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/blob/main/docs/en/auto-apply.md
 
-## Other cameras
-
-Version 1.0 is built on Camera Flexible Color, Adobe's match of Nikon's Flexible Color Picture Control, and is limited to the Nikon Z 8. For other cameras use version 0.2 (built on Adobe Standard, works with any camera): https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0 . Both versions have their own groups and can be installed side by side.
+If the profiles do not show up for a photo: the 1.0 profiles are for Nikon Z 8 photos; for other cameras use version 0.2: https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0
 
 ## Good to know
 

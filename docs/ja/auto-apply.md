@@ -46,4 +46,4 @@
 - すでにサイドカーがある写真はスキップします。`--overwrite` を付けるとサイドカーを置き換え、そこに保存されていた編集は失われます。
 - 読み取るのは `.NEF` と `.NRW` だけで、元のファイルは変更しません。
 
-このコマンドは Lightroom Classic と Camera Raw で確認済みです。クラウド版 Lightroom での結果は [Issues](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues) でお知らせください。1.0 のプロファイルは Nikon Z 8 専用です。他の機種の写真では `--profiles` に 0.2 のプロファイルを指定してください。
+このコマンドは Lightroom Classic と Camera Raw で確認済みです。クラウド版 Lightroom での結果は [Issues](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues) でお知らせください。

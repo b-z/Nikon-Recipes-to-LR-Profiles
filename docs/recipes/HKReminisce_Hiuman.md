@@ -2,7 +2,7 @@
 
 Recipe by **Hiuman**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#HKReminisce_Hiuman)
 
-Profile file `NikonRecipes_HKReminisce_Hiuman.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
+Profile file `NikonRecipes_HKReminisce_Hiuman.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
 | Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|

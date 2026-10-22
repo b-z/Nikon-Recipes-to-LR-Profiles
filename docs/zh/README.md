@@ -16,9 +16,9 @@
 
 1. 从[最新 Release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) 下载 `nikon-recipes-lr-profiles-1.0.0.zip` 并解压。只想要其中几款的话，也可以在[在线图库](https://nikon-recipes-to-lr-profiles.pages.dev/)里逐款单独下载。
 2. 在 Lightroom 或 Camera Raw 的配置文件浏览器中选择「导入配置文件」，选中 `.xmp` 文件。如果没有出现，重启 Lightroom。
-3. 打开 **Nikon Recipes LR 1.0** 分组，选择一款配方并调整数量。想要温和的效果可以先试 30–50%。
+3. 打开 **Nikon Recipes LR 1.0** 分组，选择配方并调整强度（「数量」滑块）；100% 为原版配方色彩；30–50% 效果较温和。
 
-**1.0 版本适用于 Nikon Z 8 拍摄的照片**：它的配置文件以「相机 Flexible Color」为基础（Adobe 对尼康 Flexible Color 优化校准的匹配），只会在 Z 8 的照片上显示。其他机身请使用 [0.2 版本](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0)，它以 Adobe Standard 为基础，适用于任何相机。每个版本有自己的分组，可以同时安装。详见[安装说明](INSTALL.md)。
+1.0 的配置文件需要「相机 Flexible Color」这一机型专属的基础配置文件，因此只在 Nikon Z 8 的照片上显示；其他机身可以使用适用于任何相机的 [0.2 版本](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0)。详见[安装说明](INSTALL.md)。
 
 ## 配置文件包含什么
 
@@ -73,7 +73,6 @@ nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/pr
 
 ## 已知限制
 
-- **机身。** 1.0 的配置文件为 Nikon Z 8 校准，也只能用于 Z 8。0.2 的配置文件适用于任何相机，但同样用 Z 8 校准，在其他机身上色彩差异可能更大。
 - **色彩断层。** 平滑的天空和焦外仍可能出现台阶，数量越高越明显。发现问题欢迎附上配方名和一小块裁切[反馈](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues/new/choose)。
 - **近似。** 236 款中有 223 款与 NX Studio 的平均色卡色差低于 1 ΔE（CIEDE2000，约为人眼刚能察觉的差异），最大为 1.44 ΔE。个别颜色和照片的差异可能更大。
 

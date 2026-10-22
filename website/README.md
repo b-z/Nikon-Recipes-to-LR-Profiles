@@ -40,8 +40,8 @@ npx wrangler pages deploy website/dist --project-name nikon-recipes-to-lr-profil
 - English, Chinese and Japanese (`?lang=en|zh|ja`, otherwise the browser language). A help dialog explains the project on the first visit and can be reopened from **Help**; it has its own language menu.
 - The download buttons open a short explanation first (which release is for which camera, and that single recipes can be downloaded) before linking to the release on GitHub.
 - The recipe list can be shown by folder (the folder structure of the NP3 archive, the default), by name, by difference from NX Studio, by banding risk or with favorites first. Search also matches creators and folders. The default recipe is KG200P1.
-- Image A and image B can each show NX Studio, the 1.0 or 0.2 profile, or Adobe Standard / Camera Flexible Color without a recipe. Blink mode switches every second and pauses when an image is clicked; the slider shows A on the left and B on the right. Arrow keys select the previous or next recipe in the visible list.
-- **Download this recipe** downloads the release profile of the version shown as image B (1.0 unless 0.2 is selected). The NP3 button links to the credited upstream archive; original NP3 files are not hosted here.
+- Image A and image B can each show NX Studio, the Y9 (release 1.0) or Y8 (release 0.2) profile, or Adobe Standard / Camera Flexible Color without a recipe. Blink mode switches every second and pauses when an image is clicked; the slider shows A on the left and B on the right. Arrow keys select the previous or next recipe in the visible list.
+- **Download this recipe** downloads the release profile of the version shown as image B (Y9 unless Y8 is selected). The NP3 button links to the credited upstream archive; original NP3 files are not hosted here.
 - Favorites, language, list order and comparison settings are stored only in the browser's local storage.
 - The Sponsor dialog shows GitHub Sponsors and the WeChat QR code from `payment.js`.
 

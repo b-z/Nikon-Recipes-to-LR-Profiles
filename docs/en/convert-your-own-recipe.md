@@ -51,7 +51,7 @@ nikon-recipes-lr audit MyRecipe.xmp
 - `audit` reports the banding-risk score ([what the scores mean](metrics.md)).
 - Use the name the camera shows for your Picture Control as `--name` if you want [`sidecars`](auto-apply.md) to apply the profile automatically.
 
-This makes a profile like the 1.0 release: built on Camera Flexible Color and shown only for Nikon Z 8 photos. For a profile that appears for every camera, like the 0.2 release, use the Adobe Standard measurements instead and drop the camera restriction:
+This makes a profile like the 1.0 release, built on Camera Flexible Color. For a profile on Adobe Standard that appears for every camera, like the 0.2 release, use the Adobe Standard measurements and drop the camera restriction:
 
 ```sh
 nikon-recipes-lr fit --adobe-samples calibration/z8/adobe-standard.npy --camera "" \

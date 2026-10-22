@@ -46,4 +46,4 @@ Everything else is left out, so Camera Raw uses its built-in defaults for it. A 
 - Photos with an existing sidecar are skipped. `--overwrite` replaces the sidecar, and any edits stored in it are lost.
 - Only `.NEF` and `.NRW` files are read; the original files are never changed.
 
-The command has been checked with Lightroom Classic and Camera Raw. Reports from the cloud-based Lightroom app are welcome in the [issues](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues). The 1.0 profiles are limited to the Nikon Z 8; for photos from other cameras, point `--profiles` at the 0.2 profiles instead.
+The command has been checked with Lightroom Classic and Camera Raw. Reports from the cloud-based Lightroom app are welcome in the [issues](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues).
