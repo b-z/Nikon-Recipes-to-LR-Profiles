@@ -1,25 +1,21 @@
 # Premium Vivid Norm
 
-Original author: **Mark G Adams**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Mark G Adams**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#Premium_Vivid_Norm)
 
-Profile: `NikonRecipes_Premium_Vivid_Norm.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_Premium_Vivid_Norm.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 1.4578 | 0.7160 |
-| Chart median ΔE | 1.1344 | — |
-| Chart p95 ΔE | 3.6720 | 2.0044 |
-| Chart held-out mean ΔE | 1.5668 | — |
-| Native face jump p99 | 0.8398 | 0.9632 |
-| Native face jump maximum / RMS | 2.3235 / 0.2405 | — |
-| Valid chart samples | 14919 | |
+| Difference from NX Studio, chart mean ΔE | 1.026 | 1.458 |
+| Chart median ΔE | 0.798 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 2.618 | 3.672 |
+| Chart mean ΔE on patches left out of the fit | 1.091 | — |
+| Banding risk, face-jump p99 | 0.639 | 0.840 |
+| Face-jump maximum / RMS | 1.613 / 0.196 | — |
+| Chart patches used | 14926 | |
 
-Review: **Not individually reviewed with Y8; not flagged in the 2026-10-10 Y7 owner review; not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: Not reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#Premium_Vivid_Norm). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

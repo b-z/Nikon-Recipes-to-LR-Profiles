@@ -47,8 +47,11 @@ def main():
         archive.write(args.metrics, "manifest.json")
         for name in ("LICENSE", "PROFILE_LICENSE.md", "THIRD_PARTY_NOTICES.md"):
             archive.write(root / name, name)
-        for lang in ("en", "zh", "ja"):
-            archive.write(root / "docs" / lang / "INSTALL.md", f"INSTALL.{lang}.md")
+        # One README for the archive, made from the install guides (English, Chinese, Japanese).
+        guides = [
+            (root / "docs" / lang / "INSTALL.md").read_text(encoding="utf-8").strip() for lang in ("en", "zh", "ja")
+        ]
+        archive.writestr("README.md", "\n\n---\n\n".join(guides) + "\n")
         archive.writestr("SHA256SUMS.profiles", "".join(f"{r['sha256']}  profiles/{r['file']}\n" for r in rows))
     artifacts = [destination]
     if args.samples:

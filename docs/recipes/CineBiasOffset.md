@@ -1,25 +1,21 @@
 # CineBiasOffset
 
-Original author: **RED**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **RED**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#CineBiasOffset)
 
-Profile: `NikonRecipes_CineBiasOffset.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_CineBiasOffset.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 0.4865 | 0.3377 |
-| Chart median ΔE | 0.4057 | — |
-| Chart p95 ΔE | 1.2016 | 0.8654 |
-| Chart held-out mean ΔE | 0.5099 | — |
-| Native face jump p99 | 0.3216 | 0.3157 |
-| Native face jump maximum / RMS | 0.9865 / 0.0958 | — |
-| Valid chart samples | 23989 | |
+| Difference from NX Studio, chart mean ΔE | 0.348 | 0.486 |
+| Chart median ΔE | 0.278 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 0.894 | 1.202 |
+| Chart mean ΔE on patches left out of the fit | 0.359 | — |
+| Banding risk, face-jump p99 | 0.174 | 0.322 |
+| Face-jump maximum / RMS | 0.495 / 0.058 | — |
+| Chart patches used | 23825 | |
 
-Review: **Not individually reviewed with Y8; not flagged in the 2026-10-10 Y7 owner review; not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: Not reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#CineBiasOffset). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

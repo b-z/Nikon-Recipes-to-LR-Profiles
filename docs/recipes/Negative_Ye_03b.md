@@ -1,25 +1,21 @@
 # Negative Ye 03b
 
-Original author: **Nikon**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Nikon**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#Negative_Ye_03b)
 
-Profile: `NikonRecipes_Negative_Ye_03b.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_Negative_Ye_03b.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 0.7384 | 0.4880 |
-| Chart median ΔE | 0.5749 | — |
-| Chart p95 ΔE | 1.9208 | 1.2337 |
-| Chart held-out mean ΔE | 0.7607 | — |
-| Native face jump p99 | 0.4838 | 0.5345 |
-| Native face jump maximum / RMS | 0.8990 / 0.1479 | — |
-| Valid chart samples | 16744 | |
+| Difference from NX Studio, chart mean ΔE | 0.573 | 0.738 |
+| Chart median ΔE | 0.438 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 1.503 | 1.921 |
+| Chart mean ΔE on patches left out of the fit | 0.587 | — |
+| Banding risk, face-jump p99 | 0.395 | 0.484 |
+| Face-jump maximum / RMS | 0.752 / 0.119 | — |
+| Chart patches used | 16869 | |
 
-Review: **Not individually reviewed with Y8; not flagged in the 2026-10-10 Y7 owner review; not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: Not reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#Negative_Ye_03b). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

@@ -1,25 +1,21 @@
 # QUIET
 
-Original author: **Nagisa Ichikawa**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Nagisa Ichikawa**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#QUIET_Nagisa)
 
-Profile: `NikonRecipes_QUIET_Nagisa.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_QUIET_Nagisa.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 0.6406 | 0.4054 |
-| Chart median ΔE | 0.5178 | — |
-| Chart p95 ΔE | 1.6040 | 0.9905 |
-| Chart held-out mean ΔE | 0.6958 | — |
-| Native face jump p99 | 0.4211 | 0.4443 |
-| Native face jump maximum / RMS | 0.7685 / 0.1357 | — |
-| Valid chart samples | 19635 | |
+| Difference from NX Studio, chart mean ΔE | 0.396 | 0.641 |
+| Chart median ΔE | 0.297 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 1.042 | 1.604 |
+| Chart mean ΔE on patches left out of the fit | 0.422 | — |
+| Banding risk, face-jump p99 | 0.353 | 0.421 |
+| Face-jump maximum / RMS | 0.663 / 0.103 | — |
+| Chart patches used | 19777 | |
 
-Review: **Not individually reviewed with Y8; not flagged in the 2026-10-10 Y7 owner review; not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: Not reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#QUIET_Nagisa). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

@@ -1,25 +1,21 @@
 # Coastal Glow
 
-Original author: **Najmuddin Muif**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Najmuddin Muif**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#Coastal_Glow_NM)
 
-Profile: `NikonRecipes_Coastal_Glow_NM.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_Coastal_Glow_NM.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 0.9031 | 0.5872 |
-| Chart median ΔE | 0.7171 | — |
-| Chart p95 ΔE | 2.3302 | 1.6128 |
-| Chart held-out mean ΔE | 0.9653 | — |
-| Native face jump p99 | 0.5681 | 0.6213 |
-| Native face jump maximum / RMS | 1.6670 / 0.1720 | — |
-| Valid chart samples | 15595 | |
+| Difference from NX Studio, chart mean ΔE | 0.663 | 0.903 |
+| Chart median ΔE | 0.502 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 1.754 | 2.330 |
+| Chart mean ΔE on patches left out of the fit | 0.684 | — |
+| Banding risk, face-jump p99 | 0.428 | 0.568 |
+| Face-jump maximum / RMS | 0.883 / 0.138 | — |
+| Chart patches used | 15566 | |
 
-Review: **Not individually reviewed with Y8; not flagged in the 2026-10-10 Y7 owner review; not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: Not reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#Coastal_Glow_NM). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

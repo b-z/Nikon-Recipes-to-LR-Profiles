@@ -6,16 +6,17 @@ How a maintainer publishes a new profile release. Code-only changes do not need 
 
 - **Version**: `MAJOR.MINOR.PATCH` in `pyproject.toml` and `src/nikon_recipes_lr/__init__.py`; the Git tag is `v<version>`. A release that changes any profile table bumps at least the minor version.
 - **Profile identity**: every release that changes profiles uses a new Profile Browser group (`Nikon Recipes LR <major>.<minor>/<creator group>`), a name suffix (`[NRLR <major>.<minor>]`) and new UUIDs (`uuid5(NAMESPACE_URL, "nikon-recipes-to-lr-profiles:<version>:<recipe>")`). Users can then install a new release next to the old one, and Lightroom never mixes two versions under one UUID.
-- **Manifest**: `docs/release_manifest.json` lists every profile in the release: file name, UUID, SHA-256, RGBTable ID, attribution, chart scores (`fit`), banding audit (`banding`) and review notes. The catalog and the release ZIP are both checked against it.
+- **Manifest**: `docs/release_manifest.json` lists every profile in the release: file name, UUID, SHA-256, RGBTable ID, base profile, camera restriction, Picture Control name, attribution, chart scores (`fit`), banding audit (`banding`) and the scores of the previous release. The catalog, the release ZIP and the website are all checked against it. The manifest of 0.2.0 is kept in `website/data/release_0.2.0_manifest.json` because the website still offers those profiles for cameras other than the Z 8.
 
 ## Steps
 
-1. **Prepare the profiles.** Fit every recipe from its chart samples (`nikon-recipes-lr fit` or `nikon_recipes_lr.spline.SplineFitter`), apply the naming conventions above and write the manifest. The Z 8 calibration data and the batch script used for 0.2.0 are not public yet; publishing them is an open task.
+1. **Prepare the profiles.** Fit every recipe from its chart samples (`nikon-recipes-lr fit` or `nikon_recipes_lr.spline.SplineFitter`), apply the naming conventions above and write the manifest. The chart, NX Studio settings and Camera Raw baselines are in the [Z 8 calibration kit](../calibration/z8/). The batch scripts used for 0.2.0 and 1.0.0 relabel fitted tables with the conventions above; they are not public yet.
 2. **Check the profiles.** `nikon-recipes-lr audit` a sample, render a few through Camera Raw (`nikon-recipes-lr render`), and import the set into Lightroom to confirm the group, names and Amount slider.
 3. **Update the repository.**
    - Bump the version in `pyproject.toml` and `src/nikon_recipes_lr/__init__.py`.
    - Replace `docs/release_manifest.json` and run `python scripts/write_catalog.py`.
-   - Update the group name in `README.md`, `docs/*/README.md` and `docs/*/INSTALL.md` (the INSTALL files are copied into the ZIP).
+   - If recipes were added or renamed, run `python scripts/write_picture_controls.py /path/to/Nikon-Recipes` so that `nikon-recipes-lr sidecars` recognises them.
+   - Update the version and group name in `README.md`, `docs/*/README.md` and `docs/*/INSTALL.md`. The three INSTALL files become the `README.md` inside the ZIP, so they must explain installing and using the profiles on their own.
    - Move the *Unreleased* CHANGELOG entries under the new version and describe the profile changes.
    - Open a pull request; CI checks that the catalog matches the manifest.
 4. **Build the ZIP** from the merged commit:
@@ -25,8 +26,22 @@ How a maintainer publishes a new profile release. Code-only changes do not need 
      --metrics docs/release_manifest.json --output /path/to/release-assets
    ```
 
-   It refuses to build if a profile's checksum, UUID or table ID does not match the manifest, and writes `SHA256SUMS`. Add `--samples /path/to/raws` to rebuild the sample ZIP (only when the sample RAWs change).
-5. **Publish** on GitHub with the tag `v<version>`, attaching the profiles ZIP, the sample RAW ZIP and `SHA256SUMS`. Summarize the CHANGELOG entry and the known limitations in the release notes.
-6. **Update the website** if its profile downloads should follow the release ([website/README.md](../website/README.md)).
+   It refuses to build if a profile's checksum, UUID or table ID does not match the manifest, and writes `SHA256SUMS`.
+5. **Publish** on GitHub with the tag `v<version>`, attaching only the profiles ZIP and `SHA256SUMS`, so that the release page stays simple for people who only want the profiles. GitHub adds *Source code* archives to every release automatically; they cannot be removed. In the release notes, summarize the CHANGELOG entry and the known limitations, say which cameras the profiles are for, and point to the [gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) for downloading single recipes.
+6. **Update the website** so that its previews and per-recipe downloads match the release: `website/scripts/make_previews.py` for new tables, then `build_site.py` and deploy ([website/README.md](../website/README.md)).
 
 Earlier releases stay published so that users can return to them.
+
+## Files that are not profile releases
+
+- **Sample RAWs** (`nikon-recipes-lr-samples-0.1.0.zip`) stay on the [v0.1.0 release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.1.0) together with the website asset pack. Only if the photographs change, build a new sample ZIP with `package_release.py --samples /path/to/raws` and publish it the same way.
+- **Calibration kits** live in the repository under `calibration/<camera>/`: the chart RAW (zipped), `chart.json` (patch positions in the format of `nikon-recipes-lr sample`), the NX Studio template and one Camera Raw baseline per base profile, sampled with `nikon-recipes-lr sample`. If any of these change, profiles fitted before and after are no longer comparable, so note the change in the CHANGELOG and in the kit's README.
+
+## Adding new recipes
+
+Recipe IDs are the NP3 file names of the [Nikon-Recipes archive](https://github.com/shouryan01/Nikon-Recipes) with spaces replaced by underscores; the archive commit is recorded in `website/data/downloads.json`.
+
+1. **Find new recipes.** Update a local clone of the archive and list NP3 files whose ID is not in `docs/release_manifest.json`. Recipes from Nikon Imaging Cloud that are not in the archive can be copied from a camera to a memory card (*Manage Picture Control › Load/save › Copy to memory card*); credit the recipe's creator, not the person who copied it, and add the file to the archive by pull request if its license allows.
+2. **Calibrate** each new NP3 with the current calibration kit exactly as in [Convert your own recipe](en/convert-your-own-recipe.md): `prepare-nx` for all new files at once, one NX Studio export, then `sample` and `fit`. Keep the NX TIFFs on external storage; they are the expensive part to redo.
+3. **Review** the new profiles with `audit`, a few Camera Raw renders and the gallery previews, as for any release.
+4. **Release** them following the steps above. Adding recipes changes the profile set, so it is at least a minor version with a new group and new UUIDs for every profile.

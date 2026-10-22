@@ -1,25 +1,21 @@
 # Sunset Reset
 
-Original author: **Baek Jaekwang**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Baek Jaekwang**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#SunsetReset_Baek)
 
-Profile: `NikonRecipes_SunsetReset_Baek.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_SunsetReset_Baek.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 0.5130 | 0.3965 |
-| Chart median ΔE | 0.3922 | — |
-| Chart p95 ΔE | 1.2613 | 0.9576 |
-| Chart held-out mean ΔE | 0.5247 | — |
-| Native face jump p99 | 0.3343 | 0.3406 |
-| Native face jump maximum / RMS | 1.0465 / 0.1048 | — |
-| Valid chart samples | 21393 | |
+| Difference from NX Studio, chart mean ΔE | 0.391 | 0.513 |
+| Chart median ΔE | 0.299 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 0.974 | 1.261 |
+| Chart mean ΔE on patches left out of the fit | 0.394 | — |
+| Banding risk, face-jump p99 | 0.288 | 0.334 |
+| Face-jump maximum / RMS | 0.725 / 0.080 | — |
+| Chart patches used | 21356 | |
 
-Review: **2026-10-10 Y8 owner review on multiple real photographs: no banding observed (recipe had residual banding in Y7); not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: This recipe showed banding in an earlier version (Y7). The 0.2 version was checked on several real photographs and no banding was seen; 1.0 uses the same fitting settings and has a lower banding-risk score, but has not been reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#SunsetReset_Baek). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

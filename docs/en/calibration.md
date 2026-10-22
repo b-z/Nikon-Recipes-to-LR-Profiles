@@ -1,8 +1,10 @@
 # Calibration workflow
 
+For the Nikon Z 8 you do not need any of this: the repository contains a ready [calibration kit](../../calibration/z8/), see [Convert your own recipe](convert-your-own-recipe.md). This page describes the full workflow for making a chart and baselines for another camera.
+
 ## Inputs and export settings
 
-Use the same synthetic RAW and patch-center metadata for both renderers. Export **16-bit RGB TIFF in Adobe RGB (1998)**, at original dimensions. Disable Nikon ADL, noise reduction, sharpening, clarity and optical corrections where the body/lens permits; record any control that cannot be disabled. Use an Adobe Standard baseline with As Shot white balance, a linear user curve and zero Basic/detail adjustments. Do not compare differently cropped or resized targets.
+Use the same synthetic RAW and patch-center metadata for both renderers. Export **16-bit RGB TIFF in Adobe RGB (1998)**, at original dimensions. Disable Nikon ADL, noise reduction, sharpening, clarity and optical corrections where the body/lens permits; record any control that cannot be disabled. Use a baseline on the base profile you will fit for (Adobe Standard, or Camera Flexible Color with `--base` for cameras that have it) with As Shot white balance, a linear user curve and zero Basic/detail adjustments. Do not compare differently cropped or resized targets.
 
 Our NP3 reader exposes Nikon's TLV metadata. Curves, Color Blender and Color Grading have mathematical parameters, but their processing space/order and interactions differ from Adobe's controls. The released workflow therefore fits measured NX output. It is not a claim that white-box decomposition is impossible; exact component mapping remains future research.
 

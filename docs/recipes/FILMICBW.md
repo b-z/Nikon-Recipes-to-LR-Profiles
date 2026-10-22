@@ -1,25 +1,21 @@
 # Filmic
 
-Original author: **Fabio Oliveira**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Fabio Oliveira**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#FILMICBW)
 
-Profile: `NikonRecipes_FILMICBW.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_FILMICBW.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 0.1035 | 0.2835 |
-| Chart median ΔE | 0.0589 | — |
-| Chart p95 ΔE | 0.3604 | 1.3720 |
-| Chart held-out mean ΔE | 0.1054 | — |
-| Native face jump p99 | 0.2611 | 0.3582 |
-| Native face jump maximum / RMS | 0.7721 / 0.0716 | — |
-| Valid chart samples | 24333 | |
+| Difference from NX Studio, chart mean ΔE | 0.061 | 0.104 |
+| Chart median ΔE | 0.038 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 0.186 | 0.360 |
+| Chart mean ΔE on patches left out of the fit | 0.058 | — |
+| Banding risk, face-jump p99 | 0.190 | 0.261 |
+| Face-jump maximum / RMS | 0.510 / 0.050 | — |
+| Chart patches used | 24177 | |
 
-Review: **Not individually reviewed with Y8; not flagged in the 2026-10-10 Y7 owner review; not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: Not reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#FILMICBW). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

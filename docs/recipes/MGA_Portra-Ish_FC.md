@@ -1,25 +1,21 @@
 # MGA Portra-Ish FC
 
-Original author: **Mark G Adams**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Mark G Adams**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#MGA_Portra-Ish_FC)
 
-Profile: `NikonRecipes_MGA_Portra-Ish_FC.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_MGA_Portra-Ish_FC.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 0.8053 | 0.5651 |
-| Chart median ΔE | 0.6070 | — |
-| Chart p95 ΔE | 2.1386 | 1.4246 |
-| Chart held-out mean ΔE | 0.8234 | — |
-| Native face jump p99 | 0.4637 | 0.5127 |
-| Native face jump maximum / RMS | 1.1440 / 0.1434 | — |
-| Valid chart samples | 20734 | |
+| Difference from NX Studio, chart mean ΔE | 0.628 | 0.805 |
+| Chart median ΔE | 0.444 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 1.789 | 2.139 |
+| Chart mean ΔE on patches left out of the fit | 0.636 | — |
+| Banding risk, face-jump p99 | 0.362 | 0.464 |
+| Face-jump maximum / RMS | 0.647 / 0.113 | — |
+| Chart patches used | 20864 | |
 
-Review: **2026-10-10 Y8 owner review on multiple real photographs: no banding observed (recipe had residual banding in Y7); not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: This recipe showed banding in an earlier version (Y7). The 0.2 version was checked on several real photographs and no banding was seen; 1.0 uses the same fitting settings and has a lower banding-risk score, but has not been reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#MGA_Portra-Ish_FC). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

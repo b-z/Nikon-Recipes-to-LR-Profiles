@@ -6,63 +6,95 @@
 
 [中文](docs/zh/README.md) · [日本語](docs/ja/README.md)
 
-Use the looks from Nikon Imaging Cloud **Imaging Recipes** in Lightroom and Adobe Camera Raw, with an **Amount slider from 0 to 200%**. Exposure, white balance and all other RAW edits stay available.
+### 👉 [Open the online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/): compare all 236 recipes with NX Studio and download the ones you like
 
-The current release contains **236 recipe conversions** as enhanced-profile `.xmp` files built on Adobe Standard. No DCP or installer is needed. Each profile is calibrated against NX Studio renders, so it is a close approximation of the recipe, not Nikon's renderer and not a slider-by-slider translation of the NP3 file.
+[Nikon Imaging Cloud](https://imagingcloud.nikon.com/) offers color recipes created by professional photographers. A recipe only changes the JPEGs your camera records; the RAW file stays as it is. If you edit RAW files, the only official way to use a recipe is Nikon's NX Studio, which does not fit the workflow of many photographers.
 
-![NX Studio (left) and this project's Lightroom conversion (right), Filmic recipe](docs/images/filmic-example.jpg)
+This project recreates the recipes in **Lightroom and Photoshop Camera Raw**. Choose a recipe in the Profile Browser and set its strength with the **Amount** slider (0–200%). Exposure, white balance, curves and every other adjustment keep working as usual. The current release contains **236 recipes**, and in our tests most of them reproduce the colors of the original closely.
 
-## Use the profiles
+[![KG200P1 on four test photographs. Top row: NX Studio. Bottom row: Lightroom with the converted profile.](docs/images/kg200p1-comparison.jpg)](https://nikon-recipes-to-lr-profiles.pages.dev/#KG200P1)
 
-1. Download `nikon-recipes-lr-profiles-<version>.zip` from the [latest release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) and unzip it.
-2. In Lightroom or Camera Raw, open the Profile Browser, choose **Import Profiles** and select the `.xmp` files in `profiles/`. Restart Lightroom if they do not appear.
-3. Open the **Nikon Recipes LR 0.2** group, pick a look and adjust **Amount**. 30–50% gives a subtle result.
+*The KG200P1 recipe on four test photographs. Top: NX Studio. Bottom: Lightroom with this project's profile at 100% Amount. [See every recipe this way in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/).*
 
-Profiles from a new release have their own group and IDs, so they can be installed next to an older release. Delete the old group when you no longer need it. See [INSTALL](docs/en/INSTALL.md) for details.
+## Install
+
+1. Download `nikon-recipes-lr-profiles-1.0.0.zip` from the [latest release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) and unzip it. If you only want a few recipes, download them one by one from the [gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) instead.
+2. In Lightroom or Camera Raw, open the Profile Browser, choose **Import Profiles** and select the `.xmp` files. Restart Lightroom if they do not appear.
+3. Open the **Nikon Recipes LR 1.0** group, pick a recipe and adjust **Amount**. 30–50% gives a subtle result.
+
+**Version 1.0 is for photos from the Nikon Z 8**: its profiles are built on Camera Flexible Color, Adobe's match of Nikon's Flexible Color Picture Control, and only appear for Z 8 photos. For other cameras, use [version 0.2](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0), which is built on Adobe Standard and works with any camera. Each release has its own group, so both can be installed side by side. More in [INSTALL](docs/en/INSTALL.md).
+
+## What a profile includes
+
+A profile reproduces the **color and tone** of a recipe: its colors, contrast and tone curve, saturation and color grading, as NX Studio renders them. The recipe's **sharpening, mid-range sharpening and clarity are not included**; those detail settings are ignored, and your own Lightroom settings for sharpening, texture, clarity, noise reduction, grain, vignetting and lens corrections apply as usual.
+
+## Open photos with the recipe you shot with
+
+The camera stores the name of the recipe in every NEF. This project's command-line tool reads it and writes a sidecar next to each RAW, so Lightroom Classic and Camera Raw open the photo with the matching profile already applied:
+
+```sh
+nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/profiles /path/to/photos
+```
+
+Run it before importing the photos. Setup and details: [Apply profiles automatically](docs/en/auto-apply.md).
 
 ## Compare the recipes
 
-- **[Interactive gallery](https://nikon-recipes-to-lr-profiles.pages.dev/)**: every recipe on four photographs, NX Studio next to the Lightroom conversion, with A/B blinking and per-recipe downloads.
-- **[Recipe catalog](docs/RECIPES.md)**: author credit, fitting error and banding-risk score for each profile ([what the scores mean](docs/en/metrics.md)); machine-readable as [`docs/release_manifest.json`](docs/release_manifest.json).
+- **[Online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/)**: every recipe on four photographs, NX Studio against the Lightroom profile, with a blink comparison, two scores and a download button for each recipe.
+- **[Recipe catalog](docs/RECIPES.md)**: the creator, the difference from NX Studio and the banding-risk score of every profile ([what the scores mean](docs/en/metrics.md)).
 
 ## How it works
 
-1. A synthetic chart RAW with about 24,000 color patches is rendered twice: once by NX Studio with the recipe applied, and once by Camera Raw with Adobe Standard.
-2. A smooth, bounded 3D color mapping is fitted from the Adobe colors to the NX colors. Since 0.2.0 this is a cubic spline with 16 control points per axis ([method notes](docs/Y8_REBUILD.md)), which gives smoother gradients than fitting the table directly.
-3. The mapping is stored as a 32³ RGB table inside a Lightroom "Look" profile on top of Adobe Standard. Lightroom's Amount slider blends it with the original.
+### Measuring a recipe
 
-The NP3 file supplies the recipe's name and metadata. The colors themselves come from the NX Studio renders.
+NX Studio is the reference, because it is how Nikon itself applies a recipe to RAW files. For every recipe, NX Studio renders a synthetic test chart: a Z 8 RAW file containing 24,720 color patches that cover dark to bright, neutral to strongly saturated colors in every hue. Camera Raw renders the same chart with the base profile and no recipe. Each patch then gives one pair of colors: what Lightroom starts from, and what the recipe turns it into. The recipe's settings are never translated one by one, because Nikon's curves, Color Blender and Color Grading do not work in the same color space or order as Lightroom's sliders; the profile follows what NX Studio actually produces.
+
+### Fitting a smooth color mapping
+
+From the 24,720 pairs we fit a function that maps any Lightroom color to the recipe's color. A Lightroom color table has 32 points along each of its three axes, almost 33,000 points with three values each, and Lightroom interpolates in straight lines between them. If every point were fitted freely, the table would follow the small measurement noise of each patch and bend slightly differently from cell to cell. In a photo those bends show up where colors change slowly, in skies, skin and out-of-focus backgrounds, as visible steps (banding). Earlier versions of this project showed exactly that.
+
+Since 0.2 the mapping is a **smooth cubic spline** with 16 control points per axis and a curvature penalty: its first and second derivatives are continuous everywhere, so gradients stay smooth, and its coefficients are bounded so that every output stays inside the color space without clipping. The 32³ table is then sampled from this smooth function. The price is a slightly larger difference on the chart; for 1.0 the median difference to NX Studio is still about 0.5 ΔE, below what most people can see. [Method notes](docs/Y8_REBUILD.md).
+
+### Storing it as a Lightroom profile
+
+Each recipe becomes one Adobe **enhanced profile**, a small `.xmp` file that Lightroom Classic, Lightroom and Camera Raw import directly, the same format Adobe uses for its own creative profiles. The important fields are:
+
+- `crs:PresetType="Look"`: the file is a profile that sits on top of a base profile.
+- `crs:CameraProfile`: the base profile, `Camera Flexible Color` in 1.0 (`Adobe Standard` in 0.2). Camera Raw renders the RAW with this base first.
+- `crs:RGBTable` and `crs:Table_<ID>`: the 32×32×32 color table. Its 16-bit values are stored as offsets from "no change", compressed and written as text; the ID is a checksum of the table. Camera Raw applies it to every pixel after the base profile.
+- `crs:SupportsAmount="True"` with a maximum of 200% in the table header: this is what gives the profile its **Amount** slider, which blends between the base profile (0%) and the full recipe (100%) or beyond.
+- `crs:CameraModelRestriction="NIKON Z 8"`, `crs:Group`, `crs:Name` and `crs:UUID`: where and under which name the profile appears. Each release gets new UUIDs, so releases never overwrite each other.
+
+A profile is the only place in Lightroom where a full 3D color table can live. A develop preset could only set sliders such as HSL and curves, which cannot express how a recipe moves every color, and it would overwrite your own slider settings. A camera profile (DCP) has to be made per camera and offers no Amount slider. With an enhanced profile, the recipe is one choice in the Profile Browser, its strength is adjustable, and every other slider remains yours.
+
+### Why 1.0 uses Camera Flexible Color
+
+Up to 0.2 the profiles were built on Adobe Standard. Camera Raw lowers the black level of Adobe Standard depending on the darkest pixels in each photo, so in daylight scenes without true black the shadows came out darker and more saturated than in NX Studio. Camera Flexible Color, Adobe's profile matching Nikon's Flexible Color Picture Control that the recipes are built on, keeps the sensor's black level. With it, 1.0 is closer to NX Studio than 0.2 for all 236 recipes on the chart, shadows in real photos come much closer to NX Studio, and the banding-risk score is lower for 235 of them. [Details](docs/Y9_FLEX_BASE.md).
+
+## Convert your own recipe
+
+Picture Controls you made yourself, or recipes that are not in the release, can be converted too. The repository contains a [Z 8 calibration kit](calibration/z8/) with the chart, the NX Studio settings and the Camera Raw measurements; with NX Studio and Python a recipe takes a few minutes. See [Convert your own recipe](docs/en/convert-your-own-recipe.md).
 
 ## Known limitations
 
-- **Banding.** Smooth skies and bokeh can still show steps, especially at high Amount. The 58 recipes that showed banding in the previous version were re-checked on several photographs with no banding seen; the other 178 have not been individually reviewed. Please [report](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues/new/choose) any you find.
-- **Camera.** Only the Nikon Z 8 has been calibrated and tested. Other bodies may look different.
-- **Scope.** The profiles reproduce color and global tone. Sharpening, clarity, grain, vignetting and lens corrections are left to your own Lightroom settings.
-- **Approximation.** The mean chart difference to NX Studio is below 1 ΔE (CIEDE2000) for 197 of 236 recipes and at most 1.85 ΔE. Individual colors and photos can differ more.
-
-## Calibrate a recipe yourself
-
-```sh
-python -m pip install -e .
-nikon-recipes-lr fit --adobe-samples adobe.json --nx-samples nx.json \
-  --name "My recipe" --author "Recipe author" --output my-recipe.xmp --report my-recipe-report.json
-nikon-recipes-lr audit my-recipe.xmp
-```
-
-New recipes need matching NX Studio and Camera Raw renders of the chart. The [calibration guide](docs/en/calibration.md) covers chart generation, NX batch export, sampling and fitting. [`examples/`](examples/README.md) has a small synthetic data set that runs without any Nikon or Adobe software.
+- **Camera.** 1.0 profiles are calibrated for and limited to the Nikon Z 8. 0.2 profiles work with any camera but are also calibrated on the Z 8, so colors may differ more on other bodies.
+- **Banding.** Smooth skies and bokeh can still show steps, especially at high Amount. Please [report](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues/new/choose) any you find, with the recipe and a small crop.
+- **Approximation.** For 223 of the 236 recipes the average chart difference to NX Studio is below 1 ΔE (CIEDE2000), roughly the smallest difference people notice; the largest is 1.44 ΔE. Single colors and photos can differ more.
 
 ## Contributing
 
-Contributions are welcome, especially calibrations for other Nikon bodies, banding reports with reproducible examples, smoother fitting methods, tests and translations. Start with [CONTRIBUTING](CONTRIBUTING.md); all participants are expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md). Release history is in the [CHANGELOG](CHANGELOG.md).
+Contributions are welcome: calibrations for other Nikon bodies, banding reports with reproducible examples, better fitting methods, tests, documentation and translations. Start with [CONTRIBUTING](CONTRIBUTING.md); everyone taking part is expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md). Changes between releases are listed in the [CHANGELOG](CHANGELOG.md).
 
-## Support
+## Support the project
 
-If the profiles are useful to you, you can support the project through [GitHub Sponsors](https://github.com/sponsors/b-z). Sponsorship is entirely optional and does not affect how issues or pull requests are handled.
+The project is maintained in spare time. If the profiles are useful to you, you can support it through [GitHub Sponsors](https://github.com/sponsors/b-z) or with WeChat. Sponsoring is entirely optional and does not affect how issues or pull requests are handled.
+
+<img src="docs/images/wechat-reward.jpg" alt="WeChat reward QR code" width="180">
 
 ## Credits and licenses
 
-- Recipes belong to their creators, who are credited in every profile and in the catalog. Original NP3 files are not redistributed; get them from the creators, Nikon Imaging Cloud or the [Nikon-Recipes archive](https://github.com/shouryan01/Nikon-Recipes).
+- Recipes belong to their creators, who are credited in every profile, in the catalog and in the [gallery](https://nikon-recipes-to-lr-profiles.pages.dev/). Original NP3 files are not redistributed; get them from the creators, Nikon Imaging Cloud or the [Nikon-Recipes archive](https://github.com/shouryan01/Nikon-Recipes).
 - Code and documentation: [MIT](LICENSE). Generated profiles: MIT with the attribution notes in [PROFILE_LICENSE](PROFILE_LICENSE.md). Third-party notes: [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md).
-- The four sample photographs and images derived from them are **not** MIT-licensed. They may be used only for testing and comparing this project; see [samples/LICENSE.md](samples/LICENSE.md).
+- The four sample photographs, the calibration chart (whose embedded previews come from one of them) and images made from them are **not** MIT-licensed. They may be used only for testing and comparing this project; see [samples/LICENSE.md](samples/LICENSE.md).
 
 This is an independent community project, not affiliated with or endorsed by Nikon or Adobe.

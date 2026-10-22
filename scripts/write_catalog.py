@@ -15,7 +15,20 @@ from nikon_recipes_lr import __version__
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
-GALLERY = "https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery"
+GALLERY = "https://nikon-recipes-to-lr-profiles.pages.dev/"
+
+
+# Reader-facing wording for the manifest's review and measurement fields, which keep their original values.
+REVIEW = {
+    True: "This recipe showed banding in an earlier version (Y7). The 0.2 version was checked on several real photographs "
+    "and no banding was seen; 1.0 uses the same fitting settings and has a lower banding-risk score, but has not been "
+    "reviewed photo by photo.",
+    False: "Not reviewed photo by photo.",
+}
+POLICY = {
+    "original NX chart; detail settings not uniformly disabled": "NX Studio chart render with the recipe's own detail settings",
+    "verified detail-off NX chart": "NX Studio chart render with detail settings switched off",
+}
 
 
 def main():
@@ -25,21 +38,22 @@ def main():
     for name in ("acr_validation.json", "y8_acr_validation.json"):
         for check in json.loads((DOCS / name).read_text(encoding="utf-8")):
             checks.setdefault((check["recipe"], check["table_id"]), []).append(check)
-    flagged = sum(row["prior_y7_banding"] for row in rows)
+    previous = rows[0]["previous"]["version"]
+    under_one = sum(row["fit"]["mean"] < 1 for row in rows)
     index = [
         f"# Recipe catalog — {version}",
         "",
-        f"{len(rows)} Nikon conversions, all **Y8** (smooth spline fit sampled to a 32³ RGB table). "
-        "**Banding is a known issue**; scores are not universal visibility thresholds. "
-        "[Definitions](en/metrics.md) · [Y8 method and review](Y8_REBUILD.md) · [Online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/)",
+        f"All {len(rows)} profiles of release {version}, with their creators and two scores. "
+        "[Compare every recipe on four photographs in the online gallery]({GALLERY}).".format(GALLERY=GALLERY),
         "",
-        "Chart ΔE is current-table evaluation on existing targets. Face p99 measures native RGB slope change globally; it is not ΔE. "
-        f"Y7 columns are the previous conversion, for comparison only. Reviewed: the {flagged} recipes that showed residual banding with Y7 "
-        "were checked by the maintainer with Y8 on multiple photographs and no banding was observed. "
-        f"The other {len(rows) - flagged} were not individually reviewed with Y8.",
+        "- **Difference from NX Studio**: the average color difference (CIEDE2000 ΔE) to NX Studio on the test chart. "
+        f"About 1 is the smallest difference most people notice; {under_one} of {len(rows)} recipes are below 1.",
+        "- **Banding risk**: how abruptly the color table changes direction (face-jump p99). Lower means smoother "
+        "gradients, but no score guarantees a smooth sky in every photo.",
+        f"- The {previous} columns show the previous release for comparison. [How the scores are measured](en/metrics.md).",
         "",
-        "| Recipe / original author | Chart mean ΔE | Chart p95 | Face p99 | Y7 mean ΔE | Y7 face p99 | Reviewed with Y8 |",
-        "|---|---:|---:|---:|---:|---:|:---:|",
+        f"| Recipe / creator | Difference from NX | Banding risk | {previous} difference | {previous} banding risk |",
+        "|---|---:|---:|---:|---:|",
     ]
     pages = DOCS / "recipes"
     pages.mkdir(exist_ok=True)
@@ -50,42 +64,37 @@ def main():
         old = row["previous"]
         author = html.escape(row["author"])
         display = html.escape(row["display"])
-        reviewed = "✓" if row["prior_y7_banding"] else ""
         index.append(
-            f"| [{display} — {author}](recipes/{quote(recipe, safe='')}.md) | {fit['mean']:.3f} | {fit['p95']:.3f} | "
-            f"{risk['face_jump_p99']:.3f} | {old['fit_mean']:.3f} | {old['face_jump_p99']:.3f} | {reviewed} |"
+            f"| [{display} — {author}](recipes/{quote(recipe, safe='')}.md) | {fit['mean']:.2f} | "
+            f"{risk['face_jump_p99']:.2f} | {old['fit_mean']:.2f} | {old['face_jump_p99']:.2f} |"
         )
         page = f"""# {display}
 
-Original author: **{author}**. [NP3 archive]({row["input_recipe_source"]}) · [All recipes](../RECIPES.md)
+Recipe by **{author}**. [Original NP3 archive]({row["input_recipe_source"]}) · [All recipes](../RECIPES.md) · [See it in the gallery]({GALLERY}#{quote(recipe, safe="")})
 
-Profile: `{row["file"]}` (Release {version}) · Conversion: **{row["source_version"]}** · Amount: **100%**.
+Profile file `{row["file"]}` in release {version}, on the **{row["base"]}** base profile, for the **{row["camera"]}**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | {version} | {old["version"]} |
 |---|---:|---:|
-| Chart mean ΔE | {fit["mean"]:.4f} | {old["fit_mean"]:.4f} |
-| Chart median ΔE | {fit["median"]:.4f} | — |
-| Chart p95 ΔE | {fit["p95"]:.4f} | {old["fit_p95"]:.4f} |
-| Chart held-out mean ΔE | {fit["heldout"]["mean"]:.4f} | — |
-| Native face jump p99 | {risk["face_jump_p99"]:.4f} | {old["face_jump_p99"]:.4f} |
-| Native face jump maximum / RMS | {risk["face_jump_max"]:.4f} / {risk["face_jump_rms"]:.4f} | — |
-| Valid chart samples | {fit["sample_count"]} | |
+| Difference from NX Studio, chart mean ΔE | {fit["mean"]:.3f} | {old["fit_mean"]:.3f} |
+| Chart median ΔE | {fit["median"]:.3f} | — |
+| Chart p95 ΔE (the 5% largest differences start here) | {fit["p95"]:.3f} | {old["fit_p95"]:.3f} |
+| Chart mean ΔE on patches left out of the fit | {fit["heldout"]["mean"]:.3f} | — |
+| Banding risk, face-jump p99 | {risk["face_jump_p99"]:.3f} | {old["face_jump_p99"]:.3f} |
+| Face-jump maximum / RMS | {risk["face_jump_max"]:.3f} / {risk["face_jump_rms"]:.3f} | — |
+| Chart patches used | {fit["sample_count"]} | |
 
-Review: **{row["owner_review"]}** NX target: {row["measurement_policy"]}.
+Visual review: {REVIEW[row["prior_y7_banding"]]} Reference: {POLICY[row["measurement_policy"]]}.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
-
-## Visual comparisons
-
-[View this recipe on all four scenes]({GALLERY}#{quote(recipe, safe="")}). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
 """
         verified = checks.get((recipe, row["source_table_id"]), [])
         if verified:
-            page += "## Actual Camera Raw verification\n\nThe shipped Y8 table was rendered through actual Camera Raw and compared with the numerical preview: "
+            page += "## Camera Raw check\n\nThis table was rendered through Camera Raw and compared with the gallery preview: "
             page += ", ".join(f"_DSC{c['photo']} mean ΔE {c['mean_de']:.3f}" for c in verified)
-            page += ". [All checks](../y8_acr_validation.json).\n\n"
-        page += "Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.\n"
+            page += ".\n\n"
+        page += "Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.\n"
         (pages / f"{recipe}.md").write_text(page, encoding="utf-8")
     (DOCS / "RECIPES.md").write_text("\n".join(index) + "\n", encoding="utf-8")
     print(f"Wrote catalog for {len(rows)} recipes ({version}).")

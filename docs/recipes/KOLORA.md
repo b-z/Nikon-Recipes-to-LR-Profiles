@@ -1,25 +1,21 @@
 # KOLORA
 
-Original author: **Filmstill**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Filmstill**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#KOLORA)
 
-Profile: `NikonRecipes_KOLORA.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_KOLORA.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 0.7917 | 0.5249 |
-| Chart median ΔE | 0.6564 | — |
-| Chart p95 ΔE | 1.8969 | 1.2234 |
-| Chart held-out mean ΔE | 0.8323 | — |
-| Native face jump p99 | 0.3906 | 0.4579 |
-| Native face jump maximum / RMS | 0.7320 / 0.1371 | — |
-| Valid chart samples | 19925 | |
+| Difference from NX Studio, chart mean ΔE | 0.604 | 0.792 |
+| Chart median ΔE | 0.495 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 1.485 | 1.897 |
+| Chart mean ΔE on patches left out of the fit | 0.622 | — |
+| Banding risk, face-jump p99 | 0.338 | 0.391 |
+| Face-jump maximum / RMS | 0.603 / 0.118 | — |
+| Chart patches used | 20072 | |
 
-Review: **Not individually reviewed with Y8; not flagged in the 2026-10-10 Y7 owner review; not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: Not reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#KOLORA). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

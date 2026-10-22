@@ -1,13 +1,31 @@
-# Install 0.2.0 profiles
+# Nikon Recipes to LR Profiles 1.0.0
 
-1. Unzip this archive. In Lightroom / Camera Raw, open the Profile Browser and select Import Profiles. Choose the `.xmp` files in `profiles/`. No separate DCP or installer is needed.
-2. Restart Lightroom if the imported profiles do not appear. Open **Nikon Recipes LR 0.2** and choose a style.
-3. Adjust Amount (0–200%); try 30–50% for subtle application. Continue editing exposure, white balance and other settings as usual.
+Lightroom and Camera Raw profiles for 236 Nikon Imaging Cloud recipes. Compare them online and download single recipes at https://nikon-recipes-to-lr-profiles.pages.dev/
 
-All 236 Nikon conversions use **Y8**: a smooth spline fit sampled to a 32³ RGB table, which trades some chart accuracy for smoother gradients. The 58 recipes that still showed banding with the previous Y7 tables were checked by the maintainer with Y8 on several real photographs, and no banding was observed. The other 178 were not individually reviewed with Y8. Banding remains a known risk, especially in smooth sky and bokeh gradients and at high Amount. Only Nikon Z8 has been tested.
+## Install
 
-0.2.0 profiles have new names, a new group and new UUIDs, so they can be installed next to 0.1 profiles. Remove the **Nikon Recipes LR 0.1** profiles if you no longer need them.
+1. Unzip this archive.
+2. Open the Profile Browser and import the `.xmp` files in `profiles/`:
+   - Lightroom Classic: Develop module, Basic panel, click the four-square icon next to **Profile**, then **+** › **Import Profiles**.
+   - Lightroom: **File › Import Profiles & Presets**.
+   - Camera Raw: Edit panel, Profile Browser, then the **…** menu › **Import Profiles & Presets**.
+3. Restart Lightroom if the profiles do not appear. No installer or separate DCP file is needed.
 
-Recipe authors are credited in each profile and `manifest.json`. Original NP3 files are external inputs from https://github.com/shouryan01/Nikon-Recipes or their creators. Tool code and project-created conversion resources follow the included MIT license and PROFILE_LICENSE notice. Sample photos follow separate terms and are not included in this profile pack.
+## Use
 
-Scores and comparisons: https://github.com/b-z/Nikon-Recipes-to-LR-Profiles . The release does not include Fuji film simulation conversions.
+1. Open a photo taken with a **Nikon Z 8**. The 1.0 profiles appear only for Z 8 photos (see *Other cameras* below).
+2. In the Profile Browser, open a group whose name starts with **Nikon Recipes LR 1.0** (one group per recipe creator) and click a recipe.
+3. Set its strength with the **Amount** slider under the profile name: 100% matches the recipe, 30–50% gives a subtle result, up to 200% strengthens it.
+4. Edit as usual. Exposure, white balance, curves and every other slider keep working. The profile contains the recipe's color and tone only; its sharpening, mid-range sharpening and clarity are not included.
+
+To open new photos with the recipe they were shot with, see https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/blob/main/docs/en/auto-apply.md
+
+## Other cameras
+
+Version 1.0 is built on Camera Flexible Color, Adobe's match of Nikon's Flexible Color Picture Control, and is limited to the Nikon Z 8. For other cameras use version 0.2 (built on Adobe Standard, works with any camera): https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0 . Both versions have their own groups and can be installed side by side.
+
+## Good to know
+
+- Banding can still appear in smooth skies and bokeh, especially at high Amount. Please report cases at https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues
+- `manifest.json` lists every profile with its creator and scores.
+- Recipes belong to their creators, who are credited in each profile. Original NP3 files are not included. The profiles are MIT-licensed with the attribution notes in PROFILE_LICENSE.md.

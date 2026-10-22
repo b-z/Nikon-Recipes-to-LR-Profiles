@@ -6,6 +6,7 @@
 
 - 用[问题表单](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues/new/choose)反馈断层或偏色：写明配方、版本、数量、相机和 Lightroom 版本，附上可以公开的小裁切。
 - 校准其他机身（目前只有 Nikon Z 8），见[校准说明](../en/calibration.md)。
+- 转换新的配方：用 [Z 8 校准包](../../calibration/z8/)，只需 NX Studio 和 Python（[指南](convert-your-own-recipe.md)）。提交配置文件之前，请先开一个 Issue 说明配方和它的作者。
 - 改进拟合方法、断层指标或感知评估；改进代码、测试、网站和翻译。
 
 **开发环境**（Python 3.10+）

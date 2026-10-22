@@ -1,25 +1,21 @@
 # MGA Kodachrome 2025
 
-Original author: **Mark G Adams**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Mark G Adams**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#MGA_Kodachrome_2025)
 
-Profile: `NikonRecipes_MGA_Kodachrome_2025.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_MGA_Kodachrome_2025.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 1.5723 | 1.0234 |
-| Chart median ΔE | 1.1774 | — |
-| Chart p95 ΔE | 4.0691 | 2.6821 |
-| Chart held-out mean ΔE | 1.6280 | — |
-| Native face jump p99 | 1.1150 | 1.3436 |
-| Native face jump maximum / RMS | 2.3855 / 0.3013 | — |
-| Valid chart samples | 19425 | |
+| Difference from NX Studio, chart mean ΔE | 1.197 | 1.572 |
+| Chart median ΔE | 0.903 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 3.024 | 4.069 |
+| Chart mean ΔE on patches left out of the fit | 1.216 | — |
+| Banding risk, face-jump p99 | 0.916 | 1.115 |
+| Face-jump maximum / RMS | 2.438 / 0.260 | — |
+| Chart patches used | 19324 | |
 
-Review: **2026-10-10 Y8 owner review on multiple real photographs: no banding observed (recipe had residual banding in Y7); not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: This recipe showed banding in an earlier version (Y7). The 0.2 version was checked on several real photographs and no banding was seen; 1.0 uses the same fitting settings and has a lower banding-risk score, but has not been reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#MGA_Kodachrome_2025). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

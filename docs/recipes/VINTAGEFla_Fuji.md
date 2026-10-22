@@ -1,25 +1,21 @@
 # VINTAGEFla
 
-Original author: **Fuji**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Fuji**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#VINTAGEFla_Fuji)
 
-Profile: `NikonRecipes_VINTAGEFla_Fuji.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_VINTAGEFla_Fuji.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 0.8738 | 0.5359 |
-| Chart median ΔE | 0.6708 | — |
-| Chart p95 ΔE | 2.4022 | 1.4762 |
-| Chart held-out mean ΔE | 0.9303 | — |
-| Native face jump p99 | 0.5067 | 0.5950 |
-| Native face jump maximum / RMS | 0.9977 / 0.1470 | — |
-| Valid chart samples | 22576 | |
+| Difference from NX Studio, chart mean ΔE | 0.626 | 0.874 |
+| Chart median ΔE | 0.490 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 1.680 | 2.402 |
+| Chart mean ΔE on patches left out of the fit | 0.655 | — |
+| Banding risk, face-jump p99 | 0.379 | 0.507 |
+| Face-jump maximum / RMS | 0.648 / 0.113 | — |
+| Chart patches used | 22736 | |
 
-Review: **Not individually reviewed with Y8; not flagged in the 2026-10-10 Y7 owner review; not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: Not reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#VINTAGEFla_Fuji). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

@@ -1,25 +1,21 @@
 # Tender Clear
 
-Original author: **Fuka Kamata**. [NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md)
+Recipe by **Fuka Kamata**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#TenderClear_FukaK)
 
-Profile: `NikonRecipes_TenderClear_FukaK.xmp` (Release 0.2.0) · Conversion: **Y8** · Amount: **100%**.
+Profile file `NikonRecipes_TenderClear_FukaK.xmp` in release 1.0.0, on the **Camera Flexible Color** base profile, for the **NIKON Z 8**. Scores are at 100% Amount.
 
-| Measurement | Y8 (shipped) | Y7 (previous) |
+| Measurement | 1.0.0 | 0.2.0 |
 |---|---:|---:|
-| Chart mean ΔE | 0.5824 | 0.4079 |
-| Chart median ΔE | 0.4613 | — |
-| Chart p95 ΔE | 1.4754 | 1.0216 |
-| Chart held-out mean ΔE | 0.6169 | — |
-| Native face jump p99 | 0.3833 | 0.4073 |
-| Native face jump maximum / RMS | 0.7906 / 0.1213 | — |
-| Valid chart samples | 21690 | |
+| Difference from NX Studio, chart mean ΔE | 0.376 | 0.582 |
+| Chart median ΔE | 0.299 | — |
+| Chart p95 ΔE (the 5% largest differences start here) | 0.918 | 1.475 |
+| Chart mean ΔE on patches left out of the fit | 0.396 | — |
+| Banding risk, face-jump p99 | 0.279 | 0.383 |
+| Face-jump maximum / RMS | 0.490 / 0.088 | — |
+| Chart patches used | 21883 | |
 
-Review: **Not individually reviewed with Y8; not flagged in the 2026-10-10 Y7 owner review; not a universal guarantee.** NX target: original NX chart; detail settings not uniformly disabled.
+Visual review: Not reviewed photo by photo. Reference: NX Studio chart render with the recipe's own detail settings.
 
-[Score definitions and limitations](../en/metrics.md). These are current-table chart scores and global structural banding-risk scores, not a visible-band pass/fail verdict. A low average ΔE does not guarantee smooth skies or bokeh.
+The scores describe the profile on the test chart; a low difference does not guarantee smooth skies or bokeh in every photo. [What the scores mean](../en/metrics.md).
 
-## Visual comparisons
-
-[View this recipe on all four scenes](https://nikon-recipes-to-lr-profiles.pages.dev/docs/gallery#TenderClear_FukaK). [Small NX/LR contact sheets](../comparisons/README.md) (made with the previous Y7 tables).
-
-Photos © b-z / Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.
+Photos © Zhou Bowei. [Project test/comparison permission only](../../samples/LICENSE.md); other uses require permission.

@@ -6,6 +6,7 @@
 
 - [Issue フォーム](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues/new/choose)で段差や色ずれを報告する（レシピ、バージョン、適用量、カメラ、Lightroom のバージョン、共有可能な小さな切り抜き）。
 - 他の機種を校正する（現在は Nikon Z 8 のみ）。[校正ガイド](../en/calibration.md)を参照してください。
+- 新しいレシピを変換する。[Z 8 キャリブレーションキット](../../calibration/z8/)があれば NX Studio と Python だけでできます（[ガイド](convert-your-own-recipe.md)）。プロファイルを送る前に、レシピとその作者を書いた Issue を作成してください。
 - フィット手法、段差の指標、知覚的な評価、コード、テスト、ウェブサイト、翻訳の改善。
 
 **開発環境**（Python 3.10 以上）
