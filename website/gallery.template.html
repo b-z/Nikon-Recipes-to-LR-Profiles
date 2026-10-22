@@ -1,95 +1,811 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nikon Recipes to LR Profiles — gallery</title>
-<meta name="description" content="Browse 236 Nikon recipe conversions for Lightroom, with landscape and color banding test scenes.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nikon Recipes to LR Profiles</title>
+<meta name="description" content="Nikon Imaging Cloud recipes as adjustable Lightroom and Camera Raw profiles. Browse and compare all 236 conversions with NX Studio on four photographs.">
 <style>
-:root{color-scheme:dark;--canvas:#161819;--panel:#202426;--line:#3c4245;--text:#edf0f1;--muted:#aeb9bd;--selection:#384b55;--link:#acd4e9}
-*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--text);font:15px/1.5 "Avenir Next",Avenir,"Segoe UI",sans-serif}a{color:var(--link)}button,input,select{font:inherit;color:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #cceaff;outline-offset:3px}
-.layout{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100vh}.sidebar{height:100dvh;position:sticky;top:0;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:22px 14px 0}.brand{margin:0 8px 20px;font-size:21px;line-height:1.25;font-weight:600;letter-spacing:-.5px}.controls{padding:0 8px 14px;border-bottom:1px solid var(--line)}input[type=search],select{width:100%;background:var(--canvas);border:1px solid var(--line);border-radius:4px;padding:9px 10px}select{margin-top:8px}.count{color:var(--muted);font-size:12px;margin:10px 0 0}.recipe-list{overflow:auto;flex:1;padding:10px 0 18px;scrollbar-width:thin}.recipe-row{display:flex;align-items:center;gap:2px}.recipe-button{flex:1;min-width:0;display:flex;gap:12px;align-items:center;width:100%;background:none;border:1px solid transparent;border-radius:5px;padding:8px;text-align:left}.recipe-button:hover{background:#2c3236}.recipe-button[aria-pressed=true]{background:var(--selection);border-color:#64899c}.thumb{width:86px;height:58px;object-fit:cover;flex:none;border-radius:2px;background:var(--canvas)}.recipe-button>span{min-width:0;flex:1}.favorite-button{flex:none;width:34px;height:40px;padding:6px;background:none;border:0;border-radius:4px;color:var(--muted);display:grid;place-items:center}.favorite-button:hover{background:#2c3236}.favorite-button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}.favorite-button[aria-pressed=true]{color:#e052a0}.favorite-button[aria-pressed=true] svg{fill:currentColor}.recipe-name{display:block;font-weight:600;line-height:1.25;overflow-wrap:anywhere}.author{display:block;font-size:12px;color:var(--muted);margin-top:3px}.empty{padding:14px;color:var(--muted)}
-main{width:100%;max-width:1500px;padding:32px 40px 24px}.intro{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:24px}.intro p{max-width:75ch;color:var(--muted);margin:4px 0 12px}.intro .notice{font-size:13px;max-width:80ch;margin-bottom:0}h1{font-size:28px;letter-spacing:-.6px;font-weight:600;margin:0 0 5px}h2{font-size:24px;font-weight:600;margin:0;line-height:1.3}.selected-author{color:var(--muted);margin:4px 0 14px}#score{font-size:13px;color:var(--muted);margin:0 0 10px;max-width:85ch}.recipe-header{margin-bottom:30px}.downloads{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.download-button{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:11px 18px;border-radius:5px;background:#b7deed;color:#14232b;font-weight:700;text-decoration:none;border:1px solid #b7deed}.download-button.secondary{background:#344b57;color:#edf5f8;border-color:#8baab8}.download-button:hover{filter:brightness(1.12)}#photos{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}article{min-width:0;margin-bottom:8px}.source-controls{display:flex;gap:16px;flex-wrap:wrap;margin-top:20px}.source-controls label{display:block;min-width:200px;font-size:13px;color:var(--muted)}.source-controls select{display:block;margin-top:5px}.missing{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;height:100%;padding:24px;line-height:1.5;color:var(--muted);font-size:14px}h3{font-size:18px;font-weight:500;margin:0 0 12px}.labels{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted);margin-bottom:7px}.compare{position:relative;aspect-ratio:3/2;line-height:0;overflow:hidden;background:#101213}.compare>img{display:block;width:100%;height:100%;object-fit:contain}.overlay{position:absolute;inset:0;clip-path:inset(0 0 0 50%)}.overlay img{display:block;width:100%;height:100%;object-fit:contain}.divider{position:absolute;top:0;bottom:0;left:50%;width:1px;background:#e6e6e6;pointer-events:none}.slider{display:block;width:100%;margin:10px 0 0;accent-color:#a1c4d7}.current-source{display:none;position:absolute;top:10px;left:10px;z-index:3;background:rgba(0,0,0,.65);color:white;padding:5px 9px;border-radius:3px;font-size:12px;line-height:1.4;pointer-events:none}.blink .current-source{display:block}.blink .overlay{clip-path:inset(0)!important;visibility:hidden}.blink[data-phase="b"] .overlay{visibility:visible}.blink .divider,.blink .slider{display:none}.scene-note{font-size:12px;color:var(--muted);margin:7px 0 0}footer{border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--muted);max-width:85ch}.skip{position:fixed;top:-80px;z-index:5;background:var(--panel);padding:10px}.skip:focus{top:10px}
-@media(min-width:1200px){#photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(min-width:1600px){.layout{grid-template-columns:330px minmax(0,1fr)}main{margin:auto}}
-@media(max-width:800px){.layout{grid-template-columns:240px minmax(0,1fr)}main{padding:24px 22px}.sidebar{padding:20px 8px 0}.thumb{width:64px;height:44px}.recipe-button{gap:8px}.brand{font-size:19px}h1{font-size:24px}}
-@media(max-width:600px){.layout{display:block}.sidebar{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:18px 12px 0}.brand{margin-bottom:14px}.controls{display:grid;grid-template-columns:minmax(0,1fr) 168px;gap:8px}select{margin:0}.count{grid-column:1/-1;margin:0}.recipe-list{max-height:230px;display:grid;grid-template-columns:1fr;gap:2px;flex:none}main{padding:24px 18px}h1{font-size:23px}.intro{margin-bottom:20px}.labels{font-size:11px}.recipe-header{margin-bottom:24px}}
+:root {
+  color-scheme: dark;
+  --canvas: #15181a;
+  --panel: #1e2326;
+  --panel-2: #262c30;
+  --line: #3a4246;
+  --text: #edf0f1;
+  --muted: #a9b5ba;
+  --accent: #b7deed;
+  --accent-ink: #13232b;
+  --selection: #34495a;
+  --link: #a9d2e8;
+  --warn: #d6a24c;
+  --good: #6cc28b;
+  --fair: #e0b453;
+  --poor: #e0736b;
+  --topbar: 56px;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: calc(var(--topbar) + 12px); }
+body { margin: 0; background: var(--canvas); color: var(--text); font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Avenir Next", "Segoe UI", "PingFang SC", "Hiragino Sans", "Noto Sans CJK SC", sans-serif; }
+a { color: var(--link); }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:is(a, button, input, select, summary, .chip):focus-visible { outline: 2px solid #cceaff; outline-offset: 2px; }
+.skip { position: fixed; top: -80px; left: 8px; z-index: 50; background: var(--panel); padding: 10px; }
+.skip:focus { top: 8px; }
+.icon { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Top bar */
+.topbar { position: sticky; top: 0; z-index: 30; height: var(--topbar); display: flex; align-items: center; gap: 16px; padding: 0 20px; background: rgba(21, 24, 26, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 650; letter-spacing: -.2px; white-space: nowrap; }
+.brand-mark { width: 26px; height: 26px; border-radius: 6px; background: linear-gradient(135deg, #f2c94c 0 34%, #6fb7d6 34% 67%, #d1525b 67%); }
+.nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.nav a, .nav button.link { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 6px; color: var(--text); text-decoration: none; font-size: 14px; white-space: nowrap; background: none; border: 0; }
+.nav a:hover, .nav button.link:hover { background: var(--panel-2); }
+.nav .sponsor { color: #f19ac8; }
+.lang { width: auto; margin-left: 6px; padding: 6px 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+.menu-button, .drawer-button { display: none; align-items: center; gap: 6px; white-space: nowrap; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; }
+
+/* Intro */
+.intro { border-bottom: 1px solid var(--line); background: linear-gradient(180deg, #1b2023, var(--canvas)); }
+.intro-inner { max-width: 1240px; margin: 0 auto; padding: 18px 28px; }
+.intro-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.intro h1 { font-size: 22px; letter-spacing: -.4px; margin: 0; line-height: 1.3; flex: 1 1 360px; }
+.cta { display: flex; flex-wrap: wrap; gap: 8px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 38px; padding: 7px 14px; border-radius: 7px; border: 1px solid var(--line); background: var(--panel-2); color: var(--text); font-weight: 600; text-decoration: none; font-size: 14px; }
+.button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.button.sponsor { border-color: #a8557f; color: #f6bfdc; }
+.button:hover { filter: brightness(1.1); }
+.notice { margin: 14px 0 0; padding: 7px 12px; border: 1px solid var(--warn); border-radius: 7px; color: #f0d9a8; font-size: 13px; }
+.info { background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; }
+.info > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.info > summary::-webkit-details-marker { display: none; }
+.info > summary::after { content: "+"; color: var(--muted); font-size: 18px; line-height: 1; }
+.info[open] > summary::after { content: "−"; }
+.info-title { font-size: 14px; margin: 0; font-weight: 600; }
+.info ol, .info ul { margin: 8px 0 4px; padding-left: 20px; color: var(--muted); font-size: 14px; }
+.info li + li { margin-top: 5px; }
+
+/* Dialogs: the padding sits on .modal-inner, so a click whose target is the dialog itself is a backdrop click. */
+dialog.modal { width: min(640px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 0; overflow: auto; background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 24px 60px rgba(0, 0, 0, .6); overscroll-behavior: contain; }
+dialog.modal::backdrop { background: rgba(0, 0, 0, .6); }
+.modal-inner { padding: 14px 24px 22px; }
+.modal-top { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 4px; }
+.modal-top .lang { margin: 0; width: auto; }
+.modal-close { width: 36px; height: 36px; display: grid; place-items: center; background: none; border: 1px solid transparent; border-radius: 6px; color: var(--muted); font-size: 24px; line-height: 1; }
+.modal-close:hover { background: var(--panel-2); color: var(--text); }
+.modal h2 { margin: 0 0 12px; font-size: 21px; line-height: 1.3; letter-spacing: -.3px; }
+.modal p { margin: 0 0 12px; color: #d3dcdf; }
+.help-sections { display: grid; gap: 8px; margin-top: 16px; }
+.dialog-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; margin: 18px 0 0; }
+.ways { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 22px 48px; margin-top: 20px; }
+.way { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.qr, .qr-wait { width: 176px; height: 176px; border-radius: 8px; }
+.qr { background: #fff; padding: 6px; }
+.qr-wait { display: grid; place-items: center; border: 1px dashed var(--line); }
+
+/* Browser */
+.layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); max-width: 1640px; margin: 0 auto; }
+.sidebar { position: sticky; top: var(--topbar); height: calc(100dvh - var(--topbar)); display: flex; flex-direction: column; background: var(--panel); border-right: 1px solid var(--line); }
+.sidebar-head { padding: 14px 14px 12px; border-bottom: 1px solid var(--line); display: grid; gap: 8px; }
+.sidebar-head .drawer-close { display: none; }
+input[type=search], select { width: 100%; background: var(--canvas); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; }
+.count { color: var(--muted); font-size: 12px; margin: 0; }
+.recipe-list { overflow: auto; flex: 1; padding: 8px 8px 24px; scrollbar-width: thin; overscroll-behavior: contain; }
+.recipe-row { display: flex; align-items: center; gap: 2px; }
+.recipe-button { flex: 1; min-width: 0; display: flex; gap: 10px; align-items: center; background: none; border: 1px solid transparent; border-radius: 6px; padding: 6px; text-align: left; }
+.recipe-button:hover { background: var(--panel-2); }
+.recipe-button[aria-current=true] { background: var(--selection); border-color: #64899c; }
+.thumb { width: 84px; height: 56px; object-fit: cover; flex: none; border-radius: 3px; background: var(--canvas); }
+.recipe-button > span { min-width: 0; flex: 1; }
+.recipe-name, .recipe-meta { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.recipe-name { font-weight: 600; line-height: 1.3; }
+.recipe-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.favorite-button { flex: none; width: 36px; height: 40px; display: grid; place-items: center; background: none; border: 0; border-radius: 6px; color: var(--muted); }
+.favorite-button:hover { background: var(--panel-2); }
+.favorite-button[aria-pressed=true] { color: #e052a0; }
+.favorite-button[aria-pressed=true] svg { fill: currentColor; }
+.folder { margin: 2px 0; }
+.folder > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 6px; border-radius: 6px; font-weight: 600; font-size: 13px; color: #d7e2e6; }
+.folder > summary::-webkit-details-marker { display: none; }
+.folder > summary::before { content: "▸"; color: var(--muted); width: 12px; }
+.folder[open] > summary::before { content: "▾"; }
+.folder > summary:hover { background: var(--panel-2); }
+.folder > summary .n { margin-left: auto; color: var(--muted); font-weight: 400; font-size: 12px; }
+.folder > .folder-body { padding-left: 12px; border-left: 1px solid var(--line); margin-left: 11px; }
+.empty { padding: 14px; color: var(--muted); }
+
+main { min-width: 0; padding: 24px 32px 40px; }
+.crumbs { margin: 0 0 4px; font-size: 13px; color: var(--link); min-height: 1.2em; }
+.crumbs span + span::before { content: "›"; margin: 0 6px; color: var(--muted); }
+.title-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.title-row h2 { font-size: 26px; margin: 0; line-height: 1.25; letter-spacing: -.4px; }
+.step { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; }
+.step button { width: 38px; height: 38px; border-radius: 7px; border: 1px solid var(--line); background: var(--panel); font-size: 18px; line-height: 1; }
+.author { color: var(--muted); margin: 4px 0 10px; }
+.scores { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 14px; }
+.chip { display: inline-flex; align-items: center; gap: 7px; padding: 3px 11px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--line); font-size: 13px; color: #d9e3e7; cursor: help; }
+.chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.chip .level { font-weight: 600; }
+.chip .num { color: var(--muted); font-variant-numeric: tabular-nums; }
+.lvl-good .dot { background: var(--good); } .lvl-good .level { color: var(--good); }
+.lvl-fair .dot { background: var(--fair); } .lvl-fair .level { color: var(--fair); }
+.lvl-poor .dot { background: var(--poor); } .lvl-poor .level { color: var(--poor); }
+.version-tag { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; }
+.subtle-link { font-size: 13px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; display: inline-flex; align-items: center; gap: 4px; }
+.subtle-link:hover { color: var(--link); }
+.subtle-link .icon { width: 13px; height: 13px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; }
+.controls { display: grid; grid-template-columns: repeat(3, minmax(0, 220px)); gap: 12px; margin: 0 0 16px; }
+.controls label { font-size: 12px; color: var(--muted); }
+.controls select { margin-top: 4px; }
+.mode-note { font-size: 12px; color: var(--muted); margin: 0 0 18px; }
+#photos { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; }
+article h3 { font-size: 16px; font-weight: 600; margin: 0 0 8px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+article h3 small { font-weight: 400; color: var(--muted); font-size: 12px; }
+.labels { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.compare { position: relative; aspect-ratio: 3 / 2; line-height: 0; overflow: hidden; background: #0f1112; border-radius: 4px; touch-action: pan-y; }
+.compare img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.overlay { position: absolute; inset: 0; clip-path: inset(0 0 0 50%); }
+.divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: rgba(240, 240, 240, .85); pointer-events: none; }
+.slider { display: block; width: 100%; margin: 10px 0 0; accent-color: #a1c4d7; height: 28px; }
+.current-source { display: none; position: absolute; top: 10px; left: 10px; z-index: 3; background: rgba(0, 0, 0, .66); color: white; padding: 4px 9px; border-radius: 4px; font-size: 12px; line-height: 1.4; pointer-events: none; }
+.blink .labels { display: none; }
+.blink .current-source { display: block; }
+.blink .compare { cursor: pointer; }
+.blink .overlay { clip-path: inset(0) !important; visibility: hidden; }
+.blink[data-phase=b] .overlay { visibility: visible; }
+.blink .divider, .blink .slider { display: none; }
+.missing { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 24px; color: var(--muted); font-size: 14px; line-height: 1.5; text-align: center; }
+footer.site { border-top: 1px solid var(--line); margin-top: 34px; padding-top: 16px; font-size: 12px; color: var(--muted); max-width: 90ch; }
+footer.site p { margin: 0 0 8px; }
+.scrim { display: none; }
+
+@media (min-width: 1280px) { #photos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1060px) {
+  .nav .label { display: none; }
+  .layout { grid-template-columns: 270px minmax(0, 1fr); }
+  .thumb { width: 64px; height: 43px; }
+  main { padding: 20px 22px 36px; }
+}
+@media (max-width: 760px) {
+  :root { --topbar: 52px; }
+  .topbar { padding: 0 12px; gap: 8px; }
+  .brand .brand-text { font-size: 15px; }
+  .drawer-button, .menu-button { display: inline-flex; }
+  .drawer-button { margin-left: auto; }
+  .nav { display: none; position: absolute; top: var(--topbar); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 6px 12px 12px; background: var(--panel); border-bottom: 1px solid var(--line); }
+  .nav.open { display: flex; }
+  .nav a, .nav button.link { padding: 11px 8px; }
+  .nav .label { display: inline; }
+  .nav .lang { margin: 8px 0 0; width: 100%; padding: 10px; }
+  .modal-inner { padding: 10px 16px 18px; }
+  .intro-inner { padding: 14px 16px; }
+  .intro h1 { font-size: 19px; flex-basis: 100%; }
+  .cta .button { flex: 1 1 auto; }
+  .layout { display: block; }
+  .sidebar { position: fixed; top: 0; left: 0; bottom: 0; z-index: 40; width: min(88vw, 360px); height: 100dvh; transform: translateX(-102%); transition: transform .2s ease; box-shadow: 0 0 40px rgba(0, 0, 0, .5); }
+  .sidebar.open { transform: none; }
+  .sidebar-head { padding-top: calc(12px + env(safe-area-inset-top)); }
+  .sidebar-head .drawer-close { display: inline-flex; justify-self: end; background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; }
+  .scrim.open { display: block; position: fixed; inset: 0; z-index: 35; background: rgba(0, 0, 0, .5); }
+  main { padding: 16px 14px 32px; }
+  .title-row h2 { font-size: 21px; }
+  .controls { grid-template-columns: 1fr 1fr; }
+  .controls label:last-child { grid-column: 1 / -1; }
+  .controls select, input[type=search], select { padding: 10px; font-size: 16px; }
+  .actions .button { flex: 1 1 auto; white-space: nowrap; }
+  .labels { font-size: 11px; }
+  .slider { height: 36px; }
+}
+@media (max-width: 420px) { .brand-mark { display: none; } .brand { gap: 0; } }
+@media (prefers-reduced-motion: reduce) { .sidebar { transition: none; } }
 </style>
 </head>
 <body>
-<a href="#main" class="skip">Skip to photos</a>
-<div class="layout">
-<aside class="sidebar" aria-label="Recipe selector">
-<p class="brand">Nikon Recipes<br>to LR Profiles</p>
-<div class="controls"><input id="search" type="search" placeholder="Recipe or author" aria-label="Search recipes"><select id="sort" aria-label="Sort recipes"><option value="name">Order by Name</option><option value="fit">Order by Chart ΔE</option><option value="band">Order by Banding Risk</option><option value="favorites">Order by Favorites</option></select><p id="count" class="count" aria-live="polite"></p></div>
-<div id="recipes" class="recipe-list" aria-label="All recipe thumbnails"></div>
-</aside>
-<main id="main">
-<header class="intro"><h1>Explore the recipes</h1><p>236 Nikon conversions. Compare the new Y8 smooth-function profiles with Y7 and NX Studio. Choose a look from the landscape thumbnails.</p><p id="reference-notice" class="notice"></p><p class="notice">All looks shown at 100% Amount. Choose slider or synchronized A/B blinking (one image every 1 second). Comparison controls do not change look strength. Y8 fits a smooth continuous color function before sampling the Lightroom table. All 58 previously flagged Y7 recipes passed the maintainer's latest real-photo review with no banding observed; this is not a guarantee for every image or the other 178 recipes. <a href="Y8_REBUILD.md">Y8 method and review</a> · <a href="Y7_REBUILD.md">Y7 report</a>.</p></header>
-<div class="recipe-header"><h2 id="recipe-title"></h2><p id="recipe-author" class="selected-author"></p><p id="score"></p><a id="recipe-link">Recipe measurements</a><div class="downloads"><a id="download-np3" class="download-button secondary" target="_blank" rel="noopener">Download NP3</a><a id="download-xmp" class="download-button" download>Download XMP</a></div><div class="source-controls"><label for="left-source">Left image<select id="left-source" aria-label="Left image"><option value="adobe">Adobe Standard</option><option value="nx" selected>NX Studio</option><option value="y8">Our LR conversion · Y8</option><option value="ours">Our LR conversion · Y7</option><option value="previous">Previous LR conversion</option></select></label><label for="right-source">Right image<select id="right-source" aria-label="Right image"><option value="adobe">Adobe Standard</option><option value="nx">NX Studio</option><option value="y8" selected>Our LR conversion · Y8</option><option value="ours">Our LR conversion · Y7</option><option value="previous">Previous LR conversion</option></select></label><label for="comparison-mode">Comparison mode<select id="comparison-mode" aria-label="Comparison mode"><option value="slider">Slider comparison</option><option value="blink" selected>Blink comparison · 1 s</option></select></label></div></div>
-<div id="photos"></div>
-<footer>Photos © b-z / Zhou Bowei. <a href="../samples/LICENSE.md">Project testing and comparison permission only</a>; other uses require permission. Display images are small sRGB previews. Selected numerical conversions have been checked against Camera Raw; <a href="en/metrics.md">read the measurement limitations</a>. Full-size RAWs and 16-bit exports are needed to judge subtle banding.</footer>
-</main></div>
-<script>
-const data=__DATA__, references=__REFERENCES__,downloads=__DOWNLOADS__,y8Metrics=__Y8_METRICS__;
-const scenes=[['9046','Landscape test 1',''],['2849','Landscape test 2',''],['2694','Banding test 1','Out-of-focus transitions'],['5054','Banding test 2','Smooth sky transitions']];
-const search=document.querySelector('#search'),sort=document.querySelector('#sort'),list=document.querySelector('#recipes');
-let selected=data.some(r=>r.recipe===decodeURIComponent(location.hash.slice(1)))?decodeURIComponent(location.hash.slice(1)):'Filmic_Fabio';
-const duplicateNames=new Set(data.filter(r=>data.some(t=>t.recipe!==r.recipe&&t.display===r.display&&t.author===r.author)).map(r=>r.recipe));
+<a href="#main" class="skip" data-i18n="skip">Skip to the recipe</a>
 
-const favoritesKey='nikon-recipes-lr-favorites-v1';
-const recipeIds=new Set(data.map(r=>r.recipe));
-function readFavorites(){try{const saved=JSON.parse(localStorage.getItem(favoritesKey)||'[]');return new Set(Array.isArray(saved)?saved.filter(id=>typeof id==='string'&&recipeIds.has(id)):[]);}catch{return new Set();}}
-let favorites=readFavorites();
-function updateFavorite(button,r){const active=favorites.has(r.recipe);button.setAttribute('aria-pressed',String(active));button.setAttribute('aria-label',(active?'Remove ':'Add ')+r.display+' ['+r.recipe+'] '+(active?'from':'to')+' favorites');button.title=active?'Remove from favorites':'Add to favorites';}
-function favoriteButton(r){
-  const button=document.createElement('button');button.type='button';button.className='favorite-button';button.dataset.recipe=r.recipe;
-  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');
-  const path=document.createElementNS(svg.namespaceURI,'path');path.setAttribute('d','M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z');svg.append(path);button.append(svg);updateFavorite(button,r);
-  button.onclick=()=>{if(favorites.has(r.recipe))favorites.delete(r.recipe);else favorites.add(r.recipe);try{localStorage.setItem(favoritesKey,JSON.stringify([...favorites]));}catch{}updateFavorite(button,r);if(sort.value==='favorites')options();};return button;
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Nikon Recipes to LR Profiles"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Nikon Recipes → LR Profiles</span></a>
+  <button type="button" class="drawer-button" id="drawer-open" aria-controls="sidebar" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i18n="recipes">Recipes</span></button>
+  <button type="button" class="menu-button" id="menu-button" aria-controls="nav" aria-expanded="false" data-i18n-aria="menu"><svg class="icon" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg></button>
+  <nav class="nav" id="nav" data-i18n-aria="menu">
+    <button type="button" class="link" id="nav-help"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.2a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.6M12 17v.5"/></svg><span class="label" data-i18n="navHelp">Help</span></button>
+    <button type="button" class="link" id="nav-download"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span class="label" data-i18n="navDownload">Download</span></button>
+    <a id="nav-docs" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg><span class="label" data-i18n="navDocs">Docs</span></a>
+    <a id="nav-github" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 1.6 5.8 1.9 5.8 1.9a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 8.3c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span class="label">GitHub</span></a>
+    <button type="button" class="link sponsor" id="nav-sponsor"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="label" data-i18n="navSponsor">Sponsor</span></button>
+    <select class="lang" aria-label="Language / 语言 / 言語"><option value="en">English</option><option value="zh">中文</option><option value="ja">日本語</option></select>
+  </nav>
+</header>
+
+<dialog id="help" class="modal" aria-labelledby="help-title">
+  <div class="modal-inner">
+    <div class="modal-top">
+      <select class="lang" aria-label="Language / 语言 / 言語"><option value="en">English</option><option value="zh">中文</option><option value="ja">日本語</option></select>
+      <button type="button" class="modal-close" data-close data-i18n-aria="close">×</button>
+    </div>
+    <h2 id="help-title" data-i18n="heroTitle">Nikon Imaging Recipes in Lightroom and Camera Raw</h2>
+    <p data-i18n-html="about1"></p>
+    <p data-i18n="about2"></p>
+    <p data-i18n="about3"></p>
+    <p data-i18n-html="about4"></p>
+    <div class="help-sections">
+      <details class="info"><summary><h3 class="info-title" data-i18n="installTitle">Install in three steps</h3></summary><ol><li data-i18n-html="install1"></li><li data-i18n-html="install2"></li><li data-i18n-html="install3"></li></ol></details>
+      <details class="info"><summary><h3 class="info-title" data-i18n="howTitle">How the comparison works</h3></summary><ul><li data-i18n="how1"></li><li data-i18n="how2"></li><li data-i18n="how3"></li></ul></details>
+      <details class="info"><summary><h3 class="info-title" data-i18n="limitsTitle">Good to know</h3></summary><ul><li data-i18n="limits1"></li><li data-i18n="limits2"></li></ul></details>
+    </div>
+    <form method="dialog" class="dialog-actions">
+      <button type="button" class="button" id="help-download"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span data-i18n="ctaDownload">Download LR profiles</span></button>
+      <button class="button primary" value="close" data-i18n="welcomeStart">Start browsing</button>
+    </form>
+  </div>
+</dialog>
+
+<dialog id="download" class="modal" aria-labelledby="download-title">
+  <div class="modal-inner">
+    <div class="modal-top"><button type="button" class="modal-close" data-close data-i18n-aria="close">×</button></div>
+    <h2 id="download-title" data-i18n="dlTitle">Download the Lightroom profiles</h2>
+    <p data-i18n="dlText1"></p>
+    <p data-i18n="dlText2"></p>
+    <p data-i18n-html="dlText3"></p>
+    <div class="dialog-actions">
+      <a class="button" id="dl-old" href="#" target="_blank" rel="noopener" data-i18n="dlOld">0.2 for other cameras</a>
+      <a class="button primary" id="dl-latest" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span data-i18n="dlLatest">Download 1.0 (Nikon Z 8)</span></a>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="sponsor" class="modal" aria-labelledby="sponsor-title">
+  <div class="modal-inner">
+    <div class="modal-top"><button type="button" class="modal-close" data-close data-i18n-aria="close">×</button></div>
+    <h2 id="sponsor-title" data-i18n="sponsorTitle">Support the project</h2>
+    <p data-i18n="sponsorText"></p>
+    <div class="ways">
+      <div class="way"><a class="button sponsor" id="sponsor-github" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>GitHub Sponsors</a><span data-i18n="sponsorGithubNote"></span></div>
+      <div class="way" id="wx-way"><div class="qr-wait" data-i18n="loading"></div><span data-i18n="sponsorWechatNote"></span></div>
+    </div>
+  </div>
+</dialog>
+
+<div class="intro" id="top">
+  <div class="intro-inner">
+    <div class="intro-head">
+      <h1 data-i18n="heroTitle">Nikon Imaging Recipes in Lightroom and Camera Raw</h1>
+      <div class="cta">
+        <button type="button" class="button primary" id="cta-download"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span data-i18n="ctaDownload">Download LR profiles</span></button>
+        <a class="button" id="cta-github" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 1.6 5.8 1.9 5.8 1.9a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 8.3c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</a>
+        <button type="button" class="button sponsor" id="cta-sponsor" data-i18n="ctaSponsor">♥ Sponsor</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="layout" id="browser">
+  <aside class="sidebar" id="sidebar" data-i18n-aria="recipes">
+    <div class="sidebar-head">
+      <button type="button" class="drawer-close" id="drawer-close" data-i18n="close">Close</button>
+      <input id="search" type="search" autocomplete="off" data-i18n-aria="searchPlaceholder" data-i18n-placeholder="searchPlaceholder" placeholder="Search recipe or author">
+      <select id="view" data-i18n-aria="viewLabel">
+        <option value="folder" data-i18n="viewFolder">By folder</option>
+        <option value="name" data-i18n="viewName">By name</option>
+        <option value="fit" data-i18n="viewFit">By difference from NX</option>
+        <option value="band" data-i18n="viewBand">By banding risk</option>
+        <option value="favorites" data-i18n="viewFavorites">Favorites first</option>
+      </select>
+      <p id="count" class="count" aria-live="polite"></p>
+    </div>
+    <div id="recipes" class="recipe-list"></div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <main id="main" tabindex="-1">
+    <p class="crumbs" id="crumbs"></p>
+    <div class="title-row">
+      <h2 id="recipe-title"></h2>
+      <div class="step"><button type="button" id="prev">‹</button><button type="button" id="next">›</button></div>
+    </div>
+    <p class="author" id="recipe-author"></p>
+    <div class="scores" id="scores"></div>
+    <div class="actions">
+      <a id="download-xmp" class="button primary" download></a>
+      <a id="download-np3" class="button" target="_blank" rel="noopener"></a>
+    </div>
+    <div class="controls">
+      <label><span data-i18n="imageA">Image A</span><select id="left-source"></select></label>
+      <label><span data-i18n="imageB">Image B</span><select id="right-source"></select></label>
+      <label><span data-i18n="mode">Comparison</span><select id="mode"><option value="blink" data-i18n="modeBlink">Blink every second</option><option value="slider" data-i18n="modeSlider">Slider</option></select></label>
+    </div>
+    <p class="mode-note" id="mode-note"></p>
+    <div id="photos"></div>
+    <footer class="site">
+      <p data-i18n-html="footerPhotos"></p>
+      <p data-i18n-html="footerPreview"></p>
+      <p data-i18n="footerIndependent"></p>
+    </footer>
+  </main>
+</div>
+
+<script>
+// data: the current release manifest (one row per recipe); previous: scores of the 0.2 profiles.
+const data = __DATA__, references = __REFERENCES__, downloads = __DOWNLOADS__, previous = __PREVIOUS__;
+
+const REPO = 'https://github.com/b-z/Nikon-Recipes-to-LR-Profiles';
+const LINKS = {
+  github: REPO,
+  releases: REPO + '/releases/latest',
+  releaseOld: REPO + '/releases/tag/v0.2.0',
+  sponsor: 'https://github.com/sponsors/b-z',
+  docs: { en: REPO + '#readme', zh: REPO + '/blob/main/docs/zh/README.md', ja: REPO + '/blob/main/docs/ja/README.md' },
+  metrics: { en: REPO + '/blob/main/docs/en/metrics.md', zh: REPO + '/blob/main/docs/zh/metrics.md', ja: REPO + '/blob/main/docs/ja/metrics.md' },
+  recipePage: recipe => REPO + '/blob/main/docs/recipes/' + encodeURIComponent(recipe) + '.md',
+  photoTerms: REPO + '/blob/main/samples/LICENSE.md',
+  issues: REPO + '/issues/new/choose',
+  contributing: REPO + '/blob/main/CONTRIBUTING.md',
+  imagingCloud: 'https://imagingcloud.nikon.com/',
+};
+const DEFAULT_RECIPE = 'KG200P1';
+// Score levels: [upper bound, text key, color]. A mean CIEDE2000 ΔE of about 1 is roughly the smallest difference people notice.
+const DE_LEVELS = [[0.5, 'de0', 'good'], [1.0, 'de1', 'good'], [Infinity, 'de2', 'fair']];
+// Banding risk has no calibrated visibility threshold; these bands split the published profiles into low / medium / high.
+const BAND_LEVELS = [[0.4, 'band0', 'good'], [0.6, 'band1', 'fair'], [Infinity, 'band2', 'poor']];
+
+const STR = {
+  en: {
+    skip: 'Skip to the recipe', recipes: 'Recipes', navHelp: 'Help', navDownload: 'Download', navDocs: 'Docs', navSponsor: 'Sponsor',
+    heroTitle: 'Nikon Imaging Recipes in Lightroom and Camera Raw',
+    about1: '<a href="' + LINKS.imagingCloud + '" target="_blank" rel="noopener">Nikon Imaging Cloud</a> offers color recipes created by professional photographers. A recipe only changes the JPEGs your camera records; the RAW file stays as it is. If you edit RAW files, the only official way to use a recipe is Nikon\'s NX Studio, which does not fit the workflow of many photographers.',
+    about2: 'This project recreates the recipes in Lightroom and Photoshop Camera Raw. We measure how each recipe renders colors and save the result as a Lightroom profile, a small .xmp file. Choose a recipe in the Profile Browser and set its strength with the Amount slider (0–200%); exposure, white balance, curves and every other adjustment keep working as usual.',
+    about3: 'In our tests most conversions reproduce the colors of the original recipe closely. On this site you can browse all 236 recipes and compare each conversion with NX Studio on four test photographs.',
+    about4: 'If something looks wrong, please <a href="' + LINKS.issues + '" target="_blank" rel="noopener">open an issue</a> on GitHub. Pull requests are welcome too; see <a href="' + LINKS.contributing + '" target="_blank" rel="noopener">how to contribute</a>.',
+    welcomeStart: 'Start browsing',
+    ctaDownload: 'Download LR profiles', ctaSponsor: '♥ Sponsor',
+    installTitle: 'How to install', install1: '<b>Download</b>: <b>Download LR profiles</b> gets every recipe in one ZIP file. If you only want a few, select a recipe in the list and use <b>Download this recipe</b>.', install2: '<b>Import</b>: in the Lightroom or Camera Raw Profile Browser, choose Import Profiles and select the .xmp files. Restart Lightroom if they do not appear.', install3: '<b>Use</b>: choose a recipe in the Nikon Recipes LR 1.0 group and adjust Amount; 30–50% gives a subtle result.',
+    howTitle: 'How the comparison works', how1: 'Image A and image B can each show NX Studio, either version of the Lightroom profile, or the base profile without a recipe.', how2: 'Blink switches between A and B every second (click an image to pause); the slider shows A on the left and B on the right.', how3: 'All profiles are shown at 100% Amount. The previews are calculated from Camera Raw renders of the original RAW files.',
+    limitsTitle: 'Good to know', limits1: 'Version 1.0 is for photos from the Nikon Z 8. For other cameras, use version 0.2, which works with any camera but was also calibrated on the Z 8.', limits2: 'Banding can still appear in smooth skies or bokeh. Please report cases on GitHub.',
+    dlTitle: 'Download the Lightroom profiles',
+    dlText1: 'One ZIP file (about 45 MB) holds the profiles of all 236 recipes, for Lightroom Classic, Lightroom and Photoshop Camera Raw. Unzip it and import the .xmp files in the Profile Browser; the README inside explains each step. The files are hosted on GitHub.',
+    dlText2: 'Version 1.0 is built on Camera Flexible Color and is for photos from the Nikon Z 8. For other cameras, use version 0.2, which is built on Adobe Standard.',
+    dlText3: 'Only want a few? Select a recipe in the list and use <b>Download this recipe</b>.',
+    dlLatest: 'Download 1.0 (Nikon Z 8)', dlOld: '0.2 for other cameras',
+    close: 'Close', searchPlaceholder: 'Search recipe, author or folder', viewLabel: 'Order of the recipe list', menu: 'Menu',
+    viewName: 'By name', viewFolder: 'By folder', viewFit: 'By difference from NX', viewBand: 'By banding risk', viewFavorites: 'Favorites first',
+    count: '{n} of {total} recipes', noMatch: 'No matches. Try another recipe, author or folder name.',
+    imageA: 'Image A', imageB: 'Image B', mode: 'Comparison', modeBlink: 'Blink every second', modeSlider: 'Slider',
+    modeNoteBlink: 'Click an image to pause or resume blinking.', modeNoteSlider: 'Drag the slider under each image: A on the left, B on the right.', paused: 'paused',
+    by: 'Original recipe by {author}',
+    deLabel: 'Difference from NX', deHelp: 'Average color difference (CIEDE2000 ΔE) to NX Studio on the test chart. About 1 is the smallest difference most people notice.',
+    de0: 'near-identical', de1: 'very close', de2: 'slight difference',
+    bandLabel: 'Banding risk', bandHelp: 'How abruptly the color table changes direction (face-jump p99). Lower means smoother gradients; it is not a guarantee either way.',
+    band0: 'low', band1: 'medium', band2: 'high',
+    downloadXmp: 'Download this recipe · {v}', downloadNp3: 'This recipe\'s NP3', measurements: 'Measurements',
+    srcNx: 'NX Studio (original recipe)', srcAdobe: 'Adobe Standard (no recipe)', srcFlex: 'Camera Flexible Color (no recipe)', srcVersion: 'Lightroom profile {v}',
+    ver10: '1.0 · current', ver02: '0.2 · previous',
+    scene9046: 'Landscape test 1', scene2849: 'Landscape test 2', scene2694: 'Banding test 1', scene2694note: 'out-of-focus transitions', scene5054: 'Banding test 2', scene5054note: 'smooth sky',
+    sliderLabel: '{scene}: comparison divider', missingNx: 'No NX Studio reference for this scene.', favAdd: 'Add to favorites', favRemove: 'Remove from favorites', prev: 'Previous recipe', next: 'Next recipe',
+    sponsorTitle: 'Support the project', sponsorText: 'This project is maintained in spare time. If the profiles are useful to you, a contribution helps keep it going. Sponsoring is entirely optional and does not affect how issues or pull requests are handled.', sponsorGithubNote: 'Card or PayPal', sponsorWechatNote: 'Scan with WeChat', loading: 'Loading…',
+    footerPhotos: 'Photos © Zhou Bowei. Allowed only for testing and comparing this project; other uses need permission (<a href="' + LINKS.photoTerms + '">terms</a>).',
+    footerPreview: 'Previews are 8-bit sRGB images calculated from 16-bit Camera Raw renders; use the RAW files to judge subtle banding. <a href="' + LINKS.metrics.en + '">What the scores mean</a>.',
+    footerIndependent: 'Independent community project, not affiliated with Nikon or Adobe. Recipes belong to their creators.',
+  },
+  zh: {
+    skip: '跳到配方', recipes: '配方', navHelp: '帮助', navDownload: '下载', navDocs: '文档', navSponsor: '赞助',
+    heroTitle: '在 Lightroom 和 Camera Raw 中使用尼康配方',
+    about1: '<a href="' + LINKS.imagingCloud + '" target="_blank" rel="noopener">尼康云创</a>（Nikon Imaging Cloud）汇集了许多专业摄影师创作的色彩配方。不过，这些配方只作用于相机直出的 JPEG，不会改变 RAW 图像。如果你需要处理 RAW 文件，想在后期用上这些配方，就只能使用尼康官方的 NX Studio，而这与很多摄影师的工作流并不兼容。',
+    about2: '本项目在 Lightroom 和 Photoshop Camera Raw 中复刻了这些配方：我们测量每款配方对色彩的处理，把结果保存为 Lightroom 可以直接使用的配置文件（一个小小的 .xmp 文件）。在「配置文件」中选择配方，用「数量」滑块调整强度（0–200%）即可；曝光、白平衡、曲线等调整依然照常可用。',
+    about3: '经实测，大部分转换后的配方都能很好地还原原版配方的色彩。你可以在本网站浏览全部 236 款配方，并在四张测试照片上将转换效果与 NX Studio 原版逐一对比。',
+    about4: '如果有任何问题，欢迎在 GitHub 上<a href="' + LINKS.issues + '" target="_blank" rel="noopener">提交 Issue</a> 反馈；也欢迎通过 Pull Request <a href="' + LINKS.contributing + '" target="_blank" rel="noopener">贡献代码</a>。',
+    welcomeStart: '开始浏览',
+    ctaDownload: '下载 LR 配置文件', ctaSponsor: '♥ 赞助',
+    installTitle: '安装方法', install1: '<b>下载</b>：点击「下载 LR 配置文件」，获取包含全部配方的压缩包；只想要其中几款的话，在列表中选中配方后点击「下载本配方」。', install2: '<b>导入</b>：在 Lightroom 或 Camera Raw 的配置文件浏览器中选择「导入配置文件」，选中 .xmp 文件；如果没有出现，请重启 Lightroom。', install3: '<b>使用</b>：在 Nikon Recipes LR 1.0 分组中选择配方并调整数量；30–50% 效果较温和。',
+    howTitle: '对比怎么用', how1: '图像 A 和图像 B 可以分别显示 NX Studio、任一版本的 Lightroom 配置文件，或不套配方的基础配置文件。', how2: '闪烁模式每秒在 A、B 之间切换一次（点击图片可暂停）；滑块模式左边是 A、右边是 B。', how3: '所有配置文件都按 100% 数量显示，预览图由 Camera Raw 渲染原始 RAW 文件计算得到。',
+    limitsTitle: '注意事项', limits1: '1.0 版本只适用于 Nikon Z 8 拍摄的照片。其他机身请使用 0.2 版本，它适用于任何相机，但同样是用 Z 8 校准的。', limits2: '平滑的天空或焦外仍可能出现断层，欢迎在 GitHub 上反馈。',
+    dlTitle: '下载 Lightroom 配置文件',
+    dlText1: '一个压缩包（约 45 MB）包含全部 236 款配方的配置文件，适用于 Lightroom Classic、Lightroom 和 Photoshop Camera Raw。解压后在配置文件浏览器中导入 .xmp 文件即可，压缩包里的 README 写有详细步骤。文件托管在 GitHub 上。',
+    dlText2: '1.0 版本基于「相机 Flexible Color」，适用于 Nikon Z 8 拍摄的照片；其他机身请使用 0.2 版本，它基于 Adobe Standard。',
+    dlText3: '只想要其中几款？在列表中选中配方，点击<b>「下载本配方」</b>即可。',
+    dlLatest: '下载 1.0（Nikon Z 8）', dlOld: '0.2（其他机身）',
+    close: '关闭', searchPlaceholder: '搜索配方、作者或文件夹', viewLabel: '配方列表排序方式', menu: '菜单',
+    viewName: '按名称', viewFolder: '按文件夹', viewFit: '按与原版的色差', viewBand: '按断层风险', viewFavorites: '收藏优先',
+    count: '{total} 款中的 {n} 款', noMatch: '没有匹配结果，换个配方名、作者或文件夹试试。',
+    imageA: '图像 A', imageB: '图像 B', mode: '对比方式', modeBlink: '每秒闪烁切换', modeSlider: '滑块',
+    modeNoteBlink: '点击图片可暂停或继续闪烁。', modeNoteSlider: '拖动每张图下方的滑块：左边是 A，右边是 B。', paused: '已暂停',
+    by: '原作者：{author}',
+    deLabel: '与原版色差', deHelp: '在测试色卡上与 NX Studio 的平均色差（CIEDE2000 ΔE）。约 1 是多数人能察觉的最小差异。',
+    de0: '几乎一致', de1: '很接近', de2: '略有差异',
+    bandLabel: '断层风险', bandHelp: '颜色表转折的剧烈程度（face-jump p99）。越低渐变越平滑，但不能作为有无断层的保证。',
+    band0: '低', band1: '中', band2: '高',
+    downloadXmp: '下载本配方 · {v}', downloadNp3: '本配方的 NP3', measurements: '测量数据',
+    srcNx: 'NX Studio（原版配方）', srcAdobe: 'Adobe Standard（不套配方）', srcFlex: '相机 Flexible Color（不套配方）', srcVersion: 'Lightroom 配置文件 {v}',
+    ver10: '1.0 · 当前版本', ver02: '0.2 · 上一版本',
+    scene9046: '风景测试 1', scene2849: '风景测试 2', scene2694: '断层测试 1', scene2694note: '焦外过渡', scene5054: '断层测试 2', scene5054note: '平滑天空',
+    sliderLabel: '{scene}：对比分界线', missingNx: '这个场景没有 NX Studio 参照图。', favAdd: '加入收藏', favRemove: '取消收藏', prev: '上一款', next: '下一款',
+    sponsorTitle: '支持这个项目', sponsorText: '这个项目是在业余时间维护的。如果这些配置文件对你有帮助，欢迎赞助支持。赞助完全自愿，不会影响 Issue 和 Pull Request 的处理。', sponsorGithubNote: '信用卡或 PayPal', sponsorWechatNote: '微信扫码赞赏', loading: '载入中…',
+    footerPhotos: '照片 © Zhou Bowei。仅限本项目的测试与对比使用，其他用途需另行许可（<a href="' + LINKS.photoTerms + '">条款</a>）。',
+    footerPreview: '预览图是由 16 位 Camera Raw 渲染计算出的 8 位 sRGB 图像；判断细微断层请使用 RAW 文件。<a href="' + LINKS.metrics.zh + '">分数说明</a>。',
+    footerIndependent: '独立社区项目，与尼康、Adobe 无关。配方归各自作者所有。',
+  },
+  ja: {
+    skip: 'レシピへ移動', recipes: 'レシピ', navHelp: 'ヘルプ', navDownload: 'ダウンロード', navDocs: 'ドキュメント', navSponsor: 'スポンサー',
+    heroTitle: 'ニコンのイメージングレシピを Lightroom と Camera Raw で',
+    about1: '<a href="' + LINKS.imagingCloud + '" target="_blank" rel="noopener">Nikon Imaging Cloud</a> では、プロの写真家が作成したカラーレシピが配信されています。ただし、レシピが反映されるのはカメラで記録される JPEG だけで、RAW 画像は変わりません。RAW を現像する場合、レシピを使う公式の方法はニコンの NX Studio だけで、多くの写真家のワークフローには合いません。',
+    about2: 'このプロジェクトは、レシピを Lightroom と Photoshop Camera Raw で再現します。各レシピが色をどう変えるかを測定し、その結果を Lightroom でそのまま使えるプロファイル（小さな .xmp ファイル）として保存しています。プロファイルブラウザーでレシピを選び、「適用量」スライダー（0〜200%）で強さを調整するだけです。露光量、ホワイトバランス、トーンカーブなどの調整もこれまでどおり使えます。',
+    about3: '検証では、ほとんどの変換が元のレシピの色をよく再現しています。このサイトでは 236 種類すべてのレシピを閲覧し、4 枚のテスト写真で NX Studio と 1 つずつ比較できます。',
+    about4: '問題があれば GitHub で<a href="' + LINKS.issues + '" target="_blank" rel="noopener">Issue を作成</a>してください。<a href="' + LINKS.contributing + '" target="_blank" rel="noopener">プルリクエスト</a>も歓迎します。',
+    welcomeStart: '見てみる',
+    ctaDownload: 'LR プロファイル', ctaSponsor: '♥ スポンサー',
+    installTitle: 'インストール方法', install1: '<b>ダウンロード</b>：「LR プロファイル」ボタンから、すべてのレシピを 1 つの ZIP ファイルで入手できます。いくつかだけ欲しい場合は、一覧でレシピを選んで「このレシピをダウンロード」を押してください。', install2: '<b>読み込み</b>：Lightroom または Camera Raw のプロファイルブラウザーで「プロファイルを読み込み」を選び、.xmp ファイルを指定します。表示されない場合は Lightroom を再起動してください。', install3: '<b>使い方</b>：Nikon Recipes LR 1.0 グループからレシピを選び、適用量を調整します。30〜50% で控えめな効果になります。',
+    howTitle: '比較の使い方', how1: '画像 A と画像 B には、それぞれ NX Studio、どちらかのバージョンの Lightroom プロファイル、またはレシピなしのベースプロファイルを表示できます。', how2: '点滅は 1 秒ごとに A と B を切り替えます（画像をクリックで一時停止）。スライダーでは左が A、右が B です。', how3: 'すべて適用量 100% で表示しています。プレビューは元の RAW ファイルを Camera Raw で現像した結果から計算しています。',
+    limitsTitle: '注意点', limits1: 'バージョン 1.0 は Nikon Z 8 で撮影した写真専用です。他の機種ではバージョン 0.2 を使ってください。どのカメラでも使えますが、校正は同じく Z 8 で行っています。', limits2: '滑らかな空やボケで段差が出ることがあります。GitHub で報告をお願いします。',
+    dlTitle: 'Lightroom プロファイルのダウンロード',
+    dlText1: '1 つの ZIP ファイル（約 45 MB）に 236 種類すべてのレシピのプロファイルが入っています。Lightroom Classic、Lightroom、Photoshop Camera Raw で使えます。展開してプロファイルブラウザーで .xmp ファイルを読み込んでください。手順は ZIP 内の README にあります。ファイルは GitHub で配布しています。',
+    dlText2: 'バージョン 1.0 は Camera Flexible Color をベースにしており、Nikon Z 8 で撮影した写真用です。他の機種では、Adobe Standard をベースにしたバージョン 0.2 を使ってください。',
+    dlText3: 'いくつかだけ欲しい場合は、一覧でレシピを選んで<b>「このレシピをダウンロード」</b>を押してください。',
+    dlLatest: '1.0 をダウンロード（Nikon Z 8）', dlOld: '0.2（他の機種）',
+    close: '閉じる', searchPlaceholder: 'レシピ名・作者・フォルダで検索', viewLabel: 'レシピ一覧の並べ方', menu: 'メニュー',
+    viewName: '名前順', viewFolder: 'フォルダ別', viewFit: 'NX との色差順', viewBand: '段差リスク順', viewFavorites: 'お気に入り優先',
+    count: '{total} 件中 {n} 件', noMatch: '一致するものがありません。別のレシピ名・作者・フォルダ名で試してください。',
+    imageA: '画像 A', imageB: '画像 B', mode: '比較方法', modeBlink: '1 秒ごとに点滅', modeSlider: 'スライダー',
+    modeNoteBlink: '画像をクリックすると点滅を一時停止・再開します。', modeNoteSlider: '各画像の下のスライダーを動かします。左が A、右が B です。', paused: '一時停止中',
+    by: '作者：{author}',
+    deLabel: 'NX との色差', deHelp: 'テストチャートでの NX Studio との平均色差（CIEDE2000 ΔE）。約 1 が多くの人が気づく最小の差です。',
+    de0: 'ほぼ同じ', de1: 'とても近い', de2: 'わずかな差',
+    bandLabel: '段差リスク', bandHelp: 'カラーテーブルが急に向きを変える度合い（face-jump p99）。低いほど階調が滑らかですが、段差の有無を保証するものではありません。',
+    band0: '低', band1: '中', band2: '高',
+    downloadXmp: 'このレシピをダウンロード · {v}', downloadNp3: 'このレシピの NP3', measurements: '測定データ',
+    srcNx: 'NX Studio（元のレシピ）', srcAdobe: 'Adobe Standard（レシピなし）', srcFlex: 'Camera Flexible Color（レシピなし）', srcVersion: 'Lightroom プロファイル {v}',
+    ver10: '1.0 · 現行版', ver02: '0.2 · 前の版',
+    scene9046: '風景テスト 1', scene2849: '風景テスト 2', scene2694: '段差テスト 1', scene2694note: 'ボケの階調', scene5054: '段差テスト 2', scene5054note: '滑らかな空',
+    sliderLabel: '{scene}：比較の境界線', missingNx: 'このシーンの NX Studio 参照画像はありません。', favAdd: 'お気に入りに追加', favRemove: 'お気に入りから削除', prev: '前のレシピ', next: '次のレシピ',
+    sponsorTitle: 'プロジェクトを支援', sponsorText: 'このプロジェクトは空き時間に保守しています。プロファイルが役に立ったら、支援していただけるとうれしいです。支援は任意で、Issue やプルリクエストの扱いには影響しません。', sponsorGithubNote: 'カードまたは PayPal', sponsorWechatNote: 'WeChat でスキャン', loading: '読み込み中…',
+    footerPhotos: '写真 © Zhou Bowei。本プロジェクトのテストと比較にのみ使用できます。その他の利用には許可が必要です（<a href="' + LINKS.photoTerms + '">条件</a>）。',
+    footerPreview: 'プレビューは 16 ビットの Camera Raw 現像から計算した 8 ビット sRGB 画像です。細かな段差の判断には RAW ファイルを使ってください。<a href="' + LINKS.metrics.ja + '">スコアの説明</a>。',
+    footerIndependent: '独立したコミュニティプロジェクトで、ニコンや Adobe とは関係ありません。レシピの権利は各作者にあります。',
+  },
+};
+
+/* ---------- state ---------- */
+const store = {
+  get(key, fallback) { try { const v = localStorage.getItem(key); return v === null ? fallback : JSON.parse(v); } catch { return fallback; } },
+  set(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} },
+};
+const params = new URLSearchParams(location.search);
+function detectLang() {
+  const supported = ['en', 'zh', 'ja'];
+  for (const wanted of [params.get('lang'), store.get('nrlr-lang', null)]) if (supported.includes(wanted)) return wanted;
+  for (const tag of navigator.languages || [navigator.language || 'en']) {
+    const base = String(tag).toLowerCase().split('-')[0];
+    if (supported.includes(base)) return base;
+  }
+  return 'en';
 }
-window.addEventListener('storage',event=>{if(event.key!==favoritesKey&&event.key!==null)return;favorites=readFavorites();if(sort.value==='favorites'){options();return;}for(const button of list.querySelectorAll('.favorite-button'))updateFavorite(button,data.find(r=>r.recipe===button.dataset.recipe));});
-function image(src,alt,cls){let i=new Image();i.src=src+'?v=yc8-full-20261010';i.alt=alt;i.loading='lazy';i.decoding='async';if(cls)i.className=cls;return i;}
-function options(){const q=search.value.toLowerCase(),items=data.filter(r=>(r.display+' '+r.recipe+' '+r.author).toLowerCase().includes(q));items.sort((a,b)=>sort.value==='favorites'?(Number(favorites.has(b.recipe))-Number(favorites.has(a.recipe))||a.display.localeCompare(b.display)||a.recipe.localeCompare(b.recipe)):sort.value==='fit'?shownMetrics(a).fit.mean-shownMetrics(b).fit.mean:sort.value==='band'?shownMetrics(a).banding.face_jump_p99-shownMetrics(b).banding.face_jump_p99:a.display.localeCompare(b.display)||a.recipe.localeCompare(b.recipe));list.replaceChildren();document.querySelector('#count').textContent=items.length+' of '+data.length+' recipes';if(!items.length){let p=document.createElement('p');p.className='empty';p.textContent='No matches. Try a different recipe or author.';list.append(p);return;}for(const r of items){let b=document.createElement('button');b.type='button';b.className='recipe-button';b.dataset.recipe=r.recipe;b.setAttribute('aria-pressed',String(r.recipe===selected));b.append(image('images/y8/thumbs/'+encodeURIComponent(r.recipe)+'.jpg','', 'thumb'));let span=document.createElement('span'),name=document.createElement('span'),author=document.createElement('span');name.className='recipe-name';name.textContent=r.display;author.className='author';author.textContent=r.author+(duplicateNames.has(r.recipe)?' ['+r.recipe+']':'');span.append(name,author);b.append(span);b.onclick=()=>{selected=r.recipe;history.replaceState(null,'','#'+encodeURIComponent(selected));for(const button of list.querySelectorAll('.recipe-button'))button.setAttribute('aria-pressed',String(button.dataset.recipe===selected));show();};const row=document.createElement('div');row.className='recipe-row';row.append(b,favoriteButton(r));list.append(row);}}
-const leftSource=document.querySelector('#left-source'),rightSource=document.querySelector('#right-source'),comparisonMode=document.querySelector('#comparison-mode');
-let blinkTimer=null,blinkPhase=0;
-function applyPhase(){for(const art of document.querySelectorAll('#photos article')){art.classList.toggle('blink',comparisonMode.value==='blink');art.dataset.phase=blinkPhase?'b':'a';art.querySelector('.current-source').textContent=(blinkPhase?'B · ':'A · ')+(blinkPhase?art.dataset.after:art.dataset.before);if(comparisonMode.value==='blink')for(const img of art.querySelectorAll('img'))img.loading='eager';}}
-function startComparison(){if(blinkTimer!==null)clearInterval(blinkTimer);blinkTimer=null;blinkPhase=0;applyPhase();if(comparisonMode.value==='blink')blinkTimer=setInterval(()=>{blinkPhase=1-blinkPhase;applyPhase();},1000);}
-comparisonMode.onchange=startComparison;
-document.addEventListener('keydown',event=>{
-  if(!['ArrowUp','ArrowDown'].includes(event.key)||event.altKey||event.ctrlKey||event.metaKey)return;
-  if(event.target.closest('input:not([type=range]),select,textarea,[contenteditable=true]'))return;
-  const buttons=[...list.querySelectorAll('.recipe-button')];if(!buttons.length)return;
-  event.preventDefault();let index=buttons.findIndex(button=>button.dataset.recipe===selected);
-  index=index<0?(event.key==='ArrowDown'?0:buttons.length-1):Math.max(0,Math.min(buttons.length-1,index+(event.key==='ArrowDown'?1:-1)));
-  const button=buttons[index];button.click();button.focus({preventScroll:true});button.scrollIntoView({block:'nearest'});
+let lang = detectLang();
+const t = (key, vars = {}) => (STR[lang][key] ?? STR.en[key] ?? key).replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '');
+
+const byRecipe = rows => new Map(rows.map(r => [r.recipe, r]));
+// Image folders keep the internal method names: y9 is release 1.0, y8 is release 0.2.
+const VERSIONS = [
+  { id: 'y9', label: 'ver10', short: '1.0', metrics: byRecipe(data), xmp: 'xmp_1_0' },
+  { id: 'y8', label: 'ver02', short: '0.2', metrics: byRecipe(previous), xmp: 'xmp_0_2' },
+];
+const SCENES = ['9046', '2849', '2694', '5054'];
+const files = byRecipe(downloads);
+const nxRefs = new Map(references.map(r => [r.photo + '|' + r.recipe, r]));
+const duplicateNames = new Set(data.filter(r => data.some(o => o.recipe !== r.recipe && o.display === r.display && o.author === r.author)).map(r => r.recipe));
+
+function folderOf(recipe) {
+  const m = (files.get(recipe)?.np3 || '').match(/Nikon-Recipes\/[0-9a-f]+\/(.+)$/);
+  if (!m) return [];
+  const parts = m[1].split('/').map(decodeURIComponent);
+  parts.pop();
+  return parts;
+}
+const folders = new Map(data.map(r => [r.recipe, folderOf(r.recipe)]));
+
+const favoritesKey = 'nikon-recipes-lr-favorites-v1';
+const recipeIds = new Set(data.map(r => r.recipe));
+let favorites = new Set((store.get(favoritesKey, []) || []).filter(id => recipeIds.has(id)));
+const fromHash = decodeURIComponent(location.hash.slice(1));
+let selected = recipeIds.has(fromHash) ? fromHash : (recipeIds.has(DEFAULT_RECIPE) ? DEFAULT_RECIPE : data[0].recipe);
+let visibleOrder = [];
+const openFolders = new Set(store.get('nrlr-open-folders', null) || []);
+
+const $ = s => document.querySelector(s);
+const search = $('#search'), view = $('#view'), list = $('#recipes'), leftSel = $('#left-source'), rightSel = $('#right-source'), modeSel = $('#mode');
+view.value = store.get('nrlr-view-v2', 'folder');
+modeSel.value = store.get('nrlr-mode', 'blink');
+
+/* ---------- helpers ---------- */
+function el(tag, props = {}, ...children) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (k === 'class') node.className = v; else if (k === 'text') node.textContent = v; else if (k.startsWith('on')) node[k] = v; else if (v !== undefined && v !== null) node.setAttribute(k, v);
+  }
+  node.append(...children.filter(c => c !== null && c !== undefined));
+  return node;
+}
+function svgIcon(d) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24'); svg.setAttribute('class', 'icon'); svg.setAttribute('aria-hidden', 'true');
+  for (const part of [].concat(d)) { const p = document.createElementNS(svg.namespaceURI, 'path'); p.setAttribute('d', part); svg.append(p); }
+  return svg;
+}
+const ICON_DOWNLOAD = 'M12 4v11m0 0-4-4m4 4 4-4M5 20h14';
+const ICON_EXTERNAL = ['M14 4h6v6', 'M20 4l-9 9', 'M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5'];
+const ICON_HEART = 'M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z';
+function img(src, alt, cls) { const i = new Image(); i.src = src + '?v=20261022'; i.alt = alt; i.loading = 'lazy'; i.decoding = 'async'; if (cls) i.className = cls; return i; }
+function version(id) { return VERSIONS.find(v => v.id === id); }
+function currentVersion() { return version(rightSel.value) || version(leftSel.value) || VERSIONS[0]; }
+function metrics(recipe) { return currentVersion().metrics.get(recipe); }
+function recipeLabel(r) { return r.author + (duplicateNames.has(r.recipe) ? ' [' + r.recipe + ']' : ''); }
+
+/* ---------- static text ---------- */
+function applyStatic() {
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+  for (const sel of document.querySelectorAll('select.lang')) sel.value = lang;
+  for (const node of document.querySelectorAll('[data-i18n]')) node.textContent = t(node.dataset.i18n);
+  for (const node of document.querySelectorAll('[data-i18n-html]')) node.innerHTML = t(node.dataset.i18nHtml);
+  for (const node of document.querySelectorAll('[data-i18n-placeholder]')) node.placeholder = t(node.dataset.i18nPlaceholder);
+  for (const node of document.querySelectorAll('[data-i18n-aria]')) node.setAttribute('aria-label', t(node.dataset.i18nAria));
+  for (const [id, href] of [['#dl-latest', LINKS.releases], ['#dl-old', LINKS.releaseOld], ['#nav-github', LINKS.github], ['#cta-github', LINKS.github], ['#sponsor-github', LINKS.sponsor], ['#nav-docs', LINKS.docs[lang]]]) $(id).href = href;
+  $('#prev').setAttribute('aria-label', t('prev')); $('#prev').title = t('prev');
+  $('#next').setAttribute('aria-label', t('next')); $('#next').title = t('next');
+  fillSources();
+}
+function sourceOptions() {
+  const opts = [['nx', t('srcNx')]];
+  for (const v of VERSIONS) opts.push([v.id, t('srcVersion', { v: t(v.label) })]);
+  opts.push(['adobe', t('srcAdobe')]);
+  if (version('y9')) opts.push(['flex', t('srcFlex')]);
+  return opts;
+}
+function fillSources() {
+  for (const [sel, fallback] of [[leftSel, 'nx'], [rightSel, VERSIONS[0].id]]) {
+    const keep = sel.value || store.get('nrlr-' + sel.id, fallback);
+    sel.replaceChildren(...sourceOptions().map(([value, label]) => el('option', { value, text: label })));
+    sel.value = [...sel.options].some(o => o.value === keep) ? keep : fallback;
+  }
+}
+
+/* ---------- recipe list ---------- */
+function favoriteButton(r) {
+  const button = el('button', { type: 'button', class: 'favorite-button' }, svgIcon(ICON_HEART));
+  const update = () => { const on = favorites.has(r.recipe); button.setAttribute('aria-pressed', String(on)); button.title = t(on ? 'favRemove' : 'favAdd'); button.setAttribute('aria-label', t(on ? 'favRemove' : 'favAdd') + ': ' + r.display); };
+  button.onclick = () => { favorites.has(r.recipe) ? favorites.delete(r.recipe) : favorites.add(r.recipe); store.set(favoritesKey, [...favorites]); update(); if (view.value === 'favorites') renderList(); };
+  update();
+  return button;
+}
+function recipeRow(r) {
+  const button = el('button', { type: 'button', class: 'recipe-button', 'aria-current': String(r.recipe === selected), 'data-recipe': r.recipe, title: r.display + ' — ' + recipeLabel(r) },
+    img('images/thumbs/' + encodeURIComponent(r.recipe) + '.jpg', '', 'thumb'),
+    el('span', {}, el('span', { class: 'recipe-name', text: r.display }), el('span', { class: 'recipe-meta', text: recipeLabel(r) })));
+  button.onclick = () => select(r.recipe, true);
+  return el('div', { class: 'recipe-row' }, button, favoriteButton(r));
+}
+function sortedItems() {
+  const q = search.value.trim().toLowerCase();
+  const items = data.filter(r => !q || (r.display + ' ' + r.recipe + ' ' + r.author + ' ' + folders.get(r.recipe).join(' ')).toLowerCase().includes(q));
+  const name = (a, b) => a.display.localeCompare(b.display) || a.recipe.localeCompare(b.recipe);
+  const m = r => metrics(r.recipe);
+  const order = {
+    name, folder: (a, b) => folders.get(a.recipe).join('/').localeCompare(folders.get(b.recipe).join('/')) || name(a, b),
+    fit: (a, b) => m(a).fit.mean - m(b).fit.mean, band: (a, b) => m(a).banding.face_jump_p99 - m(b).banding.face_jump_p99,
+    favorites: (a, b) => Number(favorites.has(b.recipe)) - Number(favorites.has(a.recipe)) || name(a, b),
+  }[view.value] || name;
+  return items.sort(order);
+}
+function renderList() {
+  const items = sortedItems();
+  visibleOrder = items.map(r => r.recipe);
+  $('#count').textContent = t('count', { n: items.length, total: data.length });
+  if (!items.length) { list.replaceChildren(el('p', { class: 'empty', text: t('noMatch') })); return; }
+  if (view.value !== 'folder') { list.replaceChildren(...items.map(recipeRow)); return; }
+  const root = { children: new Map(), recipes: [] };
+  for (const r of items) {
+    let node = root;
+    for (const part of folders.get(r.recipe)) {
+      if (!node.children.has(part)) node.children.set(part, { children: new Map(), recipes: [], path: (node.path ? node.path + '/' : '') + part });
+      node = node.children.get(part);
+    }
+    node.recipes.push(r);
+  }
+  const total = node => node.recipes.length + [...node.children.values()].reduce((s, c) => s + total(c), 0);
+  const searching = Boolean(search.value.trim());
+  const selectedPath = folders.get(selected).join('/');
+  const render = node => [...[...node.children.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([name, child]) => {
+    const details = el('details', { class: 'folder', 'data-path': child.path }, el('summary', {}, el('span', { text: name }), el('span', { class: 'n', text: String(total(child)) })), el('div', { class: 'folder-body' }, ...render(child)));
+    details.open = searching || openFolders.has(child.path) || selectedPath === child.path || selectedPath.startsWith(child.path + '/');
+    details.ontoggle = () => { details.open ? openFolders.add(child.path) : openFolders.delete(child.path); store.set('nrlr-open-folders', [...openFolders]); };
+    return details;
+  }), ...node.recipes.map(recipeRow)];
+  list.replaceChildren(...render(root));
+}
+function markSelected() {
+  for (const b of list.querySelectorAll('.recipe-button')) b.setAttribute('aria-current', String(b.dataset.recipe === selected));
+}
+// Scrolls only the list, never the page.
+function revealSelectedInList(center = false) {
+  const row = list.querySelector('[data-recipe="' + CSS.escape(selected) + '"]');
+  if (!row || !row.offsetParent) return;
+  const box = list.getBoundingClientRect(), r = row.getBoundingClientRect();
+  if (center) list.scrollTop += r.top - box.top - (box.height - r.height) / 2;
+  else if (r.top < box.top) list.scrollTop += r.top - box.top - 8;
+  else if (r.bottom > box.bottom) list.scrollTop += r.bottom - box.bottom + 8;
+}
+
+/* ---------- detail ---------- */
+function source(stem, r, key) {
+  const id = encodeURIComponent(r.recipe);
+  if (key === 'adobe') return { label: 'Adobe Standard', path: 'images/adobe/' + stem + '.jpg' };
+  if (key === 'flex') return { label: 'Camera Flexible Color', path: 'images/flex/' + stem + '.jpg' };
+  const v = version(key);
+  if (v) return { label: t('srcVersion', { v: v.short }), path: 'images/' + v.id + '/' + stem + '_' + id + '.jpg' };
+  const nx = nxRefs.get(stem + '|' + r.recipe);
+  return { label: 'NX Studio', path: nx ? nx.path : null };
+}
+function pane(choice, scene) {
+  if (choice.path) return img(choice.path, choice.label + ' — ' + scene);
+  return el('div', { class: 'missing', text: t('missingNx') });
+}
+function sceneCard(stem, r) {
+  const title = t('scene' + stem), note = STR.en['scene' + stem + 'note'] ? t('scene' + stem + 'note') : '';
+  const a = source(stem, r, leftSel.value), b = source(stem, r, rightSel.value);
+  const overlay = el('div', { class: 'overlay' }, pane(b, title));
+  const divider = el('div', { class: 'divider' });
+  const badge = el('span', { class: 'current-source' });
+  const frame = el('div', { class: 'compare' }, pane(a, title), overlay, divider, badge);
+  frame.onclick = () => { if (modeSel.value === 'blink') toggleBlinkPause(); };
+  const slider = el('input', { type: 'range', class: 'slider', min: 0, max: 100, value: 50, 'aria-label': t('sliderLabel', { scene: title }) });
+  slider.oninput = () => { overlay.style.clipPath = 'inset(0 0 0 ' + slider.value + '%)'; divider.style.left = slider.value + '%'; };
+  return el('article', { 'data-a': a.label, 'data-b': b.label },
+    el('h3', {}, title, note ? el('small', { text: note }) : null),
+    el('div', { class: 'labels' }, el('span', { text: 'A · ' + a.label }), el('span', { text: 'B · ' + b.label })), frame, slider);
+}
+function scoreChip(label, value, levels, help) {
+  const [, word, color] = levels.find(([max]) => value < max);
+  return el('span', { class: 'chip lvl-' + color, title: help, tabindex: '0' },
+    el('span', { class: 'dot', 'aria-hidden': 'true' }), label, el('span', { class: 'level', text: t(word) }), el('span', { class: 'num', text: value.toFixed(2) }));
+}
+function show() {
+  const r = data.find(x => x.recipe === selected) || data[0];
+  const v = currentVersion(), m = metrics(r.recipe), f = files.get(r.recipe);
+  document.title = r.display + ' — Nikon Recipes to LR Profiles';
+  $('#crumbs').replaceChildren(...folders.get(r.recipe).map(part => el('span', { text: part })));
+  $('#recipe-title').textContent = r.display;
+  $('#recipe-author').textContent = t('by', { author: recipeLabel(r) });
+  $('#scores').replaceChildren(
+    el('span', { class: 'version-tag', text: v.short }),
+    scoreChip(t('deLabel'), m.fit.mean, DE_LEVELS, t('deHelp')),
+    scoreChip(t('bandLabel'), m.banding.face_jump_p99, BAND_LEVELS, t('bandHelp')),
+    el('a', { class: 'subtle-link', href: LINKS.recipePage(r.recipe), target: '_blank', rel: 'noopener' }, t('measurements'), svgIcon(ICON_EXTERNAL)));
+  const xmp = $('#download-xmp'), path = f[v.xmp] || f.xmp;
+  xmp.href = path; xmp.download = path.split('/').pop();
+  xmp.replaceChildren(svgIcon(ICON_DOWNLOAD), t('downloadXmp', { v: v.short }));
+  const np3 = $('#download-np3');
+  np3.href = f.np3;
+  np3.replaceChildren(svgIcon(ICON_DOWNLOAD), t('downloadNp3'));
+  $('#mode-note').textContent = t(modeSel.value === 'blink' ? 'modeNoteBlink' : 'modeNoteSlider');
+  $('#photos').replaceChildren(...SCENES.map(s => sceneCard(s, r)));
+  startComparison();
+}
+function select(recipe, fromList) {
+  selected = recipe;
+  history.replaceState(null, '', location.search + '#' + encodeURIComponent(recipe));
+  if (view.value === 'folder' && !list.querySelector('[data-recipe="' + CSS.escape(recipe) + '"]')?.offsetParent) {
+    folders.get(recipe).forEach((_, i, parts) => openFolders.add(parts.slice(0, i + 1).join('/')));
+    renderList();
+  } else markSelected();
+  show();
+  if (fromList) closeDrawer();
+  if (fromList && matchMedia('(max-width: 760px)').matches) $('#main').scrollIntoView({ block: 'start' });
+}
+function step(delta) {
+  const order = visibleOrder.length ? visibleOrder : data.map(r => r.recipe);
+  let i = order.indexOf(selected);
+  i = i < 0 ? 0 : Math.max(0, Math.min(order.length - 1, i + delta));
+  select(order[i], false);
+  revealSelectedInList();
+}
+
+/* ---------- comparison ---------- */
+let blinkTimer = null, blinkPhase = 0, blinkPaused = false;
+function applyPhase() {
+  const blink = modeSel.value === 'blink';
+  for (const card of document.querySelectorAll('#photos article')) {
+    card.classList.toggle('blink', blink);
+    card.dataset.phase = blinkPhase ? 'b' : 'a';
+    card.querySelector('.current-source').textContent = (blinkPhase ? 'B · ' + card.dataset.b : 'A · ' + card.dataset.a) + (blinkPaused ? ' · ' + t('paused') : '');
+    if (blink) for (const i of card.querySelectorAll('img')) i.loading = 'eager';
+  }
+}
+function startComparison() {
+  clearInterval(blinkTimer); blinkTimer = null;
+  if (!blinkPaused) blinkPhase = 0;
+  applyPhase();
+  if (modeSel.value === 'blink' && !blinkPaused) blinkTimer = setInterval(() => { blinkPhase = 1 - blinkPhase; applyPhase(); }, 1000);
+}
+function toggleBlinkPause() {
+  blinkPaused = !blinkPaused;
+  if (blinkPaused) { clearInterval(blinkTimer); blinkTimer = null; applyPhase(); }
+  else startComparison();
+}
+
+/* ---------- drawer, menu, dialogs ---------- */
+function openDrawer() { if (!matchMedia('(max-width: 760px)').matches) return; $('#sidebar').classList.add('open'); $('#scrim').classList.add('open'); $('#drawer-open').setAttribute('aria-expanded', 'true'); }
+function closeDrawer() { $('#sidebar').classList.remove('open'); $('#scrim').classList.remove('open'); $('#drawer-open').setAttribute('aria-expanded', 'false'); }
+$('#drawer-open').onclick = () => { openDrawer(); revealSelectedInList(true); };
+$('#drawer-close').onclick = closeDrawer;
+$('#scrim').onclick = closeDrawer;
+$('#menu-button').onclick = () => { const open = $('#nav').classList.toggle('open'); $('#menu-button').setAttribute('aria-expanded', String(open)); };
+for (const a of document.querySelectorAll('#nav a, #nav button')) a.addEventListener('click', () => $('#nav').classList.remove('open'));
+function openDialog(dialog) {
+  closeDrawer();
+  $('#nav').classList.remove('open');
+  if (typeof dialog.showModal === 'function' && !dialog.open) dialog.showModal();
+}
+for (const dialog of document.querySelectorAll('dialog.modal')) {
+  // .modal-inner carries the padding, so only a click on the backdrop targets the dialog itself.
+  dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+  for (const b of dialog.querySelectorAll('[data-close]')) b.onclick = () => dialog.close();
+}
+const help = $('#help'), sponsor = $('#sponsor'), downloadDialog = $('#download');
+help.addEventListener('close', () => store.set('nrlr-welcome-seen', true));
+$('#nav-help').onclick = () => openDialog(help);
+for (const id of ['#nav-download', '#cta-download', '#help-download']) $(id).onclick = () => { help.close(); openDialog(downloadDialog); };
+// The WeChat code is loaded on demand from payment.js and shown only if its SHA-256 matches, so a swapped image is never displayed.
+let paymentPromise = null;
+function loadPaymentQr() {
+  paymentPromise ||= new Promise(resolve => {
+    const script = document.createElement('script');
+    script.src = 'payment.js';
+    script.onload = async () => {
+      try {
+        const uri = globalThis.NRLR_PAYMENT_QR;
+        const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(uri));
+        const hex = Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, '0')).join('');
+        resolve(hex === globalThis.NRLR_PAYMENT_QR_SHA256 ? uri : null);
+      } catch { resolve(null); }
+    };
+    script.onerror = () => resolve(null);
+    document.head.append(script);
+  });
+  return paymentPromise;
+}
+function openSponsor() {
+  openDialog(sponsor);
+  loadPaymentQr().then(uri => {
+    const way = $('#wx-way');
+    if (!way?.querySelector('.qr-wait')) return;
+    if (uri) way.querySelector('.qr-wait').replaceWith(el('img', { class: 'qr', src: uri, alt: t('sponsorWechatNote') }));
+    else way.hidden = true;
+  });
+}
+$('#nav-sponsor').onclick = openSponsor;
+$('#cta-sponsor').onclick = openSponsor;
+
+/* ---------- events ---------- */
+for (const sel of document.querySelectorAll('select.lang')) sel.onchange = () => { lang = sel.value; store.set('nrlr-lang', lang); applyStatic(); renderList(); show(); };
+search.oninput = renderList;
+view.onchange = () => { store.set('nrlr-view-v2', view.value); renderList(); revealSelectedInList(); };
+modeSel.onchange = () => { store.set('nrlr-mode', modeSel.value); blinkPaused = false; show(); };
+for (const sel of [leftSel, rightSel]) sel.onchange = () => { store.set('nrlr-' + sel.id, sel.value); show(); if (['fit', 'band'].includes(view.value)) renderList(); };
+$('#prev').onclick = () => step(-1);
+$('#next').onclick = () => step(1);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeDrawer(); $('#nav').classList.remove('open'); return; }
+  if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key) || e.altKey || e.ctrlKey || e.metaKey || document.querySelector('dialog[open]')) return;
+  if (e.target.closest?.('input, select, textarea, [contenteditable=true]')) return;
+  e.preventDefault();
+  step(e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : -1);
 });
-function source(stem,r,key){
-  if(key==='y8')return {label:'Our LR conversion · Y8',path:'images/y8/'+stem+'_'+encodeURIComponent(r.recipe)+'.jpg'};
-  if(key==='adobe')return {label:'Adobe Standard',path:'images/'+stem+'_base.jpg'};
-  if(key==='previous')return {label:'Previous LR conversion',path:'images/previous/'+stem+'_'+encodeURIComponent(r.recipe)+'.jpg'};
-  if(key==='ours')return {label:'Our LR conversion · Y7',path:'images/'+stem+'_'+encodeURIComponent(r.recipe)+'.jpg'};
-  const nx=references.find(x=>x.photo===stem&&x.recipe===r.recipe);
-  return {label:'NX Studio'+(nx?'':' — pending'),path:nx?nx.path:null};
-}
-function pane(choice,title){
-  if(choice.path)return image(choice.path,choice.label+' — '+title);
-  const missing=document.createElement('div');missing.className='missing';missing.textContent='NX reference not available for this recipe.';return missing;
-}
-function compare(stem,title,note,r){
-  const art=document.createElement('article'),heading=document.createElement('h3');heading.textContent=title;art.append(heading);
-  const before=source(stem,r,leftSource.value),after=source(stem,r,rightSource.value);art.dataset.before=before.label;art.dataset.after=after.label;
-  const labels=document.createElement('div');labels.className='labels';
-  for(const choice of [before,after]){const text=document.createElement('span');text.textContent=choice.label;labels.append(text);}art.append(labels);
-  const frame=document.createElement('div');frame.className='compare';frame.append(pane(before,title));
-  const overlay=document.createElement('div');overlay.className='overlay';overlay.append(pane(after,title));
-  const line=document.createElement('div');line.className='divider';frame.append(overlay,line);const badge=document.createElement('span');badge.className='current-source';frame.append(badge);art.append(frame);
-  const slider=document.createElement('input');slider.type='range';slider.className='slider';slider.min=0;slider.max=100;slider.value=50;slider.setAttribute('aria-label',title+' comparison dividing line');
-  slider.oninput=()=>{overlay.style.clipPath='inset(0 0 0 '+slider.value+'%)';line.style.left=slider.value+'%';};art.append(slider);
-  if(note){const text=document.createElement('p');text.className='scene-note';text.textContent=note;art.append(text);}return art;
-}
-function conversionVersion(){return rightSource.value==='ours'?'Y7':rightSource.value==='y8'?'Y8':leftSource.value==='ours'?'Y7':'Y8';}
-function shownMetrics(r){return conversionVersion()==='Y8'?y8Metrics.find(m=>m.recipe===r.recipe):r;}
-function show(){const r=data.find(r=>r.recipe===selected)||data[0];const files=downloads.find(d=>d.recipe===r.recipe);document.querySelector('#download-np3').href=files.np3;const xmp=document.querySelector('#download-xmp');const version=conversionVersion();const path=version==='Y8'?files.xmp_y8:files.xmp;xmp.href=path;xmp.download=path.split('/').pop();xmp.textContent='Download XMP · '+version;document.querySelector('#recipe-title').textContent=r.display;document.querySelector('#recipe-author').textContent='Original recipe by '+r.author;const metrics=shownMetrics(r);document.querySelector('#score').textContent=version+' · ΔE '+metrics.fit.mean.toFixed(3)+' · Banding risk '+metrics.banding.face_jump_p99.toFixed(3);const link=document.querySelector('#recipe-link');link.href='recipes/'+encodeURIComponent(r.recipe)+'.md';link.textContent=version+' recipe measurements';const n=references.filter(x=>x.recipe===r.recipe).length;document.querySelector('#reference-notice').textContent=(n?'NX Studio references available for '+n+' of 4 scenes. Missing NX references show a placeholder.':'NX Studio references are pending. Selecting NX shows a placeholder until a verified export is available.')+' Our LR conversion is a numerical preview of the Lightroom color table.';const box=document.querySelector('#photos');box.replaceChildren(...scenes.map(s=>compare(...s,r)));startComparison();}
-leftSource.onchange=()=>{show();if(['fit','band'].includes(sort.value))options();};rightSource.onchange=()=>{show();if(['fit','band'].includes(sort.value))options();};search.oninput=options;sort.onchange=options;window.onhashchange=()=>{const recipe=decodeURIComponent(location.hash.slice(1));if(data.some(r=>r.recipe===recipe)){selected=recipe;options();show();}};options();show();
+window.addEventListener('hashchange', () => { const r = decodeURIComponent(location.hash.slice(1)); if (recipeIds.has(r) && r !== selected) select(r, false); });
+window.addEventListener('storage', e => { if (e.key === favoritesKey) { favorites = new Set((store.get(favoritesKey, []) || []).filter(id => recipeIds.has(id))); renderList(); } });
+
+applyStatic();
+renderList();
+show();
+requestAnimationFrame(() => revealSelectedInList(true));
+if (!store.get('nrlr-welcome-seen', false)) openDialog(help);
 </script>
-</body></html>
+</body>
+</html>

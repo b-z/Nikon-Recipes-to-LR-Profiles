@@ -1,49 +1,48 @@
-# Website source and external assets
+# Website
 
-The [live comparison gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) is a separate static build. The repository contains its template, scripts and metadata, **not the complete image library**. Normal profile use does not require building the website.
+The [online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) is a single static page built from `gallery.template.html`, the release manifests and an image library that is kept outside Git. Using the profiles does not require building the website.
 
-| Location | Contents | Stored in Git |
+| Location | Contents | In Git |
 |---|---|---|
-| `website/gallery.template.html` | Gallery UI | Yes |
-| `website/scripts/` | Preview generation, NX import and site builder | Yes |
-| `website/data/` | Reference metadata, provenance and SHA-256 asset inventory | Yes |
-| `docs/images/`, `docs/comparisons/` | Small example and compact contact sheets | Yes |
-| External asset directory | Complete `images/`, `comparisons/` and downloadable `profiles/` folders | No |
-| `website/assets/` | Optional local extraction location for the asset pack | No |
-| `website/dist/` | Generated deployable site | No |
+| `website/gallery.template.html` | The page: layout, texts in English, Chinese and Japanese, and all scripts | Yes |
+| `website/payment.js` | WeChat reward QR code, shown only if its SHA-256 matches the value in the same file | Yes |
+| `website/data/` | NX Studio reference list, per-recipe download paths, the 0.2.0 manifest and the historical Y7 banding list | Yes |
+| `website/scripts/make_previews.py` | Makes the image library | Yes |
+| `website/scripts/build_site.py` | Assembles the deployable site | Yes |
+| Image library | About 4,000 JPEG previews (1280 px) | No |
+| `website/dist/` | Generated site | No (ignored) |
 
-## Build
+## Make the image library
 
-Install the project's dependencies (`python -m pip install -e .`). Obtain the separate `nikon-recipes-lr-website-assets-0.1.1.zip` asset pack and extract it outside the checkout or into the ignored `website/assets/` directory. Download it from the [v0.1.0 Release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.1.0). Maintainers can instead use the external asset directory directly.
-
-```sh
-PYTHONPATH=src python3 website/scripts/build_site.py --assets /path/to/website-assets
-```
-
-Alternatively set `NIKON_LR_WEBSITE_ASSETS` and omit `--assets`. The default output is `website/dist/`; `--output /path/to/empty-directory` overrides it. Output must be empty to avoid stale assets. The builder verifies every listed asset's SHA-256 while copying it, restores full website-only recipe previews, and checks that all NX references and conversions exist. It never writes full-size images or generated HTML into repository documentation.
-
-Open `website/dist/docs/gallery.html`, or serve `website/dist/` with any static server. Existing public URLs under `/docs/` are preserved. RAW files, source recipes, NX sidecars, credentials and developer caches are excluded.
-
-## Update references
-
-NX JPEGs may sit alongside the batch RAW names or under `exports/`. Keep originals on external storage.
+`make_previews.py` needs Camera Raw renders of the four sample RAWs (on the v0.1.0 release) with both base profiles, NX Studio JPEG exports of every recipe on every scene ([how to prepare them](../docs/GALLERY.md)), and the profiles of the current release and of 0.2.0. Its docstring lists the exact file names. All previews come out at 1280 px through the same steps, so blinking between sources never changes sharpness.
 
 ```sh
-PYTHONPATH=src python3 website/scripts/ingest_nx_gallery.py --batch /path/to/nx-batch --assets /path/to/website-assets
+python website/scripts/make_previews.py --renders /path/to/renders --nx /path/to/nx-exports \
+  --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/profiles \
+  --previous-profiles /path/to/nikon-recipes-lr-profiles-0.2.0/profiles --output /path/to/library
 ```
 
-This updates website reference metadata and the asset inventory, writes full-size gallery previews and sheets only into the external assets, and refreshes compact documentation sheets and score pages. Rebuild the asset pack after changing assets; old packs intentionally fail the new inventory check. Numerical conversion previews can be regenerated with `website/scripts/build_gallery.py --profiles ... --baselines ... --metrics docs/recipe_metrics.json --assets ...`. `docs/recipe_metrics.json` holds the Y7 gallery rows and `website/data/y8_metrics.json` the Y8 rows. The source catalog (`docs/RECIPES.md`, `docs/recipes/`) follows the Release manifest `docs/release_manifest.json`; regenerate it with `python scripts/write_catalog.py`.
+Existing images are kept, so the command can be rerun after adding recipes.
 
-Deploy `website/dist/` with Cloudflare Pages Direct Upload. Deployment does not require a Git commit or push. All photographs and derivatives follow [sample photo terms](../samples/LICENSE.md); they are not MIT-licensed.
+## Build and deploy
 
-中文：完整图库素材保存在仓库之外；仓库只保留网站代码、素材清单和小尺寸文档图。构建产物 `website/dist/` 不进入 Git。
+```sh
+python website/scripts/build_site.py --images /path/to/library/images \
+  --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/profiles \
+  --previous-profiles /path/to/nikon-recipes-lr-profiles-0.2.0/profiles
+npx wrangler pages deploy website/dist --project-name nikon-recipes-to-lr-profiles --branch main --commit-dirty=true
+```
 
-日本語：完全な画像素材はリポジトリ外に保存し、ソースにはサイトコード、素材一覧と小さな文書用画像のみを含めます。`website/dist/` は Git に追加しません。
+`build_site.py` writes `website/dist/` (use `--output` for another empty folder). It checks every profile against `docs/release_manifest.json` or the 0.2.0 manifest, fails if any preview the page links to is missing, and adds redirects for the addresses of the earlier gallery (`/docs/gallery.html` and `/docs/*`). Deploying uploads files with Cloudflare Pages Direct Upload; it does not need a commit. All photographs and previews follow the [sample photo terms](../samples/LICENSE.md), not MIT.
 
-The gallery defaults to synchronized A/B blinking every second. Arrow Up / Arrow Down selects the previous / next recipe in the visible filtered/sorted list. The NP3 button links to the credited upstream archive; the XMP button downloads the exact converted profile. Original NP3s are not hosted here.
+## How the page behaves
 
-Use the heart beside each recipe to save favorites in this browser’s local storage. Favorites persist across reloads and are not uploaded or shared between devices. Clearing site data removes them.
+- English, Chinese and Japanese (`?lang=en|zh|ja`, otherwise the browser language). A help dialog explains the project on the first visit and can be reopened from **Help**; it has its own language menu.
+- The download buttons open a short explanation first (which release is for which camera, and that single recipes can be downloaded) before linking to the release on GitHub.
+- The recipe list can be shown by folder (the folder structure of the NP3 archive, the default), by name, by difference from NX Studio, by banding risk or with favorites first. Search also matches creators and folders. The default recipe is KG200P1.
+- Image A and image B can each show NX Studio, the 1.0 or 0.2 profile, or Adobe Standard / Camera Flexible Color without a recipe. Blink mode switches every second and pauses when an image is clicked; the slider shows A on the left and B on the right. Arrow keys select the previous or next recipe in the visible list.
+- **Download this recipe** downloads the release profile of the version shown as image B (1.0 unless 0.2 is selected). The NP3 button links to the credited upstream archive; original NP3 files are not hosted here.
+- Favorites, language, list order and comparison settings are stored only in the browser's local storage.
+- The Sponsor dialog shows GitHub Sponsors and the WeChat QR code from `payment.js`.
 
-The gallery no longer shows banding warning triangles: they described the Y7 review of 2026-10-10 and do not apply to the Y8 profiles. The historical list is kept in `data/banding_warnings.json` and [BANDING_REVIEW](../docs/BANDING_REVIEW.md). Favorites remain browser-local; `Order by Favorites` is unchanged.
-
-The gallery defaults to Y8 smooth-function conversions. Select Y7 or `Previous LR conversion` to compare older versions. The XMP button explicitly labels and downloads the displayed conversion version (right-hand LR source takes priority). All 236 Y8 profiles and four-scene previews are stored as separate external assets; Y7 and NX are preserved. The 58 historical Y7 warning recipes passed the maintainer's latest Y8 real-photo review, with no banding observed. This is not a universal guarantee. Release 0.2.0 ships the same Y8 tables under release names and UUIDs.
+Image folders keep the internal method names: `images/y9` holds the 1.0 previews and `images/y8` the 0.2 previews.

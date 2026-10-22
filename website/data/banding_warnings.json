@@ -2,7 +2,7 @@
   "reported_on": "2026-10-10",
   "source_version": "YC7-full-20261009",
   "severity": "mild",
-  "source": "Owner visual review: unfavorited recipes in the gallery snapshot.",
+  "source": "Maintainer visual review: unfavorited recipes in the gallery snapshot.",
   "scope": "Residual banding in converted Y7 profiles, not original Nikon NP3s. Unmarked is not a universal no-banding guarantee.",
   "recipes": [],
   "mild_recipes": [
