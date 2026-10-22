@@ -8,4 +8,6 @@ Other uses—including unrelated creative/commercial use, stock distribution, ge
 
 Covered originals: `_DSC2694.NEF`, `_DSC5054.NEF`, `_DSC9046.NEF`, `_DSC2849.NEF`. Covered derivatives include the gallery previews, crops and actual Camera Raw validation images generated from these photographs.
 
+The calibration chart `calibration/z8/chart.NEF` (in `chart.NEF.zip`) is a copy of `_DSC2849.NEF` whose image data was replaced by synthetic color patches; its metadata and embedded previews still come from the photograph, so the same terms apply to the file. Using the chart to make profiles is one of the permitted purposes, and **profiles made with it are not restricted by these terms**.
+
 The sample asset contains untouched original NEFs, including original camera metadata, published with the photo owner’s permission. Website JPEG derivatives contain no EXIF. See `manifest.json` for SHA-256 checksums. Obtain permission from [b-z](https://github.com/b-z) for any other use.

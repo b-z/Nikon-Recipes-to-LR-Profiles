@@ -22,3 +22,7 @@ website/.env
 *.ncp
 *.nksc
 *.zip
+
+# The calibration kit is part of the repository.
+!calibration/**/*.zip
+!calibration/**/*.nksc
