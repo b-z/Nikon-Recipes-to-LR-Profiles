@@ -21,7 +21,7 @@
 2. 先预览结果，不写入任何文件：
 
    ```sh
-   nikon-recipes-lr sidecars --dry-run --profiles ~/Downloads/nikon-recipes-lr-profiles-1.0.0/profiles ~/Pictures/2026-10-18
+   nikon-recipes-lr sidecars --dry-run --profiles ~/Downloads/nikon-recipes-lr-profiles-1.0.1-z8/profiles ~/Pictures/2026-10-18
    ```
 
    `written` 列出将要写入附属文件的照片及各自的配置文件；`no_profile` 统计用没有对应配置文件的优化校准（例如「标准」）拍摄的照片。
@@ -34,7 +34,7 @@
 
 ## 附属文件里有什么
 
-- 配方的配置文件和所选的数量，以及它的基础配置文件（1.0 为「相机 Flexible Color」，0.2 为 Adobe Standard）。
+- 配方的配置文件和所选的数量，以及它的基础配置文件（各机型的压缩包为「相机 Flexible Color」，Adobe 通用版为 Adobe Standard）。
 - 开启镜头配置文件校正，与 Camera Raw 对新照片的默认做法一致。
 
 其他设置都不写入，由 Camera Raw 使用内置默认值。带有附属文件的照片不会应用你自定义的 Raw 默认设置；如果你平时使用预设，请在导入后再应用。包含配置文件的预设会替换掉配方的配置文件。

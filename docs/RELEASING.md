@@ -19,15 +19,15 @@ How a maintainer publishes a new profile release. Code-only changes do not need 
    - Update the version and group name in `README.md`, `docs/*/README.md` and `docs/*/INSTALL.md`. The three INSTALL files become the `README.md` inside the ZIP, so they must explain installing and using the profiles on their own.
    - Move the *Unreleased* CHANGELOG entries under the new version and describe the profile changes.
    - Open a pull request; CI checks that the catalog matches the manifest.
-4. **Build the ZIP** from the merged commit:
+4. **Build the ZIPs** from the merged commit: one per Camera Flexible Color body (listed in `src/nikon_recipes_lr/cameras.py`) and one Adobe pack, all with the same version:
 
    ```sh
-   python scripts/package_release.py --profiles /path/to/profiles \
-     --metrics docs/release_manifest.json --output /path/to/release-assets
+   python scripts/package_release.py --profiles /path/to/reference-z8-profiles \
+     --previous-profiles /path/to/0.2.0/profiles --output /path/to/release-assets
    ```
 
-   It refuses to build if a profile's checksum, UUID or table ID does not match the manifest, and writes `SHA256SUMS`.
-5. **Publish** on GitHub with the tag `v<version>`, attaching only the profiles ZIP and `SHA256SUMS`, so that the release page stays simple for people who only want the profiles. GitHub adds *Source code* archives to every release automatically; they cannot be removed. In the release notes, summarize the CHANGELOG entry and the known limitations, say which cameras the profiles are for, and point to the [gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) for downloading single recipes.
+   It refuses to build if a reference profile's checksum or table ID does not match the manifest. Camera packs differ from the Z 8 pack only in camera restriction, UUID and description; the website makes its per-recipe downloads with the same functions.
+5. **Publish** on GitHub with the tag `v<version>`, attaching only the profile ZIPs, so that the release page stays simple for people who only want the profiles. GitHub adds *Source code* archives to every release automatically; they cannot be removed. In the release notes, summarize the CHANGELOG entry and the known limitations, explain which pack is for which camera and how the packs differ, and point to the [gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) for downloading single recipes.
 6. **Update the website** so that its previews and per-recipe downloads match the release: `website/scripts/make_previews.py` for new tables, then `build_site.py` and deploy ([website/README.md](../website/README.md)).
 
 Earlier releases stay published so that users can return to them.

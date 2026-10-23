@@ -5,7 +5,7 @@ Output layout (deploy the whole directory, e.g. with Cloudflare Pages Direct Upl
   images/{nx,y9,y8}/<scene>_<recipe>.jpg   NX Studio, release 1.0 and release 0.2 previews
   images/{adobe,flex}/<scene>.jpg          base profiles without a recipe
   images/thumbs/<recipe>.jpg               list thumbnails
-  profiles/1.0/*.xmp, profiles/0.2/*.xmp   the release profiles, for per-recipe downloads
+  profiles/<camera>/*.xmp                  per-recipe downloads, identical to the files in the release packs
 
 Every profile is checked against its release manifest, and every preview the page links to must exist.
 Images are made by make_previews.py.
@@ -17,6 +17,9 @@ import json
 import shutil
 from pathlib import Path
 
+from nikon_recipes_lr import __version__
+from nikon_recipes_lr.cameras import ADOBE, FLEX_CAMERAS, adobe_profile, camera_profile
+
 ROOT = Path(__file__).resolve().parents[2]
 SCENES = ("9046", "2849", "2694", "5054")
 IMAGE_DIRS = ("nx", "y9", "y8", "adobe", "flex", "thumbs")
@@ -27,19 +30,35 @@ def sha256(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def copy_profiles(rows, source, destination):
-    destination.mkdir(parents=True)
+def read_profiles(rows, source):
+    texts = {}
     for row in rows:
         path = source / row["file"]
         if not path.is_file() or sha256(path) != row["sha256"]:
             raise ValueError(f"Missing or changed profile: {path}")
-        shutil.copyfile(path, destination / row["file"])
+        texts[row["recipe"]] = (row["file"], path.read_text(encoding="utf-8"))
+    return texts
+
+
+def write_packs(out, current, previous):
+    """Write the per-recipe downloads exactly as the release packs contain them."""
+    for camera in FLEX_CAMERAS:
+        folder = out / "profiles" / camera.slug
+        folder.mkdir(parents=True)
+        for recipe, (name, text) in current.items():
+            (folder / name).write_text(camera_profile(text, recipe, camera), encoding="utf-8")
+    folder = out / "profiles" / ADOBE.slug
+    folder.mkdir(parents=True)
+    for recipe, (name, text) in previous.items():
+        (folder / name).write_text(adobe_profile(text, recipe), encoding="utf-8")
 
 
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--images", type=Path, required=True, help="Image library made by make_previews.py")
-    p.add_argument("--profiles", type=Path, required=True, help="profiles/ folder of the current release ZIP")
+    p.add_argument(
+        "--profiles", type=Path, required=True, help="Reference (Nikon Z 8) profiles, e.g. profiles/ of the z8 pack"
+    )
     p.add_argument("--previous-profiles", type=Path, required=True, help="profiles/ folder of the 0.2.0 release ZIP")
     p.add_argument("--output", type=Path, default=ROOT / "website/dist")
     args = p.parse_args()
@@ -68,11 +87,9 @@ def main():
         target = out / "images" / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(args.images / name, target)
-    copy_profiles(current, args.profiles, out / "profiles/1.0")
-    copy_profiles(previous, args.previous_profiles, out / "profiles/0.2")
-    for row in downloads:
-        if not (out / row["xmp_1_0"]).is_file() or not (out / row["xmp_0_2"]).is_file():
-            raise ValueError(f"Download path does not exist: {row['recipe']}")
+    write_packs(out, read_profiles(current, args.profiles), read_profiles(previous, args.previous_profiles))
+    cameras = [dict(slug=c.slug, label=c.label, flex=True) for c in FLEX_CAMERAS]
+    cameras.append(dict(slug=ADOBE.slug, label=ADOBE.label, flex=False))
 
     def js(value):
         return json.dumps(value, ensure_ascii=False).replace("</", "<\\/")
@@ -84,8 +101,13 @@ def main():
         .replace("__PREVIOUS__", js(previous))
         .replace("__REFERENCES__", js(references))
         .replace("__DOWNLOADS__", js(downloads))
+        .replace("__CAMERAS__", js(cameras))
+        .replace("__VERSION__", __version__)
     )
-    if any(token in page for token in ("__DATA__", "__PREVIOUS__", "__REFERENCES__", "__DOWNLOADS__")):
+    if any(
+        token in page
+        for token in ("__DATA__", "__PREVIOUS__", "__REFERENCES__", "__DOWNLOADS__", "__CAMERAS__", "__VERSION__")
+    ):
         raise ValueError("Unreplaced placeholder in the template")
     (out / "index.html").write_text(page, encoding="utf-8")
     shutil.copyfile(ROOT / "website/payment.js", out / "payment.js")

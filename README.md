@@ -3,6 +3,7 @@
 [![Tests](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/actions/workflows/test.yml/badge.svg)](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/actions/workflows/test.yml)
 [![Latest release](https://img.shields.io/github/v/release/b-z/Nikon-Recipes-to-LR-Profiles)](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/b-z)
 
 [中文](docs/zh/README.md) · [日本語](docs/ja/README.md)
 
@@ -18,11 +19,11 @@ This project recreates the recipes in **Lightroom and Photoshop Camera Raw**. Ch
 
 ## Install
 
-1. Download `nikon-recipes-lr-profiles-1.0.0.zip` from the [latest release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) and unzip it. If you only want a few recipes, download them one by one from the [gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) instead.
+1. Download the ZIP for your camera from the [latest release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) and unzip it: `…-z8`, `-z9`, `-zf`, `-z6iii`, `-z5ii`, `-z50ii` or `-zr` for Nikon bodies with Camera Flexible Color, `…-adobe` for any other camera. If you only want a few recipes, download them one by one from the [gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) instead.
 2. In Lightroom or Camera Raw, open the Profile Browser, choose **Import Profiles** and select the `.xmp` files. Restart Lightroom if they do not appear.
 3. Open the **Nikon Recipes LR 1.0** group, pick a recipe and adjust its strength with **Amount**: 100% gives the colors of the original recipe; 30–50% gives a subtle result.
 
-The 1.0 profiles appear for Nikon Z 8 photos, because the Camera Flexible Color base they need is camera-specific; for other cameras, [version 0.2](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0) works with any body. More in [INSTALL](docs/en/INSTALL.md).
+The camera packs are built on Camera Flexible Color and come closest to NX Studio; the Adobe pack is built on Adobe Standard and works with any camera. Each pack only differs in the base profile and the camera it is restricted to. More in [INSTALL](docs/en/INSTALL.md).
 
 ## What a profile includes
 
@@ -33,7 +34,7 @@ A profile reproduces the **color and tone** of a recipe: its colors, contrast an
 The camera stores the name of the recipe in every NEF. This project's command-line tool reads it and writes a sidecar next to each RAW, so Lightroom Classic and Camera Raw open the photo with the matching profile already applied:
 
 ```sh
-nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/profiles /path/to/photos
+nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.1-z8/profiles /path/to/photos
 ```
 
 Run it before importing the photos. Setup and details: [Apply profiles automatically](docs/en/auto-apply.md).
@@ -60,16 +61,18 @@ Since 0.2 the mapping is a **smooth cubic spline** with 16 control points per ax
 Each recipe becomes one Adobe **enhanced profile**, a small `.xmp` file that Lightroom Classic, Lightroom and Camera Raw import directly, the same format Adobe uses for its own creative profiles. The important fields are:
 
 - `crs:PresetType="Look"`: the file is a profile that sits on top of a base profile.
-- `crs:CameraProfile`: the base profile, `Camera Flexible Color` in 1.0 (`Adobe Standard` in 0.2). Camera Raw renders the RAW with this base first.
+- `crs:CameraProfile`: the base profile, `Camera Flexible Color` in the camera packs, `Adobe Standard` in the Adobe pack. Camera Raw renders the RAW with this base first.
 - `crs:RGBTable` and `crs:Table_<ID>`: the 32×32×32 color table. Its 16-bit values are stored as offsets from "no change", compressed and written as text; the ID is a checksum of the table. Camera Raw applies it to every pixel after the base profile.
 - `crs:SupportsAmount="True"` with a maximum of 200% in the table header: this is what gives the profile its **Amount** slider, which blends between the base profile (0%) and the full recipe (100%) or beyond.
-- `crs:CameraModelRestriction="NIKON Z 8"`, `crs:Group`, `crs:Name` and `crs:UUID`: where and under which name the profile appears. Each release gets new UUIDs, so releases never overwrite each other.
+- `crs:CameraModelRestriction` (for example `Nikon Z f`), `crs:Group`, `crs:Name` and `crs:UUID`: where and under which name the profile appears. Each release gets new UUIDs, so releases never overwrite each other.
 
 A profile is the only place in Lightroom where a full 3D color table can live. A develop preset could only set sliders such as HSL and curves, which cannot express how a recipe moves every color, and it would overwrite your own slider settings. A camera profile (DCP) has to be made per camera and offers no Amount slider. With an enhanced profile, the recipe is one choice in the Profile Browser, its strength is adjustable, and every other slider remains yours.
 
-### Why 1.0 uses Camera Flexible Color
+### Why Camera Flexible Color
 
 Up to 0.2 the profiles were built on Adobe Standard. Camera Raw lowers the black level of Adobe Standard depending on the darkest pixels in each photo, so in daylight scenes without true black the shadows came out darker and more saturated than in NX Studio. Camera Flexible Color, Adobe's profile matching Nikon's Flexible Color Picture Control that the recipes are built on, keeps the sensor's black level. With it, 1.0 is closer to NX Studio than 0.2 for all 236 recipes on the chart, shadows in real photos come much closer to NX Studio, and the banding-risk score is lower for 235 of them. [Details](docs/Y9_FLEX_BASE.md).
+
+All of Adobe's Camera Matching profiles (Camera Standard, Camera Neutral and so on) keep the sensor's black level, so any of them would fix the shadows. Camera Flexible Color is the one that matches the starting point of the recipes: Imaging Recipes are made on top of Nikon's Flexible Color Picture Control. Starting from Adobe's match of it, the color table only has to describe what the recipe itself changes, which is the smallest and therefore smoothest correction. Adobe makes Camera Flexible Color for each Nikon body that has Flexible Color (Z 8, Z 9, Z f, Z6III, Z5II, Z50II, ZR) and matches it to Nikon's rendering on that body, so the same table carries over; each body gets its own pack because a profile can be restricted to only one camera model. On sample RAW files from a Z f and a Z6III, the camera packs came closer to NX Studio than the Adobe pack.
 
 ## Convert your own recipe
 
@@ -88,7 +91,10 @@ Contributions are welcome: calibrations for other Nikon bodies, banding reports 
 
 The project is maintained in spare time. If the profiles are useful to you, you can support it through [GitHub Sponsors](https://github.com/sponsors/b-z) or with WeChat. Sponsoring is entirely optional and does not affect how issues or pull requests are handled.
 
-<img src="docs/images/wechat-reward.jpg" alt="WeChat reward QR code" width="180">
+<table><tr>
+<td align="center" valign="middle"><a href="https://github.com/sponsors/b-z"><img src="https://img.shields.io/badge/GitHub%20Sponsors-%E2%9D%A4%20Sponsor-db61a2?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" height="36"></a></td>
+<td align="center" valign="middle"><img src="docs/images/wechat-reward.jpg" alt="WeChat reward QR code" width="180"></td>
+</tr></table>
 
 ## Credits and licenses
 

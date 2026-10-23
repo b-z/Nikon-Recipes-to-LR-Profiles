@@ -1,8 +1,8 @@
-# Nikon Recipes to LR Profiles 1.0.0
+## 安装与使用
 
 236 款尼康云创配方的 Lightroom / Camera Raw 配置文件。在线对比并单独下载：https://nikon-recipes-to-lr-profiles.pages.dev/
 
-## 安装
+### 安装
 
 1. 解压本压缩包。
 2. 打开配置文件浏览器，导入 `profiles/` 中的 `.xmp` 文件：
@@ -11,7 +11,7 @@
    - Camera Raw：「编辑」面板中打开配置文件浏览器，点 **…** 菜单 › **导入配置文件和预设**。
 3. 如果配置文件没有出现，请重启 Lightroom。不需要安装程序或单独的 DCP 文件。
 
-## 使用
+### 使用
 
 1. 在配置文件浏览器中，打开名称以 **Nikon Recipes LR 1.0** 开头的分组（每位配方作者一个分组），点击一款配方。
 2. 用配置文件名称下方的「数量」滑块调整强度：100% 为原版配方色彩，30–50% 效果较温和，最高可到 200%。
@@ -19,9 +19,9 @@
 
 想让新照片按拍摄时使用的配方自动套用，见 https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/blob/main/docs/zh/auto-apply.md
 
-如果某张照片看不到这些配置文件：1.0 的配置文件用于 Nikon Z 8 拍摄的照片，其他机身请使用 0.2 版本：https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0
+如果某张照片看不到这些配置文件，说明压缩包与拍摄这张照片的相机不匹配。请下载对应机型的压缩包；其他相机请使用 `adobe` 通用版：https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest
 
-## 注意事项
+### 注意事项
 
 - 平滑的天空和焦外仍可能出现断层，数量越高越明显。欢迎在 https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues 反馈。
 - `manifest.json` 列出了每个配置文件的作者和评分。

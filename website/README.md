@@ -6,7 +6,7 @@ The [online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) is a singl
 |---|---|---|
 | `website/gallery.template.html` | The page: layout, texts in English, Chinese and Japanese, and all scripts | Yes |
 | `website/payment.js` | WeChat reward QR code, shown only if its SHA-256 matches the value in the same file | Yes |
-| `website/data/` | NX Studio reference list, per-recipe download paths, the 0.2.0 manifest and the historical Y7 banding list | Yes |
+| `website/data/` | NX Studio reference list, NP3 links, the 0.2.0 manifest (Y8 tables of the Adobe pack) and the historical Y7 banding list | Yes |
 | `website/scripts/make_previews.py` | Makes the image library | Yes |
 | `website/scripts/build_site.py` | Assembles the deployable site | Yes |
 | Image library | About 4,000 JPEG previews (1280 px) | No |
@@ -18,7 +18,7 @@ The [online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) is a singl
 
 ```sh
 python website/scripts/make_previews.py --renders /path/to/renders --nx /path/to/nx-exports \
-  --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/profiles \
+  --profiles /path/to/nikon-recipes-lr-profiles-1.0.1-z8/profiles \
   --previous-profiles /path/to/nikon-recipes-lr-profiles-0.2.0/profiles --output /path/to/library
 ```
 
@@ -28,7 +28,7 @@ Existing images are kept, so the command can be rerun after adding recipes.
 
 ```sh
 python website/scripts/build_site.py --images /path/to/library/images \
-  --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/profiles \
+  --profiles /path/to/nikon-recipes-lr-profiles-1.0.1-z8/profiles \
   --previous-profiles /path/to/nikon-recipes-lr-profiles-0.2.0/profiles
 npx wrangler pages deploy website/dist --project-name nikon-recipes-to-lr-profiles --branch main --commit-dirty=true
 ```
@@ -41,7 +41,7 @@ npx wrangler pages deploy website/dist --project-name nikon-recipes-to-lr-profil
 - The download buttons open a short explanation first (which release is for which camera, and that single recipes can be downloaded) before linking to the release on GitHub.
 - The recipe list can be shown by folder (the folder structure of the NP3 archive, the default), by name, by difference from NX Studio, by banding risk or with favorites first. Search also matches creators and folders. The default recipe is KG200P1.
 - Image A and image B can each show NX Studio, the Y9 (release 1.0) or Y8 (release 0.2) profile, or Adobe Standard / Camera Flexible Color without a recipe. Blink mode switches every second and pauses when an image is clicked; the slider shows A on the left and B on the right. Arrow keys select the previous or next recipe in the visible list.
-- **Download this recipe** downloads the release profile of the version shown as image B (Y9 unless Y8 is selected). The NP3 button links to the credited upstream archive; original NP3 files are not hosted here.
+- **Download this recipe** opens a dialog to choose the camera and downloads the profile from that camera's pack (`profiles/<camera>/`), byte-identical to the release ZIP; the choice is remembered and also used by the full download dialog, which links to the matching release asset. The NP3 button links to the credited upstream archive; original NP3 files are not hosted here.
 - Favorites, language, list order and comparison settings are stored only in the browser's local storage.
 - The Sponsor dialog shows GitHub Sponsors and the WeChat QR code from `payment.js`.
 

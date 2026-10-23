@@ -1,5 +1,7 @@
 # Nikon Recipes to LR Profiles
 
+[![Latest release](https://img.shields.io/github/v/release/b-z/Nikon-Recipes-to-LR-Profiles)](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/b-z)
+
 [English](../../README.md) · [日本語](../ja/README.md)
 
 ### 👉 [打开在线对比图库](https://nikon-recipes-to-lr-profiles.pages.dev/)：236 款配方与 NX Studio 逐一对比，喜欢哪款就单独下载哪款
@@ -14,11 +16,11 @@
 
 ## 安装
 
-1. 从[最新 Release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) 下载 `nikon-recipes-lr-profiles-1.0.0.zip` 并解压。只想要其中几款的话，也可以在[在线图库](https://nikon-recipes-to-lr-profiles.pages.dev/)里逐款单独下载。
+1. 从[最新 Release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) 下载与你相机对应的压缩包并解压：有「相机 Flexible Color」的尼康机身选 `…-z8`、`-z9`、`-zf`、`-z6iii`、`-z5ii`、`-z50ii` 或 `-zr`，其他相机选 `…-adobe`。
 2. 在 Lightroom 或 Camera Raw 的配置文件浏览器中选择「导入配置文件」，选中 `.xmp` 文件。如果没有出现，重启 Lightroom。
 3. 打开 **Nikon Recipes LR 1.0** 分组，选择配方并调整强度（「数量」滑块）；100% 为原版配方色彩；30–50% 效果较温和。
 
-1.0 的配置文件需要「相机 Flexible Color」这一机型专属的基础配置文件，因此只在 Nikon Z 8 的照片上显示；其他机身可以使用适用于任何相机的 [0.2 版本](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0)。详见[安装说明](INSTALL.md)。
+各机型的压缩包以「相机 Flexible Color」为基础，最接近 NX Studio；Adobe 通用版以 Adobe Standard 为基础，适用于任何相机。各压缩包只在基础配置文件和限定的机型上有区别。详见[安装说明](INSTALL.md)。
 
 ## 配置文件包含什么
 
@@ -29,7 +31,7 @@
 相机会把拍摄时使用的配方名称记录在每个 NEF 里。本项目的命令行工具可以读出这个名称，并在每个 RAW 旁边写一个附属文件（sidecar），让 Lightroom Classic 和 Camera Raw 打开照片时直接套用对应的配置文件：
 
 ```sh
-nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/profiles /path/to/photos
+nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.1-z8/profiles /path/to/photos
 ```
 
 请在导入照片之前运行。安装方法和细节见[自动套用配置文件](auto-apply.md)。
@@ -56,16 +58,18 @@ nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/pr
 每款配方对应一个 Adobe **增强型配置文件**：一个小小的 `.xmp` 文件，Lightroom Classic、Lightroom 和 Camera Raw 都能直接导入，Adobe 自己的创意配置文件用的也是这种格式。其中关键的字段是：
 
 - `crs:PresetType="Look"`：表示这是叠加在基础配置文件之上的配置文件。
-- `crs:CameraProfile`：基础配置文件，1.0 为 `Camera Flexible Color`（0.2 为 `Adobe Standard`）。Camera Raw 先用它渲染 RAW。
+- `crs:CameraProfile`：基础配置文件，各机型的压缩包为 `Camera Flexible Color`，Adobe 通用版为 `Adobe Standard`。Camera Raw 先用它渲染 RAW。
 - `crs:RGBTable` 和 `crs:Table_<ID>`：32×32×32 的颜色表。表中的 16 位数值以相对「不改变」的偏移量存储，压缩后写成文本；ID 是这张表的校验值。Camera Raw 在基础配置文件之后把它应用到每个像素上。
 - `crs:SupportsAmount="True"`，加上表头中 200% 的上限：配置文件因此有了**数量**滑块，在基础配置文件（0%）和完整配方（100%）乃至更强之间混合。
-- `crs:CameraModelRestriction="NIKON Z 8"`、`crs:Group`、`crs:Name` 和 `crs:UUID`：决定配置文件在哪里、以什么名称出现。每个版本都使用新的 UUID，不同版本之间不会互相覆盖。
+- `crs:CameraModelRestriction`（例如 `Nikon Z f`）、`crs:Group`、`crs:Name` 和 `crs:UUID`：决定配置文件在哪里、以什么名称出现。每个版本都使用新的 UUID，不同版本之间不会互相覆盖。
 
 在 Lightroom 中，只有配置文件能容纳完整的三维颜色表。修改预设只能设置 HSL、曲线等滑块，表达不了配方对每一种颜色的改变，还会覆盖你自己的滑块设置；相机配置文件（DCP）则必须为每台相机单独制作，也没有数量滑块。用增强型配置文件，配方就是配置文件浏览器里的一个选项，强度可调，其他滑块仍完全由你掌握。
 
-### 为什么 1.0 改用相机 Flexible Color
+### 为什么用「相机 Flexible Color」
 
 0.2 及以前的配置文件以 Adobe Standard 为基础。Camera Raw 会根据每张照片最暗的像素调低 Adobe Standard 的黑电平，因此在没有纯黑的日光场景里，阴影会比 NX Studio 更暗、颜色更深。「相机 Flexible Color」是 Adobe 对尼康 Flexible Color 优化校准（云创配方正是以它为基础）的匹配，它保留传感器的黑电平。换用它之后，1.0 在色卡上 236 款全部比 0.2 更接近 NX Studio，实拍照片的阴影也明显更接近 NX Studio，其中 235 款的断层风险分也更低。[详细说明（英文）](../Y9_FLEX_BASE.md)。
+
+Adobe 的所有相机匹配配置文件（相机标准、相机中性等）都保留传感器的黑电平，用哪一个都能解决阴影问题。选「相机 Flexible Color」，是因为它正是配方的起点：云创配方是在尼康 Flexible Color 优化校准的基础上制作的。从 Adobe 对它的匹配出发，颜色表只需要描述配方本身的改动，这是最小、因此也最平滑的修正。Adobe 为每台具备 Flexible Color 的尼康机身（Z 8、Z 9、Z f、Z6III、Z5II、Z50II、ZR）分别制作了「相机 Flexible Color」，并与尼康在该机身上的渲染匹配，所以同一张颜色表可以通用；之所以每个机型一个压缩包，是因为一个配置文件只能限定一个机型。在 Z f 和 Z6III 的样张 RAW 上，各机型版本都比 Adobe 通用版更接近 NX Studio。
 
 ## 转换你自己的配方
 
@@ -84,7 +88,10 @@ nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/pr
 
 这个项目是在业余时间维护的。如果这些配置文件对你有帮助，欢迎通过 [GitHub Sponsors](https://github.com/sponsors/b-z) 或微信赞赏支持。赞助完全自愿，不会影响 Issue 和 Pull Request 的处理。
 
-<img src="../images/wechat-reward.jpg" alt="微信赞赏码" width="180">
+<table><tr>
+<td align="center" valign="middle"><a href="https://github.com/sponsors/b-z"><img src="https://img.shields.io/badge/GitHub%20Sponsors-%E2%9D%A4%20Sponsor-db61a2?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" height="36"></a></td>
+<td align="center" valign="middle"><img src="../images/wechat-reward.jpg" alt="微信赞赏码" width="180"></td>
+</tr></table>
 
 ## 署名与许可
 

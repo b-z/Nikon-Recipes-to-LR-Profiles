@@ -51,7 +51,7 @@ nikon-recipes-lr audit MyRecipe.xmp
 - `audit` 给出断层风险分（[分数说明](metrics.md)）。
 - 如果想让 [`sidecars`](auto-apply.md) 自动套用，请把相机上显示的优化校准名称作为 `--name`。
 
-这样得到的配置文件与 1.0 版本相同，以「相机 Flexible Color」为基础。如果想要像 0.2 版本那样以 Adobe Standard 为基础、适用于所有相机的配置文件，请改用 Adobe Standard 的测量数据，并去掉机型限制：
+这样得到的配置文件与 Release 中各机型的版本相同，以「相机 Flexible Color」为基础，限定 Z 8（其他具备 Flexible Color 的机身可修改 `--camera`，例如 `"Nikon Z f"`）。如果想要像 Adobe 通用版那样以 Adobe Standard 为基础、适用于所有相机的配置文件，请改用 Adobe Standard 的测量数据，并去掉机型限制：
 
 ```sh
 nikon-recipes-lr fit --adobe-samples calibration/z8/adobe-standard.npy --camera "" \

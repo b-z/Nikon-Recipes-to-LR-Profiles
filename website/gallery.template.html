@@ -82,6 +82,8 @@ dialog.modal::backdrop { background: rgba(0, 0, 0, .6); }
 .way { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
 .qr, .qr-wait { width: 176px; height: 176px; border-radius: 8px; }
 .qr { background: #fff; padding: 6px; }
+.camera-pick { display: grid; gap: 6px; margin: 4px 0 14px; font-size: 13px; color: var(--muted); }
+.camera-pick select { font-size: 15px; padding: 9px 10px; }
 .qr-wait { display: grid; place-items: center; border: 1px dashed var(--line); }
 
 /* Browser */
@@ -249,10 +251,23 @@ footer.site p { margin: 0 0 8px; }
     <div class="modal-top"><button type="button" class="modal-close" data-close data-i18n-aria="close">×</button></div>
     <h2 id="download-title" data-i18n="dlTitle">Download the Lightroom profiles</h2>
     <p data-i18n="dlText1"></p>
+    <p data-i18n="dlText2"></p>
+    <label class="camera-pick"><span data-i18n="cameraLabel">Your camera</span><select class="camera-select" id="dl-camera"></select></label>
     <p data-i18n-html="dlText3"></p>
     <div class="dialog-actions">
-      <a class="button" id="dl-old" href="#" target="_blank" rel="noopener" data-i18n="dlOld">0.2 for other cameras</a>
-      <a class="button primary" id="dl-latest" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span data-i18n="dlLatest">Download 1.0 (Nikon Z 8)</span></a>
+      <a class="button primary" id="dl-zip" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span data-i18n="dlZip">Download ZIP</span></a>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="recipe-download" class="modal" aria-labelledby="rd-title">
+  <div class="modal-inner">
+    <div class="modal-top"><button type="button" class="modal-close" data-close data-i18n-aria="close">×</button></div>
+    <h2 id="rd-title"></h2>
+    <p data-i18n="rdText"></p>
+    <label class="camera-pick"><span data-i18n="cameraLabel">Your camera</span><select class="camera-select" id="rd-camera"></select></label>
+    <div class="dialog-actions">
+      <a class="button primary" id="rd-xmp" href="#" download><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span data-i18n="rdDownload">Download XMP</span></a>
     </div>
   </div>
 </dialog>
@@ -309,7 +324,7 @@ footer.site p { margin: 0 0 8px; }
     <p class="author" id="recipe-author"></p>
     <div class="scores" id="scores"></div>
     <div class="actions">
-      <a id="download-xmp" class="button primary" download></a>
+      <button type="button" id="download-xmp" class="button primary"></button>
       <a id="download-np3" class="button" target="_blank" rel="noopener"></a>
     </div>
     <div class="controls">
@@ -328,14 +343,14 @@ footer.site p { margin: 0 0 8px; }
 </div>
 
 <script>
-// data: the current release manifest (one row per recipe); previous: scores of the 0.2 profiles.
-const data = __DATA__, references = __REFERENCES__, downloads = __DOWNLOADS__, previous = __PREVIOUS__;
+// data: the current release manifest (one row per recipe); previous: scores of the Y8 (Adobe Standard) profiles.
+// CAMERAS: one download pack per camera; the last one is the universal Adobe pack.
+const data = __DATA__, references = __REFERENCES__, downloads = __DOWNLOADS__, previous = __PREVIOUS__, CAMERAS = __CAMERAS__, VERSION = '__VERSION__';
 
 const REPO = 'https://github.com/b-z/Nikon-Recipes-to-LR-Profiles';
 const LINKS = {
   github: REPO,
   releases: REPO + '/releases/latest',
-  releaseOld: REPO + '/releases/tag/v0.2.0',
   sponsor: 'https://github.com/sponsors/b-z',
   docs: { en: REPO + '#readme', zh: REPO + '/blob/main/docs/zh/README.md', ja: REPO + '/blob/main/docs/ja/README.md' },
   metrics: { en: REPO + '/blob/main/docs/en/metrics.md', zh: REPO + '/blob/main/docs/zh/metrics.md', ja: REPO + '/blob/main/docs/ja/metrics.md' },
@@ -365,9 +380,9 @@ const STR = {
     howTitle: 'How the comparison works', how1: 'Image A and image B can each show NX Studio, either version of the Lightroom profile, or the base profile without a recipe.', how2: 'Blink switches between A and B every second (click an image to pause); the slider shows A on the left and B on the right.', how3: 'All profiles are shown at 100% Amount. The previews are calculated from Camera Raw renders of the original RAW files.',
     limitsTitle: 'Good to know', limits2: 'Banding can still appear in smooth skies or bokeh. Please report cases on GitHub.',
     dlTitle: 'Download the Lightroom profiles',
-    dlText1: 'One ZIP file (about 45 MB) holds the profiles of all 236 recipes, for Lightroom Classic, Lightroom and Photoshop Camera Raw. Unzip it and import the .xmp files in the Profile Browser; the README inside explains each step. The files are hosted on GitHub.',
+    dlText1: 'Each ZIP file (about 45 MB) holds the profiles of all 236 recipes, for Lightroom Classic, Lightroom and Photoshop Camera Raw. Unzip it and import the .xmp files in the Profile Browser; the README inside explains each step. The files are hosted on GitHub.',
+    dlText2: 'Choose the camera you shoot with. The versions for Nikon bodies with Camera Flexible Color (Z 8, Z 9, Z f, Z6III, Z5II, Z50II, ZR) are built on it (Y9) and come closest to NX Studio. For any other camera, choose the Adobe Standard version (Y8).', cameraLabel: 'Your camera', cameraAdobe: 'Other cameras · Adobe Standard (Y8)', dlZip: 'Download ZIP', rdTitle: 'Download {name}', rdText: 'The profile file depends on the camera. Choose the camera you shoot with; for a camera that is not listed, choose the Adobe Standard version.', rdDownload: 'Download XMP',
     dlText3: 'Only want some of them? Select a recipe in the list on this site and use <b>Download this recipe</b>.',
-    dlLatest: 'Download Y9 (latest)', dlOld: 'Previous version Y8',
     close: 'Close', searchPlaceholder: 'Search recipe, author or folder', viewLabel: 'Order of the recipe list', menu: 'Menu',
     viewName: 'By name', viewFolder: 'By folder', viewFit: 'By difference from NX', viewBand: 'By banding risk', viewFavorites: 'Favorites first',
     count: '{n} of {total} recipes', noMatch: 'No matches. Try another recipe, author or folder name.',
@@ -378,7 +393,7 @@ const STR = {
     de0: 'near-identical', de1: 'very close', de2: 'slight difference',
     bandLabel: 'Banding risk', bandHelp: 'How abruptly the color table changes direction (face-jump p99). Lower means smoother gradients; it is not a guarantee either way.',
     band0: 'low', band1: 'medium', band2: 'high',
-    downloadXmp: 'Download this recipe · {v}', downloadNp3: 'This recipe\'s NP3', measurements: 'Measurements',
+    downloadXmp: 'Download this recipe', downloadNp3: 'This recipe\'s NP3', measurements: 'Measurements',
     srcNx: 'NX Studio (original recipe)', srcAdobe: 'Adobe Standard (no recipe)', srcFlex: 'Camera Flexible Color (no recipe)', srcVersion: 'Lightroom profile {v}',
     ver10: 'Y9 · latest', ver02: 'Y8 · previous',
     scene9046: 'Landscape test 1', scene2849: 'Landscape test 2', scene2694: 'Banding test 1', scene2694note: 'out-of-focus transitions', scene5054: 'Banding test 2', scene5054note: 'smooth sky',
@@ -401,9 +416,9 @@ const STR = {
     howTitle: '对比怎么用', how1: '图像 A 和图像 B 可以分别显示 NX Studio、任一版本的 Lightroom 配置文件，或不套配方的基础配置文件。', how2: '闪烁模式每秒在 A、B 之间切换一次（点击图片可暂停）；滑块模式左边是 A、右边是 B。', how3: '所有配置文件都按 100% 数量显示，预览图由 Camera Raw 渲染原始 RAW 文件计算得到。',
     limitsTitle: '注意事项', limits2: '平滑的天空或焦外仍可能出现断层，欢迎在 GitHub 上反馈。',
     dlTitle: '下载 Lightroom 配置文件',
-    dlText1: '一个压缩包（约 45 MB）包含全部 236 款配方的配置文件，适用于 Lightroom Classic、Lightroom 和 Photoshop Camera Raw。解压后在配置文件浏览器中导入 .xmp 文件即可，压缩包里的 README 写有详细步骤。文件托管在 GitHub 上。',
+    dlText1: '每个压缩包（约 45 MB）包含全部 236 款配方的配置文件，适用于 Lightroom Classic、Lightroom 和 Photoshop Camera Raw。解压后在配置文件浏览器中导入 .xmp 文件即可，压缩包里的 README 写有详细步骤。文件托管在 GitHub 上。',
+    dlText2: '请选择你使用的相机。有「相机 Flexible Color」的尼康机身（Z 8、Z 9、Z f、Z6III、Z5II、Z50II、ZR）的版本以它为基础（Y9），最接近 NX Studio；其他相机请选择 Adobe Standard 通用版（Y8）。', cameraLabel: '你的相机', cameraAdobe: '其他相机 · Adobe Standard 通用版（Y8）', dlZip: '下载压缩包', rdTitle: '下载「{name}」', rdText: '不同相机的配置文件不同，请选择你使用的相机；列表中没有的相机请选择 Adobe Standard 通用版。', rdDownload: '下载 XMP',
     dlText3: '只想要其中一部分的话，在网站的列表中选中配方后点击<b>「下载本配方」</b>。',
-    dlLatest: '下载 Y9（最新）', dlOld: '上一版本 Y8',
     close: '关闭', searchPlaceholder: '搜索配方、作者或文件夹', viewLabel: '配方列表排序方式', menu: '菜单',
     viewName: '按名称', viewFolder: '按文件夹', viewFit: '按与原版的色差', viewBand: '按断层风险', viewFavorites: '收藏优先',
     count: '{total} 款中的 {n} 款', noMatch: '没有匹配结果，换个配方名、作者或文件夹试试。',
@@ -414,7 +429,7 @@ const STR = {
     de0: '几乎一致', de1: '很接近', de2: '略有差异',
     bandLabel: '断层风险', bandHelp: '颜色表转折的剧烈程度（face-jump p99）。越低渐变越平滑，但不能作为有无断层的保证。',
     band0: '低', band1: '中', band2: '高',
-    downloadXmp: '下载本配方 · {v}', downloadNp3: '本配方的 NP3', measurements: '测量数据',
+    downloadXmp: '下载本配方', downloadNp3: '本配方的 NP3', measurements: '测量数据',
     srcNx: 'NX Studio（原版配方）', srcAdobe: 'Adobe Standard（不套配方）', srcFlex: '相机 Flexible Color（不套配方）', srcVersion: 'Lightroom 配置文件 {v}',
     ver10: 'Y9 · 最新', ver02: 'Y8 · 上一版本',
     scene9046: '风景测试 1', scene2849: '风景测试 2', scene2694: '断层测试 1', scene2694note: '焦外过渡', scene5054: '断层测试 2', scene5054note: '平滑天空',
@@ -437,9 +452,9 @@ const STR = {
     howTitle: '比較の使い方', how1: '画像 A と画像 B には、それぞれ NX Studio、どちらかのバージョンの Lightroom プロファイル、またはレシピなしのベースプロファイルを表示できます。', how2: '点滅は 1 秒ごとに A と B を切り替えます（画像をクリックで一時停止）。スライダーでは左が A、右が B です。', how3: 'すべて適用量 100% で表示しています。プレビューは元の RAW ファイルを Camera Raw で現像した結果から計算しています。',
     limitsTitle: '注意点', limits2: '滑らかな空やボケで段差が出ることがあります。GitHub で報告をお願いします。',
     dlTitle: 'Lightroom プロファイルのダウンロード',
-    dlText1: '1 つの ZIP ファイル（約 45 MB）に 236 種類すべてのレシピのプロファイルが入っています。Lightroom Classic、Lightroom、Photoshop Camera Raw で使えます。展開してプロファイルブラウザーで .xmp ファイルを読み込んでください。手順は ZIP 内の README にあります。ファイルは GitHub で配布しています。',
+    dlText1: '各 ZIP ファイル（約 45 MB）に 236 種類すべてのレシピのプロファイルが入っています。Lightroom Classic、Lightroom、Photoshop Camera Raw で使えます。展開してプロファイルブラウザーで .xmp ファイルを読み込んでください。手順は ZIP 内の README にあります。ファイルは GitHub で配布しています。',
+    dlText2: 'お使いのカメラを選んでください。Camera Flexible Color のあるニコン機（Z 8、Z 9、Z f、Z6III、Z5II、Z50II、ZR）用はそれをベースにしており（Y9）、NX Studio に最も近くなります。その他のカメラでは Adobe Standard 汎用版（Y8）を選んでください。', cameraLabel: 'お使いのカメラ', cameraAdobe: 'その他のカメラ · Adobe Standard 汎用版（Y8）', dlZip: 'ZIP をダウンロード', rdTitle: '「{name}」をダウンロード', rdText: 'プロファイルのファイルはカメラによって異なります。お使いのカメラを選んでください。一覧にないカメラでは Adobe Standard 汎用版を選んでください。', rdDownload: 'XMP をダウンロード',
     dlText3: '一部だけ欲しい場合は、サイトの一覧でレシピを選んで<b>「このレシピをダウンロード」</b>を押してください。',
-    dlLatest: 'Y9 をダウンロード（最新）', dlOld: '前のバージョン Y8',
     close: '閉じる', searchPlaceholder: 'レシピ名・作者・フォルダで検索', viewLabel: 'レシピ一覧の並べ方', menu: 'メニュー',
     viewName: '名前順', viewFolder: 'フォルダ別', viewFit: 'NX との色差順', viewBand: '段差リスク順', viewFavorites: 'お気に入り優先',
     count: '{total} 件中 {n} 件', noMatch: '一致するものがありません。別のレシピ名・作者・フォルダ名で試してください。',
@@ -450,7 +465,7 @@ const STR = {
     de0: 'ほぼ同じ', de1: 'とても近い', de2: 'わずかな差',
     bandLabel: '段差リスク', bandHelp: 'カラーテーブルが急に向きを変える度合い（face-jump p99）。低いほど階調が滑らかですが、段差の有無を保証するものではありません。',
     band0: '低', band1: '中', band2: '高',
-    downloadXmp: 'このレシピをダウンロード · {v}', downloadNp3: 'このレシピの NP3', measurements: '測定データ',
+    downloadXmp: 'このレシピをダウンロード', downloadNp3: 'このレシピの NP3', measurements: '測定データ',
     srcNx: 'NX Studio（元のレシピ）', srcAdobe: 'Adobe Standard（レシピなし）', srcFlex: 'Camera Flexible Color（レシピなし）', srcVersion: 'Lightroom プロファイル {v}',
     ver10: 'Y9 · 最新', ver02: 'Y8 · 前の版',
     scene9046: '風景テスト 1', scene2849: '風景テスト 2', scene2694: '段差テスト 1', scene2694note: 'ボケの階調', scene5054: '段差テスト 2', scene5054note: '滑らかな空',
@@ -483,8 +498,8 @@ const t = (key, vars = {}) => (STR[lang][key] ?? STR.en[key] ?? key).replace(/\{
 const byRecipe = rows => new Map(rows.map(r => [r.recipe, r]));
 // Image folders keep the internal method names: y9 is release 1.0, y8 is release 0.2.
 const VERSIONS = [
-  { id: 'y9', label: 'ver10', short: 'Y9', metrics: byRecipe(data), xmp: 'xmp_1_0' },
-  { id: 'y8', label: 'ver02', short: 'Y8', metrics: byRecipe(previous), xmp: 'xmp_0_2' },
+  { id: 'y9', label: 'ver10', short: 'Y9', metrics: byRecipe(data) },
+  { id: 'y8', label: 'ver02', short: 'Y8', metrics: byRecipe(previous) },
 ];
 const SCENES = ['9046', '2849', '2694', '5054'];
 const files = byRecipe(downloads);
@@ -545,10 +560,11 @@ function applyStatic() {
   for (const node of document.querySelectorAll('[data-i18n-html]')) node.innerHTML = t(node.dataset.i18nHtml);
   for (const node of document.querySelectorAll('[data-i18n-placeholder]')) node.placeholder = t(node.dataset.i18nPlaceholder);
   for (const node of document.querySelectorAll('[data-i18n-aria]')) node.setAttribute('aria-label', t(node.dataset.i18nAria));
-  for (const [id, href] of [['#dl-latest', LINKS.releases], ['#dl-old', LINKS.releaseOld], ['#nav-github', LINKS.github], ['#cta-github', LINKS.github], ['#sponsor-github', LINKS.sponsor], ['#nav-docs', LINKS.docs[lang]]]) $(id).href = href;
+  for (const [id, href] of [['#nav-github', LINKS.github], ['#cta-github', LINKS.github], ['#sponsor-github', LINKS.sponsor], ['#nav-docs', LINKS.docs[lang]]]) $(id).href = href;
   $('#prev').setAttribute('aria-label', t('prev')); $('#prev').title = t('prev');
   $('#next').setAttribute('aria-label', t('next')); $('#next').title = t('next');
   fillSources();
+  if (typeof fillCameraSelects === 'function') fillCameraSelects();
 }
 function sourceOptions() {
   const opts = [['nx', t('srcNx')]];
@@ -676,9 +692,8 @@ function show() {
     scoreChip(t('deLabel'), m.fit.mean, DE_LEVELS, t('deHelp')),
     scoreChip(t('bandLabel'), m.banding.face_jump_p99, BAND_LEVELS, t('bandHelp')),
     el('a', { class: 'subtle-link', href: LINKS.recipePage(r.recipe), target: '_blank', rel: 'noopener' }, t('measurements'), svgIcon(ICON_EXTERNAL)));
-  const xmp = $('#download-xmp'), path = f[v.xmp] || f.xmp;
-  xmp.href = path; xmp.download = path.split('/').pop();
-  xmp.replaceChildren(svgIcon(ICON_DOWNLOAD), t('downloadXmp', { v: v.short }));
+  $('#download-xmp').replaceChildren(svgIcon(ICON_DOWNLOAD), t('downloadXmp'));
+  updateDownloadLinks();
   const np3 = $('#download-np3');
   np3.href = f.np3;
   np3.replaceChildren(svgIcon(ICON_DOWNLOAD), t('downloadNp3'));
@@ -750,6 +765,24 @@ const help = $('#help'), sponsor = $('#sponsor'), downloadDialog = $('#download'
 help.addEventListener('close', () => store.set('nrlr-welcome-seen', true));
 $('#nav-help').onclick = () => openDialog(help);
 for (const id of ['#nav-download', '#cta-download', '#help-download']) $(id).onclick = () => { help.close(); openDialog(downloadDialog); };
+// Downloads differ by camera: one pack per Camera Flexible Color body, plus the Adobe Standard pack for any other camera.
+function camera() { const slug = store.get('nrlr-camera', CAMERAS[0].slug); return CAMERAS.find(c => c.slug === slug) || CAMERAS[0]; }
+function fillCameraSelects() {
+  for (const sel of document.querySelectorAll('select.camera-select')) {
+    sel.replaceChildren(...CAMERAS.map(c => el('option', { value: c.slug, text: c.flex ? c.label : t('cameraAdobe') })));
+    sel.value = camera().slug;
+    sel.onchange = () => { store.set('nrlr-camera', sel.value); fillCameraSelects(); updateDownloadLinks(); };
+  }
+}
+function updateDownloadLinks() {
+  const c = camera(), row = data.find(x => x.recipe === selected) || data[0];
+  $('#dl-zip').href = REPO + '/releases/download/v' + VERSION + '/nikon-recipes-lr-profiles-' + VERSION + '-' + c.slug + '.zip';
+  const rd = $('#rd-xmp');
+  rd.href = 'profiles/' + c.slug + '/' + row.file;
+  rd.download = row.file;
+  $('#rd-title').textContent = t('rdTitle', { name: row.display });
+}
+$('#download-xmp').onclick = () => { updateDownloadLinks(); openDialog($('#recipe-download')); };
 // The WeChat code is loaded on demand from payment.js and shown only if its SHA-256 matches, so a swapped image is never displayed.
 let paymentPromise = null;
 function loadPaymentQr() {

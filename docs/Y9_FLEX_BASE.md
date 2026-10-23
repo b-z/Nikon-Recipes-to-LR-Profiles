@@ -35,7 +35,7 @@ On twelve independent photographs (31 photo–recipe combinations, per-pixel tab
 
 ## Costs
 
-- Camera Flexible Color exists only for Nikon bodies that support Flexible Color, and the calibration is specific to the Z 8, so 1.0 profiles are restricted to the **Nikon Z 8**. Release 0.2 (Adobe Standard) remains the choice for other cameras.
+- Camera Flexible Color exists only for Nikon bodies that support Flexible Color, and a profile can be restricted to one camera model. Since 1.0.1 the release therefore has one pack per such body (Z 8, Z 9, Z f, Z6III, Z5II, Z50II, ZR) with the same tables, and an Adobe pack (the Y8 tables on Adobe Standard) for every other camera. On sample RAW files from a Z f and a Z6III, the camera packs were closer to NX Studio than the Adobe pack (center of the frame, mean ΔE 1.45 vs 1.87 and 2.64 vs 2.75 for KG200P1).
 - At 0% Amount the photo shows Camera Flexible Color rather than Adobe Standard.
 - Slightly more chart patches clip in the highlights on this base (2.2% instead of 0.9%); they are left out of the fit as before.
 

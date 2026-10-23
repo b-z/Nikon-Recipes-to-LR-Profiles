@@ -1,5 +1,7 @@
 # Nikon Recipes to LR Profiles
 
+[![Latest release](https://img.shields.io/github/v/release/b-z/Nikon-Recipes-to-LR-Profiles)](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/b-z)
+
 [English](../../README.md) · [中文](../zh/README.md)
 
 ### 👉 [オンラインギャラリーを開く](https://nikon-recipes-to-lr-profiles.pages.dev/)：236 種類のレシピを NX Studio と比べて、気に入ったものだけダウンロード
@@ -14,11 +16,11 @@
 
 ## インストール
 
-1. [最新のリリース](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest)から `nikon-recipes-lr-profiles-1.0.0.zip` をダウンロードして展開します。いくつかだけ欲しい場合は、[オンラインギャラリー](https://nikon-recipes-to-lr-profiles.pages.dev/)から 1 つずつダウンロードすることもできます。
+1. [最新のリリース](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest)から、お使いのカメラ用の ZIP をダウンロードして展開します。Camera Flexible Color のあるニコン機は `…-z8`、`-z9`、`-zf`、`-z6iii`、`-z5ii`、`-z50ii`、`-zr`、その他のカメラは `…-adobe` です。
 2. Lightroom または Camera Raw のプロファイルブラウザーで「プロファイルを読み込み」を選び、`.xmp` ファイルを選択します。表示されない場合は Lightroom を再起動してください。
 3. **Nikon Recipes LR 1.0** グループを開き、レシピを選んで強さ（適用量）を調整します。100% で元のレシピの色になり、30〜50% で控えめな効果になります。
 
-1.0 のプロファイルは機種ごとに用意される Camera Flexible Color をベースにしているため、Nikon Z 8 の写真に表示されます。他の機種では、どのカメラでも使える[バージョン 0.2](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0) を使ってください。詳しくは[インストールガイド](INSTALL.md)を参照してください。
+機種別のパックは Camera Flexible Color をベースにしており、NX Studio に最も近くなります。Adobe パックは Adobe Standard ベースで、どのカメラでも使えます。パックの違いはベースプロファイルと対象機種だけです。詳しくは[インストールガイド](INSTALL.md)を参照してください。
 
 ## プロファイルに含まれるもの
 
@@ -29,7 +31,7 @@
 カメラは撮影時に使ったレシピの名前を NEF ごとに記録しています。このプロジェクトのコマンドラインツールはその名前を読み取り、RAW の横にサイドカーファイルを書き出します。Lightroom Classic や Camera Raw で開くと、対応するプロファイルがすでに適用された状態になります。
 
 ```sh
-nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/profiles /path/to/photos
+nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.1-z8/profiles /path/to/photos
 ```
 
 写真を読み込む前に実行してください。導入方法と詳細は[プロファイルの自動適用](auto-apply.md)を参照してください。
@@ -56,16 +58,18 @@ nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.0/pr
 レシピごとに、Adobe の**拡張プロファイル**を 1 つ作ります。Lightroom Classic、Lightroom、Camera Raw がそのまま読み込める小さな `.xmp` ファイルで、Adobe 自身のクリエイティブプロファイルと同じ形式です。主なフィールドは次のとおりです。
 
 - `crs:PresetType="Look"`：ベースプロファイルの上に重ねるプロファイルであることを示します。
-- `crs:CameraProfile`：ベースプロファイル。1.0 は `Camera Flexible Color`（0.2 は `Adobe Standard`）です。Camera Raw はまずこれで RAW を現像します。
+- `crs:CameraProfile`：ベースプロファイル。機種別のパックは `Camera Flexible Color`、Adobe パックは `Adobe Standard` です。Camera Raw はまずこれで RAW を現像します。
 - `crs:RGBTable` と `crs:Table_<ID>`：32×32×32 のカラーテーブル。16 ビットの値を「変化なし」からの差として保存し、圧縮してテキストにしています。ID はテーブルのチェックサムです。Camera Raw はベースプロファイルの後に、これをすべてのピクセルに適用します。
 - `crs:SupportsAmount="True"` と、テーブルのヘッダーにある 200% の上限：これによってプロファイルに**適用量**スライダーが付き、ベースプロファイル（0%）から完全なレシピ（100%）、さらにその先までを混ぜ合わせます。
-- `crs:CameraModelRestriction="NIKON Z 8"`、`crs:Group`、`crs:Name`、`crs:UUID`：プロファイルがどこに、どの名前で表示されるかを決めます。リリースごとに UUID を新しくしているので、リリース同士が上書きし合うことはありません。
+- `crs:CameraModelRestriction`（例：`Nikon Z f`）、`crs:Group`、`crs:Name`、`crs:UUID`：プロファイルがどこに、どの名前で表示されるかを決めます。リリースごとに UUID を新しくしているので、リリース同士が上書きし合うことはありません。
 
 Lightroom で完全な 3D カラーテーブルを持てるのはプロファイルだけです。現像プリセットは HSL やトーンカーブなどのスライダーを設定できるだけで、レシピがすべての色をどう動かすかは表現できず、自分のスライダー設定も上書きしてしまいます。カメラプロファイル（DCP）はカメラごとに作る必要があり、適用量スライダーもありません。拡張プロファイルなら、レシピはプロファイルブラウザーの選択肢の 1 つになり、強さを調整でき、ほかのスライダーはすべて自由に使えます。
 
-### 1.0 が Camera Flexible Color を使う理由
+### Camera Flexible Color を使う理由
 
 0.2 までのプロファイルは Adobe Standard をベースにしていました。Camera Raw は Adobe Standard の黒レベルを写真ごとに最も暗いピクセルに応じて下げるため、真っ黒な部分のない日中の写真では、シャドウが NX Studio より暗く、色が濃くなっていました。Camera Flexible Color は、レシピの土台であるニコンのピクチャーコントロール「Flexible Color」に合わせた Adobe のプロファイルで、センサーの黒レベルを保ちます。これに切り替えたことで、1.0 はチャート上で 236 種類すべてが 0.2 より NX Studio に近くなり、実際の写真のシャドウも NX Studio にずっと近づきました。段差リスクのスコアも 235 種類で下がっています。[詳細（英語）](../Y9_FLEX_BASE.md)。
+
+Adobe のカメラマッチングプロファイル（カメラスタンダード、カメラニュートラルなど）はどれもセンサーの黒レベルを保つので、どれを使ってもシャドウの問題は解決します。Camera Flexible Color を選んだのは、それがレシピの出発点だからです。イメージングレシピはニコンのピクチャーコントロール「Flexible Color」をもとに作られています。Adobe によるその再現から始めれば、カラーテーブルはレシピ自身の変更だけを表せばよく、最小の、つまり最も滑らかな補正になります。Adobe は Flexible Color を持つニコン機（Z 8、Z 9、Z f、Z6III、Z5II、Z50II、ZR）ごとに Camera Flexible Color を用意し、その機種でのニコンの現像に合わせているため、同じテーブルをそのまま使えます。プロファイルは 1 機種にしか限定できないので、機種ごとにパックを分けています。Z f と Z6III のサンプル RAW では、機種別のパックのほうが Adobe パックより NX Studio に近くなりました。
 
 ## 自分のレシピを変換する
 
@@ -84,7 +88,10 @@ Lightroom で完全な 3D カラーテーブルを持てるのはプロファイ
 
 このプロジェクトは空き時間に保守しています。プロファイルが役に立ったら、[GitHub Sponsors](https://github.com/sponsors/b-z) や WeChat で支援していただけるとうれしいです。支援は任意で、Issue やプルリクエストの扱いには影響しません。
 
-<img src="../images/wechat-reward.jpg" alt="WeChat の投げ銭用 QR コード" width="180">
+<table><tr>
+<td align="center" valign="middle"><a href="https://github.com/sponsors/b-z"><img src="https://img.shields.io/badge/GitHub%20Sponsors-%E2%9D%A4%20Sponsor-db61a2?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" height="36"></a></td>
+<td align="center" valign="middle"><img src="../images/wechat-reward.jpg" alt="WeChat の投げ銭用 QR コード" width="180"></td>
+</tr></table>
 
 ## クレジットとライセンス
 

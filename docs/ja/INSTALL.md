@@ -1,8 +1,8 @@
-# Nikon Recipes to LR Profiles 1.0.0
+## インストールと使い方
 
 Nikon Imaging Cloud の 236 種類のレシピを Lightroom / Camera Raw のプロファイルにしたものです。オンラインでの比較と 1 つずつのダウンロード：https://nikon-recipes-to-lr-profiles.pages.dev/
 
-## インストール
+### インストール
 
 1. このアーカイブを展開します。
 2. プロファイルブラウザーを開き、`profiles/` 内の `.xmp` ファイルを読み込みます。
@@ -11,7 +11,7 @@ Nikon Imaging Cloud の 236 種類のレシピを Lightroom / Camera Raw のプ�
    - Camera Raw：編集パネルでプロファイルブラウザーを開き、**…** メニュー › **プロファイルとプリセットを読み込み**。
 3. プロファイルが表示されない場合は Lightroom を再起動してください。インストーラーや別の DCP ファイルは不要です。
 
-## 使い方
+### 使い方
 
 1. プロファイルブラウザーで、名前が **Nikon Recipes LR 1.0** で始まるグループ（レシピの作者ごとに 1 つ）を開き、レシピをクリックします。
 2. プロファイル名の下の「適用量」スライダーで強さを調整します。100% で元のレシピの色、30〜50% で控えめになり、最大 200% まで強められます。
@@ -19,9 +19,9 @@ Nikon Imaging Cloud の 236 種類のレシピを Lightroom / Camera Raw のプ�
 
 新しい写真を撮影時のレシピで自動的に開くには https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/blob/main/docs/ja/auto-apply.md を参照してください。
 
-写真にプロファイルが表示されない場合：1.0 のプロファイルは Nikon Z 8 の写真用です。他の機種ではバージョン 0.2 を使ってください：https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/tag/v0.2.0
+写真にプロファイルが表示されない場合は、パックと撮影したカメラが合っていません。そのカメラ用のパックか、他のカメラ用の `adobe` パックをダウンロードしてください：https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest
 
-## 注意点
+### 注意点
 
 - 滑らかな空やボケでは、特に適用量が高いときに段差が出ることがあります。https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/issues で報告をお願いします。
 - `manifest.json` に、すべてのプロファイルの作者とスコアが記載されています。

@@ -51,7 +51,7 @@ nikon-recipes-lr audit MyRecipe.xmp
 - `audit` は段差リスクのスコアを表示します（[スコアの説明](metrics.md)）。
 - [`sidecars`](auto-apply.md) で自動適用したい場合は、カメラに表示されるピクチャーコントロール名を `--name` に指定してください。
 
-これで 1.0 と同じ、Camera Flexible Color ベースのプロファイルができます。0.2 のように Adobe Standard ベースでどのカメラでも表示されるプロファイルにしたい場合は、Adobe Standard の測定値を使い、機種の制限を外します。
+これでリリースの機種別パックと同じ、Camera Flexible Color ベースで Z 8 に限定したプロファイルができます（Flexible Color のある他の機種では `--camera` を `"Nikon Z f"` などに変更）。Adobe パックのように Adobe Standard ベースでどのカメラでも表示されるプロファイルにしたい場合は、Adobe Standard の測定値を使い、機種の制限を外します。
 
 ```sh
 nikon-recipes-lr fit --adobe-samples calibration/z8/adobe-standard.npy --camera "" \

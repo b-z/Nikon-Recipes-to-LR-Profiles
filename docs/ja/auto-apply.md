@@ -21,7 +21,7 @@
 2. まず何も書き込まずに結果を確認します：
 
    ```sh
-   nikon-recipes-lr sidecars --dry-run --profiles ~/Downloads/nikon-recipes-lr-profiles-1.0.0/profiles ~/Pictures/2026-10-18
+   nikon-recipes-lr sidecars --dry-run --profiles ~/Downloads/nikon-recipes-lr-profiles-1.0.1-z8/profiles ~/Pictures/2026-10-18
    ```
 
    `written` にはサイドカーが書き出される写真と、それぞれのプロファイルが表示されます。`no_profile` は、対応するプロファイルのないピクチャーコントロール（スタンダードなど）で撮った写真の数です。
@@ -34,7 +34,7 @@
 
 ## サイドカーの内容
 
-- 選んだ適用量でのレシピのプロファイルと、そのベースプロファイル（1.0 は Camera Flexible Color、0.2 は Adobe Standard）。
+- 選んだ適用量でのレシピのプロファイルと、そのベースプロファイル（機種別のパックは Camera Flexible Color、Adobe パックは Adobe Standard）。
 - Camera Raw が新しい写真に適用するのと同様に、レンズプロファイル補正をオン。
 
 それ以外の設定は含まれず、Camera Raw の初期値が使われます。サイドカーのある写真には、独自に設定した RAW 初期設定は適用されません。プリセットを使っている場合は読み込み後に適用してください。プロファイルを含むプリセットは、レシピのプロファイルを置き換えます。

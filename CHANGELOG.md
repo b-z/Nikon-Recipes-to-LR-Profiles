@@ -2,6 +2,17 @@
 
 Notable changes to the released profiles and tools. Profile releases are on the [Releases page](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases).
 
+## 1.0.1 — 2026-10-23
+
+### Profiles
+- **One pack per camera.** The 1.0 tables now come in a pack for every Nikon body that has a Camera Flexible Color profile in Lightroom: Z 8, Z 9, Z f, Z6III, Z5II, Z50II and ZR. A profile can be restricted to only one camera model, so each pack has its own restriction and UUIDs; the tables are the same. The Z 8 pack is identical to 1.0.0. On sample RAW files from a Z f and a Z6III the camera packs were closer to NX Studio than the Adobe pack.
+- **Adobe pack** for every other camera: the Y8 tables on Adobe Standard without a camera restriction, in the group **Nikon Recipes LR 1.0 Adobe**.
+- No checksum file; each ZIP has its own README and manifest.
+
+### Website and tools
+- "Download this recipe" and the download dialog ask for the camera and download the matching profile or pack.
+- `scripts/package_release.py` builds all packs; `src/nikon_recipes_lr/cameras.py` defines them.
+
 ## 1.0.0 — 2026-10-22
 
 ### Profiles
