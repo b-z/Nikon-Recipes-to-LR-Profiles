@@ -2,9 +2,9 @@
 
 Recipe by **Baek Jaekwang**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#SunsetReset_Baek)
 
-Profile file `NikonRecipes_SunsetReset_Baek.xmp` in release 1.1.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
+Profile file `NikonRecipes_SunsetReset_Baek.xmp` in release 1.2.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
-| Measurement | 1.1.0 | 0.2.0 |
+| Measurement | 1.2.0 | 0.2.0 |
 |---|---:|---:|
 | Difference from NX Studio, chart mean ΔE | 0.391 | 0.513 |
 | Chart median ΔE | 0.299 | — |

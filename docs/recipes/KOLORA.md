@@ -2,9 +2,9 @@
 
 Recipe by **Filmstill**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#KOLORA)
 
-Profile file `NikonRecipes_KOLORA.xmp` in release 1.1.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
+Profile file `NikonRecipes_KOLORA.xmp` in release 1.2.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
-| Measurement | 1.1.0 | 0.2.0 |
+| Measurement | 1.2.0 | 0.2.0 |
 |---|---:|---:|
 | Difference from NX Studio, chart mean ΔE | 0.604 | 0.792 |
 | Chart median ΔE | 0.495 | — |

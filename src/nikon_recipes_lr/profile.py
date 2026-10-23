@@ -13,7 +13,7 @@ RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 X = "adobe:ns:meta/"
 ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!/*?`'|()[]{}@%$#"
 URL = "https://github.com/b-z/Nikon-Recipes-to-LR-Profiles"
-DEFAULT_GROUP = "Nikon Recipes LR/Custom"
+DEFAULT_GROUP = "NRLR - Custom"
 DEFAULT_CAMERA = "NIKON Z 8"
 BASES = ("Adobe Standard", "Camera Flexible Color")
 for prefix, ns in [("x", X), ("rdf", RDF), ("crs", CRS)]:

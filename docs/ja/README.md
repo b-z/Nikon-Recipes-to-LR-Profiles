@@ -1,4 +1,4 @@
-# Nikon Recipes to LR Profiles
+# NRLR - Nikon Recipes to LR Profiles
 
 [![Latest release](https://img.shields.io/github/v/release/b-z/Nikon-Recipes-to-LR-Profiles)](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/b-z)
 
@@ -14,19 +14,17 @@
 
 *4 枚のテスト写真での KG200P1 レシピ。上段が NX Studio、下段が適用量 100% の Lightroom プロファイルです。[ギャラリーではすべてのレシピをこのように比較できます](https://nikon-recipes-to-lr-profiles.pages.dev/)。*
 
-## 特長
+## 公式レシピと比べた利点
 
-- **強さを調整できる。**適用量スライダーは 0〜200% で、レシピはあなたの調整の下に重なるだけで、上書きはしません。露光量、ホワイトバランス、トーンカーブ、マスク、プリセットはいつも通り使えます。
-- **公式レシピが使えないカメラにも。**イメージングレシピは Flexible Color のピクチャーコントロールを備えた比較的新しいニコン機でしか使えず、古い機種では NX Studio でも適用できません。Adobe パックは Lightroom で開けるあらゆる RAW に使えます。古いニコン機はもちろん、他社のカメラでも使えます。
-- **機種ごとに測定。**Z 8、Z 9、Z f、Z6III、Z5II、Z50II では、すべてのレシピをその機種自身の RAW データで測定しており、NX Studio がそのカメラをどう現像するかに合わせています。
-- **手持ちの写真にも。**レシピなしで撮った RAW、何年も前の写真、レシピの公開前に撮った写真にも適用できます。撮影時に使ったレシピを自動で適用することもできます。
+- **強さを調整できる。**適用量スライダーは 0〜200%。NX Studio の公式レシピは固定の強さでしか使えません。
+- **公式レシピが使えないカメラにも。**イメージングレシピは Flexible Color のピクチャーコントロールを備えた比較的新しいニコン機でしか使えず、古い機種では NX Studio でも適用できません。このプロジェクトのプロファイルは Lightroom で開けるあらゆる RAW に使えます。古いニコン機はもちろん、他社のカメラでも使えます。
 - **目分量ではなく測定、そしてオープン。**すべてのレシピについて NX Studio との色差とバンディングリスクを公開し、ギャラリーで 4 枚の写真で比較できます。自作レシピを変換するツールもこのリポジトリにあります。
 
 ## インストール
 
 1. [最新のリリース](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest)から、お使いのカメラ用の ZIP をダウンロードして展開します。Camera Flexible Color のあるニコン機は `…-z8`、`-z9`、`-zf`、`-z6iii`、`-z5ii`、`-z50ii`、`-zr`、その他のカメラは `…-adobe` です。
 2. Lightroom または Camera Raw のプロファイルブラウザーで「プロファイルを読み込み」を選び、`.xmp` ファイルを選択します。表示されない場合は Lightroom を再起動してください。
-3. **Nikon Recipes LR 1.1** グループを開き、レシピを選んで強さ（適用量）を調整します。100% で元のレシピの色になり、30〜50% で控えめな効果になります。
+3. 名前が **NRLR Y9**（機種別パック）または **NRLR Y8**（Adobe パック）で始まるグループを開き、レシピを選んで強さ（適用量）を調整します。100% で元のレシピの色になり、30〜50% で控えめな効果になります。
 
 機種別のパックは Camera Flexible Color をベースにしており、NX Studio に最も近くなります。Adobe パックは Adobe Standard ベースで、どのカメラでも使えます。機種別パックのカラーテーブルは、それぞれの機種で測定したものです。詳しくは[インストールガイド](INSTALL.md)を参照してください。
 
@@ -39,7 +37,7 @@
 カメラは撮影時に使ったレシピの名前を NEF ごとに記録しています。このプロジェクトのコマンドラインツールはその名前を読み取り、RAW の横にサイドカーファイルを書き出します。Lightroom Classic や Camera Raw で開くと、対応するプロファイルがすでに適用された状態になります。
 
 ```sh
-nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.1.0-z8/profiles /path/to/photos
+nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.2.0-z8/profiles /path/to/photos
 ```
 
 写真を読み込む前に実行してください。導入方法と詳細は[プロファイルの自動適用](auto-apply.md)を参照してください。

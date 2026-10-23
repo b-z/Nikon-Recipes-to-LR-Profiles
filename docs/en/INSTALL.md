@@ -13,7 +13,7 @@ Lightroom and Camera Raw profiles for 236 Nikon Imaging Cloud recipes. Compare t
 
 ### Use
 
-1. In the Profile Browser, open a group whose name starts with **Nikon Recipes LR 1.1** (one group per recipe creator) and click a recipe.
+1. In the Profile Browser, open a group whose name starts with **NRLR Y9** (camera packs) or **NRLR Y8** (Adobe pack); there is one group per recipe creator and click a recipe.
 2. Set its strength with the **Amount** slider under the profile name: 100% gives the colors of the original recipe, 30–50% gives a subtle result, up to 200% strengthens it.
 3. Edit as usual. Exposure, white balance, curves and every other slider keep working. The profile contains the recipe's color and tone only; its sharpening, mid-range sharpening and clarity are not included.
 

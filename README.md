@@ -1,4 +1,4 @@
-# Nikon Recipes to LR Profiles
+# NRLR - Nikon Recipes to LR Profiles
 
 [![Tests](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/actions/workflows/test.yml/badge.svg)](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/actions/workflows/test.yml)
 [![Latest release](https://img.shields.io/github/v/release/b-z/Nikon-Recipes-to-LR-Profiles)](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest)
@@ -17,19 +17,17 @@ This project recreates the recipes in **Lightroom and Photoshop Camera Raw**. Ch
 
 *The KG200P1 recipe on four test photographs. Top: NX Studio. Bottom: Lightroom with this project's profile at 100% Amount. [See every recipe this way in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/).*
 
-## Why use it
+## Advantages over the official recipes
 
-- **Adjustable strength.** The Amount slider goes from 0 to 200%, and the recipe sits underneath your own edits instead of replacing them: exposure, white balance, curves, masks and presets work as usual.
-- **Cameras the official recipes do not support.** Imaging Recipes only work on recent Nikon bodies with the Flexible Color Picture Control, and older bodies cannot use them even in NX Studio. The Adobe pack works with any RAW file Lightroom opens: older Nikons, and other brands too.
-- **Measured on each camera.** For the Z 8, Z 9, Z f, Z6III, Z5II and Z50II, every recipe is measured on that body's own RAW data, so the profile follows how NX Studio renders that camera.
-- **Any photo you already have.** A recipe can be applied to RAW files shot without it, years ago, or before the recipe existed, and the tool can apply the recipe a photo was shot with automatically.
+- **Adjustable strength.** The Amount slider goes from 0 to 200%; the official recipes in NX Studio only come at a fixed strength.
+- **Cameras the official recipes do not support.** Imaging Recipes only work on recent Nikon bodies with the Flexible Color Picture Control, and older bodies cannot use them even in NX Studio. Our profiles work with any RAW file Lightroom opens: older Nikons, and other brands too.
 - **Measured, not eyeballed, and open.** Every recipe has a published difference from NX Studio and a banding-risk score, the gallery compares each one on four photographs, and the tools to convert your own recipe are in this repository.
 
 ## Install
 
 1. Download the ZIP for your camera from the [latest release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) and unzip it: `…-z8`, `-z9`, `-zf`, `-z6iii`, `-z5ii`, `-z50ii` or `-zr` for Nikon bodies with Camera Flexible Color, `…-adobe` for any other camera. If you only want a few recipes, download them one by one from the [gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) instead.
 2. In Lightroom or Camera Raw, open the Profile Browser, choose **Import Profiles** and select the `.xmp` files. Restart Lightroom if they do not appear.
-3. Open the **Nikon Recipes LR 1.1** group, pick a recipe and adjust its strength with **Amount**: 100% gives the colors of the original recipe; 30–50% gives a subtle result.
+3. Open a group whose name starts with **NRLR Y9** (camera packs) or **NRLR Y8** (Adobe pack), pick a recipe and adjust its strength with **Amount**: 100% gives the colors of the original recipe; 30–50% gives a subtle result.
 
 The camera packs are built on Camera Flexible Color and come closest to NX Studio; the Adobe pack is built on Adobe Standard and works with any camera. Each camera pack has color tables measured on that camera. More in [INSTALL](docs/en/INSTALL.md).
 
@@ -42,7 +40,7 @@ A profile reproduces the **color and tone** of a recipe: its colors, contrast an
 The camera stores the name of the recipe in every NEF. This project's command-line tool reads it and writes a sidecar next to each RAW, so Lightroom Classic and Camera Raw open the photo with the matching profile already applied:
 
 ```sh
-nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.1.0-z8/profiles /path/to/photos
+nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.2.0-z8/profiles /path/to/photos
 ```
 
 Run it before importing the photos. Setup and details: [Apply profiles automatically](docs/en/auto-apply.md).

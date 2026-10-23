@@ -1,6 +1,6 @@
-# Recipe catalog — 1.1.0
+# Recipe catalog — 1.2.0
 
-All 236 profiles of release 1.1.0, with their creators and two scores, measured on the Nikon Z 8 (the other camera packs reach similar scores on their own cameras; see `docs/camera_manifests/`). [Compare every recipe on four photographs in the online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/).
+All 236 profiles of release 1.2.0, with their creators and two scores, measured on the Nikon Z 8 (the other camera packs reach similar scores on their own cameras; see `docs/camera_manifests/`). [Compare every recipe on four photographs in the online gallery](https://nikon-recipes-to-lr-profiles.pages.dev/).
 
 - **Difference from NX Studio**: the average color difference (CIEDE2000 ΔE) to NX Studio on the test chart. About 1 is the smallest difference most people notice; 223 of 236 recipes are below 1.
 - **Banding risk**: how abruptly the color table changes direction (face-jump p99). Lower means smoother gradients, but no score guarantees a smooth sky in every photo.

@@ -9,9 +9,9 @@ from nikon_recipes_lr.cameras import (
     ADOBE,
     FLEX_CAMERAS,
     REFERENCE,
-    SERIES,
     adobe_profile,
     camera_profile,
+    short_group,
     table_of,
     table_sources,
 )
@@ -23,7 +23,7 @@ def reference(lut):
         lut,
         "KP160 by A [NRLR 1.0]",
         "A",
-        group="Nikon Recipes LR 1.0/X",
+        group="Nikon Recipes LR 1.0/ThirdParty/MGA/Nikon B&W Recipes",
         base="Camera Flexible Color",
         camera="NIKON Z 8",
         short_name="KP160 [NRLR 1.0]",
@@ -32,7 +32,7 @@ def reference(lut):
 
 
 class CameraPackTests(unittest.TestCase):
-    def test_each_camera_gets_its_restriction_series_and_own_uuid(self):
+    def test_each_camera_gets_its_restriction_names_and_own_uuid(self):
         lut = identity(5)
         text = reference(lut)
         uuids = set()
@@ -43,12 +43,17 @@ class CameraPackTests(unittest.TestCase):
                 table, meta = read_profile(path)
                 self.assertEqual(meta["camera"], camera.restriction)
                 self.assertEqual(meta["base"], "Camera Flexible Color")
-                self.assertEqual(meta["group"], f"Nikon Recipes LR {SERIES}/X")
-                self.assertTrue(meta["name"].endswith(f"[NRLR {SERIES}]"))
+                self.assertEqual(meta["group"], "NRLR Y9 - MGA B&W Recipes")
+                self.assertEqual(meta["name"], "KP160 by A [NRLR Y9]")
                 self.assertLess(abs(table - lut).max(), 1e-4)
                 uuids.add(meta["uuid"])
         self.assertEqual(len(uuids), len(FLEX_CAMERAS))
         self.assertIn("Nikon Z f)", camera_profile(text, "KP160", FLEX_CAMERAS[2]))
+
+    def test_short_groups(self):
+        self.assertEqual(short_group("Nikon Creators"), "Nikon Creators")
+        self.assertEqual(short_group("ThirdParty/Stephen Morais"), "Stephen Morais")
+        self.assertEqual(short_group("Nikon Recipes LR 0.2/ThirdParty/MGA/Nikon Colour Recipes"), "MGA Colour Recipes")
 
     def test_table_source_replaces_only_the_table(self):
         lut = identity(5)
@@ -86,14 +91,14 @@ class CameraPackTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 table_sources(root, manifests)
 
-    def test_adobe_pack_is_unrestricted_with_new_group(self):
+    def test_adobe_pack_is_unrestricted_with_its_own_group(self):
         text = build_profile(identity(5), "KP160 by A [NRLR 0.2]", "A", group="Nikon Recipes LR 0.2/X", camera="")
         with tempfile.TemporaryDirectory() as t:
             path = Path(t) / "p.xmp"
             path.write_text(adobe_profile(text, "KP160"), "utf-8")
             meta = read_profile(path)[1]
-        self.assertEqual(meta["group"], f"Nikon Recipes LR {SERIES} Adobe/X")
-        self.assertTrue(meta["name"].endswith(f"[NRLR {SERIES} Adobe]"))
+        self.assertEqual(meta["group"], "NRLR Y8 - X")
+        self.assertEqual(meta["name"], "KP160 by A [NRLR Y8]")
         self.assertEqual(ADOBE.slug, "adobe")
 
 

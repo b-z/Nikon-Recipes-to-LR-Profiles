@@ -2,9 +2,9 @@
 
 Recipe by **DAnn**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#SunlightHappy_DAnn)
 
-Profile file `NikonRecipes_SunlightHappy_DAnn.xmp` in release 1.1.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
+Profile file `NikonRecipes_SunlightHappy_DAnn.xmp` in release 1.2.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
-| Measurement | 1.1.0 | 0.2.0 |
+| Measurement | 1.2.0 | 0.2.0 |
 |---|---:|---:|
 | Difference from NX Studio, chart mean ΔE | 0.561 | 0.807 |
 | Chart median ΔE | 0.382 | — |

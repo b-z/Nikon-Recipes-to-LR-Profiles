@@ -2,9 +2,9 @@
 
 Recipe by **Fuka Kamata**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#TenderClear_FukaK)
 
-Profile file `NikonRecipes_TenderClear_FukaK.xmp` in release 1.1.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
+Profile file `NikonRecipes_TenderClear_FukaK.xmp` in release 1.2.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
-| Measurement | 1.1.0 | 0.2.0 |
+| Measurement | 1.2.0 | 0.2.0 |
 |---|---:|---:|
 | Difference from NX Studio, chart mean ΔE | 0.376 | 0.582 |
 | Chart median ΔE | 0.299 | — |

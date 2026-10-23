@@ -21,7 +21,7 @@
 2. 先预览结果，不写入任何文件：
 
    ```sh
-   nikon-recipes-lr sidecars --dry-run --profiles ~/Downloads/nikon-recipes-lr-profiles-1.1.0-z8/profiles ~/Pictures/2026-10-18
+   nikon-recipes-lr sidecars --dry-run --profiles ~/Downloads/nikon-recipes-lr-profiles-1.2.0-z8/profiles ~/Pictures/2026-10-18
    ```
 
    `written` 列出将要写入附属文件的照片及各自的配置文件；`no_profile` 统计用没有对应配置文件的优化校准（例如「标准」）拍摄的照片。

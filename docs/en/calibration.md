@@ -60,7 +60,7 @@ Clipped pairs (any channel below 0.0005 or above 0.999) are excluded. The fit re
 
 Refitting a released recipe from the same samples with a different SciPy version can differ slightly, because the bounded solver stops at a tolerance rather than at the exact optimum. For the 0.2.0 profiles the difference is below 0.2 ΔE at every table node.
 
-New profiles are written to the `Nikon Recipes LR/Custom` group unless you pass `--group`. The UUID is derived from group and name, so re-importing a refit with the same name and group replaces the earlier one in Lightroom. Use `--camera ""` to drop the camera restriction.
+New profiles are written to the `NRLR - Custom` group unless you pass `--group`. The UUID is derived from group and name, so re-importing a refit with the same name and group replaces the earlier one in Lightroom. Use `--camera ""` to drop the camera restriction.
 
 Import the enhanced `.xmp` manually, restart Lightroom if needed, and inspect smooth gradients, skies and bokeh at both normal strength and 200%. Changing the profile can change exposure/WB slider feel. Do not overwrite existing edits when preparing benchmarks.
 

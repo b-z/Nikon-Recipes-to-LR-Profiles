@@ -52,7 +52,7 @@ def readme(version, camera, kind):
     notes = [n.format(label=camera.label, **words) for n in PACK_NOTE[kind]]
     guides = [(ROOT / "docs" / lang / "INSTALL.md").read_text(encoding="utf-8").strip() for lang in ("en", "zh", "ja")]
     parts = [f"{note}\n\n{guide}" for note, guide in zip(notes, guides)]
-    return f"# Nikon Recipes to LR Profiles {version} — {camera.label}\n\n" + "\n\n---\n\n".join(parts) + "\n"
+    return f"# NRLR {version} (Nikon Recipes to LR Profiles) — {camera.label}\n\n" + "\n\n---\n\n".join(parts) + "\n"
 
 
 def write_pack(destination, version, camera, kind, rows, texts):

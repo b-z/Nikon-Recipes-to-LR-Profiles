@@ -4,7 +4,7 @@
 
 1. 使用自己的已校准 Z8 donor 生成标靶，或提供已有标靶与色块中心元数据。`make-target` 是实验功能，机身型号相同并不表示黑电平、白平衡和 Bayer 布局兼容；必须按[英文指南](../en/calibration.md)确认。嵌入缩略图仍是 donor 原图，检查 RAW 渲染。
 2. NX 保存一个配置正确的 `.nksc` 模板，用 `prepare-nx --source chart.NEF --template chart.NEF.nksc --recipes recipe.NP3 --output nx-batch` 创建批次。注入配方不会替你验证其他设置，在 NX 面板中核对后导出。
-3. 用 `sample` 从 TIFF 采样；用 `fit --adobe-samples adobe.json --nx-samples nx.json --name "Recipe" --author "Author" --output recipe.xmp` 拟合，再用 `audit recipe.xmp` 审计。默认使用与发布版相同的平滑样条方法（`--method spline`），新配置文件放在 `Nikon Recipes LR/Custom` 分组（可用 `--group` 修改）。完整参数见英文指南。
+3. 用 `sample` 从 TIFF 采样；用 `fit --adobe-samples adobe.json --nx-samples nx.json --name "Recipe" --author "Author" --output recipe.xmp` 拟合，再用 `audit recipe.xmp` 审计。默认使用与发布版相同的平滑样条方法（`--method spline`），新配置文件放在 `NRLR - Custom` 分组（可用 `--group` 修改）。完整参数见英文指南。
 4. 手动导入并重启 LR，在多张真实照片、平滑色路、100% 与 200% 强度下检查。拟合报告是训练标靶分数，独立验证需另设数据。
 
 Python 核心可跨平台；自动 Adobe 渲染需要 macOS、Photoshop 与 ExifTool，不会自动装配置文件或重启 Photoshop。用户指定输出目录，临时本地 RAW/TIFF 用完即删。

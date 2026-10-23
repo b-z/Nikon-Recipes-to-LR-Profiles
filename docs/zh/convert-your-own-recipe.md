@@ -62,7 +62,7 @@ nikon-recipes-lr fit --adobe-samples calibration/z8/adobe-standard.npy --camera 
 
 ## 4. 在 Lightroom 中使用
 
-在配置文件浏览器中选择「导入配置文件」，导入 `MyRecipe.xmp`，它会出现在 **Nikon Recipes LR/Custom** 分组。正式使用之前，请在有平滑天空或焦外的照片上，用 100% 和更高的数量检查一下。与 Release 中的配置文件一样，它只复刻色彩和影调，配方中的锐化、中等锐化和清晰度不包含在内。
+在配置文件浏览器中选择「导入配置文件」，导入 `MyRecipe.xmp`，它会出现在 **NRLR - Custom** 分组。正式使用之前，请在有平滑天空或焦外的照片上，用 100% 和更高的数量检查一下。与 Release 中的配置文件一样，它只复刻色彩和影调，配方中的锐化、中等锐化和清晰度不包含在内。
 
 ## 其他机身和自制色卡
 

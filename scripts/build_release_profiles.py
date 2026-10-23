@@ -7,8 +7,8 @@ patches. For every recipe the script samples the TIFF, fits the smooth spline on
 kit's fixed training patches, scores it on the held-out patches, audits banding risk and writes a release
 profile plus one manifest row.
 
-  python scripts/build_release_profiles.py --nx /path/to/nx-batch --version 1.1.0 --output /path/to/out
-  python scripts/build_release_profiles.py --camera zf --nx /path/to/zf-batch --version 1.1.0 --output /path/to/zf
+  python scripts/build_release_profiles.py --nx /path/to/nx-batch --output /path/to/out
+  python scripts/build_release_profiles.py --camera zf --nx /path/to/zf-batch --output /path/to/zf
 
 For a body other than the Z 8, the profiles are the source of that body's color tables: `package_release.py`
 puts each table into the reference profile of the recipe (see `nikon_recipes_lr.cameras`).
@@ -22,13 +22,12 @@ import argparse
 import hashlib
 import json
 import re
-import uuid
 from pathlib import Path
 
 import numpy as np
 
 from nikon_recipes_lr.calibration import sample_tiff
-from nikon_recipes_lr.cameras import FLEX_CAMERAS
+from nikon_recipes_lr.cameras import ADOBE, ADOBE_CODE, FLEX_CAMERAS, FLEX_CODE, group_name, profile_uuid
 from nikon_recipes_lr.color import de2000, lab
 from nikon_recipes_lr.np3 import inspect
 from nikon_recipes_lr.profile import build_profile, read_profile
@@ -50,7 +49,6 @@ def clipped(a):
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--nx", type=Path, required=True, help="Folder of NX Studio TIFF exports named <recipe>.TIF")
-    p.add_argument("--version", required=True, help="Release version, e.g. 1.1.0")
     p.add_argument("--output", type=Path, required=True, help="New folder for profiles/ and manifest.json")
     p.add_argument("--base", choices=sorted(BASELINES), default="Camera Flexible Color")
     p.add_argument("--recipes", type=Path, help="JSON with names and creators of recipes not yet released")
@@ -61,10 +59,10 @@ def main():
     if args.output.exists() and any(args.output.iterdir()):
         p.error("Output must be a new or empty folder")
     (args.output / "profiles").mkdir(parents=True, exist_ok=True)
-    series = ".".join(args.version.split(".")[:2])
     body = CAMERAS[args.camera]
     kit = ROOT / "calibration" / body.slug
     camera = body.restriction if args.base == "Camera Flexible Color" else ""
+    code = FLEX_CODE if args.base == "Camera Flexible Color" else ADOBE_CODE
     known = {r["recipe"]: r for r in json.loads((ROOT / "docs/release_manifest.json").read_text(encoding="utf-8"))}
     if args.recipes:
         known.update({r["recipe"]: r for r in json.loads(args.recipes.read_text(encoding="utf-8"))})
@@ -92,18 +90,16 @@ def main():
         held = split["test"] & ok
         dh = de2000(lab(lookup(lut, x[held])), lab(y[held]))
         risk = audit(lut)["all_face_jump"]
-        name = f"{meta['display']} by {meta['author']} [NRLR {series}]"
+        name = f"{meta['display']} by {meta['author']} [NRLR {code}]"
         text = build_profile(
             lut,
             name,
             meta["author"],
-            group=f"Nikon Recipes LR {series}/{meta['group']}",
+            group=group_name(code, meta["group"]),
             camera=camera,
             base=args.base,
-            profile_uuid=uuid.uuid5(
-                uuid.NAMESPACE_URL, f"nikon-recipes-to-lr-profiles:{args.version}:{body.slug}:{recipe}"
-            ).hex.upper(),
-            short_name=f"{meta['display']} [NRLR {series}]",
+            profile_uuid=profile_uuid(body if camera else ADOBE, recipe),
+            short_name=f"{meta['display']} [NRLR {code}]",
             description=f'Original Imaging Recipe "{meta["display"]}" by {meta["author"]}. Converted to a Lightroom / '
             f"Camera Raw profile (RGB table on {args.base}{', ' + body.label if camera else ''}) by Nikon Recipes to LR "
             f"Profiles: {URL}. Use the Amount slider for strength. Color and tone only.",

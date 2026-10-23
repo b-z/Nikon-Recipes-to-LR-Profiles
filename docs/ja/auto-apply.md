@@ -21,7 +21,7 @@
 2. まず何も書き込まずに結果を確認します：
 
    ```sh
-   nikon-recipes-lr sidecars --dry-run --profiles ~/Downloads/nikon-recipes-lr-profiles-1.1.0-z8/profiles ~/Pictures/2026-10-18
+   nikon-recipes-lr sidecars --dry-run --profiles ~/Downloads/nikon-recipes-lr-profiles-1.2.0-z8/profiles ~/Pictures/2026-10-18
    ```
 
    `written` にはサイドカーが書き出される写真と、それぞれのプロファイルが表示されます。`no_profile` は、対応するプロファイルのないピクチャーコントロール（スタンダードなど）で撮った写真の数です。

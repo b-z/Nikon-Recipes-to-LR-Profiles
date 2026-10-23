@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Nikon Recipes to LR Profiles</title>
+<title>NRLR - Nikon Recipes to LR Profiles</title>
 <meta name="description" content="Nikon Imaging Cloud recipes as adjustable Lightroom and Camera Raw profiles. Browse and compare all 236 conversions with NX Studio on four photographs.">
 <style>
 :root {
@@ -121,6 +121,8 @@ input[type=search], select { width: 100%; background: var(--canvas); border: 1px
 main { min-width: 0; padding: 24px 32px 40px; }
 .crumbs { margin: 0 0 4px; font-size: 13px; color: var(--link); min-height: 1.2em; }
 .crumbs span + span::before { content: "›"; margin: 0 6px; color: var(--muted); }
+.browse-recipes { display: none; width: 100%; align-items: center; gap: 10px; margin: 0 0 14px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--panel)); color: var(--text); font-size: 15px; font-weight: 600; text-align: left; }
+.browse-recipes .browse-arrow { margin-left: auto; font-size: 20px; line-height: 1; color: var(--accent); }
 .title-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .title-row h2 { font-size: 26px; margin: 0; line-height: 1.25; letter-spacing: -.4px; }
 .step { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; }
@@ -176,7 +178,8 @@ footer.site p { margin: 0 0 8px; }
   .topbar { padding: 0 12px; gap: 8px; }
   .brand .brand-text { font-size: 15px; }
   .drawer-button, .menu-button { display: inline-flex; }
-  .drawer-button { margin-left: auto; }
+  .drawer-button { margin-left: auto; background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+  .browse-recipes { display: flex; }
   .nav { display: none; position: absolute; top: var(--topbar); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 6px 12px 12px; background: var(--panel); border-bottom: 1px solid var(--line); }
   .nav.open { display: flex; }
   .nav a, .nav button.link { padding: 11px 8px; }
@@ -201,7 +204,7 @@ footer.site p { margin: 0 0 8px; }
   .labels { font-size: 11px; }
   .slider { height: 36px; }
 }
-@media (max-width: 420px) { .brand-mark { display: none; } .brand { gap: 0; } }
+@media (max-width: 420px) { .brand-mark { display: none; } .brand { gap: 0; } .brand-long { display: none; } }
 @media (max-width: 360px) { .topbar { gap: 6px; } .brand { min-width: 0; } .brand .brand-text { font-size: 13px; overflow: hidden; text-overflow: ellipsis; } }
 @media (prefers-reduced-motion: reduce) { .sidebar { transition: none; } }
 </style>
@@ -210,8 +213,8 @@ footer.site p { margin: 0 0 8px; }
 <a href="#main" class="skip" data-i18n="skip">Skip to the recipe</a>
 
 <header class="topbar">
-  <a class="brand" href="#top" aria-label="Nikon Recipes to LR Profiles"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Nikon Recipes → LR Profiles</span></a>
-  <button type="button" class="drawer-button" id="drawer-open" aria-controls="sidebar" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i18n="recipes">Recipes</span></button>
+  <a class="brand" href="#top" aria-label="NRLR - Nikon Recipes to LR Profiles"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text"><b>NRLR</b><span class="brand-long"> · Nikon Recipes → LR Profiles</span></span></a>
+  <button type="button" class="drawer-button" id="drawer-open" aria-controls="sidebar" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i18n="recipeList">All recipes</span></button>
   <button type="button" class="menu-button" id="menu-button" aria-controls="nav" aria-expanded="false" data-i18n-aria="menu"><svg class="icon" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg></button>
   <nav class="nav" id="nav" data-i18n-aria="menu">
     <button type="button" class="link" id="nav-help"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.2a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.6M12 17v.5"/></svg><span class="label" data-i18n="navHelp">Help</span></button>
@@ -229,16 +232,15 @@ footer.site p { margin: 0 0 8px; }
       <select class="lang" aria-label="Language / 语言 / 言語"><option value="en">English</option><option value="zh">中文</option><option value="ja">日本語</option></select>
       <button type="button" class="modal-close" data-close data-i18n-aria="close">×</button>
     </div>
-    <h2 id="help-title" data-i18n="heroTitle">Nikon Imaging Recipes in Lightroom and Camera Raw</h2>
+    <h2 id="help-title" data-i18n="heroTitle">Nikon Imaging Cloud Recipes in Lightroom and Camera Raw</h2>
     <p data-i18n-html="about1"></p>
     <p data-i18n="about2"></p>
     <p data-i18n="about3"></p>
     <p data-i18n-html="about4"></p>
     <div class="help-sections">
-      <details class="info" open><summary><h3 class="info-title" data-i18n="whyTitle">Why use it</h3></summary><ul><li data-i18n-html="why1"></li><li data-i18n-html="why2"></li><li data-i18n-html="why3"></li><li data-i18n-html="why4"></li></ul></details>
+      <details class="info" open><summary><h3 class="info-title" data-i18n="whyTitle">Advantages over the official recipes</h3></summary><ul><li data-i18n-html="why1"></li><li data-i18n-html="why2"></li></ul></details>
       <details class="info"><summary><h3 class="info-title" data-i18n="installTitle">Install in three steps</h3></summary><ol><li data-i18n-html="install1"></li><li data-i18n-html="install2"></li><li data-i18n-html="install3"></li></ol></details>
-      <details class="info"><summary><h3 class="info-title" data-i18n="howTitle">How the comparison works</h3></summary><ul><li data-i18n="how1"></li><li data-i18n="how2"></li><li data-i18n="how3"></li></ul></details>
-      <details class="info"><summary><h3 class="info-title" data-i18n="limitsTitle">Good to know</h3></summary><ul><li data-i18n="limits2"></li></ul></details>
+      <details class="info"><summary><h3 class="info-title" data-i18n="limitsTitle">Good to know</h3></summary><ul><li data-i18n="limits3"></li><li data-i18n="limits2"></li></ul></details>
     </div>
     <form method="dialog" class="dialog-actions">
       <button type="button" class="button" id="help-download"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span data-i18n="ctaDownload">Download LR profiles</span></button>
@@ -288,7 +290,7 @@ footer.site p { margin: 0 0 8px; }
 <div class="intro" id="top">
   <div class="intro-inner">
     <div class="intro-head">
-      <h1 data-i18n="heroTitle">Nikon Imaging Recipes in Lightroom and Camera Raw</h1>
+      <h1 data-i18n="heroTitle">Nikon Imaging Cloud Recipes in Lightroom and Camera Raw</h1>
       <div class="cta">
         <button type="button" class="button primary" id="cta-download"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg><span data-i18n="ctaDownload">Download LR profiles</span></button>
         <a class="button" id="cta-github" href="#" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 1.6 5.8 1.9 5.8 1.9a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 8.3c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</a>
@@ -317,6 +319,7 @@ footer.site p { margin: 0 0 8px; }
   <div class="scrim" id="scrim"></div>
 
   <main id="main" tabindex="-1">
+    <button type="button" class="browse-recipes" id="browse-recipes" aria-controls="sidebar"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span id="browse-label"></span><span class="browse-arrow" aria-hidden="true">›</span></button>
     <p class="crumbs" id="crumbs"></p>
     <div class="title-row">
       <h2 id="recipe-title"></h2>
@@ -361,7 +364,7 @@ const LINKS = {
   contributing: REPO + '/blob/main/CONTRIBUTING.md',
   imagingCloud: 'https://imagingcloud.nikon.com/',
 };
-const DEFAULT_RECIPE = 'KG200P1';
+const DEFAULT_RECIPE = 'F400H';
 // Score levels: [upper bound, text key, color]. A mean CIEDE2000 ΔE of about 1 is roughly the smallest difference people notice.
 const DE_LEVELS = [[0.5, 'de0', 'good'], [1.0, 'de1', 'good'], [Infinity, 'de2', 'fair']];
 // Banding risk has no calibrated visibility threshold; these bands split the published profiles into low / medium / high.
@@ -369,22 +372,19 @@ const BAND_LEVELS = [[0.4, 'band0', 'good'], [0.6, 'band1', 'fair'], [Infinity, 
 
 const STR = {
   en: {
-    skip: 'Skip to the recipe', recipes: 'Recipes', navHelp: 'Help', navDownload: 'Download', navDocs: 'Docs', navSponsor: 'Sponsor',
-    heroTitle: 'Nikon Imaging Recipes in Lightroom and Camera Raw',
+    skip: 'Skip to the recipe', recipes: 'Recipes', recipeList: 'All recipes', browseAll: 'Browse all {total} recipes', navHelp: 'Help', navDownload: 'Download', navDocs: 'Docs', navSponsor: 'Sponsor',
+    heroTitle: 'Nikon Imaging Cloud Recipes in Lightroom and Camera Raw',
     about1: '<a href="' + LINKS.imagingCloud + '" target="_blank" rel="noopener">Nikon Imaging Cloud</a> offers color recipes created by professional photographers. A recipe only changes the JPEGs your camera records; the RAW file stays as it is. If you edit RAW files, the only official way to use a recipe is Nikon\'s NX Studio, which does not fit the workflow of many photographers.',
-    about2: 'This project recreates the recipes in Lightroom and Photoshop Camera Raw. We measure how each recipe renders colors and save the result as a Lightroom profile, a small .xmp file. Choose a recipe in the Profile Browser and set its strength with the Amount slider (0–200%); exposure, white balance, curves and every other adjustment keep working as usual.',
-    whyTitle: 'Why use it',
-    why1: '<b>Adjustable strength</b>: Amount from 0 to 200%, underneath your own edits instead of replacing them.',
-    why2: '<b>Cameras the official recipes do not support</b>: recipes only work on recent Nikon bodies with Flexible Color, and older bodies cannot use them even in NX Studio. The Adobe pack works with any RAW that Lightroom opens, including older Nikons and other brands.',
-    why3: '<b>Measured on each camera</b>: the Z 8, Z 9, Z f, Z6III, Z5II and Z50II packs each use tables measured on that body.',
-    why4: '<b>Any photo you already have</b>, even shot before the recipe existed, and every recipe with a measured difference from NX Studio.',
+    about2: 'This project recreates the recipes in Lightroom and Photoshop Camera Raw. We measure how each recipe renders colors and save the result as a profile that Lightroom installs and uses directly. Choose a recipe in the Profile Browser and set its strength with the Amount slider (0–200%); exposure, white balance, curves and every other adjustment keep working as usual.',
+    whyTitle: 'Advantages over the official recipes',
+    why1: '<b>Adjustable strength</b>: the Amount slider goes from 0 to 200%; the official recipes in NX Studio only come at a fixed strength.',
+    why2: '<b>Cameras the official recipes do not support</b>: recipes only work on recent Nikon bodies with Flexible Color, and older bodies cannot use them even in NX Studio. Our profiles work with any RAW that Lightroom opens, including older Nikons and other brands.',
     about3: 'In our tests most conversions reproduce the colors of the original recipe closely. On this site you can browse all 236 recipes and compare each conversion with NX Studio on four test photographs.',
     about4: 'If something looks wrong, please <a href="' + LINKS.issues + '" target="_blank" rel="noopener">open an issue</a> on GitHub. Pull requests are welcome too; see <a href="' + LINKS.contributing + '" target="_blank" rel="noopener">how to contribute</a>.',
     welcomeStart: 'Start browsing',
     ctaDownload: 'Download LR profiles', ctaSponsor: '♥ Sponsor',
-    installTitle: 'How to install', install1: '<b>Download</b>: <b>Download LR profiles</b> gets every recipe in one ZIP file. If you only want some of them, select a recipe in the list on this site and use <b>Download this recipe</b>.', install2: '<b>Import</b>: in the Lightroom or Camera Raw Profile Browser, choose Import Profiles and select the .xmp files. Restart Lightroom if they do not appear.', install3: '<b>Use</b>: choose a recipe in the Nikon Recipes LR 1.1 group and adjust its strength (Amount); 100% gives the colors of the original recipe; 30–50% gives a subtle result.',
-    howTitle: 'How the comparison works', how1: 'Image A and image B can each show NX Studio, either version of the Lightroom profile, or the base profile without a recipe.', how2: 'Blink switches between A and B every second (click an image to pause); the slider shows A on the left and B on the right.', how3: 'All profiles are shown at 100% Amount. The previews are calculated from Camera Raw renders of the original RAW files.',
-    limitsTitle: 'Good to know', limits2: 'Banding can still appear in smooth skies or bokeh. Please report cases on GitHub.',
+    installTitle: 'How to install', install1: '<b>Download</b>: <b>Download LR profiles</b> gets every recipe in one ZIP file. If you only want some of them, select a recipe in the list on this site and use <b>Download this recipe</b>.', install2: '<b>Import</b>: in the Lightroom or Camera Raw Profile Browser, choose Import Profiles and select the .xmp files. Restart Lightroom if they do not appear.', install3: '<b>Use</b>: choose a recipe in a group starting with NRLR Y9 (camera packs) or NRLR Y8 (Adobe pack) and adjust its strength (Amount); 100% gives the colors of the original recipe; 30–50% gives a subtle result.',
+    limitsTitle: 'Good to know', limits3: 'There are many Imaging Cloud recipes (236). You can pick the ones you like on this website and download only those.', limits2: 'Banding can still appear in smooth skies or bokeh. Please report cases on GitHub.',
     dlTitle: 'Download the Lightroom profiles',
     dlText1: 'Each ZIP file (about 45 MB) holds the profiles of all 236 recipes, for Lightroom Classic, Lightroom and Photoshop Camera Raw. Unzip it and import the .xmp files in the Profile Browser; the README inside explains each step. The files are hosted on GitHub.',
     dlText2: 'Choose the camera you shoot with. The versions for Nikon bodies with Camera Flexible Color (Z 8, Z 9, Z f, Z6III, Z5II, Z50II, ZR) are built on it (Y9), with color tables measured on each camera, and come closest to NX Studio. For any other camera, choose the Adobe Standard version (Y8).', cameraLabel: 'Your camera', cameraAdobe: 'Other cameras · Adobe Standard (Y8)', dlZip: 'Download ZIP', rdTitle: 'Download {name}', rdText: 'The profile file depends on the camera. Choose the camera you shoot with; for a camera that is not listed, choose the Adobe Standard version.', rdDownload: 'Download XMP',
@@ -400,7 +400,7 @@ const STR = {
     bandLabel: 'Banding risk', bandHelp: 'How abruptly the color table changes direction (face-jump p99). Lower means smoother gradients; it is not a guarantee either way.',
     band0: 'low', band1: 'medium', band2: 'high',
     downloadXmp: 'Download this recipe', downloadNp3: 'This recipe\'s NP3', measurements: 'Measurements',
-    srcNx: 'NX Studio (original recipe)', srcAdobe: 'Adobe Standard (no recipe)', srcFlex: 'Camera Flexible Color (no recipe)', srcVersion: 'Lightroom profile {v}',
+    srcNx: 'NX Studio original', srcAdobe: 'Adobe Standard (no recipe)', srcFlex: 'Camera Flexible Color (no recipe)', srcVersion: 'Our conversion {v}',
     ver10: 'Y9 · latest', ver02: 'Y8 · previous',
     scene9046: 'Landscape test 1', scene2849: 'Landscape test 2', scene2694: 'Banding test 1', scene2694note: 'out-of-focus transitions', scene5054: 'Banding test 2', scene5054note: 'smooth sky',
     sliderLabel: '{scene}: comparison divider', missingNx: 'No NX Studio reference for this scene.', favAdd: 'Add to favorites', favRemove: 'Remove from favorites', prev: 'Previous recipe', next: 'Next recipe',
@@ -410,22 +410,19 @@ const STR = {
     footerIndependent: 'Independent community project, not affiliated with Nikon or Adobe. Recipes belong to their creators.',
   },
   zh: {
-    skip: '跳到配方', recipes: '配方', navHelp: '帮助', navDownload: '下载', navDocs: '文档', navSponsor: '赞助',
-    heroTitle: '在 Lightroom 和 Camera Raw 中使用尼康配方',
+    skip: '跳到配方', recipes: '配方', recipeList: '配方列表', browseAll: '浏览全部 {total} 款配方', navHelp: '帮助', navDownload: '下载', navDocs: '文档', navSponsor: '赞助',
+    heroTitle: '在 Lightroom 和 Camera Raw 中使用尼康云创配方',
     about1: '<a href="' + LINKS.imagingCloud + '" target="_blank" rel="noopener">尼康云创</a>（Nikon Imaging Cloud）汇集了许多专业摄影师创作的色彩配方。不过，这些配方只作用于相机直出的 JPEG，不会改变 RAW 图像。如果你需要处理 RAW 文件，想在后期用上这些配方，就只能使用尼康官方的 NX Studio，而这与很多摄影师的工作流并不兼容。',
-    about2: '本项目在 Lightroom 和 Photoshop Camera Raw 中复刻了这些配方：我们测量每款配方对色彩的处理，把结果保存为 Lightroom 可以直接使用的配置文件（一个小小的 .xmp 文件）。在「配置文件」中选择配方，用「数量」滑块调整强度（0–200%）即可；曝光、白平衡、曲线等调整依然照常可用。',
-    whyTitle: '项目特色',
-    why1: '<b>强度可调</b>：「数量」从 0 到 200%，配方垫在你自己的调整之下，不会覆盖它们。',
-    why2: '<b>支持官方配方不支持的相机</b>：云创配方只能用在具备 Flexible Color 的较新尼康机身上，旧机型即使在 NX Studio 里也无法套用。Adobe 通用版适用于 Lightroom 能打开的任何 RAW，包括旧款尼康，甚至其他品牌的相机。',
-    why3: '<b>按机型分别测量</b>：Z 8、Z 9、Z f、Z6III、Z5II、Z50II 的压缩包各自使用在该机身上测量的色彩表。',
-    why4: '<b>已有的照片都能用</b>，哪怕是在配方发布之前拍的；每款配方都公布了与 NX Studio 的实测色差。',
+    about2: '本项目在 Lightroom 和 Photoshop Camera Raw 中复刻了这些配方：我们测量每款配方对色彩的处理，把结果保存为 Lightroom 可以直接安装使用的配置文件。在「配置文件」中选择配方，用「数量」滑块调整强度（0–200%）即可；曝光、白平衡、曲线等调整依然照常可用。',
+    whyTitle: '相比官方云创的优势',
+    why1: '<b>强度可调</b>：「数量」滑块从 0 到 200%；NX Studio 中的官方预设只能使用固定强度。',
+    why2: '<b>支持官方配方不支持的相机</b>：云创配方只能用在具备 Flexible Color 的较新尼康机身上，旧机型即使在 NX Studio 里也无法套用。我们的版本适用于 Lightroom 能打开的任何 RAW，包括旧款尼康，甚至其他品牌的相机。',
     about3: '经实测，大部分转换后的配方都能很好地还原原版配方的色彩。你可以在本网站浏览全部 236 款配方，并在四张测试照片上将转换效果与 NX Studio 原版逐一对比。',
     about4: '如果有任何问题，欢迎在 GitHub 上<a href="' + LINKS.issues + '" target="_blank" rel="noopener">提交 Issue</a> 反馈；也欢迎通过 Pull Request <a href="' + LINKS.contributing + '" target="_blank" rel="noopener">贡献代码</a>。',
     welcomeStart: '开始浏览',
     ctaDownload: '下载 LR 配置文件', ctaSponsor: '♥ 赞助',
-    installTitle: '安装方法', install1: '<b>下载</b>：点击「下载 LR 配置文件」，获取包含全部配方的压缩包；只想要其中一部分的话，在网站的列表中选中配方后点击「下载本配方」。', install2: '<b>导入</b>：在 Lightroom 或 Camera Raw 的配置文件浏览器中选择「导入配置文件」，选中 .xmp 文件；如果没有出现，请重启 Lightroom。', install3: '<b>使用</b>：在 Nikon Recipes LR 1.1 分组中选择配方并调整强度；100% 为原版配方色彩；30–50% 效果较温和。',
-    howTitle: '对比怎么用', how1: '图像 A 和图像 B 可以分别显示 NX Studio、任一版本的 Lightroom 配置文件，或不套配方的基础配置文件。', how2: '闪烁模式每秒在 A、B 之间切换一次（点击图片可暂停）；滑块模式左边是 A、右边是 B。', how3: '所有配置文件都按 100% 数量显示，预览图由 Camera Raw 渲染原始 RAW 文件计算得到。',
-    limitsTitle: '注意事项', limits2: '平滑的天空或焦外仍可能出现断层，欢迎在 GitHub 上反馈。',
+    installTitle: '安装方法', install1: '<b>下载</b>：点击「下载 LR 配置文件」，获取包含全部配方的压缩包；只想要其中一部分的话，在网站的列表中选中配方后点击「下载本配方」。', install2: '<b>导入</b>：在 Lightroom 或 Camera Raw 的配置文件浏览器中选择「导入配置文件」，选中 .xmp 文件；如果没有出现，请重启 Lightroom。', install3: '<b>使用</b>：在以 NRLR Y9（机型版）或 NRLR Y8（Adobe 通用版）开头的分组中选择配方并调整强度；100% 为原版配方色彩；30–50% 效果较温和。',
+    limitsTitle: '注意事项', limits3: '全部云创配方数量较多（236 款），你可以在网站上挑选你喜欢的配方下载。', limits2: '平滑的天空或焦外仍可能出现断层，欢迎在 GitHub 上反馈。',
     dlTitle: '下载 Lightroom 配置文件',
     dlText1: '每个压缩包（约 45 MB）包含全部 236 款配方的配置文件，适用于 Lightroom Classic、Lightroom 和 Photoshop Camera Raw。解压后在配置文件浏览器中导入 .xmp 文件即可，压缩包里的 README 写有详细步骤。文件托管在 GitHub 上。',
     dlText2: '请选择你使用的相机。有「相机 Flexible Color」的尼康机身（Z 8、Z 9、Z f、Z6III、Z5II、Z50II、ZR）的版本以它为基础（Y9），色彩表在各机型上分别测量，最接近 NX Studio；其他相机请选择 Adobe Standard 通用版（Y8）。', cameraLabel: '你的相机', cameraAdobe: '其他相机 · Adobe Standard 通用版（Y8）', dlZip: '下载压缩包', rdTitle: '下载「{name}」', rdText: '不同相机的配置文件不同，请选择你使用的相机；列表中没有的相机请选择 Adobe Standard 通用版。', rdDownload: '下载 XMP',
@@ -441,7 +438,7 @@ const STR = {
     bandLabel: '断层风险', bandHelp: '颜色表转折的剧烈程度（face-jump p99）。越低渐变越平滑，但不能作为有无断层的保证。',
     band0: '低', band1: '中', band2: '高',
     downloadXmp: '下载本配方', downloadNp3: '本配方的 NP3', measurements: '测量数据',
-    srcNx: 'NX Studio（原版配方）', srcAdobe: 'Adobe Standard（不套配方）', srcFlex: '相机 Flexible Color（不套配方）', srcVersion: 'Lightroom 配置文件 {v}',
+    srcNx: 'NX Studio 原版', srcAdobe: 'Adobe Standard（不套配方）', srcFlex: '相机 Flexible Color（不套配方）', srcVersion: '我们的转换 {v}',
     ver10: 'Y9 · 最新', ver02: 'Y8 · 上一版本',
     scene9046: '风景测试 1', scene2849: '风景测试 2', scene2694: '断层测试 1', scene2694note: '焦外过渡', scene5054: '断层测试 2', scene5054note: '平滑天空',
     sliderLabel: '{scene}：对比分界线', missingNx: '这个场景没有 NX Studio 参照图。', favAdd: '加入收藏', favRemove: '取消收藏', prev: '上一款', next: '下一款',
@@ -451,22 +448,19 @@ const STR = {
     footerIndependent: '独立社区项目，与尼康、Adobe 无关。配方归各自作者所有。',
   },
   ja: {
-    skip: 'レシピへ移動', recipes: 'レシピ', navHelp: 'ヘルプ', navDownload: 'ダウンロード', navDocs: 'ドキュメント', navSponsor: 'スポンサー',
-    heroTitle: 'ニコンのイメージングレシピを Lightroom と Camera Raw で',
+    skip: 'レシピへ移動', recipes: 'レシピ', recipeList: 'レシピ一覧', browseAll: '全 {total} 件のレシピを見る', navHelp: 'ヘルプ', navDownload: 'ダウンロード', navDocs: 'ドキュメント', navSponsor: 'スポンサー',
+    heroTitle: 'ニコンのイメージングクラウドのレシピを Lightroom と Camera Raw で',
     about1: '<a href="' + LINKS.imagingCloud + '" target="_blank" rel="noopener">Nikon Imaging Cloud</a> では、プロの写真家が作成したカラーレシピが配信されています。ただし、レシピが反映されるのはカメラで記録される JPEG だけで、RAW 画像は変わりません。RAW を現像する場合、レシピを使う公式の方法はニコンの NX Studio だけで、多くの写真家のワークフローには合いません。',
-    about2: 'このプロジェクトは、レシピを Lightroom と Photoshop Camera Raw で再現します。各レシピが色をどう変えるかを測定し、その結果を Lightroom でそのまま使えるプロファイル（小さな .xmp ファイル）として保存しています。プロファイルブラウザーでレシピを選び、「適用量」スライダー（0〜200%）で強さを調整するだけです。露光量、ホワイトバランス、トーンカーブなどの調整もこれまでどおり使えます。',
-    whyTitle: '特長',
-    why1: '<b>強さを調整できる</b>：適用量は 0〜200%。レシピはあなたの調整の下に重なるだけで、上書きはしません。',
-    why2: '<b>公式レシピが使えないカメラにも</b>：イメージングレシピは Flexible Color を備えた比較的新しいニコン機でしか使えず、古い機種では NX Studio でも適用できません。Adobe パックは Lightroom で開けるあらゆる RAW に使えます。古いニコン機や他社のカメラでも使えます。',
-    why3: '<b>機種ごとに測定</b>：Z 8、Z 9、Z f、Z6III、Z5II、Z50II のパックは、それぞれの機種で測定したテーブルを使います。',
-    why4: '<b>手持ちの写真にも</b>。レシピの公開前に撮った写真にも使えます。すべてのレシピに NX Studio との色差の測定値があります。',
+    about2: 'このプロジェクトは、レシピを Lightroom と Photoshop Camera Raw で再現します。各レシピが色をどう変えるかを測定し、その結果を Lightroom にそのままインストールして使えるプロファイルとして保存しています。プロファイルブラウザーでレシピを選び、「適用量」スライダー（0〜200%）で強さを調整するだけです。露光量、ホワイトバランス、トーンカーブなどの調整もこれまでどおり使えます。',
+    whyTitle: '公式レシピと比べた利点',
+    why1: '<b>強さを調整できる</b>：適用量スライダーは 0〜200%。NX Studio の公式レシピは固定の強さでしか使えません。',
+    why2: '<b>公式レシピが使えないカメラにも</b>：イメージングレシピは Flexible Color を備えた比較的新しいニコン機でしか使えず、古い機種では NX Studio でも適用できません。このプロジェクトのプロファイルは Lightroom で開けるあらゆる RAW に使えます。古いニコン機や他社のカメラでも使えます。',
     about3: '検証では、ほとんどの変換が元のレシピの色をよく再現しています。このサイトでは 236 種類すべてのレシピを閲覧し、4 枚のテスト写真で NX Studio と 1 つずつ比較できます。',
     about4: '問題があれば GitHub で<a href="' + LINKS.issues + '" target="_blank" rel="noopener">Issue を作成</a>してください。<a href="' + LINKS.contributing + '" target="_blank" rel="noopener">プルリクエスト</a>も歓迎します。',
     welcomeStart: '見てみる',
     ctaDownload: 'LR プロファイル', ctaSponsor: '♥ スポンサー',
-    installTitle: 'インストール方法', install1: '<b>ダウンロード</b>：「LR プロファイル」ボタンから、すべてのレシピを 1 つの ZIP ファイルで入手できます。一部だけ欲しい場合は、サイトの一覧でレシピを選んで「このレシピをダウンロード」を押してください。', install2: '<b>読み込み</b>：Lightroom または Camera Raw のプロファイルブラウザーで「プロファイルを読み込み」を選び、.xmp ファイルを指定します。表示されない場合は Lightroom を再起動してください。', install3: '<b>使い方</b>：Nikon Recipes LR 1.1 グループからレシピを選び、強さ（適用量）を調整します。100% で元のレシピの色になり、30〜50% で控えめな効果になります。',
-    howTitle: '比較の使い方', how1: '画像 A と画像 B には、それぞれ NX Studio、どちらかのバージョンの Lightroom プロファイル、またはレシピなしのベースプロファイルを表示できます。', how2: '点滅は 1 秒ごとに A と B を切り替えます（画像をクリックで一時停止）。スライダーでは左が A、右が B です。', how3: 'すべて適用量 100% で表示しています。プレビューは元の RAW ファイルを Camera Raw で現像した結果から計算しています。',
-    limitsTitle: '注意点', limits2: '滑らかな空やボケで段差が出ることがあります。GitHub で報告をお願いします。',
+    installTitle: 'インストール方法', install1: '<b>ダウンロード</b>：「LR プロファイル」ボタンから、すべてのレシピを 1 つの ZIP ファイルで入手できます。一部だけ欲しい場合は、サイトの一覧でレシピを選んで「このレシピをダウンロード」を押してください。', install2: '<b>読み込み</b>：Lightroom または Camera Raw のプロファイルブラウザーで「プロファイルを読み込み」を選び、.xmp ファイルを指定します。表示されない場合は Lightroom を再起動してください。', install3: '<b>使い方</b>：NRLR Y9（機種別パック）または NRLR Y8（Adobe パック）で始まるグループからレシピを選び、強さ（適用量）を調整します。100% で元のレシピの色になり、30〜50% で控えめな効果になります。',
+    limitsTitle: '注意点', limits3: 'イメージングクラウドのレシピは数が多い（236 種類）ので、このサイトで気に入ったものだけを選んでダウンロードできます。', limits2: '滑らかな空やボケで段差が出ることがあります。GitHub で報告をお願いします。',
     dlTitle: 'Lightroom プロファイルのダウンロード',
     dlText1: '各 ZIP ファイル（約 45 MB）に 236 種類すべてのレシピのプロファイルが入っています。Lightroom Classic、Lightroom、Photoshop Camera Raw で使えます。展開してプロファイルブラウザーで .xmp ファイルを読み込んでください。手順は ZIP 内の README にあります。ファイルは GitHub で配布しています。',
     dlText2: 'お使いのカメラを選んでください。Camera Flexible Color のあるニコン機（Z 8、Z 9、Z f、Z6III、Z5II、Z50II、ZR）用はそれをベースにし（Y9）、カラーテーブルを機種ごとに測定しているため、NX Studio に最も近くなります。その他のカメラでは Adobe Standard 汎用版（Y8）を選んでください。', cameraLabel: 'お使いのカメラ', cameraAdobe: 'その他のカメラ · Adobe Standard 汎用版（Y8）', dlZip: 'ZIP をダウンロード', rdTitle: '「{name}」をダウンロード', rdText: 'プロファイルのファイルはカメラによって異なります。お使いのカメラを選んでください。一覧にないカメラでは Adobe Standard 汎用版を選んでください。', rdDownload: 'XMP をダウンロード',
@@ -482,7 +476,7 @@ const STR = {
     bandLabel: '段差リスク', bandHelp: 'カラーテーブルが急に向きを変える度合い（face-jump p99）。低いほど階調が滑らかですが、段差の有無を保証するものではありません。',
     band0: '低', band1: '中', band2: '高',
     downloadXmp: 'このレシピをダウンロード', downloadNp3: 'このレシピの NP3', measurements: '測定データ',
-    srcNx: 'NX Studio（元のレシピ）', srcAdobe: 'Adobe Standard（レシピなし）', srcFlex: 'Camera Flexible Color（レシピなし）', srcVersion: 'Lightroom プロファイル {v}',
+    srcNx: 'NX Studio オリジナル', srcAdobe: 'Adobe Standard（レシピなし）', srcFlex: 'Camera Flexible Color（レシピなし）', srcVersion: '私たちの変換 {v}',
     ver10: 'Y9 · 最新', ver02: 'Y8 · 前の版',
     scene9046: '風景テスト 1', scene2849: '風景テスト 2', scene2694: '段差テスト 1', scene2694note: 'ボケの階調', scene5054: '段差テスト 2', scene5054note: '滑らかな空',
     sliderLabel: '{scene}：比較の境界線', missingNx: 'このシーンの NX Studio 参照画像はありません。', favAdd: 'お気に入りに追加', favRemove: 'お気に入りから削除', prev: '前のレシピ', next: '次のレシピ',
@@ -579,6 +573,7 @@ function applyStatic() {
   for (const [id, href] of [['#nav-github', LINKS.github], ['#cta-github', LINKS.github], ['#sponsor-github', LINKS.sponsor], ['#nav-docs', LINKS.docs[lang]]]) $(id).href = href;
   $('#prev').setAttribute('aria-label', t('prev')); $('#prev').title = t('prev');
   $('#next').setAttribute('aria-label', t('next')); $('#next').title = t('next');
+  $('#browse-label').textContent = t('browseAll', { total: data.length });
   fillSources();
   if (typeof fillCameraSelects === 'function') fillCameraSelects();
 }
@@ -671,7 +666,7 @@ function source(stem, r, key) {
   const v = version(key);
   if (v) return { label: t('srcVersion', { v: v.short }), path: 'images/' + v.id + '/' + stem + '_' + id + '.jpg' };
   const nx = nxRefs.get(stem + '|' + r.recipe);
-  return { label: 'NX Studio', path: nx ? nx.path : null };
+  return { label: t('srcNx'), path: nx ? nx.path : null };
 }
 function pane(choice, scene) {
   if (choice.path) return img(choice.path, choice.label + ' — ' + scene);
@@ -699,7 +694,7 @@ function scoreChip(label, value, levels, help) {
 function show() {
   const r = data.find(x => x.recipe === selected) || data[0];
   const v = currentVersion(), m = metrics(r.recipe), f = files.get(r.recipe);
-  document.title = r.display + ' — Nikon Recipes to LR Profiles';
+  document.title = r.display + ' — NRLR';
   $('#crumbs').replaceChildren(...folders.get(r.recipe).map(part => el('span', { text: part })));
   $('#recipe-title').textContent = r.display;
   $('#recipe-author').textContent = t('by', { author: recipeLabel(r) });
@@ -763,6 +758,7 @@ function toggleBlinkPause() {
 function openDrawer() { if (!matchMedia('(max-width: 760px)').matches) return; $('#sidebar').classList.add('open'); $('#scrim').classList.add('open'); $('#drawer-open').setAttribute('aria-expanded', 'true'); }
 function closeDrawer() { $('#sidebar').classList.remove('open'); $('#scrim').classList.remove('open'); $('#drawer-open').setAttribute('aria-expanded', 'false'); }
 $('#drawer-open').onclick = () => { openDrawer(); revealSelectedInList(true); };
+$('#browse-recipes').onclick = () => { openDrawer(); revealSelectedInList(true); };
 $('#drawer-close').onclick = closeDrawer;
 $('#scrim').onclick = closeDrawer;
 $('#menu-button').onclick = () => { const open = $('#nav').classList.toggle('open'); $('#menu-button').setAttribute('aria-expanded', String(open)); };

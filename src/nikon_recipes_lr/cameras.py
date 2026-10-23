@@ -38,8 +38,11 @@ FLEX_CAMERAS = (
 )
 ADOBE = Camera("adobe", "Other cameras (Adobe Standard)", "")
 REFERENCE = FLEX_CAMERAS[0]
-REFERENCE_SERIES = "1.0"  # series of the reference profiles in docs/release_manifest.json
-SERIES = "1.1"  # Profile Browser group and name suffix of this release series
+# Profiles carry the project's short name and the method's code name, not the release number: groups such as
+# "NRLR Y9 - Stephen Morais" and names such as "KG200P1 by Stephen Morais [NRLR Y9]". Their UUIDs stay the same
+# from release to release, so importing a newer release replaces the older profiles in Lightroom.
+FLEX_CODE = "Y9"  # Camera Flexible Color packs
+ADOBE_CODE = "Y8"  # Adobe Standard pack
 
 
 def _once(pattern, replacement, text):
@@ -51,6 +54,35 @@ def _once(pattern, replacement, text):
 
 def _uuid(*parts):
     return uuid.uuid5(uuid.NAMESPACE_URL, ":".join(("nikon-recipes-to-lr-profiles",) + parts)).hex.upper()
+
+
+def profile_uuid(camera, recipe):
+    return _uuid("nrlr", camera.slug, recipe)
+
+
+def short_group(group):
+    """A recipe's creator group as one short Profile Browser group: "ThirdParty/MGA/Nikon B&W Recipes" -> "MGA B&W Recipes"."""
+    group = re.sub(r"^(Nikon Recipes LR[^/]*/)?(ThirdParty/)?", "", group)
+    return group.replace("MGA/Nikon ", "MGA ").replace("/", " ")
+
+
+def group_name(code, group):
+    return f"NRLR {code} - {short_group(group)}"
+
+
+def relabel(text, code, recipe, camera):
+    """Give a release profile this project's names (suffix and group) and the camera pack's UUID."""
+    text, count = re.subn(r"\[NRLR [^\]]*\]", f"[NRLR {code}]", text)
+    if count != 3:
+        raise ValueError("Expected the NRLR suffix in Name, ShortName and SortName")
+    text, count = re.subn(
+        r"(<crs:Group>\s*<rdf:Alt>\s*<rdf:li[^>]*>)([^<]*)(</rdf:li>)",
+        lambda m: m.group(1) + group_name(code, m.group(2)) + m.group(3),
+        text,
+    )
+    if count != 1:
+        raise ValueError("Expected one profile group")
+    return _once(r'crs:UUID="[0-9A-F]{32}"', f'crs:UUID="{profile_uuid(camera, recipe)}"', text)
 
 
 TABLE = re.compile(r'crs:RGBTable="([0-9A-F]{32})"')
@@ -71,13 +103,8 @@ def camera_profile(reference_text, recipe, camera, table_source=None):
     ``table_source`` is a profile fitted on that body's calibration kit; its color table replaces the
     reference table. Everything else (names, credits, description) comes from the reference profile.
     """
-    old = f"[NRLR {REFERENCE_SERIES}]"
-    if reference_text.count(old) != 3:
-        raise ValueError("Expected the reference suffix in Name, ShortName and SortName")
-    text = reference_text.replace(old, f"[NRLR {SERIES}]")
-    text = _once(rf"Nikon Recipes LR {re.escape(REFERENCE_SERIES)}/", f"Nikon Recipes LR {SERIES}/", text)
+    text = relabel(reference_text, FLEX_CODE, recipe, camera)
     text = _once(r'crs:CameraModelRestriction="NIKON Z 8"', f'crs:CameraModelRestriction="{camera.restriction}"', text)
-    text = _once(r'crs:UUID="[0-9A-F]{32}"', f'crs:UUID="{_uuid(SERIES, camera.slug, recipe)}"', text)
     # Release descriptions name the camera; replace it where present.
     text = text.replace("Camera Flexible Color, Nikon Z 8)", f"Camera Flexible Color, {camera.label})")
     if table_source is not None:
@@ -112,13 +139,8 @@ def table_sources(root, manifests):
 
 
 def adobe_profile(previous_text, recipe):
-    """Relabel a 0.2 profile (Adobe Standard base, no restriction) as the universal pack of this series."""
-    tag = f"NRLR {SERIES} Adobe"
-    text = previous_text.replace("[NRLR 0.2]", f"[{tag}]")
-    if text.count(f"[{tag}]") != 3:
-        raise ValueError("Expected the 0.2 suffix in Name, ShortName and SortName")
-    text = _once(r"Nikon Recipes LR 0\.2/", f"Nikon Recipes LR {SERIES} Adobe/", text)
-    text = _once(r'crs:UUID="[0-9A-F]{32}"', f'crs:UUID="{_uuid(SERIES, ADOBE.slug, recipe)}"', text)
+    """Relabel a 0.2 profile (Adobe Standard base, no restriction) as the universal pack."""
+    text = relabel(previous_text, ADOBE_CODE, recipe, ADOBE)
     if 'crs:CameraProfile="Adobe Standard"' not in text or 'crs:CameraModelRestriction=""' not in text:
         raise ValueError("Expected an unrestricted profile on Adobe Standard")
     return text

@@ -62,7 +62,7 @@ Fitting takes a few seconds. With the kit, a released recipe refitted this way d
 
 ## 4. Use it in Lightroom
 
-Import `MyRecipe.xmp` through the Profile Browser (**Import Profiles**). It appears in the **Nikon Recipes LR/Custom** group. Check it on photos with smooth skies or bokeh, at 100% and at higher Amount, before relying on it. Like the released profiles, it reproduces color and tone only; the recipe's sharpening, mid-range sharpening and clarity are not included.
+Import `MyRecipe.xmp` through the Profile Browser (**Import Profiles**). It appears in the **NRLR - Custom** group. Check it on photos with smooth skies or bokeh, at 100% and at higher Amount, before relying on it. Like the released profiles, it reproduces color and tone only; the recipe's sharpening, mid-range sharpening and clarity are not included.
 
 ## Other cameras and your own chart
 

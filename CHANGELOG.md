@@ -2,6 +2,18 @@
 
 Notable changes to the released profiles and tools. Profile releases are on the [Releases page](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases).
 
+## 1.2.0 — 2026-10-23
+
+### Profiles
+- **Short, findable names.** The project is now called **NRLR** (Nikon Recipes to LR Profiles). Profile Browser groups are `NRLR Y9 - <creator>` in the camera packs and `NRLR Y8 - <creator>` in the Adobe pack, without the release number and without nested `/` paths (`ThirdParty/` is gone); names end in `[NRLR Y9]` or `[NRLR Y8]`. Search for "NRLR" to find this project again.
+- UUIDs no longer change from release to release: importing a newer release replaces the profiles instead of adding another set. The tables are the same as in 1.1.0.
+
+### Website and documentation
+- README title "NRLR - Nikon Recipes to LR Profiles"; the website shows NRLR in its header, calls the comparison sources "NX Studio original" and "Our conversion".
+- The help dialog and READMEs list the advantages over the official recipes (adjustable strength; cameras the official recipes do not support). The comparison help section is removed, and the help notes that recipes can be downloaded one by one.
+- On phones, the recipe list has a prominent button in the top bar and above the recipe.
+- The gallery opens on F400H.
+
 ## 1.1.0 — 2026-10-23
 
 ### Profiles

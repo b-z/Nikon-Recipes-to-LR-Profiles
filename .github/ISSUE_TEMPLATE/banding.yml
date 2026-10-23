@@ -9,7 +9,7 @@ body:
     id: recipe
     attributes:
       label: Recipe and release
-      description: Profile name as shown in Lightroom, e.g. "Filmic by Fabio Oliveira [NRLR 0.2]"
+      description: Profile name as shown in Lightroom, e.g. "Filmic by Fabio Oliveira [NRLR Y9]"
     validations:
       required: true
   - type: input
