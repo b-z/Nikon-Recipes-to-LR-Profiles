@@ -10,7 +10,13 @@ How a maintainer publishes a new profile release. Code-only changes do not need 
 
 ## Steps
 
-1. **Prepare the profiles.** Fit every recipe from its chart samples (`nikon-recipes-lr fit` or `nikon_recipes_lr.spline.SplineFitter`), apply the naming conventions above and write the manifest. The chart, NX Studio settings and Camera Raw baselines are in the [Z 8 calibration kit](../calibration/z8/). The batch scripts used for 0.2.0 and 1.0.0 relabel fitted tables with the conventions above; they are not public yet.
+1. **Prepare the profiles.** Make one NX Studio export of the [Z 8 calibration kit](../calibration/z8/) chart per recipe (`prepare-nx` for all NP3 files at once), then run
+
+   ```sh
+   python scripts/build_release_profiles.py --nx /path/to/nx-batch --version <version> --np3 /path/to/Nikon-Recipes --output /path/to/new-release
+   ```
+
+   It samples every TIFF, fits on the kit's fixed training patches, scores the held-out patches, audits banding risk, and writes the reference (Nikon Z 8) profiles with the naming conventions above plus a manifest; copy that manifest to `docs/release_manifest.json` after adding each row's `previous` scores. Refitting a released recipe this way reproduces its table within about 0.06 ΔE.
 2. **Check the profiles.** `nikon-recipes-lr audit` a sample, render a few through Camera Raw (`nikon-recipes-lr render`), and import the set into Lightroom to confirm the group, names and Amount slider.
 3. **Update the repository.**
    - Bump the version in `pyproject.toml` and `src/nikon_recipes_lr/__init__.py`.

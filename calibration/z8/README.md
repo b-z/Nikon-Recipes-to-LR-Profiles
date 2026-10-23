@@ -8,6 +8,7 @@ Everything needed to turn a Nikon Picture Control or Imaging Recipe (`.NP3`) int
 | `chart.json` | Patch positions, for `nikon-recipes-lr sample` |
 | `nx-template.nksc` | NX Studio settings for the chart, for `nikon-recipes-lr prepare-nx` |
 | `camera-flexible-color.npy` | The chart rendered by Camera Raw with Camera Flexible Color and measured with `nikon-recipes-lr sample`; use with `fit --base "Camera Flexible Color"` (the 1.0 method) |
+| `splits.npz` | The fixed training, validation and test patches used for the releases; `scripts/build_release_profiles.py` fits on `train` and reports `test` |
 | `adobe-standard.npy` | The same with Adobe Standard; use with the default `fit --base "Adobe Standard"` (the 0.2 method, for profiles that work with any camera) |
 
 The chart's image data is synthetic; its metadata and embedded previews come from the sample photograph `_DSC2849.NEF`, so the [sample photo terms](../../samples/LICENSE.md) apply to the file. Profiles you make with it are yours to use and share.

@@ -140,13 +140,24 @@ def read_profile(path):
     return lut, metadata
 
 
-def build_profile(lut, name, author, group=DEFAULT_GROUP, camera=DEFAULT_CAMERA, base="Adobe Standard"):
+def build_profile(
+    lut,
+    name,
+    author,
+    group=DEFAULT_GROUP,
+    camera=DEFAULT_CAMERA,
+    base="Adobe Standard",
+    profile_uuid=None,
+    short_name=None,
+    description=None,
+):
     """Return an enhanced-profile XMP (a Look on ``base``) embedding ``lut``.
 
     ``lut`` must have been fitted to chart samples rendered with the same base profile.
 
     The UUID is derived from the group and name, so re-fitting a profile with the
-    same name and group replaces it in Lightroom instead of adding a duplicate.
+    same name and group replaces it in Lightroom instead of adding a duplicate. Releases pass their own
+    ``profile_uuid``, ``short_name`` and ``description``.
     """
     if base not in BASES:
         raise ValueError(f"Base profile must be one of {BASES}")
@@ -156,7 +167,7 @@ def build_profile(lut, name, author, group=DEFAULT_GROUP, camera=DEFAULT_CAMERA,
     attrs = dict(
         PresetType="Look",
         Cluster="Nikon Recipes to LR Profiles",
-        UUID=uuid.uuid5(uuid.NAMESPACE_URL, f"{URL}:{group}:{name}").hex.upper(),
+        UUID=profile_uuid or uuid.uuid5(uuid.NAMESPACE_URL, f"{URL}:{group}:{name}").hex.upper(),
         SupportsAmount="True",
         SupportsColor="True",
         SupportsMonochrome="False",
@@ -178,13 +189,13 @@ def build_profile(lut, name, author, group=DEFAULT_GROUP, camera=DEFAULT_CAMERA,
     )
     attrs[f"Table_{tid}"] = payload
     desc = ET.SubElement(rdf, f"{{{RDF}}}Description", {f"{{{CRS}}}{k}": v for k, v in attrs.items()})
-    description = (
+    description = description or (
         f"Original recipe by {author}. Calibrated approximation on {base} made with Nikon Recipes to LR Profiles ({URL}); Amount 0–200%."
         + (f" Calibrated for {camera}." if camera else "")
     )
     for key, value in [
         ("Name", name),
-        ("ShortName", name),
+        ("ShortName", short_name or name),
         ("SortName", name),
         ("Group", group),
         ("Description", description),

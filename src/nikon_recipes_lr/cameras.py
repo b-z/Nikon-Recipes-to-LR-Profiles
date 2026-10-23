@@ -56,7 +56,8 @@ def camera_profile(reference_text, recipe, camera):
         r'crs:CameraModelRestriction="NIKON Z 8"', f'crs:CameraModelRestriction="{camera.restriction}"', reference_text
     )
     text = _once(r'crs:UUID="[0-9A-F]{32}"', f'crs:UUID="{_uuid(SERIES, camera.slug, recipe)}"', text)
-    return _once(r"Camera Flexible Color, Nikon Z 8\)", f"Camera Flexible Color, {camera.label})", text)
+    # Release descriptions name the camera; replace it where present.
+    return text.replace("Camera Flexible Color, Nikon Z 8)", f"Camera Flexible Color, {camera.label})")
 
 
 def adobe_profile(previous_text, recipe):

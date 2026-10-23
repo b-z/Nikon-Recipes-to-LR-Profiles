@@ -43,7 +43,7 @@ The core library and CLI need only Python. Rendering (`nikon-recipes-lr render`)
 |---|---|
 | `src/nikon_recipes_lr/` | Library and CLI: NP3 reader, chart generator, sampling, fitters (`spline.py` for released profiles, `fit.py` for the direct table fit), RGBTable/XMP codec, tetrahedral interpolation, banding audit, and import sidecars (`sidecar.py`, with the recipe-to-Picture-Control table `picture_controls.json`) |
 | `tests/` | Unit and CLI tests (no vendor software needed) |
-| `scripts/` | Maintainer scripts: `write_catalog.py` (recipe catalog from the release manifest), `package_release.py` (release ZIP), `write_picture_controls.py` (Picture Control names for `sidecars`) |
+| `scripts/` | Maintainer scripts: `write_catalog.py` (recipe catalog from the release manifest), `package_release.py` (release ZIP), `write_picture_controls.py` (Picture Control names for `sidecars`), `build_release_profiles.py` (fit all recipes of a release) |
 | `docs/` | User documentation, recipe catalog and method notes; `docs/release_manifest.json` describes the current release |
 | `calibration/` | Calibration kits: chart RAW, patch positions, NX Studio settings and Camera Raw measurements per camera |
 | `website/` | Gallery page, data and build scripts; the image library is kept outside Git ([website/README.md](website/README.md)) |
