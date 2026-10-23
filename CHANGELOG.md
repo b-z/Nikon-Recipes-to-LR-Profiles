@@ -2,11 +2,32 @@
 
 Notable changes to the released profiles and tools. Profile releases are on the [Releases page](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases).
 
-## Unreleased
+## 1.1.0 — 2026-10-23
 
-### Tools
-- `scripts/build_release_profiles.py` fits all recipes of a release from NX Studio exports of the calibration chart, with the release naming, scores and banding audit; the kit now includes the fixed training/test split (`splits.npz`). Refitting a released recipe reproduces its table within about 0.06 ΔE.
+### Profiles
+- **A color table for each camera.** The camera packs no longer share the Z 8 tables: every pack is fitted on a chart made from that camera's own RAW data, with the same fitter, patches and NX Studio settings as the Z 8. Camera Raw and NX Studio do not place every body's brightness in the same way, so on other bodies the Z 8 tables were 0.1–1.6 ΔE further from NX Studio (median over recipes); with their own tables every body is as close as the Z 8 (held-out patches, median over the 236 recipes):
+
+  | Body | Z 8 table | Own table |
+  |---|---:|---:|
+  | Z f | 1.02 | 0.52 |
+  | Z 9 | 1.06 | 0.48 |
+  | Z50II | 2.12 | 0.54 |
+  | Z6III | 0.60 | 0.51 |
+  | Z5II | 0.89 | 0.51 |
+  | ZR | 1.33 | 0.52 |
+
+  The own table is closer for 1,414 of 1,416 recipe–body pairs. The Z 8 pack keeps the 1.0 tables. [Details](docs/Y9_FLEX_BASE.md#one-table-per-camera).
+- New group **Nikon Recipes LR 1.1** (and **Nikon Recipes LR 1.1 Adobe**) with new names and UUIDs, so 1.1 can be installed next to 1.0. The Adobe pack keeps the Y8 tables.
+
+### Calibration kits and tools
+- Kits for the Z 9, Z f, Z50II, Z6III, Z5II and ZR in `calibration/<camera>/`. The Z 9, Z f and Z50II kits include the chart RAW; the others explain how to make it from your own photo.
+- `scripts/make_chart.py` makes a chart for another Nikon body from one of its NEFs and finds the patches in a rendered TIFF.
+- `scripts/build_release_profiles.py --camera <body>` fits on that body's kit; `package_release.py` and the website put each body's table into its pack (`--camera-profiles`, manifests in `docs/camera_manifests/`).
+- `scripts/build_release_profiles.py` fits all recipes of a release from NX Studio exports of the calibration chart, with the release naming, scores and banding audit; the Z 8 kit includes the fixed training/test split (`splits.npz`).
 - `build_profile` accepts a release UUID, short name and description.
+
+### Documentation and website
+- README and website list what the project offers beyond NX Studio: adjustable strength, cameras the official recipes do not support (any camera with the Adobe pack), tables measured per camera, and photos taken before a recipe existed.
 
 ## 1.0.1 — 2026-10-23
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nikon-recipes-to-lr-profiles"
-version = "1.0.1"
+version = "1.1.0"
 description = "Calibrate Nikon Imaging Recipes into adjustable Lightroom / Camera Raw profiles"
 readme = "README.md"
 requires-python = ">=3.10"

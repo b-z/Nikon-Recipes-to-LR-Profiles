@@ -18,7 +18,7 @@ import shutil
 from pathlib import Path
 
 from nikon_recipes_lr import __version__
-from nikon_recipes_lr.cameras import ADOBE, FLEX_CAMERAS, adobe_profile, camera_profile
+from nikon_recipes_lr.cameras import ADOBE, FLEX_CAMERAS, adobe_profile, camera_profile, table_sources
 
 ROOT = Path(__file__).resolve().parents[2]
 SCENES = ("9046", "2849", "2694", "5054")
@@ -40,13 +40,14 @@ def read_profiles(rows, source):
     return texts
 
 
-def write_packs(out, current, previous):
+def write_packs(out, current, previous, sources):
     """Write the per-recipe downloads exactly as the release packs contain them."""
     for camera in FLEX_CAMERAS:
+        tables = sources.get(camera.slug, (None, {}))[1]
         folder = out / "profiles" / camera.slug
         folder.mkdir(parents=True)
         for recipe, (name, text) in current.items():
-            (folder / name).write_text(camera_profile(text, recipe, camera), encoding="utf-8")
+            (folder / name).write_text(camera_profile(text, recipe, camera, tables.get(recipe)), encoding="utf-8")
     folder = out / "profiles" / ADOBE.slug
     folder.mkdir(parents=True)
     for recipe, (name, text) in previous.items():
@@ -58,6 +59,12 @@ def main():
     p.add_argument("--images", type=Path, required=True, help="Image library made by make_previews.py")
     p.add_argument(
         "--profiles", type=Path, required=True, help="Reference (Nikon Z 8) profiles, e.g. profiles/ of the z8 pack"
+    )
+    p.add_argument(
+        "--camera-profiles",
+        type=Path,
+        required=True,
+        help="Table sources of the fitted bodies, as for package_release.py",
     )
     p.add_argument("--previous-profiles", type=Path, required=True, help="profiles/ folder of the 0.2.0 release ZIP")
     p.add_argument("--output", type=Path, default=ROOT / "website/dist")
@@ -87,7 +94,8 @@ def main():
         target = out / "images" / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(args.images / name, target)
-    write_packs(out, read_profiles(current, args.profiles), read_profiles(previous, args.previous_profiles))
+    sources = table_sources(args.camera_profiles, ROOT / "docs/camera_manifests")
+    write_packs(out, read_profiles(current, args.profiles), read_profiles(previous, args.previous_profiles), sources)
     cameras = [dict(slug=c.slug, label=c.label, flex=True) for c in FLEX_CAMERAS]
     cameras.append(dict(slug=ADOBE.slug, label=ADOBE.label, flex=False))
 

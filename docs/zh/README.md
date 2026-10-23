@@ -14,13 +14,21 @@
 
 *KG200P1 配方在四张测试照片上的效果。上排为 NX Studio，下排为 Lightroom 中数量 100% 的配置文件。[在图库中可以这样对比每一款配方](https://nikon-recipes-to-lr-profiles.pages.dev/)。*
 
+## 为什么用它
+
+- **强度可调。**「数量」滑块从 0 到 200%，配方垫在你自己的调整之下，不会覆盖它们：曝光、白平衡、曲线、蒙版和预设都照常可用。
+- **支持官方配方不支持的相机。**云创配方只能用在具备 Flexible Color 优化校准的较新尼康机身上，旧机型即使在 NX Studio 里也无法套用。Adobe 通用版适用于 Lightroom 能打开的任何 RAW：旧款尼康，甚至其他品牌的相机。
+- **按机型分别测量。**Z 8、Z 9、Z f、Z6III、Z5II、Z50II 的每款配方都用该机身自己的 RAW 数据测量，配置文件贴合 NX Studio 对这台相机的渲染。
+- **已有的照片都能用。**拍摄时没有用配方、几年前拍的、甚至配方发布之前拍的 RAW 都能套用；工具还能按拍摄时使用的配方自动套用。
+- **实测而非目测，完全开源。**每款配方都公布与 NX Studio 的色差和断层风险，图库在四张照片上逐一对比；转换你自己配方的工具也在本仓库中。
+
 ## 安装
 
 1. 从[最新 Release](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases/latest) 下载与你相机对应的压缩包并解压：有「相机 Flexible Color」的尼康机身选 `…-z8`、`-z9`、`-zf`、`-z6iii`、`-z5ii`、`-z50ii` 或 `-zr`，其他相机选 `…-adobe`。
 2. 在 Lightroom 或 Camera Raw 的配置文件浏览器中选择「导入配置文件」，选中 `.xmp` 文件。如果没有出现，重启 Lightroom。
-3. 打开 **Nikon Recipes LR 1.0** 分组，选择配方并调整强度（「数量」滑块）；100% 为原版配方色彩；30–50% 效果较温和。
+3. 打开 **Nikon Recipes LR 1.1** 分组，选择配方并调整强度（「数量」滑块）；100% 为原版配方色彩；30–50% 效果较温和。
 
-各机型的压缩包以「相机 Flexible Color」为基础，最接近 NX Studio；Adobe 通用版以 Adobe Standard 为基础，适用于任何相机。各压缩包只在基础配置文件和限定的机型上有区别。详见[安装说明](INSTALL.md)。
+各机型的压缩包以「相机 Flexible Color」为基础，最接近 NX Studio；Adobe 通用版以 Adobe Standard 为基础，适用于任何相机。各机型压缩包的色彩表都在该机型上测量。详见[安装说明](INSTALL.md)。
 
 ## 配置文件包含什么
 
@@ -31,7 +39,7 @@
 相机会把拍摄时使用的配方名称记录在每个 NEF 里。本项目的命令行工具可以读出这个名称，并在每个 RAW 旁边写一个附属文件（sidecar），让 Lightroom Classic 和 Camera Raw 打开照片时直接套用对应的配置文件：
 
 ```sh
-nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.1-z8/profiles /path/to/photos
+nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.1.0-z8/profiles /path/to/photos
 ```
 
 请在导入照片之前运行。安装方法和细节见[自动套用配置文件](auto-apply.md)。
@@ -69,7 +77,7 @@ nikon-recipes-lr sidecars --profiles /path/to/nikon-recipes-lr-profiles-1.0.1-z8
 
 0.2 及以前的配置文件以 Adobe Standard 为基础。Camera Raw 会根据每张照片最暗的像素调低 Adobe Standard 的黑电平，因此在没有纯黑的日光场景里，阴影会比 NX Studio 更暗、颜色更深。「相机 Flexible Color」是 Adobe 对尼康 Flexible Color 优化校准（云创配方正是以它为基础）的匹配，它保留传感器的黑电平。换用它之后，1.0 在色卡上 236 款全部比 0.2 更接近 NX Studio，实拍照片的阴影也明显更接近 NX Studio，其中 235 款的断层风险分也更低。[详细说明（英文）](../Y9_FLEX_BASE.md)。
 
-Adobe 的所有相机匹配配置文件（相机标准、相机中性等）都保留传感器的黑电平，用哪一个都能解决阴影问题。选「相机 Flexible Color」，是因为它正是配方的起点：云创配方是在尼康 Flexible Color 优化校准的基础上制作的。从 Adobe 对它的匹配出发，颜色表只需要描述配方本身的改动，这是最小、因此也最平滑的修正。Adobe 为每台具备 Flexible Color 的尼康机身（Z 8、Z 9、Z f、Z6III、Z5II、Z50II、ZR）分别制作了「相机 Flexible Color」，并与尼康在该机身上的渲染匹配，所以同一张颜色表可以通用；之所以每个机型一个压缩包，是因为一个配置文件只能限定一个机型。在 Z f 和 Z6III 的样张 RAW 上，各机型版本都比 Adobe 通用版更接近 NX Studio。
+Adobe 的所有相机匹配配置文件（相机标准、相机中性等）都保留传感器的黑电平，用哪一个都能解决阴影问题。选「相机 Flexible Color」，是因为它正是配方的起点：云创配方是在尼康 Flexible Color 优化校准的基础上制作的。从 Adobe 对它的匹配出发，颜色表只需要描述配方本身的改动，这是最小、因此也最平滑的修正。Adobe 为每台具备 Flexible Color 的尼康机身（Z 8、Z 9、Z f、Z6III、Z5II、Z50II、ZR）分别制作了「相机 Flexible Color」。它的亮度并不是在每台机身上都与 NX Studio 完全一致，所以从 1.1 起，每台机身的颜色表都用该机身自己的 RAW 数据制作的色卡拟合，方法和色块与 Z 8 相同。[详细说明](../Y9_FLEX_BASE.md#one-table-per-camera)（英文）。
 
 ## 转换你自己的配方
 

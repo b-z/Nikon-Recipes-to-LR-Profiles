@@ -29,11 +29,12 @@ Existing images are kept, so the command can be rerun after adding recipes.
 ```sh
 python website/scripts/build_site.py --images /path/to/library/images \
   --profiles /path/to/nikon-recipes-lr-profiles-1.0.1-z8/profiles \
+  --camera-profiles /path/to/camera-profiles \
   --previous-profiles /path/to/nikon-recipes-lr-profiles-0.2.0/profiles
 npx wrangler pages deploy website/dist --project-name nikon-recipes-to-lr-profiles --branch main --commit-dirty=true
 ```
 
-`build_site.py` writes `website/dist/` (use `--output` for another empty folder). It checks every profile against `docs/release_manifest.json` or the 0.2.0 manifest, fails if any preview the page links to is missing, and adds redirects for the addresses of the earlier gallery (`/docs/gallery.html` and `/docs/*`). Deploying uploads files with Cloudflare Pages Direct Upload; it does not need a commit. All photographs and previews follow the [sample photo terms](../samples/LICENSE.md), not MIT.
+`build_site.py` writes `website/dist/` (use `--output` for another empty folder). `--profiles` are the reference profiles of `docs/release_manifest.json` (the Z 8 tables of 1.0) and `--camera-profiles` the per-camera tables of `docs/camera_manifests/`, as for `scripts/package_release.py`. It checks every profile against its manifest, fails if any preview the page links to is missing, and adds redirects for the addresses of the earlier gallery (`/docs/gallery.html` and `/docs/*`). Deploying uploads files with Cloudflare Pages Direct Upload; it does not need a commit. All photographs and previews follow the [sample photo terms](../samples/LICENSE.md), not MIT.
 
 ## How the page behaves
 

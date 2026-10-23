@@ -51,7 +51,7 @@ nikon-recipes-lr audit MyRecipe.xmp
 - `audit` 给出断层风险分（[分数说明](metrics.md)）。
 - 如果想让 [`sidecars`](auto-apply.md) 自动套用，请把相机上显示的优化校准名称作为 `--name`。
 
-这样得到的配置文件与 Release 中各机型的版本相同，以「相机 Flexible Color」为基础，限定 Z 8（其他具备 Flexible Color 的机身可修改 `--camera`，例如 `"Nikon Z f"`）。如果想要像 Adobe 通用版那样以 Adobe Standard 为基础、适用于所有相机的配置文件，请改用 Adobe Standard 的测量数据，并去掉机型限制：
+这样得到的配置文件与 Release 中各机型的版本相同，以「相机 Flexible Color」为基础，限定 Z 8（其他机身请用对应的校准包，见[下文](#其他机身和自制色卡)）。如果想要像 Adobe 通用版那样以 Adobe Standard 为基础、适用于所有相机的配置文件，请改用 Adobe Standard 的测量数据，并去掉机型限制：
 
 ```sh
 nikon-recipes-lr fit --adobe-samples calibration/z8/adobe-standard.npy --camera "" \
@@ -66,4 +66,6 @@ nikon-recipes-lr fit --adobe-samples calibration/z8/adobe-standard.npy --camera 
 
 ## 其他机身和自制色卡
 
-校准包由 Z 8 的 RAW 制作，配置文件描述的是 NX Studio 如何渲染 Z 8 的数据。要校准其他机身，需要用那台相机的 RAW 制作色卡，并自己测量 Camera Raw 的渲染结果；所有步骤见[校准流程](calibration.md)（完整版为[英文](../en/calibration.md)）。非常欢迎贡献其他机身的校准。
+仓库里为 Release 拟合过的每台机身都准备了校准包：[Z 8](../../calibration/z8/)、[Z 9](../../calibration/z9/)、[Z f](../../calibration/zf/)、[Z50II](../../calibration/z50ii/)、[Z6III](../../calibration/z6iii/) 和 [Z5II](../../calibration/z5ii/)。Camera Raw 和 NX Studio 对不同机身亮度的处理并不完全一致，所以其他机身请使用对应的校准包：`prepare-nx` 用它的 `chart.NEF`，`sample` 用它的 `chart.json`，`fit` 用它的 `camera-flexible-color.npy`，`--camera` 填它在 Camera Raw 中的型号名（例如 `"Nikon Z f"`，型号名列在 `src/nikon_recipes_lr/cameras.py` 中）。Z6III 和 Z5II 的校准包不含色卡 RAW，它们的 README 说明了如何用你自己的照片制作。
+
+没有校准包的机身（例如 ZR），可以用 [`scripts/make_chart.py`](../../scripts/make_chart.py) 从这台相机的任意一张无损压缩或未压缩 NEF 制作色卡，用 NX Studio 和 Camera Raw 各渲染一次，再用 `sample` 测量 Camera Raw 的渲染结果。背景知识见[校准流程](calibration.md)（完整版为[英文](../en/calibration.md)）。非常欢迎贡献其他机身的校准包。

@@ -51,7 +51,7 @@ nikon-recipes-lr audit MyRecipe.xmp
 - `audit` reports the banding-risk score ([what the scores mean](metrics.md)).
 - Use the name the camera shows for your Picture Control as `--name` if you want [`sidecars`](auto-apply.md) to apply the profile automatically.
 
-This makes a profile like the camera packs of the release, built on Camera Flexible Color and restricted to the Z 8 (change `--camera`, for example to `"Nikon Z f"`, for another body with Flexible Color). For a profile on Adobe Standard that appears for every camera, like the Adobe pack, use the Adobe Standard measurements and drop the camera restriction:
+This makes a profile like the camera packs of the release, built on Camera Flexible Color and restricted to the Z 8 (for another body, use its kit; see [below](#other-cameras-and-your-own-chart)). For a profile on Adobe Standard that appears for every camera, like the Adobe pack, use the Adobe Standard measurements and drop the camera restriction:
 
 ```sh
 nikon-recipes-lr fit --adobe-samples calibration/z8/adobe-standard.npy --camera "" \
@@ -66,4 +66,6 @@ Import `MyRecipe.xmp` through the Profile Browser (**Import Profiles**). It appe
 
 ## Other cameras and your own chart
 
-The kit is made from a Z 8 RAW, and the profiles describe how NX Studio renders Z 8 data. To calibrate another body you need a chart made from that camera's RAW and your own Camera Raw measurements; the [calibration workflow](calibration.md) describes every step. Calibrations for other cameras are very welcome as contributions.
+The repository has a kit for each body the release is fitted on: [Z 8](../../calibration/z8/), [Z 9](../../calibration/z9/), [Z f](../../calibration/zf/), [Z50II](../../calibration/z50ii/), [Z6III](../../calibration/z6iii/) and [Z5II](../../calibration/z5ii/). Camera Raw and NX Studio do not place every body's brightness in exactly the same way, so for another body use its kit: its `chart.NEF` with `prepare-nx`, its `chart.json` with `sample`, its `camera-flexible-color.npy` with `fit`, and its Camera Raw model name with `--camera` (for example `"Nikon Z f"`; the names are listed in `src/nikon_recipes_lr/cameras.py`). The Z6III and Z5II kits have no chart RAW; their READMEs explain how to make one from your own photo.
+
+For a body without a kit (the ZR, for example), make one with [`scripts/make_chart.py`](../../scripts/make_chart.py) from any lossless or uncompressed NEF of that camera, render the chart once with NX Studio and Camera Raw, and measure the Camera Raw render with `sample`. The [calibration workflow](calibration.md) has the background. Kits for other cameras are very welcome as contributions.

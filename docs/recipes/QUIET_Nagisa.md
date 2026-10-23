@@ -2,9 +2,9 @@
 
 Recipe by **Nagisa Ichikawa**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#QUIET_Nagisa)
 
-Profile file `NikonRecipes_QUIET_Nagisa.xmp` in release 1.0.1, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
+Profile file `NikonRecipes_QUIET_Nagisa.xmp` in release 1.1.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
-| Measurement | 1.0.1 | 0.2.0 |
+| Measurement | 1.1.0 | 0.2.0 |
 |---|---:|---:|
 | Difference from NX Studio, chart mean ΔE | 0.396 | 0.641 |
 | Chart median ΔE | 0.297 | — |

@@ -2,9 +2,9 @@
 
 Recipe by **Fabio Oliveira**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#Filmic_Fabio)
 
-Profile file `NikonRecipes_Filmic_Fabio.xmp` in release 1.0.1, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
+Profile file `NikonRecipes_Filmic_Fabio.xmp` in release 1.1.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
-| Measurement | 1.0.1 | 0.2.0 |
+| Measurement | 1.1.0 | 0.2.0 |
 |---|---:|---:|
 | Difference from NX Studio, chart mean ΔE | 0.407 | 0.566 |
 | Chart median ΔE | 0.314 | — |

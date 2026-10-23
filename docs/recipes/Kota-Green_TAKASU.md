@@ -2,9 +2,9 @@
 
 Recipe by **TAKASU TILE**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#Kota-Green_TAKASU)
 
-Profile file `NikonRecipes_Kota-Green_TAKASU.xmp` in release 1.0.1, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
+Profile file `NikonRecipes_Kota-Green_TAKASU.xmp` in release 1.1.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
-| Measurement | 1.0.1 | 0.2.0 |
+| Measurement | 1.1.0 | 0.2.0 |
 |---|---:|---:|
 | Difference from NX Studio, chart mean ΔE | 0.417 | 0.599 |
 | Chart median ΔE | 0.309 | — |

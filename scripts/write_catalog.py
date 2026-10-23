@@ -43,7 +43,8 @@ def main():
     index = [
         f"# Recipe catalog — {version}",
         "",
-        f"All {len(rows)} profiles of release {version}, with their creators and two scores. "
+        f"All {len(rows)} profiles of release {version}, with their creators and two scores, measured on the Nikon Z 8 "
+        "(the other camera packs reach similar scores on their own cameras; see `docs/camera_manifests/`). "
         "[Compare every recipe on four photographs in the online gallery]({GALLERY}).".format(GALLERY=GALLERY),
         "",
         "- **Difference from NX Studio**: the average color difference (CIEDE2000 ΔE) to NX Studio on the test chart. "

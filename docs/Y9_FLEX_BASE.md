@@ -35,9 +35,29 @@ On twelve independent photographs (31 photo–recipe combinations, per-pixel tab
 
 ## Costs
 
-- Camera Flexible Color exists only for Nikon bodies that support Flexible Color, and a profile can be restricted to one camera model. Since 1.0.1 the release therefore has one pack per such body (Z 8, Z 9, Z f, Z6III, Z5II, Z50II, ZR) with the same tables, and an Adobe pack (the Y8 tables on Adobe Standard) for every other camera. On sample RAW files from a Z f and a Z6III, the camera packs were closer to NX Studio than the Adobe pack (center of the frame, mean ΔE 1.45 vs 1.87 and 2.64 vs 2.75 for KG200P1).
+- Camera Flexible Color exists only for Nikon bodies that support Flexible Color, and a profile can be restricted to one camera model. The release therefore has one pack per such body (Z 8, Z 9, Z f, Z6III, Z5II, Z50II, ZR), each with its own tables since 1.1 (see below), and an Adobe pack (the Y8 tables on Adobe Standard) for every other camera.
 - At 0% Amount the photo shows Camera Flexible Color rather than Adobe Standard.
 - Slightly more chart patches clip in the highlights on this base (2.2% instead of 0.9%); they are left out of the fit as before.
+
+## One table per camera
+
+Release 1.0.1 used the Z 8 tables for every Flexible Color body, assuming that Adobe's Camera Flexible Color matches Nikon's rendering equally well on each of them. Charts made from other bodies' RAW files showed that this holds for color but not for brightness: on a Z f, Z 9 or Z50II, NX Studio renders the same chart up to a few L* brighter or darker relative to Camera Raw than on the Z 8, the same for every recipe. A table fitted on the Z 8 carries the Z 8's offset over.
+
+Since 1.1 every body has a calibration kit (`calibration/<camera>/`): the 24,720 patches of the Z 8 chart written into a RAW file of that body with [`scripts/make_chart.py`](../scripts/make_chart.py), its Camera Raw measurements, and NX Studio exports of every recipe. The tables are fitted exactly as for the Z 8 (same fitter, settings, training patches and NX Studio template). On the held-out patches (median over 236 recipes, ΔE 2000):
+
+| Body | Z 8 table on this body | Table fitted on this body |
+|---|---:|---:|
+| Z 8 | 0.52 | 0.52 |
+| Z f | 1.02 | 0.52 |
+| Z 9 | 1.06 | 0.48 |
+| Z50II | 2.12 | 0.54 |
+| Z6III | 0.60 | 0.51 |
+| Z5II | 0.89 | 0.51 |
+| ZR | 1.33 | 0.52 |
+
+The own table is closer for 1,414 of the 1,416 recipe–body pairs (all but two on the Z6III, where the Z 8 table was already close), and its banding-risk score is as low as on the Z 8.
+
+Every ZR sample we found is a High Efficiency★ NEF, which Camera Raw does not open once the chart is written into it, although NX Studio does. The ZR and the Z6III share the same sensor, and Adobe's profiles for the two are identical except that Camera Flexible Color is 0.10 EV brighter on the ZR, so the ZR's Camera Raw measurements are the Z6III chart rendered at +0.10 exposure, and the ZR chart for NX Studio uses the white balance of the Z6III chart. See the [ZR kit](../calibration/zr/).
 
 ## Reproducing
 

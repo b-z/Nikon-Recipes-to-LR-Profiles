@@ -2,7 +2,11 @@
 
 Does not commit, push or publish. Usage:
   python scripts/package_release.py --profiles /path/to/1.0-reference-profiles \
-    --previous-profiles /path/to/0.2.0/profiles --output /path/to/release-assets
+    --camera-profiles /path/to/camera-tables --previous-profiles /path/to/0.2.0/profiles \
+    --output /path/to/release-assets
+
+--camera-profiles holds one folder per fitted body (zf/, z9/, ...) with the profiles that
+build_release_profiles.py --camera <body> wrote; docs/camera_manifests/<body>.json is checked against them.
 """
 
 import argparse
@@ -12,16 +16,16 @@ import zipfile
 from pathlib import Path
 
 from nikon_recipes_lr import __version__
-from nikon_recipes_lr.cameras import ADOBE, FLEX_CAMERAS, adobe_profile, camera_profile
+from nikon_recipes_lr.cameras import ADOBE, FLEX_CAMERAS, adobe_profile, camera_profile, table_sources
 from nikon_recipes_lr.nx import sha256
 from nikon_recipes_lr.profile import read_profile
 
 ROOT = Path(__file__).resolve().parents[1]
 PACK_NOTE = {
     "flex": (
-        "This pack is for the **{label}**: its profiles are built on Camera Flexible Color and appear only for photos from this camera.",
-        "本压缩包适用于 **{label}**：配置文件以「相机 Flexible Color」为基础，只在这台相机拍摄的照片上显示。",
-        "このパックは **{label}** 用です。プロファイルは Camera Flexible Color をベースにしており、このカメラの写真にだけ表示されます。",
+        "This pack is for the **{label}**: its profiles are built on Camera Flexible Color{fitted_en} and appear only for photos from this camera.",
+        "本压缩包适用于 **{label}**：配置文件以「相机 Flexible Color」为基础{fitted_zh}，只在这台相机拍摄的照片上显示。",
+        "このパックは **{label}** 用です。プロファイルは Camera Flexible Color をベースにしており{fitted_ja}、このカメラの写真にだけ表示されます。",
     ),
     "adobe": (
         "This is the universal pack: its profiles are built on Adobe Standard and work with photos from any camera. For a Nikon body with Camera Flexible Color (Z 8, Z 9, Z f, Z6III, Z5II, Z50II, ZR), the pack for that camera is closer to NX Studio.",
@@ -31,8 +35,21 @@ PACK_NOTE = {
 }
 
 
+FITTED = dict(
+    fitted_en=", with color tables measured on this camera's own RAW data,",
+    fitted_zh="，色彩表由这台相机自己的 RAW 数据测量得到",
+    fitted_ja="（カラーテーブルはこのカメラ自身の RAW データで測定）",
+)
+NOT_FITTED = dict(
+    fitted_en=" (color tables measured on the Nikon Z 8)",
+    fitted_zh="（色彩表在 Nikon Z 8 上测量）",
+    fitted_ja="（カラーテーブルは Nikon Z 8 で測定）",
+)
+
+
 def readme(version, camera, kind):
-    notes = [n.format(label=camera.label) for n in PACK_NOTE[kind]]
+    words = FITTED if camera.fitted else NOT_FITTED
+    notes = [n.format(label=camera.label, **words) for n in PACK_NOTE[kind]]
     guides = [(ROOT / "docs" / lang / "INSTALL.md").read_text(encoding="utf-8").strip() for lang in ("en", "zh", "ja")]
     parts = [f"{note}\n\n{guide}" for note, guide in zip(notes, guides)]
     return f"# Nikon Recipes to LR Profiles {version} — {camera.label}\n\n" + "\n\n---\n\n".join(parts) + "\n"
@@ -60,6 +77,7 @@ def write_pack(destination, version, camera, kind, rows, texts):
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--profiles", required=True, help="Reference (Nikon Z 8) profiles of the current series")
+    p.add_argument("--camera-profiles", required=True, help="Table sources of the fitted bodies, one folder each")
     p.add_argument("--previous-profiles", required=True, help="profiles/ of release 0.2.0, for the Adobe pack")
     p.add_argument("--output", required=True)
     p.add_argument("--version", default=__version__)
@@ -81,11 +99,15 @@ def main():
         if sha256(path) != row["sha256"]:
             raise ValueError(f"0.2.0 profile does not match its manifest: {path}")
         prior[row["recipe"]] = path.read_text(encoding="utf-8")
+    sources = table_sources(args.camera_profiles, ROOT / "docs/camera_manifests")
     artifacts = []
     for camera in FLEX_CAMERAS:
-        texts = {r: camera_profile(t, r, camera) for r, t in reference.items()}
+        rows, tables = sources.get(camera.slug, (current, {}))
+        if [r["recipe"] for r in rows] != [r["recipe"] for r in current]:
+            raise ValueError(f"The {camera.slug} manifest lists different recipes")
+        texts = {r: camera_profile(t, r, camera, tables.get(r)) for r, t in reference.items()}
         name = f"nikon-recipes-lr-profiles-{args.version}-{camera.slug}.zip"
-        artifacts.append(write_pack(out / name, args.version, camera, "flex", current, texts))
+        artifacts.append(write_pack(out / name, args.version, camera, "flex", rows, texts))
     texts = {r: adobe_profile(t, r) for r, t in prior.items()}
     name = f"nikon-recipes-lr-profiles-{args.version}-{ADOBE.slug}.zip"
     artifacts.append(write_pack(out / name, args.version, ADOBE, "adobe", previous, texts))

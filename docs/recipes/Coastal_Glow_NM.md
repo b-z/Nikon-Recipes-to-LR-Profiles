@@ -2,9 +2,9 @@
 
 Recipe by **Najmuddin Muif**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#Coastal_Glow_NM)
 
-Profile file `NikonRecipes_Coastal_Glow_NM.xmp` in release 1.0.1, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
+Profile file `NikonRecipes_Coastal_Glow_NM.xmp` in release 1.1.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
-| Measurement | 1.0.1 | 0.2.0 |
+| Measurement | 1.1.0 | 0.2.0 |
 |---|---:|---:|
 | Difference from NX Studio, chart mean ΔE | 0.663 | 0.903 |
 | Chart median ΔE | 0.502 | — |

@@ -51,7 +51,7 @@ nikon-recipes-lr audit MyRecipe.xmp
 - `audit` は段差リスクのスコアを表示します（[スコアの説明](metrics.md)）。
 - [`sidecars`](auto-apply.md) で自動適用したい場合は、カメラに表示されるピクチャーコントロール名を `--name` に指定してください。
 
-これでリリースの機種別パックと同じ、Camera Flexible Color ベースで Z 8 に限定したプロファイルができます（Flexible Color のある他の機種では `--camera` を `"Nikon Z f"` などに変更）。Adobe パックのように Adobe Standard ベースでどのカメラでも表示されるプロファイルにしたい場合は、Adobe Standard の測定値を使い、機種の制限を外します。
+これでリリースの機種別パックと同じ、Camera Flexible Color ベースで Z 8 に限定したプロファイルができます（他の機種ではその機種のキットを使います。[後述](#他の機種と自作のチャート)を参照）。Adobe パックのように Adobe Standard ベースでどのカメラでも表示されるプロファイルにしたい場合は、Adobe Standard の測定値を使い、機種の制限を外します。
 
 ```sh
 nikon-recipes-lr fit --adobe-samples calibration/z8/adobe-standard.npy --camera "" \
@@ -66,4 +66,6 @@ nikon-recipes-lr fit --adobe-samples calibration/z8/adobe-standard.npy --camera 
 
 ## 他の機種と自作のチャート
 
-キットは Z 8 の RAW から作られており、プロファイルは NX Studio が Z 8 のデータをどう現像するかを表しています。他の機種を校正するには、その機種の RAW から作ったチャートと、自分で測った Camera Raw の現像結果が必要です。手順はすべて[キャリブレーションの流れ](calibration.md)（完全版は[英語](../en/calibration.md)）にあります。他機種の校正の貢献を歓迎します。
+リリースでフィットした各機種のキットがリポジトリにあります：[Z 8](../../calibration/z8/)、[Z 9](../../calibration/z9/)、[Z f](../../calibration/zf/)、[Z50II](../../calibration/z50ii/)、[Z6III](../../calibration/z6iii/)、[Z5II](../../calibration/z5ii/)。Camera Raw と NX Studio では機種ごとの明るさの扱いが完全には一致しないため、他の機種ではその機種のキットを使ってください。`prepare-nx` にはその `chart.NEF`、`sample` には `chart.json`、`fit` には `camera-flexible-color.npy` を使い、`--camera` には Camera Raw での機種名（例：`"Nikon Z f"`。機種名は `src/nikon_recipes_lr/cameras.py` にあります）を指定します。Z6III と Z5II のキットにはチャートの RAW が含まれていません。自分の写真から作る方法はそれぞれの README にあります。
+
+キットのない機種（ZR など）は、[`scripts/make_chart.py`](../../scripts/make_chart.py) でその機種のロスレス圧縮または非圧縮の NEF からチャートを作り、NX Studio と Camera Raw で一度ずつ現像して、Camera Raw の現像結果を `sample` で測定します。背景は[キャリブレーションの流れ](calibration.md)（完全版は[英語](../en/calibration.md)）にあります。他機種のキットの貢献を歓迎します。

@@ -2,9 +2,9 @@
 
 Recipe by **InstantF**. [Original NP3 archive](https://github.com/shouryan01/Nikon-Recipes) · [All recipes](../RECIPES.md) · [See it in the gallery](https://nikon-recipes-to-lr-profiles.pages.dev/#MovieG%26O_InstantF)
 
-Profile file `NikonRecipes_MovieG&O_InstantF.xmp` in release 1.0.1, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
+Profile file `NikonRecipes_MovieG&O_InstantF.xmp` in release 1.1.0, on the **Camera Flexible Color** base profile. Scores are at 100% Amount.
 
-| Measurement | 1.0.1 | 0.2.0 |
+| Measurement | 1.1.0 | 0.2.0 |
 |---|---:|---:|
 | Difference from NX Studio, chart mean ΔE | 0.285 | 0.437 |
 | Chart median ΔE | 0.178 | — |

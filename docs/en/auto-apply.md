@@ -21,7 +21,7 @@ When a Nikon camera takes a photo, it stores the name of the active Picture Cont
 2. See what would happen, without writing anything:
 
    ```sh
-   nikon-recipes-lr sidecars --dry-run --profiles ~/Downloads/nikon-recipes-lr-profiles-1.0.1-z8/profiles ~/Pictures/2026-10-18
+   nikon-recipes-lr sidecars --dry-run --profiles ~/Downloads/nikon-recipes-lr-profiles-1.1.0-z8/profiles ~/Pictures/2026-10-18
    ```
 
    `written` lists the photos that would get a sidecar and the profile for each; `no_profile` counts photos taken with a Picture Control that has no profile, such as Standard.

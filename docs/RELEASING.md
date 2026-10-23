@@ -17,6 +17,8 @@ How a maintainer publishes a new profile release. Code-only changes do not need 
    ```
 
    It samples every TIFF, fits on the kit's fixed training patches, scores the held-out patches, audits banding risk, and writes the reference (Nikon Z 8) profiles with the naming conventions above plus a manifest; copy that manifest to `docs/release_manifest.json` after adding each row's `previous` scores. Refitting a released recipe this way reproduces its table within about 0.06 ΔE.
+
+   Repeat this for every other body with a kit (`calibration/<camera>/`): `prepare-nx` with that kit's `chart.NEF` (or the chart made with `scripts/make_chart.py` for kits without one), one NX Studio export, then `build_release_profiles.py --camera <camera>`. Copy each manifest to `docs/camera_manifests/<camera>.json` and keep the profiles in one folder per camera (`<camera-profiles>/<camera>/`); only their color tables are used.
 2. **Check the profiles.** `nikon-recipes-lr audit` a sample, render a few through Camera Raw (`nikon-recipes-lr render`), and import the set into Lightroom to confirm the group, names and Amount slider.
 3. **Update the repository.**
    - Bump the version in `pyproject.toml` and `src/nikon_recipes_lr/__init__.py`.
@@ -29,10 +31,11 @@ How a maintainer publishes a new profile release. Code-only changes do not need 
 
    ```sh
    python scripts/package_release.py --profiles /path/to/reference-z8-profiles \
-     --previous-profiles /path/to/0.2.0/profiles --output /path/to/release-assets
+     --camera-profiles /path/to/camera-profiles --previous-profiles /path/to/0.2.0/profiles \
+     --output /path/to/release-assets
    ```
 
-   It refuses to build if a reference profile's checksum or table ID does not match the manifest. Camera packs differ from the Z 8 pack only in camera restriction, UUID and description; the website makes its per-recipe downloads with the same functions.
+   It refuses to build if a reference profile's checksum or a camera table does not match its manifest. Each camera pack is the reference profile with that camera's restriction, UUID and color table; the website makes its per-recipe downloads with the same functions.
 5. **Publish** on GitHub with the tag `v<version>`, attaching only the profile ZIPs, so that the release page stays simple for people who only want the profiles. GitHub adds *Source code* archives to every release automatically; they cannot be removed. In the release notes, summarize the CHANGELOG entry and the known limitations, explain which pack is for which camera and how the packs differ, and point to the [gallery](https://nikon-recipes-to-lr-profiles.pages.dev/) for downloading single recipes.
 6. **Update the website** so that its previews and per-recipe downloads match the release: `website/scripts/make_previews.py` for new tables, then `build_site.py` and deploy ([website/README.md](../website/README.md)).
 
