@@ -2,6 +2,12 @@
 
 Notable changes to the released profiles and tools. Profile releases are on the [Releases page](https://github.com/b-z/Nikon-Recipes-to-LR-Profiles/releases).
 
+## Unreleased
+
+### Website
+- A dice button next to the previous/next arrows jumps to a random recipe (among the recipes the list currently shows).
+- The comparison source "Y8 · previous" is now called "Y8 · Adobe universal".
+
 ## 1.2.0 — 2026-10-23
 
 ### Profiles
